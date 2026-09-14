@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#090e17"/>
+  <circle cx="1000" cy="150" r="300" fill="#06b6d4" fill-opacity="0.12"/>
+  <circle cx="200" cy="500" r="250" fill="#0284c7" fill-opacity="0.10"/>
+  
+  <!-- Logo Icon -->
+  <g transform="translate(100, 140)">
+    <rect width="100" height="100" rx="24" fill="url(#gradLogo)"/>
+    <rect x="25" y="25" width="50" height="50" rx="8" stroke="#ffffff" stroke-width="4"/>
+    <path d="M35 45h30M35 55h30M50 40v30" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brand Text -->
+  <text x="230" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="64" fill="#f8fafc">
+    Calc<tspan fill="#38bdf8">Vora</tspan><tspan font-size="28" font-weight="600" fill="#94a3b8"> .online</tspan>
+  </text>
+  
+  <!-- Slogan / Value Proposition -->
+  <text x="100" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="52" fill="#ffffff" letter-spacing="-1">
+    Precision Calculators &amp; Utility Tools
+  </text>
+  <text x="100" y="410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" font-size="30" fill="#94a3b8">
+    Fast, private client-side calculators for Finance, Health, Math &amp; Date tracking.
+  </text>
+
+  <!-- Badges -->
+  <g transform="translate(100, 480)">
+    <rect width="170" height="48" rx="24" fill="#0f172a" stroke="#1e293b"/>
+    <text x="85" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#34d399" text-anchor="middle">⚡ Instant Math</text>
+  </g>
+  <g transform="translate(290, 480)">
+    <rect width="170" height="48" rx="24" fill="#0f172a" stroke="#1e293b"/>
+    <text x="85" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#38bdf8" text-anchor="middle">🔒 Zero Tracking</text>
+  </g>
+  <g transform="translate(480, 480)">
+    <rect width="210" height="48" rx="24" fill="#0f172a" stroke="#1e293b"/>
+    <text x="105" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="18" fill="#fbbf24" text-anchor="middle">100+ Tools Pipeline</text>
+  </g>
+
+  <defs>
+    <linearGradient id="gradLogo" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0284c7"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+</svg>
