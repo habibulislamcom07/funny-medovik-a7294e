@@ -371,8 +371,8 @@
                 Sales Tax Amount = Total Retail Cost − Pre-Tax Base Price
               </div>
             </div>
+        
           </section>
-
           <!-- 5 Complete Interactive FAQs -->
           <section class="content-section" aria-labelledby="faq-title">
             <h2 id="faq-title" class="section-title">
@@ -384,60 +384,60 @@
               Frequently Asked Questions (FAQ)
             </h2>
             
-            <div class="faq-accordion" id="tool-faq">
+            <div id="simple-faq-accordion" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
               
               <!-- FAQ 1 -->
-              <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
+              <div class="faq-box" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.03); overflow: hidden;">
+                <button type="button" onclick="toggleFaq(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: transparent; border: none; color: inherit; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;">
                   <span>What is the difference between Tax Inclusive and Tax Exclusive?</span>
-                  <span class="faq-icon">+</span>
+                  <span class="faq-sign" style="font-size: 1.25rem; font-weight: bold; margin-left: 1rem;">+</span>
                 </button>
-                <div class="faq-answer" style="display: none;">
-                  <p>Tax Exclusive means sales tax is added on top of the base sticker price at checkout. Tax Inclusive means the final price already includes sales tax, and the tool calculates the net pre-tax amount.</p>
+                <div class="faq-content" style="display: none; padding: 0 1rem 1rem 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem;">
+                  <p style="margin: 0; padding-top: 0.5rem;">Tax Exclusive means sales tax is added on top of the base sticker price at checkout. Tax Inclusive means the final price already includes sales tax, and the tool calculates the net pre-tax amount.</p>
                 </div>
               </div>
 
               <!-- FAQ 2 -->
-              <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
+              <div class="faq-box" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.03); overflow: hidden;">
+                <button type="button" onclick="toggleFaq(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: transparent; border: none; color: inherit; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;">
                   <span>How do you reverse calculate pre-tax base price from total price?</span>
-                  <span class="faq-icon">+</span>
+                  <span class="faq-sign" style="font-size: 1.25rem; font-weight: bold; margin-left: 1rem;">+</span>
                 </button>
-                <div class="faq-answer" style="display: none;">
-                  <p>To extract sales tax from a final price, divide the total price by 1 plus the tax rate as a decimal. Formula: Pre-Tax Amount = Total Price / [1 + (Tax Rate / 100)].</p>
+                <div class="faq-content" style="display: none; padding: 0 1rem 1rem 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem;">
+                  <p style="margin: 0; padding-top: 0.5rem;">To extract sales tax from a final price, divide the total price by 1 plus the tax rate as a decimal. Formula: Pre-Tax Amount = Total Price / [1 + (Tax Rate / 100)].</p>
                 </div>
               </div>
 
               <!-- FAQ 3 -->
-              <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
+              <div class="faq-box" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.03); overflow: hidden;">
+                <button type="button" onclick="toggleFaq(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: transparent; border: none; color: inherit; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;">
                   <span>How do combined sales tax rates work in US states?</span>
-                  <span class="faq-icon">+</span>
+                  <span class="faq-sign" style="font-size: 1.25rem; font-weight: bold; margin-left: 1rem;">+</span>
                 </button>
-                <div class="faq-answer" style="display: none;">
-                  <p>In the United States, total sales tax is often a combination of statewide base sales tax plus local county, city, and transit district taxes.</p>
+                <div class="faq-content" style="display: none; padding: 0 1rem 1rem 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem;">
+                  <p style="margin: 0; padding-top: 0.5rem;">In the United States, total sales tax is often a combination of statewide base sales tax plus local county, city, and transit district taxes.</p>
                 </div>
               </div>
 
               <!-- FAQ 4 -->
-              <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
+              <div class="faq-box" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.03); overflow: hidden;">
+                <button type="button" onclick="toggleFaq(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: transparent; border: none; color: inherit; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;">
                   <span>Can I calculate custom sales tax percentages?</span>
-                  <span class="faq-icon">+</span>
+                  <span class="faq-sign" style="font-size: 1.25rem; font-weight: bold; margin-left: 1rem;">+</span>
                 </button>
-                <div class="faq-answer" style="display: none;">
-                  <p>Yes. Select the 'Custom' rate button in the calculator to enter specific combined rates like 6.25%, 8.875%, or local municipal surcharges.</p>
+                <div class="faq-content" style="display: none; padding: 0 1rem 1rem 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem;">
+                  <p style="margin: 0; padding-top: 0.5rem;">Yes. Select the 'Custom' rate button in the calculator to enter specific combined rates like 6.25%, 8.875%, or local municipal surcharges.</p>
                 </div>
               </div>
 
               <!-- FAQ 5 -->
-              <div class="faq-item">
-                <button class="faq-question" type="button" aria-expanded="false">
+              <div class="faq-box" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgba(255, 255, 255, 0.03); overflow: hidden;">
+                <button type="button" onclick="toggleFaq(this)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: transparent; border: none; color: inherit; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;">
                   <span>Which US states do not have state sales tax?</span>
-                  <span class="faq-icon">+</span>
+                  <span class="faq-sign" style="font-size: 1.25rem; font-weight: bold; margin-left: 1rem;">+</span>
                 </button>
-                <div class="faq-answer" style="display: none;">
-                  <p>Five US states do not impose a statewide sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon (often referred to as the NOMAD states).</p>
+                <div class="faq-content" style="display: none; padding: 0 1rem 1rem 1rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0.5rem;">
+                  <p style="margin: 0; padding-top: 0.5rem;">Five US states do not impose a statewide sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon (often referred to as the NOMAD states).</p>
                 </div>
               </div>
 
@@ -449,31 +449,20 @@
     </div>
   </main>
 
-  <!-- Interactive Accordion JavaScript Script -->
+  <!-- Working Direct Click FAQ Handler -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Toggle FAQ items
-      const faqQuestions = document.querySelectorAll('.faq-question');
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const sign = btn.querySelector('.faq-sign');
       
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', function () {
-          const answer = this.nextElementSibling;
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          
-          // Toggle Current Item
-          this.setAttribute('aria-expanded', !isExpanded);
-          if (answer) {
-            answer.style.display = isExpanded ? 'none' : 'block';
-          }
-          
-          // Toggle Icon
-          const icon = this.querySelector('.faq-icon');
-          if (icon) {
-            icon.textContent = isExpanded ? '+' : '−';
-          }
-        });
-      });
-    });
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        if (sign) sign.textContent = "−";
+      } else {
+        content.style.display = "none";
+        if (sign) sign.textContent = "+";
+      }
+    }
   </script>
 
 </body>
