@@ -1469,6 +1469,16 @@
   }
 
   function wire() {
+    
+/* Mark elements handled by js/main.js so we don't double-bind */
+['themeToggle', 'mobileToggle', 'langBtn', 'backToTop'].forEach(function (id) {
+  var el = document.getElementById(id);
+  if (el) el.dataset.calcifyBound = '1';
+});
+document.querySelectorAll('[data-newsletter]').forEach(function (f) {
+  f.dataset.calcifyBound = '1';
+});
+    
     /* ---- Theme toggle ---- */
     var tt = $('#themeToggle');
     if (tt) tt.addEventListener('click', function () {
