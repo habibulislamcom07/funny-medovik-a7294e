@@ -1087,7 +1087,16 @@
      SITE SCRIPTS (created in later files)
 ============================================================ -->
 <script src="js/i18n.js" defer></script>
-<script src="js/main.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<!-- js/main.js index.html me nahi chahiye — inline bootstrap handles everything -->
+
+<!-- ============================================================
+     INDEX BOOTSTRAP — self-contained so index.html runs standalone
+============================================================ -->
+<script>
+(function () {
+  'use strict';
+  ...
 
 <!-- ============================================================
      INDEX BOOTSTRAP — Part 1/2 (config + tool catalog)
