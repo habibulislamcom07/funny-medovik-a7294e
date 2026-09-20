@@ -1,342 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>CalcVora – Premium Free Online Calculators for Finance, Health & Math</title>
-  <meta name="description" content="Free online calculators for loan EMI, BMI, sales tax, age, and compound interest. Fast, accurate, and privacy-focused glassmorphic tools.">
-  <link rel="canonical" href="https://calcvora.online/">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://calcvora.online/">
-  <meta property="og:title" content="CalcVora – Premium Free Online Calculators">
-  <meta property="og:description" content="Free online calculators for loan EMI, BMI, sales tax, age, and compound interest. Fast, accurate, and privacy-focused.">
-  <meta property="og:image" content="https://calcvora.online/assets/img/favicon.svg">
-  <meta property="og:site_name" content="CalcVora">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://calcvora.online/">
-  <meta name="twitter:title" content="CalcVora – Premium Free Online Calculators">
-  <meta name="twitter:description" content="Fast, verified, and client-side online calculation tools.">
-  <meta name="twitter:image" content="https://calcvora.online/assets/img/favicon.svg">
-
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://calcvora.online/#website",
-        "url": "https://calcvora.online/",
-        "name": "CalcVora",
-        "description": "High-precision online calculators and utility tools for finance, fitness, mathematics, and time management.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://calcvora.online/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://calcvora.online/#organization",
-        "name": "CalcVora",
-        "url": "https://calcvora.online/",
-        "logo": "https://calcvora.online/assets/img/favicon.svg",
-        "email": "CalcVora@gmail.com"
-      }
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcVora - Free Online Multi-Tool Calculators</title>
+    <meta name="description" content="CalcVora.online provides 50+ free online calculators for Finance, Fitness, Math, and Everyday Utilities. Accurate, fast, and easy to use.">
+    <link rel="canonical" href="https://calcvora.online/">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background: #090d16; color: #f1f5f9;">
+<body>
 
-  <header class="site-header" style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top:0; z-index: 100;">
-    <div class="container header-inner" style="display:flex; justify-content:space-between; align-items:center; padding: 0.85rem 1rem;">
-      <a href="/" class="brand-link" aria-label="CalcVora Home" style="display:flex; align-items:center; gap: 0.5rem; text-decoration:none; font-weight:800; font-size: 1.35rem; color:#fff;">
-        <span class="brand-logo-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6); padding: 6px; border-radius: 8px; display:inline-flex;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-            <line x1="8" y1="6" x2="16" y2="6"></line>
-            <line x1="16" y1="14" x2="16" y2="18"></line>
-            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"></path>
-          </svg>
-        </span>
-        <span>Calc<span style="color: #38bdf8;">Vora</span></span>
-        <span class="brand-tld" style="font-size: 0.75rem; color: #94a3b8; font-family: monospace;">online</span>
-      </a>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Calc<span class="highlight">Vora</span></span>
+            </a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-menu" style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0;">
-          <li><a href="/" class="nav-link active" style="color:#38bdf8; text-decoration:none; font-weight:600;">All Tools</a></li>
-          <li><a href="/about.html" class="nav-link" style="color:#94a3b8; text-decoration:none;">About</a></li>
-          <li><a href="/contact.html" class="nav-link" style="color:#94a3b8; text-decoration:none;">Contact</a></li>
-        </ul>
-      </nav>
+            <div class="search-box">
+                <input type="text" id="globalSearch" placeholder="Search 50+ calculators (e.g. Mortgage, BMI, Percentage)..." onkeyup="filterTools()">
+                <span class="search-icon">🔍</span>
+            </div>
 
-      <div class="header-actions" style="display:flex; gap: 0.75rem; align-items:center;">
-        <button class="btn btn-premium" data-action="open-premium" aria-label="Upgrade to Pro" style="background: linear-gradient(135deg, #f59e0b, #d97706); border:none; color:#fff; font-weight:700; padding: 0.45rem 0.9rem; border-radius: 20px; display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          Go Ad-Free
-        </button>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color:#fff; padding: 6px; border-radius:50%; cursor:pointer;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+            <nav class="nav-links">
+                <a href="#financial">Finance</a>
+                <a href="#health">Health</a>
+                <a href="#math">Math</a>
+                <a href="#utility">Utilities</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Hero Section -->
-  <section style="padding: 3.5rem 0 2rem; position: relative; overflow: hidden; background: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.15), transparent 70%);">
-    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
-      <div style="max-width: 820px; margin:0 auto; text-align: center;">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>All Your Calculation Needs in One Place</h1>
+            <p>Fast, accurate, and easy-to-use smart tools for financial planning, fitness tracking, math problems, and daily tasks.</p>
+            <div class="hero-stats">
+                <div class="stat-item"><strong>50+</strong> Tools</div>
+                <div class="stat-item"><strong>100%</strong> Free</div>
+                <div class="stat-item"><strong>Instant</strong> Results</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container / Categories & Tools Grid -->
+    <main class="container main-content">
         
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem; backdrop-filter: blur(8px);">
-          <span>⚡ 100% Client-Side Engine • Zero Data Tracking</span>
-        </div>
-
-        <h1 style="font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; color: #ffffff; margin-bottom: 1.25rem;">
-          Precision Calculators for <span style="background: linear-gradient(135deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Finance, Health & Math</span>
-        </h1>
-
-        <p style="font-size: 1.1rem; color: #94a3b8; line-height: 1.6; margin-bottom: 2.2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-          CalcVora delivers instant, high-precision calculation tools designed for daily financial planning, fitness tracking, and mathematical problem-solving.
-        </p>
-
-        <!-- Search Bar -->
-        <div class="hero-search-box" style="position: relative; max-width: 600px; margin: 0 auto 2rem;">
-          <input type="text" id="tool-search-input" class="hero-search-input" placeholder="Search calculators (e.g. Loan, EMI, BMI, Tax, Age)..." style="width: 100%; padding: 1rem 1rem 1rem 3rem; background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; color: #fff; font-size: 1rem; backdrop-filter: blur(12px); outline: none; transition: border-color 0.3s;">
-          <svg style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #64748b;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </div>
-
-        <!-- Filter Chips -->
-        <div class="filter-chips" style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;">
-          <button type="button" class="filter-chip active" data-filter="all" style="background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #fff; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer; font-weight: 600;">All Tools</button>
-          <button type="button" class="filter-chip" data-filter="finance" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer;">Finance</button>
-          <button type="button" class="filter-chip" data-filter="health" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer;">Health & Body</button>
-          <button type="button" class="filter-chip" data-filter="math" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer;">Mathematics</button>
-          <button type="button" class="filter-chip" data-filter="datetime" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer;">Date & Time</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-    <!-- Tools Grid Section -->
-  <main class="main-content" style="padding: 2rem 0 4rem;" id="tools">
-    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
-      
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
-        <div>
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff;">Live Utility Tools</h2>
-          <p style="color: #94a3b8; font-size: 0.875rem;">Pick a tool to start real-time calculations instantly.</p>
-        </div>
-        <span style="font-size: 0.85rem; color: #38bdf8; font-family: monospace; font-weight: 700;">8 Tools Verified</span>
-      </div>
-
-      <div class="tool-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.25rem;">
-        
-        <!-- Tool 1: Age Calculator -->
-        <article class="tool-card" data-category="datetime" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+        <!-- Category: Financial -->
+        <section id="financial" class="tool-category">
+            <div class="category-header">
+                <h2>💰 Financial Calculators</h2>
+                <p>Plan your investments, loans, mortgages, and savings easily.</p>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Age Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Compute exact chronological age in years, months, days, hours, and next birthday countdown.</p>
-          </div>
-          <a href="/tools/age-calculator/" style="text-decoration:none; text-align:center; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; transition: 0.2s;">Launch Tool &rarr;</a>
-        </article>
+            <div class="tools-grid" id="financialGrid">
+                <!-- Tool Card 1 -->
+                <a href="mortgage-calculator.html" class="tool-card" data-keywords="mortgage home loan EMI interest property house">
+                    <div class="tool-icon">🏠</div>
+                    <div class="tool-info">
+                        <h3>Mortgage Calculator</h3>
+                        <p>Calculate monthly house payments, interest, and amortization schedule.</p>
+                    </div>
+                </a>
+                
+                <!-- Tool Card 2 -->
+                <a href="auto-loan-calculator.html" class="tool-card" data-keywords="car auto loan payment interest vehicle buying">
+                    <div class="tool-icon">🚗</div>
+                    <div class="tool-info">
+                        <h3>Auto Loan Calculator</h3>
+                        <p>Estimate monthly car payments and total interest cost.</p>
+                    </div>
+                </a>
 
-        <!-- Tool 2: Loan EMI Calculator -->
-        <article class="tool-card" data-category="finance" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+                <!-- Tool Card 3 -->
+                <a href="compound-interest-calculator.html" class="tool-card" data-keywords="investment compound interest wealth growth return bank">
+                    <div class="tool-icon">📈</div>
+                    <div class="tool-info">
+                        <h3>Compound Interest Calculator</h3>
+                        <p>See how your investments grow over time with compounding.</p>
+                    </div>
+                </a>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Loan EMI Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Calculate monthly loan EMIs, total interest, and complete principal repayment schedules.</p>
-          </div>
-          <a href="/tools/loan-emi-calculator/" style="text-decoration:none; text-align:center; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
+        </section>
 
-        <!-- Tool 3: BMI Calculator -->
-        <article class="tool-card" data-category="health" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+        <!-- Category: Health & Fitness -->
+        <section id="health" class="tool-category">
+            <div class="category-header">
+                <h2>🏋️ Health & Fitness</h2>
+                <p>Track your health metrics, fitness goals, and body stats.</p>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">BMI Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Check Body Mass Index, medical weight classification, and recommended healthy target range.</p>
-          </div>
-          <a href="/tools/bmi-calculator/" style="text-decoration:none; text-align:center; background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); color: #f43f5e; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
-
-        <!-- Tool 4: Percentage Calculator -->
-        <article class="tool-card" data-category="math" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+            <div class="tools-grid" id="healthGrid">
+                <a href="bmi-calculator.html" class="tool-card" data-keywords="bmi body mass index weight height health fitness">
+                    <div class="tool-icon">⚖️</div>
+                    <div class="tool-info">
+                        <h3>BMI Calculator</h3>
+                        <p>Check your Body Mass Index and healthy weight range.</p>
+                    </div>
+                </a>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Percentage Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Calculate percentage increases, decreases, relative ratios, shopping discounts, and markups.</p>
-          </div>
-          <a href="/tools/percentage-calculator/" style="text-decoration:none; text-align:center; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); color: #a78bfa; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
+        </section>
 
-        <!-- Tool 5: Sales Tax Calculator -->
-        <article class="tool-card" data-category="finance" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+        <!-- Category: Math & Utilities -->
+        <section id="math" class="tool-category">
+            <div class="category-header">
+                <h2>🔢 Math & Daily Utilities</h2>
+                <p>Quick mathematical calculations and daily life tools.</p>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Sales Tax Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Compute VAT, GST, and global sales taxes with custom inclusive or exclusive rates.</p>
-          </div>
-          <a href="/tools/sales-tax-calculator/" style="text-decoration:none; text-align:center; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
-
-        <!-- Tool 6: Compound Interest Calculator (FIXED LINK) -->
-        <article class="tool-card" data-category="finance" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+            <div class="tools-grid" id="mathGrid">
+                <a href="percentage-calculator.html" class="tool-card" data-keywords="percentage percent fraction math discount ratio">
+                    <div class="tool-icon">٪</div>
+                    <div class="tool-info">
+                        <h3>Percentage Calculator</h3>
+                        <p>Calculate percentages, percentage increases, and discounts instantly.</p>
+                    </div>
+                </a>
+                <a href="age-calculator.html" class="tool-card" data-keywords="age date birth calendar leap year birthday days">
+                    <div class="tool-icon">📅</div>
+                    <div class="tool-info">
+                        <h3>Age Calculator</h3>
+                        <p>Find exact age in years, months, weeks, days, and hours.</p>
+                    </div>
+                </a>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Compound Interest Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Project long-term compound wealth accumulation with monthly contributions and inflation.</p>
-          </div>
-          <a href="/tools/compound-interest-calculator/" style="text-decoration:none; text-align:center; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
+        </section>
 
-        <!-- Tool 7: Calorie & TDEE Calculator -->
-        <article class="tool-card" data-category="health" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Calc<span class="highlight">Vora</span></a>
+                <p>© 2026 CalcVora.online. All Rights Reserved.</p>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Calorie & TDEE Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Determine Total Daily Energy Expenditure and ideal macro distribution for fitness goals.</p>
-          </div>
-          <a href="/tools/calorie-tdee-calculator/" style="text-decoration:none; text-align:center; background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.3); color: #f43f5e; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
-
-        <!-- Tool 8: Time Duration Calculator (FIXED LINK) -->
-        <article class="tool-card" data-category="datetime" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 10px; border-radius: 12px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-              </div>
-              <span style="font-size: 0.7rem; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 12px; font-weight: 700;">Live Tool</span>
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
             </div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem;">Time Duration Calculator</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.2rem;">Measure elapsed time, shift work hours, and time differences between two timestamps.</p>
-          </div>
-          <a href="/tools/time-duration-calculator/" style="text-decoration:none; text-align:center; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 0.6rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;">Launch Tool &rarr;</a>
-        </article>
-
-      </div>
-
-      <!-- Features Highlights -->
-      <section style="margin-top: 4rem; padding: 2.5rem; background: rgba(30, 41, 59, 0.25); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; backdrop-filter: blur(12px);">
-        <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: 0.5rem;">
-          Engineered for Pure Speed & Absolute Privacy
-        </h2>
-        <p style="text-align: center; color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem; font-size: 0.95rem;">
-          Calculations run directly inside your browser. No server waiting, no hidden data logging.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.25rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
-            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem;">Client-Side Execution</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Calculations happen in real-time as you type, bypassing network delays.</p>
-          </div>
-
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.25rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔒</div>
-            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem;">Zero-Log Guarantee</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Your inputs never leave your personal browser window.</p>
-          </div>
-
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.25rem;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌍</div>
-            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem;">Global Standard Formats</h3>
-            <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Designed for multi-currency values and dual metric/imperial conversions.</p>
-          </div>
         </div>
-      </section>
+    </footer>
 
-    </div>
-  </main>
-
-  <footer class="site-footer" style="background: rgba(15, 23, 42, 0.9); border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 3rem 0 2rem;">
-    <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-        <div>
-          <a href="/" style="text-decoration:none; font-weight:800; font-size: 1.2rem; color:#fff; display:inline-block; margin-bottom: 0.75rem;">
-            Calc<span style="color: #38bdf8;">Vora</span> <span style="font-size:0.7rem; color:#64748b; font-family:monospace;">online</span>
-          </a>
-          <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Fast, responsive, privacy-first web utilities built for personal and professional daily use.</p>
-        </div>
-
-        <div>
-          <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.8rem;">Core Tools</h4>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
-            <li><a href="/tools/age-calculator/" style="color: #94a3b8; text-decoration: none;">Age Calculator</a></li>
-            <li><a href="/tools/loan-emi-calculator/" style="color: #94a3b8; text-decoration: none;">Loan EMI Calculator</a></li>
-            <li><a href="/tools/bmi-calculator/" style="color: #94a3b8; text-decoration: none;">BMI Calculator</a></li>
-            <li><a href="/tools/compound-interest-calculator/" style="color: #94a3b8; text-decoration: none;">Compound Interest</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 0.8rem;">Support & Contact</h4>
-          <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.5;">Questions or feedback? Reach out directly via email:</p>
-          <a href="mailto:CalcVora@gmail.com" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; font-weight: 600;">CalcVora@gmail.com</a>
-        </div>
-      </div>
-
-      <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; color: #64748b; font-size: 0.8rem;">
-        &copy; 2026 CalcVora.online. All rights reserved. Built for high performance & accuracy.
-      </div>
-    </div>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
