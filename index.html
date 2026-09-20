@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="format-detection" content="telephone=no" />
+
+<title>Calcify — 150+ Free Online Calculators &amp; Smart Tools</title>
+<meta name="description" content="150+ free online calculators and smart tools for finance, health, math, conversions, text and dates. Fast, accurate, mobile-friendly and 100% free." />
+<meta name="keywords" content="online calculator, free calculators, emi calculator, bmi calculator, age calculator, percentage calculator, unit converter, word counter" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="Calcify — 150+ Free Online Calculators" />
+<meta property="og:description" content="150+ free online calculators and smart tools." />
+<meta property="og:url" content="https://calcify.com/" />
+<meta property="og:image" content="https://calcify.com/assets/og-cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calcify — 150+ Free Online Calculators" />
+<meta name="twitter:image" content="https://calcify.com/assets/og-cover.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.18) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.14) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.12) 0px, transparent 50%);
+  }
+  .dark .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.22) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.16) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.14) 0px, transparent 50%);
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .tool-card { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .tool-card:hover { transform: translateY(-3px); }
+  .chip.is-active { background: #4f46e5 !important; color:#fff !important; border-color:#4f46e5 !important; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Calcify",
+  "url": "https://calcify.com/",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "mediaprojects.official@gmail.com",
+    "availableLanguage": ["English","Hindi","Spanish","Arabic"]
+  },
+  "sameAs": [
+    "https://youtube.com/@calcifyofficialchannel",
+    "https://www.facebook.com/share/19XLZJw3wW/"
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="index.html" class="flex shrink-0 items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex">
+      <a href="#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <nav class="grid grid-cols-2 gap-1.5" id="mobileCatGrid"></nav>
+    <div class="mt-4 grid grid-cols-2 gap-1.5">
+      <a href="#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </div>
+    <a href="#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- Top banner ad -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="mesh relative overflow-hidden">
+    <div class="mx-auto max-w-8xl px-4 pb-16 pt-14 sm:px-6 sm:pt-20 lg:px-8 lg:pb-24">
+      <div class="mx-auto max-w-3xl text-center">
+
+        <span class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 shadow-soft backdrop-blur dark:border-brand-800 dark:bg-slate-900/70 dark:text-brand-300">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-600"></span>
+          </span>
+          150+ Free Smart Calculators &amp; Tools
+        </span>
+
+        <h1 class="mt-6 font-display text-[2.15rem] font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+          Every calculator you need,<br class="hidden sm:block" />
+          <span class="grad-text">in one fast place.</span>
+        </h1>
+
+        <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+          Finance, health, math, converters, text and date tools — all free, all instant, all private.
+          No signup. No downloads. Results calculated right inside your browser.
+        </p>
+
+        <div class="mx-auto mt-8 max-w-xl">
+          <div class="relative">
+            <svg class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input id="heroSearch" type="search" autocomplete="off" placeholder="Search calculator…"
+              class="h-14 w-full rounded-2xl border border-slate-200 bg-white pl-12 pr-28 text-[15px] shadow-card outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-800 dark:bg-slate-900 dark:placeholder:text-slate-500" />
+            <button type="button" id="heroSearchBtn" class="absolute right-2 top-1/2 h-10 -translate-y-1/2 rounded-xl bg-brand-600 px-4 text-sm font-bold text-white transition hover:bg-brand-700">
+              Search
+            </button>
+          </div>
+          <div class="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs">
+            <span class="font-semibold text-slate-400">Popular:</span>
+            <a href="tools/emi-calculator.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">EMI</a>
+            <a href="tools/bmi-calculator.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">BMI</a>
+            <a href="tools/gst-calculator.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">GST</a>
+            <a href="tools/age-calculator.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Age</a>
+            <a href="tools/percentage-calculator.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Percentage</a>
+            <a href="tools/word-counter.html" class="rounded-full border border-slate-200 bg-white px-3 py-1 font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Word Counter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4">
+        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/60">
+          <div class="font-display text-2xl font-extrabold text-slate-900 dark:text-white">150+</div>
+          <div class="mt-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">Free Tools</div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/60">
+          <div class="font-display text-2xl font-extrabold text-slate-900 dark:text-white">2.4M+</div>
+          <div class="mt-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">Monthly Uses</div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/60">
+          <div class="font-display text-2xl font-extrabold text-slate-900 dark:text-white">100%</div>
+          <div class="mt-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">Private</div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/60">
+          <div class="font-display text-2xl font-extrabold text-slate-900 dark:text-white">4</div>
+          <div class="mt-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">Languages</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Browse by category</h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Eight focused collections covering everything.</p>
+      </div>
+      <a href="#all-tools" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+        View all tools
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-4" id="categoryGrid"></div>
+  </section>
+
+  <!-- ============ MAIN 2-COLUMN LAYOUT ============ -->
+  <div class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <div class="min-w-0">
+
+        <!-- ============ POPULAR TOOLS ============ -->
+        <section id="popular" class="scroll-mt-24">
+          <div class="mb-6">
+            <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Most popular tools</h2>
+            <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">The calculators people open every single day.</p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 xl:grid-cols-3">
+
+            <a href="tools/emi-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12m-3-2.8l.9.7c1.2.9 3.1.9 4.2 0 1.2-.9 1.2-2.3 0-3.2-.6-.4-1.3-.7-2.1-.7s-1.5-.2-2-.7c-1.1-.9-1.1-2.3 0-3.2s2.9-.9 4 0l.4.3"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">EMI Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Monthly instalment, total interest and full amortisation for any loan.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/bmi-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.25c0-2.5-2.1-4.5-4.7-4.5-1.9 0-3.6 1.1-4.3 2.7-.7-1.6-2.4-2.7-4.3-2.7C5.1 3.75 3 5.75 3 8.25c0 7.2 9 12 9 12s9-4.8 9-12z"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">BMI Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Body Mass Index with metric or imperial units and healthy-range guidance.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/gst-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">GST Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Add or remove GST/VAT at any slab and get the exact tax split instantly.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/age-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 3v3M16 3v3M3 9.5h18"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">Age Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Exact age in years, months, days, hours and your next birthday countdown.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/percentage-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">Percentage Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Percent of a number, increase, decrease and percentage-change in one tool.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/word-counter.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25H12"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">Word Counter</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Live word, character, sentence and reading-time count as you type.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/sip-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">SIP Calculator</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Project mutual-fund SIP maturity value with monthly compounding.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/unit-converter.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 21L3 16.5M3 16.5L7.5 12M3 16.5h13.5M16.5 3L21 7.5M21 7.5L16.5 12M21 7.5H7.5"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">Unit Converter</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Length, weight, temperature, area, volume, speed and 20+ more categories.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+            <a href="tools/compound-interest-calculator.html" class="tool-card group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="mb-3 grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M12 7l5 5M12 12l5 5"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <h3 class="font-display text-base font-bold text-slate-900 group-hover:text-brand-700 dark:text-white dark:group-hover:text-brand-400">Compound Interest</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">See how money grows over time with any compounding frequency.</p>
+              <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400">Open tool →</span>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- In-content ad -->
+        <div class="my-10">
+          <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · In-content</span>
+          </div>
+         </div>
+
+          <!-- ============ ALL TOOLS ============ -->
+<section id="all-tools" class="scroll-mt-24">
+  <div class="mb-6">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+      All calculators &amp; tools
+    </h2>
+    <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+      Filter by category or search — <span id="toolCount" class="font-semibold text-slate-800 dark:text-slate-200">0</span> tools available.
+    </p>
+  </div>
+
+  <!-- Filter chips -->
+  <div class="mb-4 flex flex-wrap gap-2" id="filterChips"></div>
+
+  <!-- Grid search -->
+  <div class="relative mb-5">
+    <svg class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="gridSearch" type="search" placeholder="Filter tools by name…" autocomplete="off"
+      class="h-12 w-full rounded-xl border border-slate-200 bg-white pl-11 pr-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-800 dark:bg-slate-900" />
+  </div>
+
+  <!-- Tool grid -->
+  <div id="toolGrid" class="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3"></div>
+
+  <!-- Empty state -->
+  <div id="emptyState" class="hidden rounded-2xl border border-dashed border-slate-300 py-14 text-center dark:border-slate-700">
+    <p class="font-display text-lg font-bold text-slate-800 dark:text-slate-200">No tools matched your search</p>
+    <p class="mt-1 text-sm text-slate-500">Try a different keyword or clear the filters.</p>
+    <button type="button" id="clearFilters" class="mt-4 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-700">Clear filters</button>
+  </div>
+
+  <!-- Load more -->
+  <div class="mt-7 text-center">
+    <button type="button" id="loadMore" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-soft transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+      Load more tools
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <p id="loadMoreInfo" class="mt-3 text-xs font-medium text-slate-500">Showing 0 of 0 tools</p>
+  </div>
+</section>
+
+<!-- ============ AFFILIATE BOX ============ -->
+<section class="mt-12">
+  <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+    <div class="mb-5 flex items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+      </span>
+      <div>
+        <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for you</h2>
+        <p class="text-xs font-medium text-slate-500">Hand-picked products our readers use</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+      <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+        <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">🛒</span>
+        <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Amazon Deals</h3>
+        <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Calculators, laptops and office gear at today's lowest prices.</p>
+        <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+      </a>
+
+      <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+        <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🛍️</span>
+        <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Flipkart Picks</h3>
+        <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Big Billion savings on electronics, fitness bands and more.</p>
+        <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+      </a>
+
+      <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank" class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+        <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+        <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+        <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your own tools site from ₹149/month with free SSL.</p>
+        <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+      </a>
+    </div>
+    <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+      Disclosure: some links above are affiliate links. We may earn a small commission at no extra cost to you.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PREMIUM CTA ============ -->
+<section id="premium" class="mt-12 scroll-mt-24">
+  <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+    <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+
+    <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">
+          ⚡ Calcify Premium
+        </span>
+        <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">
+          Remove every ad. Unlock pro features.
+        </h2>
+        <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">
+          Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export, priority support and early access to new tools.
+        </p>
+        <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+          <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+          <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+          <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+        <div class="flex items-end gap-1.5">
+          <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+          <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+        </div>
+        <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+        <a href="premium.html" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">
+          Go Premium — Remove Ads
+        </a>
+        <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / SEO ============ -->
+<section class="mt-12">
+  <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">About Calcify</h2>
+
+    <h3 class="mt-6 font-display text-base font-bold text-slate-900 dark:text-white">About the tool</h3>
+    <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Calcify is a free online calculator hub built for people who need an answer in seconds, not after five pop-ups. The platform hosts more than 150 individual tools spread across eight practical categories: finance, health and fitness, mathematics, unit converters, text utilities, date and time helpers, developer utilities and everyday lifestyle calculators. Every single tool runs entirely inside your browser using plain JavaScript, which means results appear the moment you press a key and your numbers never leave your device. There is no account wall, no download, no trial timer and no premium lock on the basics. The interface is mobile-first, keyboard friendly and optimised for slow connections, so a student on a budget phone in Patna gets the same fast experience as an analyst on a desktop in Berlin. Whether you are checking a loan EMI before signing a contract, converting grams to cups mid-recipe or counting words before submitting an assignment, Calcify is designed to be the one tab you keep open.
+    </p>
+
+    <h3 class="mt-6 font-display text-base font-bold text-slate-900 dark:text-white">How to use Calcify</h3>
+    <ol class="mt-2 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      <li><strong class="text-slate-800 dark:text-slate-200">Pick a category.</strong> Use the category cards near the top to jump straight to the collection you need.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Search if you know the name.</strong> Type "EMI", "BMI" or "percentage" into the search box. Results filter live as you type.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Open the tool.</strong> Click any card to load that calculator's dedicated page with its own inputs and results.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Enter your values.</strong> Most tools recalculate instantly — no "submit" button to hunt for.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Read the breakdown.</strong> Alongside the answer you'll find formulas and plain-English explanations.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Copy or share.</strong> Copy results or share the tool link. Nothing is stored on our servers.</li>
+      <li><strong class="text-slate-800 dark:text-slate-200">Save your preferences.</strong> Toggle dark mode or switch between English, Hindi, Spanish and Arabic.</li>
+    </ol>
+  </div>
+</section>
+    
+    <!-- ==================== SIDEBAR (desktop only) ==================== -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              Remove all ads, export results to PDF/CSV and save unlimited calculations.
+            </p>
+            <a href="#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5" id="trendingList"></ol>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">📬 New tools weekly</h2>
+            <p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              Get one short email whenever we ship a new calculator. No spam, unsubscribe in one click.
+            </p>
+            <form class="mt-3.5 space-y-2.5" data-newsletter="sidebar" novalidate>
+              <input type="email" required placeholder="you@example.com"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950" />
+              <button type="submit" class="w-full rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200">Subscribe free</button>
+              <p class="hidden text-[11px] font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+            </form>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+      </p>
+      <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="footer" novalidate>
+        <input type="email" required placeholder="you@example.com"
+          class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+        <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+      </form>
+      <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+      <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer ad -->
+<div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · Footer</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <!-- Brand column -->
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#all-tools" data-cat-link="finance" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="#all-tools" data-cat-link="health" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="#all-tools" data-cat-link="math" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="#all-tools" data-cat-link="converter" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="#all-tools" data-cat-link="text" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="#all-tools" data-cat-link="date" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="#all-tools" data-cat-link="dev" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="#all-tools" data-cat-link="other" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <!-- Popular -->
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="tools/emi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="tools/bmi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="tools/age-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="tools/percentage-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="tools/unit-converter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="tools/word-counter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+          <li><a href="tools/sip-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="tools/gst-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="mailto:mediaprojects.official@gmail.com" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="premium.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Go Premium</a></li>
+          <li><a href="privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>   
+</button>
+
+<!-- ============================================================
+     INDEX BOOTSTRAP — Part 1/3
+============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Category definitions ---- */
+  var CATS = {
+    finance:   { name: 'Finance',    short: 'Money, loans, tax & investing', color: 'emerald', icon: 'M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+    health:    { name: 'Health',     short: 'BMI, calories & fitness',       color: 'rose',    icon: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z' },
+    math:      { name: 'Math',       short: 'Algebra, stats & numbers',      color: 'violet',  icon: 'M12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.5 48.5 0 0012 2.25zM8.25 6h7.5v2.25h-7.5V6zm0 5.25h.008v.008H8.25v-.008zm3.75 0h.008v.008H12v-.008zm3.75 0h.008v.008h-.008v-.008zM8.25 15h.008v.008H8.25V15zm3.75 0h.008v.008H12V15zm3.75 0h.008v.008h-.008V15z' },
+    converter: { name: 'Converters', short: 'Units, currency & formats',     color: 'sky',     icon: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5' },
+    text:      { name: 'Text Tools', short: 'Count, convert & clean text',   color: 'amber',   icon: 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12' },
+    date:      { name: 'Date & Time',short: 'Age, duration & scheduling',    color: 'cyan',    icon: 'M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5' },
+    dev:       { name: 'Developer',  short: 'Code, JSON, colors & regex',    color: 'indigo',  icon: 'M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5' },
+    other:     { name: 'Everyday',   short: 'QR, grades, fuel & lifestyle',  color: 'teal',    icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z' }
+  };
+
+  var COLOR_MAP = {
+    emerald: ['bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400', 'hover:border-emerald-300 dark:hover:border-emerald-800'],
+    rose:    ['bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400',             'hover:border-rose-300 dark:hover:border-rose-800'],
+    violet:  ['bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400',     'hover:border-violet-300 dark:hover:border-violet-800'],
+    sky:     ['bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400',                 'hover:border-sky-300 dark:hover:border-sky-800'],
+    amber:   ['bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400',         'hover:border-amber-300 dark:hover:border-amber-800'],
+    cyan:    ['bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400',             'hover:border-cyan-300 dark:hover:border-cyan-800'],
+    indigo:  ['bg-indigo-50 text-indigo-600 dark:bg-indigo-950/50 dark:text-indigo-400',     'hover:border-indigo-300 dark:hover:border-indigo-800'],
+    teal:    ['bg-teal-50 text-teal-600 dark:bg-teal-950/50 dark:text-teal-400',             'hover:border-teal-300 dark:hover:border-teal-800']
+  };
+
+  /* ---- Tool catalog (158 tools) ---- */
+  var TOOLS = [
+    ['EMI Calculator','emi-calculator','finance'],
+    ['Loan Calculator','loan-calculator','finance'],
+    ['Mortgage Calculator','mortgage-calculator','finance'],
+    ['Compound Interest Calculator','compound-interest-calculator','finance'],
+    ['Simple Interest Calculator','simple-interest-calculator','finance'],
+    ['SIP Calculator','sip-calculator','finance'],
+    ['FD Calculator','fd-calculator','finance'],
+    ['RD Calculator','rd-calculator','finance'],
+    ['PPF Calculator','ppf-calculator','finance'],
+    ['NPS Calculator','nps-calculator','finance'],
+    ['Income Tax Calculator','income-tax-calculator','finance'],
+    ['GST Calculator','gst-calculator','finance'],
+    ['VAT Calculator','vat-calculator','finance'],
+    ['Discount Calculator','discount-calculator','finance'],
+    ['Tip Calculator','tip-calculator','finance'],
+    ['Salary Calculator','salary-calculator','finance'],
+    ['Take Home Pay Calculator','take-home-pay-calculator','finance'],
+    ['Retirement Calculator','retirement-calculator','finance'],
+    ['Investment Return Calculator','investment-return-calculator','finance'],
+    ['Inflation Calculator','inflation-calculator','finance'],
+    ['Currency Converter','currency-converter','finance'],
+    ['Crypto Profit Calculator','crypto-profit-calculator','finance'],
+    ['Car Loan Calculator','car-loan-calculator','finance'],
+    ['Home Loan Eligibility Calculator','home-loan-eligibility-calculator','finance'],
+    ['Credit Card Payoff Calculator','credit-card-payoff-calculator','finance'],
+    ['Savings Goal Calculator','savings-goal-calculator','finance'],
+    ['Break Even Calculator','break-even-calculator','finance'],
+    ['Profit Margin Calculator','profit-margin-calculator','finance'],
+    ['ROI Calculator','roi-calculator','finance'],
+    ['CAGR Calculator','cagr-calculator','finance'],
+
+    ['BMI Calculator','bmi-calculator','health'],
+    ['BMR Calculator','bmr-calculator','health'],
+    ['TDEE Calculator','tdee-calculator','health'],
+    ['Body Fat Calculator','body-fat-calculator','health'],
+    ['Ideal Weight Calculator','ideal-weight-calculator','health'],
+    ['Calorie Calculator','calorie-calculator','health'],
+    ['Macro Calculator','macro-calculator','health'],
+    ['Protein Intake Calculator','protein-intake-calculator','health'],
+    ['Water Intake Calculator','water-intake-calculator','health'],
+    ['Pregnancy Due Date Calculator','pregnancy-due-date-calculator','health'],
+    ['Ovulation Calculator','ovulation-calculator','health'],
+    ['Heart Rate Zone Calculator','heart-rate-zone-calculator','health'],
+    ['Running Pace Calculator','pace-calculator','health'],
+    ['One Rep Max Calculator','one-rep-max-calculator','health'],
+    ['BMI for Kids Calculator','bmi-for-kids-calculator','health'],
+    ['Waist to Hip Ratio Calculator','waist-to-hip-ratio-calculator','health'],
+    ['Lean Body Mass Calculator','lean-body-mass-calculator','health'],
+    ['Blood Alcohol Calculator','blood-alcohol-calculator','health'],
+    ['Sleep Calculator','sleep-calculator','health'],
+    ['Diabetes Risk Calculator','diabetes-risk-calculator','health'],
+    ['Vitamin D Calculator','vitamin-d-calculator','health'],
+    ['Smoking Cost Calculator','smoking-cost-calculator','health'],
+
+    ['Percentage Calculator','percentage-calculator','math'],
+    ['Scientific Calculator','scientific-calculator','math'],
+    ['Fraction Calculator','fraction-calculator','math'],
+    ['Average Calculator','average-calculator','math'],
+    ['Ratio Calculator','ratio-calculator','math'],
+    ['Proportion Calculator','proportion-calculator','math'],
+    ['Quadratic Equation Solver','quadratic-equation-solver','math'],
+    ['Prime Number Checker','prime-number-checker','math'],
+    ['GCD & LCM Calculator','gcd-lcm-calculator','math'],
+    ['Square Root Calculator','square-root-calculator','math'],
+    ['Exponent Calculator','exponent-calculator','math'],
+    ['Logarithm Calculator','logarithm-calculator','math'],
+    ['Trigonometry Calculator','trigonometry-calculator','math'],
+    ['Standard Deviation Calculator','standard-deviation-calculator','math'],
+    ['Mean Median Mode Calculator','mean-median-mode-calculator','math'],
+    ['Permutation & Combination Calculator','permutation-combination-calculator','math'],
+    ['Rounding Calculator','rounding-calculator','math'],
+    ['Random Number Generator','random-number-generator','math'],
+    ['Matrix Calculator','matrix-calculator','math'],
+    ['Binary Calculator','binary-calculator','math'],
+
+    ['Unit Converter','unit-converter','converter'],
+    ['Length Converter','length-converter','converter'],
+    ['Weight Converter','weight-converter','converter'],
+    ['Temperature Converter','temperature-converter','converter'],
+    ['Area Converter','area-converter','converter'],
+    ['Volume Converter','volume-converter','converter'],
+    ['Speed Converter','speed-converter','converter'],
+    ['Time Converter','time-converter','converter'],
+    ['Data Storage Converter','data-storage-converter','converter'],
+    ['Pressure Converter','pressure-converter','converter'],
+    ['Energy Converter','energy-converter','converter'],
+    ['Power Converter','power-converter','converter'],
+    ['Angle Converter','angle-converter','converter'],
+    ['Fuel Consumption Converter','fuel-consumption-converter','converter'],
+    ['Shoe Size Converter','shoe-size-converter','converter'],
+    ['Cooking Measurement Converter','cooking-measurement-converter','converter'],
+    ['Roman Numeral Converter','roman-numeral-converter','converter'],
+    ['Number to Words Converter','number-to-words-converter','converter'],
+    ['Hex to Decimal Converter','hex-to-decimal-converter','converter'],
+    ['Decimal to Fraction Calculator','decimal-to-fraction-calculator','converter'],
+
+    ['Word Counter','word-counter','text'],
+    ['Character Counter','character-counter','text'],
+    ['Case Converter','case-converter','text'],
+    ['Lorem Ipsum Generator','lorem-ipsum-generator','text'],
+    ['Text Reverser','text-reverser','text'],
+    ['Remove Duplicate Lines','remove-duplicate-lines','text'],
+    ['Text Diff Checker','text-diff-checker','text'],
+    ['Readability Checker','readability-checker','text'],
+    ['Keyword Density Checker','keyword-density-checker','text'],
+    ['Slug Generator','slug-generator','text'],
+    ['Password Generator','password-generator','text'],
+    ['Text to Binary Converter','text-to-binary','text'],
+    ['Binary to Text Converter','binary-to-text','text'],
+    ['URL Encoder Decoder','url-encoder-decoder','text'],
+    ['Base64 Encoder Decoder','base64-encoder-decoder','text'],
+    ['HTML Escape Unescape','html-escape-unescape','text'],
+    ['Markdown to HTML','markdown-to-html','text'],
+    ['Text to Speech','text-to-speech','text'],
+
+    ['Age Calculator','age-calculator','date'],
+    ['Date Difference Calculator','date-difference-calculator','date'],
+    ['Days Between Dates','days-between-dates','date'],
+    ['Add Days to Date','add-days-to-date','date'],
+    ['Business Days Calculator','business-days-calculator','date'],
+    ['Week Number Calculator','week-number-calculator','date'],
+    ['Leap Year Checker','leap-year-checker','date'],
+    ['Time Zone Converter','time-zone-converter','date'],
+    ['Countdown Timer','countdown-timer','date'],
+    ['Date Format Converter','date-format-converter','date'],
+    ['Working Hours Calculator','working-hours-calculator','date'],
+    ['Timesheet Calculator','timesheet-calculator','date'],
+    ['Anniversary Calculator','anniversary-calculator','date'],
+    ['Zodiac Sign Calculator','zodiac-sign-calculator','date'],
+
+    ['JSON Formatter','json-formatter','dev'],
+    ['JSON Validator','json-validator','dev'],
+    ['HTML Minifier','html-minifier','dev'],
+    ['CSS Minifier','css-minifier','dev'],
+    ['JavaScript Minifier','js-minifier','dev'],
+    ['Regex Tester','regex-tester','dev'],
+    ['UUID Generator','uuid-generator','dev'],
+    ['Hash Generator','hash-generator','dev'],
+    ['MD5 Generator','md5-generator','dev'],
+    ['SHA-256 Generator','sha256-generator','dev'],
+    ['Color Picker','color-picker','dev'],
+    ['HEX to RGB Converter','hex-to-rgb','dev'],
+    ['RGB to HEX Converter','rgb-to-hex','dev'],
+    ['CSS Gradient Generator','gradient-generator','dev'],
+    ['Box Shadow Generator','box-shadow-generator','dev'],
+    ['Border Radius Generator','border-radius-generator','dev'],
+    ['Meta Tag Generator','meta-tag-generator','dev'],
+    ['Robots.txt Generator','robots-txt-generator','dev'],
+    ['Htaccess Redirect Generator','htaccess-redirect-generator','dev'],
+    ['Cron Expression Generator','cron-expression-generator','dev'],
+
+    ['QR Code Generator','qr-code-generator','other'],
+    ['Image Resizer','image-resizer','other'],
+    ['Grade Calculator','grade-calculator','other'],
+    ['GPA Calculator','gpa-calculator','other'],
+    ['Fuel Cost Calculator','fuel-cost-calculator','other'],
+    ['Wedding Budget Calculator','wedding-budget-calculator','other'],
+    ['Paint Coverage Calculator','paint-coverage-calculator','other'],
+    ['Random Picker Wheel','random-picker-wheel','other'],
+    ['Dice Roller','dice-roller','other'],
+    ['Coin Flip','coin-flip','other'],
+    ['Barcode Generator','barcode-generator','other'],
+    ['Invoice Generator','invoice-generator','other'],
+    ['Resume Word Checker','resume-word-checker','other'],
+    ['Typing Speed Test','typing-speed-test','other']
+  ];
+
+  var PER_PAGE = 24;
+  var state = { cat: 'all', query: '', shown: PER_PAGE };
+
+  /* ---- Helpers ---- */
+function svg(path, cls) {
+  return '<svg class="' + (cls || 'h-5 w-5') + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="' + path + '"/></svg>';
+}
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+  });
+}
+function countCat(key) {
+  return TOOLS.filter(function (t) { return t[2] === key; }).length;
+}
+function $(sel) { return document.querySelector(sel); }
+
+/* ---- Render: category cards ---- */
+function renderCategories() {
+  var html = '';
+  Object.keys(CATS).forEach(function (key) {
+    var c = CATS[key];
+    var styles = COLOR_MAP[c.color];
+    html +=
+      '<a href="#all-tools" data-cat-link="' + key + '" ' +
+      'class="tool-card group flex items-start gap-3.5 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft ' + styles[1] + ' dark:border-slate-800 dark:bg-slate-900">' +
+        '<span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl ' + styles[0] + '">' + svg(c.icon) + '</span>' +
+        '<span class="min-w-0">' +
+          '<span class="flex items-center gap-2">' +
+            '<span class="font-display text-[15px] font-bold text-slate-900 dark:text-white">' + esc(c.name) + '</span>' +
+            '<span class="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">' + countCat(key) + '</span>' +
+          '</span>' +
+          '<span class="mt-1 block text-xs leading-relaxed text-slate-500 dark:text-slate-400">' + esc(c.short) + '</span>' +
+        '</span>' +
+      '</a>';
+  });
+  var g = $('#categoryGrid');
+  if (g) g.innerHTML = html;
+}
+
+/* ---- Render: mobile nav categories ---- */
+function renderNavCats() {
+  var html = '';
+  Object.keys(CATS).forEach(function (key) {
+    var c = CATS[key];
+    var styles = COLOR_MAP[c.color];
+    html +=
+      '<a href="#all-tools" data-cat-link="' + key + '" class="flex items-center gap-2.5 rounded-xl bg-slate-50 px-3.5 py-3 dark:bg-slate-900">' +
+        '<span class="grid h-7 w-7 shrink-0 place-items-center rounded-lg ' + styles[0] + '">' + svg(c.icon, 'h-3.5 w-3.5') + '</span>' +
+        '<span class="text-sm font-semibold text-slate-700 dark:text-slate-200">' + esc(c.name) + '</span>' +
+      '</a>';
+  });
+  var m = $('#mobileCatGrid');
+  if (m) m.innerHTML = html;
+}
+
+/* ---- Render: filter chips ---- */
+function renderChips() {
+  var html = '<button type="button" class="chip is-active rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" data-cat="all">All <span class="opacity-60">(' + TOOLS.length + ')</span></button>';
+  Object.keys(CATS).forEach(function (key) {
+    html += '<button type="button" class="chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" data-cat="' + key + '">' + esc(CATS[key].name) + ' <span class="opacity-60">(' + countCat(key) + ')</span></button>';
+  });
+  var el = $('#filterChips');
+  if (el) el.innerHTML = html;
+}
+
+/* ---- Filter ---- */
+function filtered() {
+  var q = state.query.trim().toLowerCase();
+  return TOOLS.filter(function (t) {
+    if (state.cat !== 'all' && t[2] !== state.cat) return false;
+    if (q && t[0].toLowerCase().indexOf(q) === -1 && t[1].indexOf(q) === -1) return false;
+    return true;
+  });
+}
+
+/* ---- Render: tool grid ---- */
+function renderGrid() {
+  var list = filtered();
+  var slice = list.slice(0, state.shown);
+  var grid = $('#toolGrid');
+  var empty = $('#emptyState');
+  var info = $('#loadMoreInfo');
+  var btn = $('#loadMore');
+  if (!grid) return;
+
+  if (list.length === 0) {
+    grid.innerHTML = '';
+    if (empty) empty.classList.remove('hidden');
+    if (btn) btn.classList.add('hidden');
+    if (info) info.textContent = 'No tools found';
+    return;
+  }
+  if (empty) empty.classList.add('hidden');
+
+  grid.innerHTML = slice.map(function (t) {
+    var c = CATS[t[2]];
+    var styles = COLOR_MAP[c.color];
+    return '<a href="tools/' + t[1] + '.html" ' +
+      'class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">' +
+        '<span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg ' + styles[0] + '">' + svg(c.icon, 'h-4 w-4') + '</span>' +
+        '<span class="min-w-0 flex-1">' +
+          '<span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">' + esc(t[0]) + '</span>' +
+          '<span class="block text-[11px] font-medium text-slate-400">' + esc(c.name) + '</span>' +
+        '</span>' +
+        '<svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>' +
+      '</a>';
+  }).join('');
+
+  var tc = $('#toolCount');
+  if (tc) tc.textContent = list.length;
+
+  if (info) info.textContent = 'Showing ' + Math.min(state.shown, list.length) + ' of ' + list.length + ' tools';
+
+  if (btn) {
+    if (state.shown >= list.length) btn.classList.add('hidden');
+    else btn.classList.remove('hidden');
+  }
+}
+
+/* ---- Render: trending ---- */
+function renderTrending() {
+  var picks = [
+    ['EMI Calculator', 'emi-calculator'],
+    ['BMI Calculator', 'bmi-calculator'],
+    ['Age Calculator', 'age-calculator'],
+    ['Percentage Calculator', 'percentage-calculator'],
+    ['Word Counter', 'word-counter'],
+    ['SIP Calculator', 'sip-calculator'],
+    ['Unit Converter', 'unit-converter']
+  ];
+  var el = $('#trendingList');
+  if (!el) return;
+  el.innerHTML = picks.map(function (p, i) {
+    return '<li><a href="tools/' + p[1] + '.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800">' +
+      '<span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">' + (i + 1) + '</span>' +
+      '<span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">' + esc(p[0]) + '</span></a></li>';
+  }).join('');
+}
+
+/* ---- Category setter ---- */
+function setCat(cat) {
+  state.cat = cat;
+  state.shown = PER_PAGE;
+  document.querySelectorAll('#filterChips .chip').forEach(function (b) {
+    b.classList.toggle('is-active', b.getAttribute('data-cat') === cat);
+  });
+  renderGrid();
+  }
+
+   /* ---- Theme toggle ---- */
+  function initTheme() {
+    var btn = $('#themeToggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+
+  /* ---- Mobile menu ---- */
+  function initMobileMenu() {
+    var btn = $('#mobileToggle');
+    var menu = $('#mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ---- Language dropdown ---- */
+  function initLang() {
+    var btn = $('#langBtn');
+    var menu = $('#langMenu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !menu.classList.contains('invisible');
+      menu.classList.toggle('invisible', isOpen);
+      menu.classList.toggle('opacity-0', isOpen);
+      menu.classList.toggle('translate-y-1', isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', function () {
+      menu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+
+    document.querySelectorAll('.lang-opt').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        var lang = opt.getAttribute('data-lang');
+        if (!lang) return;
+        try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        var lbl = $('#langLabel');
+        if (lbl) lbl.textContent = lang.toUpperCase();
+        menu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      });
+    });
+  }
+
+  /* ---- Search triggers ---- */
+  function initSearch() {
+    var heroSearch = $('#heroSearch');
+    var gridSearch = $('#gridSearch');
+    var searchTrigger = $('#searchTrigger');
+    var heroBtn = $('#heroSearchBtn');
+
+    function pushQuery(q) {
+      state.query = q;
+      state.shown = PER_PAGE;
+      if (gridSearch) gridSearch.value = q;
+      renderGrid();
+    }
+    function jumpToAllTools() {
+      var el = document.getElementById('all-tools');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (heroSearch) {
+      heroSearch.addEventListener('input', function () { pushQuery(heroSearch.value); });
+      heroSearch.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); jumpToAllTools(); }
+      });
+    }
+    if (heroBtn) heroBtn.addEventListener('click', function () {
+      pushQuery(heroSearch ? heroSearch.value : '');
+      jumpToAllTools();
+    });
+    if (gridSearch) gridSearch.addEventListener('input', function () {
+      state.query = gridSearch.value;
+      state.shown = PER_PAGE;
+      if (heroSearch) heroSearch.value = gridSearch.value;
+      renderGrid();
+    });
+    if (searchTrigger) searchTrigger.addEventListener('click', function () {
+      jumpToAllTools();
+      window.setTimeout(function () { if (gridSearch) gridSearch.focus(); }, 400);
+    });
+
+    var chips = $('#filterChips');
+    if (chips) chips.addEventListener('click', function (e) {
+      var btn = e.target.closest('.chip');
+      if (btn) setCat(btn.getAttribute('data-cat'));
+    });
+
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-cat-link]');
+      if (!link) return;
+      var cat = link.getAttribute('data-cat-link');
+      setCat(cat);
+      state.query = '';
+      if (gridSearch) gridSearch.value = '';
+      if (heroSearch) heroSearch.value = '';
+      var mm = $('#mobileMenu');
+      if (mm) mm.classList.add('hidden');
+    });
+
+    var lmBtn = $('#loadMore');
+    if (lmBtn) lmBtn.addEventListener('click', function () {
+      state.shown += PER_PAGE;
+      renderGrid();
+    });
+
+    var cf = $('#clearFilters');
+    if (cf) cf.addEventListener('click', function () {
+      state.query = '';
+      if (gridSearch) gridSearch.value = '';
+      if (heroSearch) heroSearch.value = '';
+      setCat('all');
+    });
+  }
+
+  /* ---- Newsletter forms ---- */
+  function initNewsletter() {
+    document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = form.querySelector('input[type="email"]');
+        var msg = form.querySelector('[data-newsletter-msg]');
+        if (!input || !input.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value)) {
+          if (input) {
+            input.classList.add('border-red-400');
+            input.focus();
+            window.setTimeout(function () { input.classList.remove('border-red-400'); }, 1600);
+          }
+          return;
+        }
+        if (msg) msg.classList.remove('hidden');
+        input.value = '';
+        input.disabled = true;
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Subscribed ✓'; }
+      });
+    });
+  }
+
+  /* ---- Back to top ---- */
+  function initBackToTop() {
+    var btt = $('#backToTop');
+    if (!btt) return;
+    var onScroll = function () {
+      if (window.scrollY > 600) {
+        btt.classList.remove('hidden');
+        btt.classList.add('grid');
+      } else {
+        btt.classList.add('hidden');
+        btt.classList.remove('grid');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+
+  /* ---- Header shadow ---- */
+  function initHeaderShadow() {
+    var header = $('#siteHeader');
+    if (!header) return;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 8) header.classList.add('shadow-soft');
+      else header.classList.remove('shadow-soft');
+    }, { passive: true });
+  }
+
+  /* ---- Init ---- */
+  function init() {
+    renderCategories();
+    renderNavCats();
+    renderChips();
+    renderGrid();
+    renderTrending();
+    initTheme();
+    initMobileMenu();
+    initLang();
+    initSearch();
+    initNewsletter();
+    initBackToTop();
+    initHeaderShadow();
+
+    var lbl = $('#langLabel');
+    try {
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      if (lbl) lbl.textContent = lang.toUpperCase();
+    } catch (e) {}
+
+    var y = $('#year');
+    if (y) y.textContent = new Date().getFullYear();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+</body>
+</html>
