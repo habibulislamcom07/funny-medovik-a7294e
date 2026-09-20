@@ -1297,3 +1297,393 @@
   var state = { cat: 'all', query: '', shown: PER_PAGE };
 
   
+    /* ---------------------------------------------
+     HELPERS
+  --------------------------------------------- */
+  function svg(path, cls) {
+    return '<svg class="' + (cls || 'h-5 w-5') + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + path + '"/></svg>';
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function countCat(key) {
+    return TOOLS.filter(function (t) { return t[2] === key; }).length;
+  }
+  function $(sel) { return document.querySelector(sel); }
+
+  /* ---------------------------------------------
+     RENDER : CATEGORY CARDS
+  --------------------------------------------- */
+  function renderCategories() {
+    var html = '';
+    Object.keys(CATS).forEach(function (key) {
+      var c = CATS[key];
+      var styles = COLOR_MAP[c.color];
+      html +=
+        '<a href="#all-tools" data-cat-link="' + key + '" ' +
+        'class="tool-card group flex items-start gap-3.5 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft ' + styles[1] + ' dark:border-slate-800 dark:bg-slate-900">' +
+          '<span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl ' + styles[0] + '">' + svg(c.icon) + '</span>' +
+          '<span class="min-w-0">' +
+            '<span class="flex items-center gap-2">' +
+              '<span class="font-display text-[15px] font-bold text-slate-900 dark:text-white">' + esc(c.name) + '</span>' +
+              '<span class="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">' + countCat(key) + '</span>' +
+            '</span>' +
+            '<span class="mt-1 block text-xs leading-relaxed text-slate-500 dark:text-slate-400">' + esc(c.short) + '</span>' +
+          '</span>' +
+        '</a>';
+    });
+    var grid = $('#categoryGrid');
+    if (grid) grid.innerHTML = html;
+  }
+
+  /* ---------------------------------------------
+     RENDER : NAV CATEGORY DROPDOWN + MOBILE
+  --------------------------------------------- */
+  function renderNavCats() {
+    var navHtml = '', mobHtml = '';
+    Object.keys(CATS).forEach(function (key) {
+      var c = CATS[key];
+      var styles = COLOR_MAP[c.color];
+      navHtml +=
+        '<a href="#all-tools" data-cat-link="' + key + '" class="flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-slate-100 dark:hover:bg-slate-800">' +
+          '<span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg ' + styles[0] + '">' + svg(c.icon, 'h-4 w-4') + '</span>' +
+          '<span class="min-w-0"><span class="block text-sm font-semibold text-slate-800 dark:text-slate-100">' + esc(c.name) + '</span>' +
+          '<span class="block truncate text-[11px] text-slate-500 dark:text-slate-400">' + countCat(key) + ' tools</span></span>' +
+        '</a>';
+      mobHtml +=
+        '<a href="#all-tools" data-cat-link="' + key + '" class="flex items-center gap-2.5 rounded-xl bg-slate-50 px-3.5 py-3 dark:bg-slate-900">' +
+          '<span class="grid h-7 w-7 shrink-0 place-items-center rounded-lg ' + styles[0] + '">' + svg(c.icon, 'h-3.5 w-3.5') + '</span>' +
+          '<span class="text-sm font-semibold text-slate-700 dark:text-slate-200">' + esc(c.name) + '</span>' +
+        '</a>';
+    });
+    var n = $('#navCatGrid'); if (n) n.innerHTML = navHtml;
+    var m = $('#mobileCatGrid'); if (m) m.innerHTML = mobHtml;
+  }
+
+  /* ---------------------------------------------
+     RENDER : FILTER CHIPS
+  --------------------------------------------- */
+  function renderChips() {
+    var html = '<button type="button" role="tab" class="chip is-active rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" data-cat="all">All <span class="opacity-60">(' + TOOLS.length + ')</span></button>';
+    Object.keys(CATS).forEach(function (key) {
+      html += '<button type="button" role="tab" class="chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" data-cat="' + key + '">' +
+        esc(CATS[key].name) + ' <span class="opacity-60">(' + countCat(key) + ')</span></button>';
+    });
+    var el = $('#filterChips');
+    if (el) el.innerHTML = html;
+  }
+
+  /* ---------------------------------------------
+     FILTER LOGIC
+  --------------------------------------------- */
+  function filtered() {
+    var q = state.query.trim().toLowerCase();
+    return TOOLS.filter(function (t) {
+      if (state.cat !== 'all' && t[2] !== state.cat) return false;
+      if (q && t[0].toLowerCase().indexOf(q) === -1 && t[1].indexOf(q) === -1) return false;
+      return true;
+    });
+  }
+
+  /* ---------------------------------------------
+     RENDER : TOOL GRID
+  --------------------------------------------- */
+  function renderGrid() {
+    var list = filtered();
+    var slice = list.slice(0, state.shown);
+    var grid = $('#toolGrid');
+    var empty = $('#emptyState');
+    var info = $('#loadMoreInfo');
+    var btn = $('#loadMore');
+
+    if (!grid) return;
+
+    if (list.length === 0) {
+      grid.innerHTML = '';
+      if (empty) empty.classList.remove('hidden');
+      if (btn) btn.classList.add('hidden');
+      if (info) info.textContent = 'No tools found';
+      return;
+    }
+    if (empty) empty.classList.add('hidden');
+
+    grid.innerHTML = slice.map(function (t) {
+      var c = CATS[t[2]];
+      var styles = COLOR_MAP[c.color];
+      return '<a href="tools/' + t[1] + '.html" ' +
+        'class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">' +
+          '<span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg ' + styles[0] + '">' + svg(c.icon, 'h-4 w-4') + '</span>' +
+          '<span class="min-w-0 flex-1">' +
+            '<span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100 dark:group-hover:text-brand-400">' + esc(t[0]) + '</span>' +
+            '<span class="block text-[11px] font-medium text-slate-400">' + esc(c.name) + '</span>' +
+          '</span>' +
+          '<svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>' +
+        '</a>';
+    }).join('');
+
+    var tc = $('#toolCount');
+    if (tc) tc.textContent = list.length;
+
+    if (info) info.textContent = 'Showing ' + Math.min(state.shown, list.length) + ' of ' + list.length + ' tools';
+
+    if (btn) {
+      if (state.shown >= list.length) btn.classList.add('hidden');
+      else btn.classList.remove('hidden');
+    }
+  }
+
+  /* ---------------------------------------------
+     RENDER : TRENDING LIST
+  --------------------------------------------- */
+  function renderTrending() {
+    var picks = [
+      ['EMI Calculator', 'emi-calculator'],
+      ['BMI Calculator', 'bmi-calculator'],
+      ['Age Calculator', 'age-calculator'],
+      ['Percentage Calculator', 'percentage-calculator'],
+      ['Word Counter', 'word-counter'],
+      ['SIP Calculator', 'sip-calculator'],
+      ['Unit Converter', 'unit-converter']
+    ];
+    var el = $('#trendingList');
+    if (!el) return;
+    el.innerHTML = picks.map(function (p, i) {
+      return '<li><a href="tools/' + p[1] + '.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800">' +
+        '<span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">' + (i + 1) + '</span>' +
+        '<span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">' + esc(p[0]) + '</span></a></li>';
+    }).join('');
+  }
+
+  /* ---------------------------------------------
+     EVENT WIRING
+  --------------------------------------------- */
+  function setCat(cat) {
+    state.cat = cat;
+    state.shown = PER_PAGE;
+    document.querySelectorAll('#filterChips .chip').forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-cat') === cat);
+    });
+    renderGrid();
+  }
+
+  function wire() {
+    /* ---- Theme toggle ---- */
+    var tt = $('#themeToggle');
+    if (tt) tt.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+
+    /* ---- Mobile menu ---- */
+    var mt = $('#mobileToggle'), mm = $('#mobileMenu');
+    if (mt && mm) {
+      mt.addEventListener('click', function () {
+        var open = mm.classList.toggle('hidden') === false;
+        mt.setAttribute('aria-expanded', String(open));
+      });
+      mm.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { mm.classList.add('hidden'); mt.setAttribute('aria-expanded', 'false'); });
+      });
+    }
+
+    /* ---- Language dropdown ---- */
+    var lb = $('#langBtn'), lm = $('#langMenu');
+    if (lb && lm) {
+      lb.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = lm.classList.toggle('invisible') === false;
+        lm.classList.toggle('opacity-0', !open);
+        lm.classList.toggle('translate-y-1', !open);
+        lb.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', function () {
+        lm.classList.add('invisible', 'opacity-0', 'translate-y-1');
+        lb.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.querySelectorAll('.lang-opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var lang = btn.getAttribute('data-lang');
+        try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        var lbl = $('#langLabel');
+        if (lbl) lbl.textContent = lang.toUpperCase();
+        if (lm) { lm.classList.add('invisible', 'opacity-0', 'translate-y-1'); }
+        document.dispatchEvent(new CustomEvent('calcify:langchange', { detail: { lang: lang } }));
+      });
+    });
+
+    /* ---- Search triggers ---- */
+    var heroSearch = $('#heroSearch');
+    var gridSearch = $('#gridSearch');
+    var searchTrigger = $('#searchTrigger');
+    var heroBtn = $('#heroSearchBtn');
+
+    function pushQuery(q) {
+      state.query = q;
+      state.shown = PER_PAGE;
+      if (gridSearch) gridSearch.value = q;
+      renderGrid();
+    }
+
+    function jumpToAllTools() {
+      var el = document.getElementById('all-tools');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (heroSearch) {
+      heroSearch.addEventListener('input', function () { pushQuery(heroSearch.value); });
+      heroSearch.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); jumpToAllTools(); }
+      });
+    }
+    if (heroBtn) heroBtn.addEventListener('click', function () {
+      pushQuery(heroSearch ? heroSearch.value : '');
+      jumpToAllTools();
+    });
+    if (gridSearch) gridSearch.addEventListener('input', function () {
+      state.query = gridSearch.value;
+      state.shown = PER_PAGE;
+      if (heroSearch) heroSearch.value = gridSearch.value;
+      renderGrid();
+    });
+    if (searchTrigger) searchTrigger.addEventListener('click', function () {
+      jumpToAllTools();
+      window.setTimeout(function () { if (gridSearch) gridSearch.focus(); }, 400);
+    });
+
+    /* ---- "/" shortcut ---- */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+        e.preventDefault();
+        jumpToAllTools();
+        window.setTimeout(function () { if (gridSearch) gridSearch.focus(); }, 400);
+      }
+      if (e.key === 'Escape') {
+        if (document.activeElement === gridSearch || document.activeElement === heroSearch) {
+          pushQuery('');
+          if (heroSearch) heroSearch.value = '';
+        }
+      }
+    });
+
+    /* ---- Filter chips ---- */
+    var chips = $('#filterChips');
+    if (chips) chips.addEventListener('click', function (e) {
+      var btn = e.target.closest('.chip');
+      if (btn) setCat(btn.getAttribute('data-cat'));
+    });
+
+    /* ---- Category links ---- */
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-cat-link]');
+      if (!link) return;
+      var cat = link.getAttribute('data-cat-link');
+      setCat(cat);
+      state.query = '';
+      if (gridSearch) gridSearch.value = '';
+      if (heroSearch) heroSearch.value = '';
+      var mmEl = $('#mobileMenu');
+      if (mmEl) mmEl.classList.add('hidden');
+    });
+
+    /* ---- Load more ---- */
+    var lmBtn = $('#loadMore');
+    if (lmBtn) lmBtn.addEventListener('click', function () {
+      state.shown += PER_PAGE;
+      renderGrid();
+    });
+
+    /* ---- Clear filters ---- */
+    var cf = $('#clearFilters');
+    if (cf) cf.addEventListener('click', function () {
+      state.query = '';
+      if (gridSearch) gridSearch.value = '';
+      if (heroSearch) heroSearch.value = '';
+      setCat('all');
+    });
+
+    /* ---- Newsletter forms ---- */
+    document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = form.querySelector('input[type="email"]');
+        var msg = form.querySelector('[data-newsletter-msg]');
+        if (!input || !input.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value)) {
+          if (input) {
+            input.classList.add('border-red-400');
+            input.focus();
+            window.setTimeout(function () { input.classList.remove('border-red-400'); }, 1600);
+          }
+          return;
+        }
+        if (msg) msg.classList.remove('hidden');
+        input.value = '';
+        input.disabled = true;
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Subscribed ✓'; }
+      });
+    });
+
+    /* ---- Back to top ---- */
+    var btt = $('#backToTop');
+    if (btt) {
+      var onScroll = function () {
+        if (window.scrollY > 600) {
+          btt.classList.remove('hidden');
+          btt.classList.add('grid');
+        } else {
+          btt.classList.add('hidden');
+          btt.classList.remove('grid');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    /* ---- Header shadow on scroll ---- */
+    var header = $('#siteHeader');
+    if (header) {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 8) header.classList.add('shadow-soft');
+        else header.classList.remove('shadow-soft');
+      }, { passive: true });
+    }
+
+    /* ---- Footer year ---- */
+    var y = $('#year');
+    if (y) y.textContent = new Date().getFullYear();
+  }
+
+  /* ---------------------------------------------
+     INIT
+  --------------------------------------------- */
+  function init() {
+    renderCategories();
+    renderNavCats();
+    renderChips();
+    renderGrid();
+    renderTrending();
+    wire();
+
+    var lbl = $('#langLabel');
+    try {
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      if (lbl) lbl.textContent = lang.toUpperCase();
+    } catch (e) {}
+
+    window.__CALCIFY_BOOTED__ = true;
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+</body>
+</html>
