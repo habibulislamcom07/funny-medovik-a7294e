@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+
+<title>EMI Calculator — Free Online Loan EMI Calculator | Calcify</title>
+<meta name="description" content="Free online EMI calculator. Calculate monthly loan instalment, total interest and total payment for home, car and personal loans instantly. No signup required." />
+<meta name="keywords" content="emi calculator, loan emi calculator, home loan emi, car loan emi, monthly instalment calculator, free emi calculator" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/tools/emi-calculator/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="EMI Calculator — Free Online Loan EMI Calculator" />
+<meta property="og:description" content="Calculate monthly loan instalment, total interest and total payment instantly. Free, accurate, mobile-friendly." />
+<meta property="og:url" content="https://calcify.com/tools/emi-calculator/" />
+<meta property="og:image" content="https://calcify.com/assets/og-emi-calculator.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="EMI Calculator — Free Online Loan EMI Calculator" />
+<meta name="twitter:description" content="Calculate monthly loan instalment, total interest and total payment instantly." />
+<meta name="twitter:image" content="https://calcify.com/assets/og-emi-calculator.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none;
+    height: 8px; border-radius: 999px;
+    background: linear-gradient(to right, #4f46e5 var(--range-pct, 50%), #e2e8f0 var(--range-pct, 50%) 100%);
+    outline: none;
+  }
+  .dark input[type="range"] {
+    background: linear-gradient(to right, #4f46e5 var(--range-pct, 50%), #1e293b var(--range-pct, 50%) 100%);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #fff; border: 3px solid #4f46e5; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(79,70,229,.35);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #fff; border: 3px solid #4f46e5; cursor: pointer;
+  }
+  .result-card {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+  .donut {
+    width: 100%; max-width: 200px; aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(#4f46e5 0deg var(--interest-deg, 180deg), #e2e8f0 var(--interest-deg, 180deg) 360deg);
+    display: grid; place-items: center;
+  }
+  .donut::after {
+    content: ''; width: 62%; aspect-ratio: 1;
+    background: #fff; border-radius: 50%;
+  }
+  .dark .donut {
+    background: conic-gradient(#a5b4fc 0deg var(--interest-deg, 180deg), #1e293b var(--interest-deg, 180deg) 360deg);
+  }
+  .dark .donut::after { background: #0f172a; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EMI Calculator",
+  "url": "https://calcify.com/tools/emi-calculator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "description": "Free online EMI calculator to compute monthly loan instalment, total interest and total payment.",
+  "inLanguage": ["en","hi","es","ar"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcify.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://calcify.com/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "EMI Calculator", "item": "https://calcify.com/tools/emi-calculator/" }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../../index.html" class="flex shrink-0 items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex">
+      <a href="../../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <div class="grid grid-cols-2 gap-1.5">
+      <a href="../../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </div>
+    <a href="../../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- Top banner ad -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">EMI Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 dark:border-brand-800 dark:bg-brand-950/50 dark:text-brand-300">
+        Finance · Calculator
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        EMI <span class="grad-text">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        Calculate your monthly loan instalment (EMI), total interest payable and total payment amount for any home, car, personal or business loan — instantly and accurately.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- Inputs -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Loan details</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Adjust the sliders or type values directly.</p>
+
+        <form id="emiForm" class="mt-6 space-y-6" autocomplete="off">
+
+          <!-- Loan Amount -->
+          <div>
+            <div class="flex items-center justify-between gap-3">
+              <label for="loanAmount" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Loan Amount</label>
+              <div class="relative">
+                <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">₹</span>
+                <input id="loanAmount" name="loanAmount" type="number" min="1000" max="100000000" step="1000" value="500000"
+                  class="w-36 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-7 pr-3 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+              </div>
+            </div>
+            <input id="loanAmountRange" type="range" min="1000" max="10000000" step="1000" value="500000" class="mt-3 w-full" aria-label="Loan amount slider" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>₹1K</span><span>₹1Cr</span></div>
+          </div>
+
+          <!-- Interest Rate -->
+          <div>
+            <div class="flex items-center justify-between gap-3">
+              <label for="interestRate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Interest Rate (per year)</label>
+              <div class="relative">
+                <input id="interestRate" name="interestRate" type="number" min="0.1" max="50" step="0.1" value="8.5"
+                  class="w-36 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-8 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+            <input id="interestRateRange" type="range" min="0.1" max="30" step="0.1" value="8.5" class="mt-3 w-full" aria-label="Interest rate slider" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>0.1%</span><span>30%</span></div>
+          </div>
+
+          <!-- Tenure -->
+          <div>
+            <div class="flex items-center justify-between gap-3">
+              <label for="tenure" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Loan Tenure</label>
+              <div class="flex items-center gap-2">
+                <input id="tenure" name="tenure" type="number" min="1" max="40" step="1" value="5"
+                  class="w-24 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-2 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <select id="tenureUnit" name="tenureUnit" class="rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-8 text-sm font-semibold outline-none transition focus:border-brand-500 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+                  <option value="years" selected>Years</option>
+                  <option value="months">Months</option>
+                </select>
+              </div>
+            </div>
+            <input id="tenureRange" type="range" min="1" max="40" step="1" value="5" class="mt-3 w-full" aria-label="Tenure slider" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>1 yr</span><span>40 yrs</span></div>
+          </div>
+
+          <button type="button" id="resetEmi" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 12a9 9 0 1015-6.7L21 8M21 3v5h-5"/></svg>
+            Reset to defaults
+          </button>
+        </form>
+      </div>
+
+      <!-- Results -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Your monthly EMI</h2>
+
+        <div class="result-card mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div class="text-xs font-bold uppercase tracking-wider text-white/75">Monthly Instalment</div>
+          <div id="emiValue" class="mt-2 font-display text-3xl font-extrabold tabular-nums sm:text-4xl">₹10,261</div>
+          <div class="mt-1 text-xs text-white/75">Payable every month for the loan period</div>
+        </div>
+
+        <!-- Breakdown -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Principal</div>
+            <div id="principalValue" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">₹5,00,000</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Interest</div>
+            <div id="interestValue" class="mt-1 font-display text-lg font-extrabold tabular-nums text-brand-600 dark:text-brand-400">₹1,15,664</div>
+          </div>
+          <div class="col-span-2 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Payment</div>
+            <div id="totalValue" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">₹6,15,664</div>
+          </div>
+        </div>
+
+        <!-- Donut chart -->
+        <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+          <div id="donut" class="donut" style="--interest-deg: 100deg;" role="img" aria-label="Principal vs interest breakdown"></div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-sm bg-brand-600"></span>
+              <span class="text-slate-600 dark:text-slate-400">Principal <strong id="principalPct" class="text-slate-900 dark:text-white">81%</strong></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-sm bg-slate-200 dark:bg-slate-700"></span>
+              <span class="text-slate-600 dark:text-slate-400">Interest <strong id="interestPct" class="text-slate-900 dark:text-white">19%</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" id="copyEmi" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+
+      <!-- Left: content -->
+      <article class="min-w-0">
+
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          About the EMI Calculator
+        </h2>
+        <p class="mt-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+          The EMI Calculator on Calcify is a free, browser-based tool that instantly computes the Equated Monthly Instalment for any loan — whether you are planning a home purchase, financing a car, taking a personal loan or setting up business capital. EMI is the fixed amount a borrower pays to the lender every month, and it combines two components: the principal repayment and the interest charged on the outstanding balance. Our calculator uses the standard reducing-balance formula that all Indian banks and NBFCs follow, so the numbers you see here match what your lender will quote you at the branch. Simply enter the loan amount, the annual interest rate and the repayment tenure, and the tool instantly shows your monthly EMI, the total interest you will pay over the life of the loan, and the total amount that will leave your pocket. A visual donut chart makes it immediately clear how much of your total outgo is principal versus interest. Everything is calculated inside your browser — no data is sent to any server, and you can use the tool as many times as you like without any signup or hidden charges.
+        </p>
+
+        <!-- ============ HOW TO USE ============ -->
+<h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+  How to use the EMI Calculator
+</h2>
+<ol class="mt-5 space-y-4">
+  <li class="flex gap-4">
+    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+    <div>
+      <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter your loan amount</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Type the total amount you plan to borrow in the first field, or drag the slider. The default shows ₹5,00,000 — replace it with your actual loan requirement. The slider supports amounts from ₹1,000 up to ₹1 crore, so it works for small personal loans and large home loans alike.
+      </p>
+    </div>
+  </li>
+  <li class="flex gap-4">
+    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+    <div>
+      <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Set the annual interest rate</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Move to the second field and enter the yearly interest rate quoted by your lender — for example, 8.5% for a home loan or 12% for a personal loan. The slider lets you explore rates from 0.1% to 30%, so you can quickly see how a slightly higher or lower rate changes your monthly outflow.
+      </p>
+    </div>
+  </li>
+  <li class="flex gap-4">
+    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+    <div>
+      <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose your tenure</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Enter how long you want to take to repay the loan, and switch between years and months using the dropdown. Shorter tenures mean higher monthly EMI but much lower total interest; longer tenures mean smaller monthly payments but a bigger interest bill overall. Try both to find the balance that suits your budget.
+      </p>
+    </div>
+  </li>
+  <li class="flex gap-4">
+    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+    <div>
+      <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Read your results instantly</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        The moment you change any value, the result panel updates live. You will see your monthly EMI in the highlighted card, along with the principal amount, total interest and total payment. The donut chart shows the principal-to-interest split visually so you can see at a glance how much of your money is going towards interest.
+      </p>
+    </div>
+  </li>
+  <li class="flex gap-4">
+    <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+    <div>
+      <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Compare and copy</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Adjust the sliders to compare multiple scenarios — a 15-year loan versus a 20-year loan, or 8% versus 9% interest — to see which works best. When you are happy with the numbers, hit “Copy result” to save the figures to your clipboard and paste them into your budget sheet, WhatsApp chat or loan application notes.
+      </p>
+    </div>
+  </li>
+</ol>
+
+<!-- ============ FAQ ============ -->
+<h2 class="mt-12 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+  Frequently asked questions
+</h2>
+<p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+  The seven questions people ask us most about EMI calculations.
+</p>
+
+<div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+  <details class="group p-5" open>
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      What exactly is EMI and how is it calculated?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      EMI stands for Equated Monthly Instalment — the fixed amount you pay your lender every month until the loan is fully repaid. It is calculated using the reducing-balance formula: EMI = P × r × (1 + r)^n / [(1 + r)^n − 1], where P is the principal, r is the monthly interest rate (annual rate divided by 12) and n is the total number of monthly instalments. Each EMI contains both interest on the outstanding balance and a portion of the principal, with the interest component shrinking over time.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      Is this EMI calculator free to use?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Yes, completely free with no hidden charges, no signup and no limit on how many times you use it. The tool runs entirely inside your browser, so no data is sent to our servers and no personal information is collected. You can calculate as many loan scenarios as you want — compare 10-year versus 20-year tenures, adjust rates, test different amounts — all without ever paying anything.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      Does the tool include processing fees or prepayment charges?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      No — this calculator shows the pure EMI based on principal, interest rate and tenure. Banks typically also charge a one-time processing fee (usually 0.25% to 2% of the loan amount), possibly a legal or documentation charge, and sometimes a prepayment penalty if you close the loan early. Add those separately when you compare loan offers so you get the true total cost of borrowing.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      Should I choose a shorter or longer tenure?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      It depends on your cash flow. A shorter tenure means higher monthly EMI but significantly lower total interest — you pay off the loan faster and save a lot of money. A longer tenure reduces your monthly outgo, which helps if your budget is tight, but you end up paying much more in interest over the years. A useful rule of thumb: keep your total EMIs under 40% of your net monthly income to stay financially comfortable.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      Can I use this calculator for home, car and personal loans?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Yes — the formula is the same for all reducing-balance loans. Home loans usually run 15–30 years at lower rates (around 8–9%), car loans run 3–7 years at 9–12%, and personal loans are shorter with higher rates (11–18%). Just enter the appropriate amount, rate and tenure for your loan type, and the calculator will give you an accurate EMI for any of them, plus education loans, gold loans and business loans.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      What is the difference between flat rate and reducing balance EMI?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      In a flat-rate loan, interest is calculated on the full principal for the entire tenure — so a “10% flat” loan is much more expensive than a “10% reducing” loan. In a reducing-balance loan (which almost all modern bank loans use), interest is charged only on the outstanding balance, which decreases every month as you repay. This calculator uses the reducing-balance method because it is the industry standard and gives you the true EMI you will actually pay.
+    </p>
+  </details>
+
+  <details class="group p-5">
+    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+      Can I prepay my loan early to save interest?
+      <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Yes, and prepaying is one of the best ways to save on interest. When you make a part-prepayment, the amount goes straight towards the principal, which reduces your outstanding balance — and therefore the interest charged on it. You can either keep the same EMI and finish the loan sooner, or ask the lender to reduce your EMI while keeping the tenure unchanged. Most floating-rate home loans in India have zero prepayment charges, so check your loan agreement for the exact terms.
+    </p>
+  </details>
+
+</div>
+        <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+        <section class="mt-12">
+          <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+            <div class="mb-5 flex items-center gap-2.5">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+              </span>
+              <div>
+                <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for you</h2>
+                <p class="text-xs font-medium text-slate-500">Hand-picked tools our readers actually use</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+              <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">🛒</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Amazon Deals</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Financial calculators, laptops and office gear at lowest prices.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+              </a>
+              <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🛍️</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Flipkart Picks</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Big Billion savings on electronics and home-office essentials.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+              </a>
+              <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your own tools site from ₹149/month with free SSL.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+              </a>
+            </div>
+            <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+              Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ RELATED TOOLS ============ -->
+        <section class="mt-12">
+          <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Finance Tools</h2>
+          <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the Finance category.</p>
+
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+            <a href="../loan-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Loan Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../compound-interest-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M12 7l5 5M12 12l5 5"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Compound Interest Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../sip-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">SIP Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../gst-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">GST Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../fd-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">FD Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../income-tax-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Income Tax Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ============ PREMIUM CTA ============ -->
+        <section class="mt-12">
+          <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+            <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+            <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+              <div>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+                <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+                <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+                <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <div class="flex items-end gap-1.5">
+                  <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                  <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+                </div>
+                <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+                <a href="../../premium.html" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+                <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="../emi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="../bmi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+              <li><a href="../age-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+              <li><a href="../percentage-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Percentage Calculator</span></a></li>
+              <li><a href="../word-counter/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Word Counter</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../../premium.html" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  </main>
+  <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+    </p>
+    <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="tool" novalidate>
+      <label class="sr-only" for="toolEmail">Email address</label>
+      <input id="toolEmail" type="email" required placeholder="you@example.com"
+        class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+      <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+    </form>
+    <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+    <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- Footer ad -->
+<div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · Footer</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <!-- Brand column -->
+      <div>
+        <a href="../../index.html" class="flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <!-- Popular -->
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../emi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="../bmi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="../age-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="../percentage-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="../unit-converter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="../word-counter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+          <li><a href="../sip-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="../gst-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="mailto:mediaprojects.official@gmail.com" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../../premium.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Go Premium</a></li>
+          <li><a href="../../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============ FAQ SCHEMA (EXACTLY 7 questions) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly is EMI and how is it calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EMI stands for Equated Monthly Instalment — the fixed amount you pay your lender every month until the loan is fully repaid. It is calculated using the reducing-balance formula: EMI = P × r × (1 + r)^n / [(1 + r)^n − 1], where P is the principal, r is the monthly interest rate (annual rate divided by 12) and n is the total number of monthly instalments. Each EMI contains both interest on the outstanding balance and a portion of the principal, with the interest component shrinking over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this EMI calculator free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free with no hidden charges, no signup and no limit on how many times you use it. The tool runs entirely inside your browser, so no data is sent to our servers and no personal information is collected. You can calculate as many loan scenarios as you want without ever paying anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the tool include processing fees or prepayment charges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this calculator shows the pure EMI based on principal, interest rate and tenure. Banks typically also charge a one-time processing fee (usually 0.25% to 2% of the loan amount), possibly a legal or documentation charge, and sometimes a prepayment penalty if you close the loan early. Add those separately when you compare loan offers so you get the true total cost of borrowing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I choose a shorter or longer tenure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your cash flow. A shorter tenure means higher monthly EMI but significantly lower total interest — you pay off the loan faster and save a lot of money. A longer tenure reduces your monthly outgo, which helps if your budget is tight, but you end up paying much more in interest over the years. A useful rule of thumb is to keep your total EMIs under 40% of your net monthly income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for home, car and personal loans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the formula is the same for all reducing-balance loans. Home loans usually run 15 to 30 years at lower rates (around 8 to 9%), car loans run 3 to 7 years at 9 to 12%, and personal loans are shorter with higher rates (11 to 18%). Just enter the appropriate amount, rate and tenure for your loan type, and the calculator will give you an accurate EMI for any of them, including education loans, gold loans and business loans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between flat rate and reducing balance EMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a flat-rate loan, interest is calculated on the full principal for the entire tenure — so a 10% flat loan is much more expensive than a 10% reducing loan. In a reducing-balance loan (which almost all modern bank loans use), interest is charged only on the outstanding balance, which decreases every month as you repay. This calculator uses the reducing-balance method because it is the industry standard and gives you the true EMI you will actually pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prepay my loan early to save interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and prepaying is one of the best ways to save on interest. When you make a part-prepayment, the amount goes straight towards the principal, which reduces your outstanding balance — and therefore the interest charged on it. You can either keep the same EMI and finish the loan sooner, or ask the lender to reduce your EMI while keeping the tenure unchanged. Most floating-rate home loans in India have zero prepayment charges, so check your loan agreement for the exact terms."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ============ SITE SCRIPTS ============ -->
+<script src="../../js/i18n.js" defer></script>
+<script src="../../js/main.js" defer></script>
+
+<!-- ============ EMI CALCULATOR LOGIC ============ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---- Element references ---- */
+  var amountEl    = document.getElementById('loanAmount');
+  var amountRange = document.getElementById('loanAmountRange');
+  var rateEl      = document.getElementById('interestRate');
+  var rateRange   = document.getElementById('interestRateRange');
+  var tenureEl    = document.getElementById('tenure');
+  var tenureRange = document.getElementById('tenureRange');
+  var unitEl      = document.getElementById('tenureUnit');
+
+  var emiOut      = document.getElementById('emiValue');
+  var principalOut = document.getElementById('principalValue');
+  var interestOut = document.getElementById('interestValue');
+  var totalOut    = document.getElementById('totalValue');
+  var principalPctEl = document.getElementById('principalPct');
+  var interestPctEl  = document.getElementById('interestPct');
+  var donut       = document.getElementById('donut');
+
+  var resetBtn = document.getElementById('resetEmi');
+  var copyBtn  = document.getElementById('copyEmi');
+
+  if (!amountEl || !emiOut) return;
+
+  /* ---- Currency formatter (Indian style) ---- */
+  function formatINR(n) {
+    if (!isFinite(n)) return '—';
+    try {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      }).format(Math.round(n));
+    } catch (e) {
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+  }
+
+  /* ---- Range visual update (% filled) ---- */
+  function paintRange(el) {
+    var min = parseFloat(el.min) || 0;
+    var max = parseFloat(el.max) || 100;
+    var val = parseFloat(el.value) || 0;
+    var pct = ((val - min) / (max - min)) * 100;
+    el.style.setProperty('--range-pct', pct + '%');
+  }
+
+  /* ---- Parse safe number with limits ---- */
+  function clamp(v, min, max) {
+    v = parseFloat(v);
+    if (!isFinite(v)) return min;
+    return Math.max(min, Math.min(max, v));
+  }
+
+  /* ---- Main calculation ---- */
+  function calculate() {
+    var P = clamp(amountEl.value, 1000, 100000000);
+    var annualRate = clamp(rateEl.value, 0.1, 50);
+    var tenureVal = clamp(tenureEl.value, 1, 600);
+    var unit = unitEl.value;
+
+    // Total months
+    var n = unit === 'years' ? Math.round(tenureVal * 12) : Math.round(tenureVal);
+    if (n < 1) n = 1;
+
+    // Monthly interest rate (decimal)
+    var r = annualRate / 12 / 100;
+
+    // EMI formula (reducing balance)
+    var emi;
+    if (r === 0) {
+      emi = P / n;
+    } else {
+      var pow = Math.pow(1 + r, n);
+      emi = P * r * pow / (pow - 1);
+    }
+
+    var totalPayment = emi * n;
+    var totalInterest = totalPayment - P;
+
+    // Percentages
+    var interestShare = totalPayment > 0 ? (totalInterest / totalPayment) * 100 : 0;
+    var principalShare = 100 - interestShare;
+
+    // Render
+    emiOut.textContent = formatINR(emi);
+    principalOut.textContent = formatINR(P);
+    interestOut.textContent = formatINR(totalInterest);
+    totalOut.textContent = formatINR(totalPayment);
+
+    principalPctEl.textContent = principalShare.toFixed(0) + '%';
+    interestPctEl.textContent = interestShare.toFixed(0) + '%';
+
+    // Donut: interest share in degrees (0-360)
+    var deg = (interestShare / 100) * 360;
+    donut.style.setProperty('--interest-deg', deg.toFixed(1) + 'deg');
+
+    // Range paint
+    paintRange(amountRange);
+    paintRange(rateRange);
+    paintRange(tenureRange);
+
+    // Cache latest for copy
+    lastResult = {
+      emi: emi,
+      principal: P,
+      interest: totalInterest,
+      total: totalPayment,
+      months: n
+    };
+  }
+
+  var lastResult = null;
+
+  /* ---- Sync inputs both ways ---- */
+  function bindPair(numberEl, rangeEl, min, max) {
+    // Number → Range
+    numberEl.addEventListener('input', function () {
+      var v = clamp(numberEl.value, min, max);
+      rangeEl.value = v;
+      calculate();
+    });
+    numberEl.addEventListener('blur', function () {
+      var v = clamp(numberEl.value, min, max);
+      numberEl.value = v;
+      rangeEl.value = v;
+      calculate();
+    });
+    // Range → Number
+    rangeEl.addEventListener('input', function () {
+      numberEl.value = rangeEl.value;
+      calculate();
+    });
+  }
+
+  bindPair(amountEl, amountRange, 1000, 10000000);
+  bindPair(rateEl, rateRange, 0.1, 30);
+
+  // Tenure: range maps to years when unit is years, months when unit is months
+  function syncTenureRangeLimits() {
+    if (unitEl.value === 'years') {
+      tenureRange.min = 1;
+      tenureRange.max = 40;
+      tenureRange.step = 1;
+      if (parseFloat(tenureRange.value) > 40) tenureRange.value = 40;
+    } else {
+      tenureRange.min = 1;
+      tenureRange.max = 480;
+      tenureRange.step = 1;
+    }
+    // Resync
+    if (parseFloat(tenureEl.value) > parseFloat(tenureRange.max)) {
+      tenureEl.value = tenureRange.max;
+    }
+    tenureRange.value = tenureEl.value;
+    calculate();
+  }
+
+  tenureEl.addEventListener('input', function () {
+    var v = clamp(tenureEl.value, 1, parseFloat(tenureRange.max));
+    tenureRange.value = v;
+    calculate();
+  });
+  tenureEl.addEventListener('blur', function () {
+    var v = clamp(tenureEl.value, 1, parseFloat(tenureRange.max));
+    tenureEl.value = v;
+    tenureRange.value = v;
+    calculate();
+  });
+  tenureRange.addEventListener('input', function () {
+    tenureEl.value = tenureRange.value;
+    calculate();
+  });
+  unitEl.addEventListener('change', function () {
+    // Reset range limits for unit
+    syncTenureRangeLimits();
+  });
+
+  /* ---- Reset ---- */
+  if (resetBtn) resetBtn.addEventListener('click', function () {
+    amountEl.value = 500000;
+    amountRange.value = 500000;
+    rateEl.value = 8.5;
+    rateRange.value = 8.5;
+    unitEl.value = 'years';
+    tenureEl.value = 5;
+    tenureRange.min = 1;
+    tenureRange.max = 40;
+    tenureRange.value = 5;
+    calculate();
+  });
+
+  /* ---- Copy result ---- */
+  if (copyBtn) copyBtn.addEventListener('click', function () {
+    if (!lastResult) return;
+    var t = 'EMI: ' + formatINR(lastResult.emi) +
+            '\nPrincipal: ' + formatINR(lastResult.principal) +
+            '\nTotal Interest: ' + formatINR(lastResult.interest) +
+            '\nTotal Payment: ' + formatINR(lastResult.total) +
+            '\nTenure: ' + lastResult.months + ' months';
+    var done = function () {
+      if (window.Calcify && Calcify.toast) Calcify.toast('Result copied to clipboard', 'success');
+      else alert('Copied to clipboard');
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(done).catch(function () {
+        alert('Copy failed');
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = t;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) { alert('Copy failed'); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ---- Initial run ---- */
+  paintRange(amountRange);
+  paintRange(rateRange);
+  paintRange(tenureRange);
+  calculate();
+})();
+</script>
+
+</body>
+</html>
