@@ -1703,6 +1703,12 @@ document.querySelectorAll('[data-newsletter]').forEach(function (f) {
   else init();
 })();
 </script>
-
+<script>
+  window.addEventListener('load', function () {
+    alert('TOOLS loaded: ' + (window.TOOLS ? 'yes' : 'no') +
+          ' | Grid children: ' + document.getElementById('toolGrid')?.children.length +
+          ' | Chips children: ' + document.getElementById('filterChips')?.children.length);
+  });
+</script>
 </body>
 </html>
