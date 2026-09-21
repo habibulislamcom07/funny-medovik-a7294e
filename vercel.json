@@ -1,9 +1,0 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/tools/:slug.html", "destination": "/tools/:slug/index.html" },
-    { "source": "/tools/:slug", "destination": "/tools/:slug/index.html" },
-    { "source": "/(.*)", "destination": "/$1" }
-  ]
-}
