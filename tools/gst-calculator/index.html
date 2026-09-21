@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="format-detection" content="telephone=no" />
+
+<title>GST Calculator — Free Online GST &amp; VAT Calculator | Calcify</title>
+<meta name="description" content="Free online GST calculator. Add or remove GST at 5%, 12%, 18% and 28% slabs instantly. Get net price, GST amount and gross price with one click. Supports VAT too." />
+<meta name="keywords" content="gst calculator, gst tax calculator, gst calculator india, add gst, remove gst, vat calculator, gst rate calculator, 18 percent gst, reverse gst calculator, free gst calculator" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/tools/gst-calculator.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="GST Calculator — Free Online GST &amp; VAT Calculator" />
+<meta property="og:description" content="Add or remove GST at 5%, 12%, 18% and 28% slabs instantly. Get net, GST and gross amounts with one click." />
+<meta property="og:url" content="https://calcify.com/tools/gst-calculator.html" />
+<meta property="og:image" content="https://calcify.com/assets/og-gst-calculator.png" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="GST Calculator — Free Online GST &amp; VAT Calculator" />
+<meta name="twitter:description" content="Add or remove GST at any slab instantly — free, accurate, no signup." />
+<meta name="twitter:image" content="https://calcify.com/assets/og-gst-calculator.png" />
+
+<link rel="alternate" hreflang="en" href="https://calcify.com/tools/gst-calculator.html" />
+<link rel="alternate" hreflang="hi" href="https://calcify.com/tools/gst-calculator.html?lang=hi" />
+<link rel="alternate" hreflang="es" href="https://calcify.com/tools/gst-calculator.html?lang=es" />
+<link rel="alternate" hreflang="ar" href="https://calcify.com/tools/gst-calculator.html?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="https://calcify.com/tools/gst-calculator.html" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.18) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.14) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.12) 0px, transparent 50%);
+  }
+  .dark .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.22) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.16) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.14) 0px, transparent 50%);
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .result-card-gst {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+  .mode-tab {
+    transition: all .2s ease;
+  }
+  .mode-tab.is-active {
+    background: #4f46e5 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px -2px rgba(79,70,229,.35);
+  }
+  .rate-chip {
+    transition: all .15s ease;
+  }
+  .rate-chip.is-active {
+    background: #4f46e5 !important;
+    color: #fff !important;
+    border-color: #4f46e5 !important;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  input[type="number"] { -moz-appearance: textfield; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GST Calculator",
+  "alternateName": "Calcify GST Calculator",
+  "url": "https://calcify.com/tools/gst-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "applicationSubCategory": "Tax Calculator",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+  "description": "Free online GST calculator to add or remove GST at 5%, 12%, 18% and 28% slabs. Also supports VAT, custom rates and multi-currency.",
+  "inLanguage": ["en","hi","es","ar"],
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Add GST to base price",
+    "Remove GST from gross price",
+    "Standard 5%, 12%, 18%, 28% slabs",
+    "Custom rate support",
+    "CGST + SGST split",
+    "Multi-currency support"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "5216",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcify.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://calcify.com/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "GST Calculator", "item": "https://calcify.com/tools/gst-calculator.html" }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../index.html" class="flex shrink-0 items-center gap-2.5" aria-label="Calcify home">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+      <a href="../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="../contact.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400" aria-label="Search tools">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Change language">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" role="listbox" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <nav class="grid grid-cols-2 gap-1.5" aria-label="Mobile navigation">
+      <a href="../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="../contact.html" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </nav>
+    <a href="../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- ============ TOP BANNER AD ============ -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">GST Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+        Finance · Tax · Multi-Currency
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        GST <span class="grad-text">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        Add GST to a base price or remove GST from a gross amount instantly. Supports standard 5%, 12%, 18% and 28% slabs, custom rates, CGST + SGST split and multi-currency.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ GST CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- ==================== INPUTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">GST details</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Choose a mode, pick a rate and enter the amount.</p>
+
+        <!-- Currency selector -->
+        <div class="mt-5 flex items-center justify-between gap-3 rounded-xl border border-brand-200 bg-brand-50/60 px-4 py-3 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+            <label for="currencySelect" class="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">Currency</label>
+          </div>
+          <select id="currencySelect" class="max-w-[60%] rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-bold text-slate-800 outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            <option value="INR" selected>₹ INR — Indian Rupee</option>
+            <option value="USD">$ USD — US Dollar</option>
+            <option value="EUR">€ EUR — Euro</option>
+            <option value="GBP">£ GBP — British Pound</option>
+            <option value="AED">د.إ AED — UAE Dirham</option>
+            <option value="SAR">﷼ SAR — Saudi Riyal</option>
+            <option value="JPY">¥ JPY — Japanese Yen</option>
+          </select>
+        </div>
+
+        <!-- Mode tabs -->
+        <div class="mt-6 grid grid-cols-2 gap-1.5 rounded-xl bg-slate-100 p-1 dark:bg-slate-950" role="tablist" aria-label="GST calculation mode">
+          <button type="button" role="tab" aria-selected="true" data-mode="add"
+            class="mode-tab is-active rounded-lg px-3 py-2.5 text-xs font-bold text-slate-600 transition dark:text-slate-300">
+            Add GST
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-mode="remove"
+            class="mode-tab rounded-lg px-3 py-2.5 text-xs font-bold text-slate-600 transition dark:text-slate-300">
+            Remove GST
+          </button>
+        </div>
+
+        <form id="gstForm" class="mt-6 space-y-6" autocomplete="off">
+
+          <!-- Amount input -->
+          <div>
+            <label for="gstAmount" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">
+              <span id="amountLabel">Base Amount (Before GST)</span>
+            </label>
+            <div class="relative mt-2">
+              <span id="currencySymbol1" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">₹</span>
+              <input id="gstAmount" name="gstAmount" type="number" min="0" max="100000000" step="0.01" value="1000"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-9 pr-3 text-lg font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+            </div>
+            <p id="amountHint" class="mt-1.5 text-[11px] font-medium text-slate-400">Enter the price before GST is added</p>
+          </div>
+
+          <!-- GST Rate -->
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200">GST Rate</label>
+            <div class="mt-2 flex flex-wrap gap-2" id="rateChips">
+              <button type="button" data-rate="0.25" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">0.25%</button>
+              <button type="button" data-rate="3" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">3%</button>
+              <button type="button" data-rate="5" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">5%</button>
+              <button type="button" data-rate="12" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">12%</button>
+              <button type="button" data-rate="18" class="rate-chip is-active rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">18%</button>
+              <button type="button" data-rate="28" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">28%</button>
+            </div>
+
+            <div class="mt-3 flex items-center gap-3">
+              <label for="gstRate" class="text-xs font-semibold text-slate-500 dark:text-slate-400">Custom rate:</label>
+              <div class="relative">
+                <input id="gstRate" name="gstRate" type="number" min="0" max="100" step="0.01" value="18"
+                  class="w-28 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-8 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CGST/SGST split toggle -->
+          <div class="flex items-start gap-3">
+            <input id="gstSplitToggle" type="checkbox"
+              class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-brand-600 focus:ring-brand-500 dark:border-slate-700 dark:bg-slate-950" />
+            <label for="gstSplitToggle" class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              Show CGST + SGST split (typical for intra-state transactions in India)
+            </label>
+          </div>
+
+          <button type="button" id="gstReset" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 1015-6.7L21 8M21 3v5h-5"/></svg>
+            Reset to defaults
+          </button>
+        </form>
+      </div>
+
+      <!-- ==================== RESULTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">GST breakdown</h2>
+        <p id="resultLabel" class="mt-1 text-sm text-slate-500 dark:text-slate-400">₹1,000 + 18% GST</p>
+
+        <!-- Main result -->
+        <div class="result-card-gst mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div id="resultCaption" class="text-xs font-bold uppercase tracking-wider text-white/75">Total Price (Incl. GST)</div>
+          <div id="gstTotal" class="mt-2 font-display text-3xl font-extrabold tabular-nums sm:text-4xl leading-tight break-words">₹1,180</div>
+          <div id="gstTotalSub" class="mt-1 text-xs text-white/75">Base ₹1,000 + GST ₹180</div>
+        </div>
+
+        <!-- Breakdown -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span id="baseLabel">Base Price</span>
+            </div>
+            <div id="gstBase" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">₹1,000</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              GST <span id="rateDisplay">(18%)</span>
+            </div>
+            <div id="gstAmountOut" class="mt-1 font-display text-lg font-extrabold tabular-nums text-emerald-600 dark:text-emerald-400">₹180</div>
+          </div>
+          <div class="col-span-2 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span id="totalLabel">Total Price</span>
+            </div>
+            <div id="gstTotalOut" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">₹1,180</div>
+          </div>
+        </div>
+
+        <!-- CGST / SGST Split (hidden by default) -->
+        <div id="splitBox" class="hidden mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">CGST + SGST Split (Intra-State)</div>
+          <div class="mt-3 grid grid-cols-2 gap-3">
+            <div class="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-800 dark:bg-slate-900">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">CGST <span id="cgstPct">(9%)</span></div>
+              <div id="cgstValue" class="mt-1 font-display text-base font-extrabold tabular-nums text-slate-900 dark:text-white">₹90</div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-800 dark:bg-slate-900">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">SGST <span id="sgstPct">(9%)</span></div>
+              <div id="sgstValue" class="mt-1 font-display text-base font-extrabold tabular-nums text-slate-900 dark:text-white">₹90</div>
+            </div>
+          </div>
+          <p class="mt-3 text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+            For inter-state transactions, the full GST amount is charged as IGST instead of CGST + SGST.
+          </p>
+        </div>
+
+        <!-- Formula / working -->
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950">
+          <div class="flex items-center gap-2">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Calculation</div>
+            </div>
+          </div>
+          <div id="gstWorking" class="mt-3 space-y-1.5 font-mono text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+            <div>GST = Base × Rate ÷ 100</div>
+            <div>GST = 1000 × 18 ÷ 100 = 180</div>
+            <div>Total = Base + GST = 1180</div>
+          </div>
+        </div>
+
+        <button type="button" id="gstCopy" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT + HOW-TO ============ -->
+<section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+
+    <!-- ============ LEFT: CONTENT ============ -->
+    <article class="min-w-0">
+
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        About the GST Calculator
+      </h2>
+      <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+        <p>
+          The GST Calculator on Calcify is a free, browser-based tool that lets you add GST to a base price or remove GST from a gross amount instantly. Whether you are a shopkeeper preparing a bill, a freelancer creating a client invoice, a student learning the tax system, or a consumer trying to understand how much tax is buried inside a price you are being quoted, this calculator gives you a clear, accurate breakdown in a single click. It supports all four standard Indian GST slabs — 5%, 12%, 18% and 28% — along with special concessional rates of 0.25% and 3%, plus any custom rate you type in. It also handles the CGST + SGST split that Indian businesses use for intra-state transactions, and works with VAT-style taxes used in other countries.
+        </p>
+        <p>
+          GST (Goods and Services Tax) replaced a complex web of indirect taxes in India when it was introduced on 1st July 2017. Under the new system, most goods and services fall into one of the four rate slabs, and the tax is charged at every stage of the supply chain but credited back at each step. For a business, getting GST calculations right is essential — a single wrong invoice can lead to disputes with customers, penalties from the tax department, or overpayment of tax. For a consumer, understanding how much GST is hidden inside a price is useful for budgeting and for questioning whether a bill is accurate. Our calculator handles both sides of the equation with the exact same precision, and shows you the working so you can verify the numbers yourself.
+        </p>
+        <p>
+          The tool supports two distinct modes. In Add GST mode, you enter the base (net) price before tax, and the calculator shows you the GST amount and the final gross price the customer pays. This is the mode you use when quoting a price to a customer who is not registered for GST, or when preparing an invoice for a sale. In Remove GST mode, you enter the gross (inclusive) price the customer has paid, and the calculator extracts the base price and the GST component that was included. This is the mode you use when a customer gives you a total figure and asks "how much of this is GST?" — a common request from accountants, auditors and business owners reconciling their books.
+        </p>
+        <p>
+          Beyond the basic numbers, the GST Calculator also shows the CGST + SGST split when you enable it. In India, for sales that happen within the same state (intra-state transactions), the GST is split evenly between Central GST (CGST) and State GST (SGST) — for example, an 18% GST becomes 9% CGST + 9% SGST. For sales between different states (inter-state transactions), the full 18% is charged as Integrated GST (IGST) instead. Our calculator handles the intra-state case cleanly with one toggle, and the note below the split reminds you that IGST applies for inter-state transactions. Everything runs entirely in your browser, so your numbers are completely private, and the tool is free to use as often as you like with no signup and no limits.
+        </p>
+      </div>
+
+      <!-- Highlight callout -->
+      <div class="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 dark:border-emerald-900 dark:bg-emerald-950/30">
+        <div class="flex gap-3">
+          <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <div>
+            <h3 class="!mt-0 !mb-1 font-display text-sm font-bold text-slate-900 dark:text-white">Two Formulas — Both Handled Instantly</h3>
+            <p class="!mb-0 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <strong>Add GST:</strong> Total = Base × (1 + Rate ÷ 100) — for when you have the pre-tax price and need the final bill amount.<br />
+              <strong>Remove GST:</strong> Base = Gross ÷ (1 + Rate ÷ 100) — for when you have the inclusive price and need to extract the tax component.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        How to use the GST Calculator
+      </h2>
+      <ol class="mt-5 space-y-4">
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose your currency</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Select your preferred currency from the dropdown at the top of the input panel. Calcify supports seven major currencies — Indian Rupee (INR), US Dollar (USD), Euro (EUR), British Pound (GBP), UAE Dirham (AED), Saudi Riyal (SAR) and Japanese Yen (JPY). This is useful if you are outside India and using a VAT-style tax, or if you run a business across multiple currencies and want to see the tax calculation in the correct local format with the right comma style and symbol.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose Add or Remove mode</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              The two tabs at the top of the form let you pick the direction of the calculation. Use <strong>Add GST</strong> when you have a base (pre-tax) price and want to know the final amount with GST added. Use <strong>Remove GST</strong> when you have a gross (tax-inclusive) price and want to know how much of that price is the base amount and how much is the tax. The input label and hint text change automatically to remind you which number to enter.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter the amount and pick the rate</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Type the price into the amount field. Then click one of the six rate chips — 0.25%, 3%, 5%, 12%, 18% or 28% — to apply the standard Indian GST slab instantly. If your rate is not in the list (for example, VAT at 20% in the UK, or a special concessional rate), just type it directly into the "Custom rate" field. The result updates live on every keystroke, so you can experiment with different slabs and see how the tax amount changes.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Read the breakdown and enable CGST/SGST split</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              The result panel shows the total price prominently, along with the base amount and the GST amount separately. If you are billing an Indian customer within the same state, tick the "Show CGST + SGST split" checkbox — a new panel appears that shows the GST evenly divided between Central GST and State GST (for example 9% + 9% on an 18% slab). The step-by-step working below the results shows exactly how the numbers were calculated, so you can verify or explain them to someone else.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Copy the result and use it anywhere</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              When you are happy with the calculation, click the "Copy result" button. The full breakdown — mode, amount, rate, base price, GST amount, total price and (if enabled) the CGST/SGST split — is copied to your clipboard in a clean, readable format. You can paste it into an email, an invoice, a chat message, a WhatsApp quote or a spreadsheet. Nothing you type is stored anywhere — the entire calculation happens inside your browser, so your prices and tax figures remain completely private.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+              <!-- ============ FAQ ============ -->
+        <h2 class="mt-12 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          Frequently asked questions
+        </h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+          The seven questions people ask us most about GST calculations.
+        </p>
+
+        <div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+          <details class="group p-5" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              What is GST and how is it calculated?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              GST (Goods and Services Tax) is a single, unified indirect tax levied on the supply of goods and services. It was introduced in India on 1st July 2017 to replace a complex web of taxes like excise duty, VAT, service tax, CST and octroi. The basic formula is simple: GST Amount = Base Price × (Rate ÷ 100). For example, 18% GST on a ₹1,000 base price is ₹180, making the final bill amount ₹1,180. To reverse the calculation from a gross price (say, ₹1,180 at 18% rate), the base price is ₹1,180 ÷ 1.18 = ₹1,000 and the GST is the remaining ₹180. All of this is handled automatically by our calculator.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              What are the standard GST rate slabs in India?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              India uses four primary GST slabs: 5% for essential goods and services like food grains, medicines and economy transport; 12% for processed foods and business-class air travel; 18% for most goods and services including electronics, restaurants and professional services; and 28% for luxury items like cars, tobacco and high-end appliances. In addition, special concessional rates of 0.25% (rough diamonds, rough precious stones) and 3% (gold, silver, jewellery) apply to specific categories. Some items like fresh vegetables, milk, curd and educational services are exempt (0% GST). The exact rate depends on the HSN (goods) or SAC (services) code of what you are selling.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              What is the difference between CGST, SGST and IGST?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              For sales within the same state (intra-state), the GST is split evenly between Central GST (CGST) and State GST (SGST). For example, an 18% intra-state GST becomes 9% CGST (collected by the Centre) and 9% SGST (collected by the State). For sales between different states (inter-state), the full GST rate is charged as Integrated GST (IGST), which the Central Government later distributes to the destination state. This means for inter-state supply at 18%, the invoice shows 18% IGST, not 9% + 9%. Our calculator shows the CGST + SGST split when you enable the toggle, and the note below reminds you to use IGST for inter-state supply.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              How do I remove GST from an inclusive price?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Removing GST (also called reverse GST calculation) means finding the base price and the tax amount from a gross price that already includes GST. The formula is: Base Price = Gross Price ÷ (1 + Rate ÷ 100), and GST Amount = Gross Price − Base Price. For example, if a bill totals ₹2,360 at 18% GST, the base is 2360 ÷ 1.18 = ₹2,000, and the GST is ₹360. This reverse calculation is essential when a customer gives you only the final amount, when you receive an invoice that shows only the total, or when you are reconciling a bank statement with your sales records.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Is GST the same as VAT?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              GST and VAT are conceptually similar — both are multi-stage destination-based indirect taxes collected on value addition — but GST is more comprehensive. VAT (Value Added Tax) was the predecessor system in India and is still used in many countries including the UK, EU member states, UAE and Saudi Arabia. The key difference: GST is a single tax applied on both goods and services across the entire supply chain, while VAT historically applied only to goods (with separate service tax) and had different rates at different stages. Practically, the math works the same way — Base × Rate ÷ 100 — so our calculator works perfectly for both GST and VAT calculations, no matter which country you are in.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Who needs to register for GST in India?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              GST registration is mandatory in India for businesses with an annual turnover above ₹40 lakh for goods and ₹20 lakh for services (₹20 lakh and ₹10 lakh respectively in special category states). E-commerce sellers, inter-state suppliers, casual taxable persons and businesses already registered under older tax regimes must register regardless of turnover. Once registered, you must charge GST on all taxable supplies, issue GST invoices with your GSTIN, file periodic GST returns (GSTR-1, GSTR-3B), and deposit the collected tax with the government. However, our calculator is useful even if you are not registered — many consumers and small businesses use it to understand how much tax is inside a bill.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Is this GST calculator free and accurate for business use?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Yes to both. The calculator is completely free with no signup, no limits and no ads inside the tool itself. The GST math uses the standard formula accepted by accountants, chartered accountants and the GSTN portal, so the numbers are mathematically exact. However, for legal, tax-filing or audit purposes, always verify with a qualified chartered accountant and the official GST portal, because tax rules can change and specific categories (composite supply, reverse charge mechanism, exemptions, cess on luxury items) may affect the final tax liability. Treat our calculator as an accurate, fast reference tool that saves you time and gives you the numbers you can double-check against your accounting software.
+            </p>
+          </details>
+
+        </div>
+
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="emi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="sip-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">SIP Calculator</span></a></li>
+              <li><a href="gst-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">GST Calculator</span></a></li>
+              <li><a href="bmi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+              <li><a href="age-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../index.html#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+<!-- ============ FAQ SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GST and how is it calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GST (Goods and Services Tax) is a single, unified indirect tax levied on the supply of goods and services. It was introduced in India on 1st July 2017 to replace a complex web of taxes like excise duty, VAT, service tax, CST and octroi. The basic formula is: GST Amount = Base Price × (Rate ÷ 100). For example, 18% GST on a ₹1,000 base price is ₹180, making the final bill amount ₹1,180. To reverse the calculation from a gross price, use Base = Gross ÷ (1 + Rate ÷ 100)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the standard GST rate slabs in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "India uses four primary GST slabs: 5% for essential goods and services, 12% for processed foods and business-class travel, 18% for most goods and services including electronics and restaurants, and 28% for luxury items like cars, tobacco and high-end appliances. Special concessional rates of 0.25% and 3% apply to specific categories such as rough diamonds and gold. Some items like fresh vegetables, milk, curd and educational services are exempt (0% GST)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between CGST, SGST and IGST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For sales within the same state (intra-state), the GST is split evenly between Central GST (CGST) and State GST (SGST). For example, an 18% intra-state GST becomes 9% CGST and 9% SGST. For sales between different states (inter-state), the full GST rate is charged as Integrated GST (IGST), which the Central Government later distributes to the destination state. Our calculator shows the CGST + SGST split when you enable the toggle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove GST from an inclusive price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Removing GST (also called reverse GST calculation) means finding the base price and the tax amount from a gross price that already includes GST. The formula is: Base Price = Gross Price ÷ (1 + Rate ÷ 100), and GST Amount = Gross Price − Base Price. For example, if a bill totals ₹2,360 at 18% GST, the base is 2360 ÷ 1.18 = ₹2,000, and the GST is ₹360."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GST the same as VAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GST and VAT are conceptually similar — both are multi-stage destination-based indirect taxes collected on value addition — but GST is more comprehensive. VAT was the predecessor system in India and is still used in many countries including the UK, EU, UAE and Saudi Arabia. The key difference: GST is a single tax applied on both goods and services across the entire supply chain, while VAT historically applied only to goods. Practically, the math works the same way, so our calculator works perfectly for both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who needs to register for GST in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GST registration is mandatory in India for businesses with an annual turnover above ₹40 lakh for goods and ₹20 lakh for services (₹20 lakh and ₹10 lakh respectively in special category states). E-commerce sellers, inter-state suppliers, casual taxable persons and businesses already registered under older tax regimes must register regardless of turnover. Once registered, you must charge GST on all taxable supplies, issue GST invoices with your GSTIN, and file periodic GST returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this GST calculator free and accurate for business use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes to both. The calculator is completely free with no signup, no limits and no ads inside the tool itself. The GST math uses the standard formula accepted by accountants, chartered accountants and the GSTN portal, so the numbers are mathematically exact. However, for legal, tax-filing or audit purposes, always verify with a qualified chartered accountant and the official GST portal, because tax rules can change and specific categories may affect the final tax liability."
+      }
+    }
+  ]
+}
+</script>
+
+</main>
+ <!-- ============ AFFILIATE + PREMIUM SECTION ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <div class="min-w-0">
+
+      <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+      <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+        <div class="mb-5 flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for businesses</h2>
+            <p class="text-xs font-medium text-slate-500">Hand-picked tools and resources</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+          <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">🧾</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Invoice Books</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">GST-compliant invoice books and bill pads for small businesses.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+          </a>
+          <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🧮</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Business Calculators</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">GST-ready billing calculators, POS systems and accounting machines.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+          </a>
+          <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your business website from ₹149/month with free SSL.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+          </a>
+        </div>
+        <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+          Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+        </p>
+      </div>
+
+      <!-- ============ RELATED TOOLS ============ -->
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Finance Tools</h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the Finance category.</p>
+
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+          <a href="emi-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">EMI Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="sip-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">SIP Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="income-tax-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Income Tax Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="compound-interest-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M12 7l5 5M12 12l5 5"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Compound Interest Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="fd-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M12 3v18"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">FD Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="discount-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Discount Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ============ PREMIUM CTA ============ -->
+      <section class="mt-10">
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+          <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+          <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+              <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+              <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+              <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <div class="flex items-end gap-1.5">
+                <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+              </div>
+              <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+              <a href="../index.html#premium" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+              <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="hidden lg:block" aria-label="Sidebar">
+      <div class="sticky top-24 space-y-5">
+
+        <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+          <span>Advertisement · 300×250</span>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+          <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+          <ol class="mt-3.5 space-y-0.5">
+            <li><a href="emi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+            <li><a href="sip-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">SIP Calculator</span></a></li>
+            <li><a href="gst-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">GST Calculator</span></a></li>
+            <li><a href="bmi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+            <li><a href="age-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+          </ol>
+        </div>
+
+        <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex items-center gap-2">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+            </span>
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+          </div>
+          <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+          <a href="../index.html#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+        </div>
+
+        <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+          <span>Advertisement · 300×600</span>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+  </section>
+
+    <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+      </p>
+      <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="footer" novalidate>
+        <label class="sr-only" for="footerEmail">Email address</label>
+        <input id="footerEmail" type="email" required placeholder="you@example.com" autocomplete="email"
+          class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+        <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+      </form>
+      <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+      <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · Footer</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <div>
+        <a href="../index.html" class="flex items-center gap-2.5" aria-label="Calcify home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="emi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="sip-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="gst-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+          <li><a href="bmi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="age-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="unit-converter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="word-counter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="../contact.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Disclaimer</a></li>
+          <li><a href="../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+ <!-- ============ SCRIPTS ============ -->
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     CURRENCY CONFIGURATION
+     ============================================================ */
+  var CURRENCIES = {
+    INR: { code: 'INR', symbol: '₹', locale: 'en-IN', defaultAmount: 1000 },
+    USD: { code: 'USD', symbol: '$', locale: 'en-US', defaultAmount: 100 },
+    EUR: { code: 'EUR', symbol: '€', locale: 'es-ES', defaultAmount: 100 },
+    GBP: { code: 'GBP', symbol: '£', locale: 'en-GB', defaultAmount: 100 },
+    AED: { code: 'AED', symbol: 'د.إ', locale: 'ar-AE', defaultAmount: 500 },
+    SAR: { code: 'SAR', symbol: '﷼', locale: 'ar-SA', defaultAmount: 500 },
+    JPY: { code: 'JPY', symbol: '¥', locale: 'ja-JP', defaultAmount: 10000 }
+  };
+
+  var LANG_CURRENCY = { en: 'INR', hi: 'INR', es: 'EUR', ar: 'AED' };
+
+  var currentCurrency = 'INR';
+  var currentMode = 'add'; // 'add' | 'remove'
+  var lastResult = null;
+
+  /* ============================================================
+     ELEMENT REFS
+     ============================================================ */
+  var currencySelect = document.getElementById('currencySelect');
+  var currencySymbol1 = document.getElementById('currencySymbol1');
+  var modeTabs = document.querySelectorAll('.mode-tab');
+
+  var amountLabel = document.getElementById('amountLabel');
+  var amountHint = document.getElementById('amountHint');
+  var gstAmount = document.getElementById('gstAmount');
+  var gstRate = document.getElementById('gstRate');
+  var rateChips = document.querySelectorAll('.rate-chip');
+  var splitToggle = document.getElementById('gstSplitToggle');
+  var gstReset = document.getElementById('gstReset');
+
+  var resultLabel = document.getElementById('resultLabel');
+  var resultCaption = document.getElementById('resultCaption');
+  var gstTotal = document.getElementById('gstTotal');
+  var gstTotalSub = document.getElementById('gstTotalSub');
+  var baseLabel = document.getElementById('baseLabel');
+  var gstBase = document.getElementById('gstBase');
+  var rateDisplay = document.getElementById('rateDisplay');
+  var gstAmountOut = document.getElementById('gstAmountOut');
+  var totalLabel = document.getElementById('totalLabel');
+  var gstTotalOut = document.getElementById('gstTotalOut');
+  var gstWorking = document.getElementById('gstWorking');
+
+  var splitBox = document.getElementById('splitBox');
+  var cgstPct = document.getElementById('cgstPct');
+  var sgstPct = document.getElementById('sgstPct');
+  var cgstValue = document.getElementById('cgstValue');
+  var sgstValue = document.getElementById('sgstValue');
+
+  var gstCopy = document.getElementById('gstCopy');
+
+  var themeToggle = document.getElementById('themeToggle');
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var langBtn = document.getElementById('langBtn');
+  var langMenu = document.getElementById('langMenu');
+  var backToTop = document.getElementById('backToTop');
+  var header = document.getElementById('siteHeader');
+
+  if (!gstAmount || !gstTotal) return;
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function num(v) {
+    var n = parseFloat(v);
+    return isFinite(n) ? n : NaN;
+  }
+
+  function formatMoney(n) {
+    if (!isFinite(n)) return '—';
+    var cfg = CURRENCIES[currentCurrency];
+    try {
+      return new Intl.NumberFormat(cfg.locale, {
+        style: 'currency',
+        currency: cfg.code,
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 0
+      }).format(n);
+    } catch (e) {
+      return cfg.symbol + ' ' + n.toLocaleString(cfg.locale);
+    }
+  }
+
+  function formatNum(n, decimals) {
+    if (!isFinite(n)) return '—';
+    decimals = (decimals == null) ? 2 : decimals;
+    var s = n.toFixed(decimals);
+    if (s.indexOf('.') !== -1) s = s.replace(/\.?0+$/, '');
+    return s;
+  }
+
+  /* ============================================================
+     CORE GST CALCULATION
+     ============================================================ */
+  function calculate() {
+    var amount = num(gstAmount.value);
+    var rate = num(gstRate.value);
+
+    if (!isFinite(amount) || amount < 0) amount = 0;
+    if (!isFinite(rate) || rate < 0) rate = 0;
+    if (rate > 100) rate = 100;
+
+    var base, gstAmt, total;
+
+    if (currentMode === 'add') {
+      /* Input is base (pre-tax) */
+      base = amount;
+      gstAmt = base * rate / 100;
+      total = base + gstAmt;
+    } else {
+      /* Input is gross (inclusive) — reverse-calculate */
+      total = amount;
+      if (rate === 0) {
+        base = amount;
+        gstAmt = 0;
+      } else {
+        base = amount / (1 + rate / 100);
+        gstAmt = amount - base;
+      }
+    }
+
+    /* Update labels based on mode */
+    if (currentMode === 'add') {
+      amountLabel.textContent = 'Base Amount (Before GST)';
+      amountHint.textContent = 'Enter the price before GST is added';
+      resultCaption.textContent = 'Total Price (Incl. GST)';
+      baseLabel.textContent = 'Base Price';
+      totalLabel.textContent = 'Total Price';
+    } else {
+      amountLabel.textContent = 'Total Amount (Incl. GST)';
+      amountHint.textContent = 'Enter the final price that already includes GST';
+      resultCaption.textContent = 'Base Price (Excl. GST)';
+      baseLabel.textContent = 'Base Price';
+      totalLabel.textContent = 'Total Price';
+    }
+
+    /* Main result card — show the "answer" depending on mode */
+    if (currentMode === 'add') {
+      gstTotal.textContent = formatMoney(total);
+      gstTotalSub.textContent = 'Base ' + formatMoney(base) + ' + GST ' + formatMoney(gstAmt);
+    } else {
+      gstTotal.textContent = formatMoney(base);
+      gstTotalSub.textContent = 'Extracted from ' + formatMoney(total) + ' (GST was ' + formatMoney(gstAmt) + ')';
+    }
+
+    /* Breakdown cards */
+    gstBase.textContent = formatMoney(base);
+    gstAmountOut.textContent = formatMoney(gstAmt);
+    gstTotalOut.textContent = formatMoney(total);
+    rateDisplay.textContent = '(' + formatNum(rate, 2) + '%)';
+
+    /* Result label under heading */
+    if (currentMode === 'add') {
+      resultLabel.textContent = formatMoney(base) + ' + ' + formatNum(rate, 2) + '% GST';
+    } else {
+      resultLabel.textContent = formatMoney(total) + ' ÷ ' + formatNum(rate, 2) + '% GST';
+    }
+
+    /* Working / formula */
+    var lines;
+    if (currentMode === 'add') {
+      lines = [
+        'GST = Base × Rate ÷ 100',
+        'GST = ' + formatNum(base, 4) + ' × ' + formatNum(rate, 2) + ' ÷ 100 = ' + formatNum(gstAmt, 2),
+        'Total = Base + GST = ' + formatNum(base, 4) + ' + ' + formatNum(gstAmt, 2) + ' = ' + formatNum(total, 2)
+      ];
+    } else {
+      lines = [
+        'Base = Gross ÷ (1 + Rate ÷ 100)',
+        'Base = ' + formatNum(total, 4) + ' ÷ (1 + ' + formatNum(rate, 2) + ' ÷ 100) = ' + formatNum(base, 2),
+        'GST = Gross − Base = ' + formatNum(total, 4) + ' − ' + formatNum(base, 2) + ' = ' + formatNum(gstAmt, 2)
+      ];
+    }
+    gstWorking.innerHTML = lines.map(function (l) { return '<div>' + l + '</div>'; }).join('');
+
+    /* CGST / SGST split */
+    var halfRate = rate / 2;
+    var halfAmt = gstAmt / 2;
+    if (cgstPct) cgstPct.textContent = '(' + formatNum(halfRate, 2) + '%)';
+    if (sgstPct) sgstPct.textContent = '(' + formatNum(halfRate, 2) + '%)';
+    if (cgstValue) cgstValue.textContent = formatMoney(halfAmt);
+    if (sgstValue) sgstValue.textContent = formatMoney(halfAmt);
+
+    /* Save for copy */
+    lastResult = {
+      mode: currentMode,
+      amount: amount,
+      base: base,
+      gst: gstAmt,
+      total: total,
+      rate: rate,
+      currency: currentCurrency,
+      split: splitToggle ? splitToggle.checked : false
+    };
+  }
+
+  /* ============================================================
+     MODE SWITCHING
+     ============================================================ */
+  function setMode(mode) {
+    currentMode = mode === 'remove' ? 'remove' : 'add';
+    modeTabs.forEach(function (tab) {
+      var isActive = tab.getAttribute('data-mode') === currentMode;
+      tab.classList.toggle('is-active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    calculate();
+  }
+
+  modeTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      setMode(tab.getAttribute('data-mode'));
+    });
+  });
+
+  /* ============================================================
+     RATE CHIPS
+     ============================================================ */
+  rateChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var r = chip.getAttribute('data-rate');
+      gstRate.value = r;
+      rateChips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      calculate();
+    });
+  });
+
+  /* Update active chip when custom rate typed */
+  gstRate.addEventListener('input', function () {
+    var r = num(gstRate.value);
+    rateChips.forEach(function (c) {
+      var chipRate = parseFloat(c.getAttribute('data-rate'));
+      c.classList.toggle('is-active', isFinite(r) && chipRate === r);
+    });
+    calculate();
+  });
+
+  /* ============================================================
+     CURRENCY APPLICATION
+     ============================================================ */
+  function applyCurrency(code, opts) {
+    opts = opts || {};
+    if (!CURRENCIES[code]) code = 'INR';
+    currentCurrency = code;
+    var cfg = CURRENCIES[code];
+
+    if (currencySymbol1) currencySymbol1.textContent = cfg.symbol;
+
+    if (opts.setDefaults) {
+      gstAmount.value = cfg.defaultAmount;
+    }
+
+    if (currencySelect && currencySelect.value !== code) {
+      currencySelect.value = code;
+    }
+
+    calculate();
+  }
+
+  if (currencySelect) {
+    currencySelect.addEventListener('change', function () {
+      applyCurrency(currencySelect.value);
+      try { localStorage.setItem('calcify-currency', currencySelect.value); } catch (e) {}
+    });
+  }
+
+  /* ============================================================
+     AMOUNT INPUT
+     ============================================================ */
+  gstAmount.addEventListener('input', calculate);
+  gstAmount.addEventListener('change', calculate);
+
+  /* ============================================================
+     SPLIT TOGGLE
+     ============================================================ */
+  if (splitToggle) {
+    splitToggle.addEventListener('change', function () {
+      if (splitToggle.checked) splitBox.classList.remove('hidden');
+      else splitBox.classList.add('hidden');
+      calculate();
+    });
+  }
+
+  /* ============================================================
+     RESET
+     ============================================================ */
+  if (gstReset) {
+    gstReset.addEventListener('click', function () {
+      var cfg = CURRENCIES[currentCurrency];
+      gstAmount.value = cfg.defaultAmount;
+      gstRate.value = 18;
+      rateChips.forEach(function (c) {
+        c.classList.toggle('is-active', parseFloat(c.getAttribute('data-rate')) === 18);
+      });
+      if (splitToggle) {
+        splitToggle.checked = false;
+        splitBox.classList.add('hidden');
+      }
+      setMode('add');
+      calculate();
+    });
+  }
+
+  /* ============================================================
+     COPY RESULT
+     ============================================================ */
+  if (gstCopy) {
+    gstCopy.addEventListener('click', function () {
+      if (!lastResult) return;
+      var cfg = CURRENCIES[lastResult.currency];
+      var modeLabel = lastResult.mode === 'add' ? 'Add GST' : 'Remove GST';
+      var text =
+        'GST Calculation (' + cfg.code + ')\n' +
+        '-----------------------\n' +
+        'Mode: ' + modeLabel + '\n' +
+        'Rate: ' + formatNum(lastResult.rate, 2) + '%\n' +
+        'Base Price: ' + formatMoney(lastResult.base) + '\n' +
+        'GST Amount: ' + formatMoney(lastResult.gst) + '\n' +
+        'Total Price: ' + formatMoney(lastResult.total);
+      if (lastResult.split) {
+        text += '\n\nCGST (' + formatNum(lastResult.rate / 2, 2) + '%): ' + formatMoney(lastResult.gst / 2);
+        text += '\nSGST (' + formatNum(lastResult.rate / 2, 2) + '%): ' + formatMoney(lastResult.gst / 2);
+      }
+
+      var notify = function (ok) {
+        toast(ok ? 'Result copied to clipboard' : 'Copy failed', ok ? 'success' : 'error');
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { notify(true); }).catch(function () { notify(false); });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); notify(true); }
+        catch (e) { notify(false); }
+        document.body.removeChild(ta);
+      }
+    });
+  }
+
+  /* ============================================================
+     TOAST
+     ============================================================ */
+  function toast(message, type) {
+    var existing = document.querySelector('.gst-toast');
+    if (existing) existing.remove();
+
+    var t = document.createElement('div');
+    t.className = 'gst-toast';
+    var bg = type === 'error' ? '#dc2626' : type === 'warning' ? '#d97706' : '#0f172a';
+    t.style.cssText =
+      'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);' +
+      'background:' + bg + ';color:#fff;padding:12px 20px;border-radius:12px;' +
+      'font-size:14px;font-weight:600;font-family:Inter,sans-serif;' +
+      'box-shadow:0 12px 32px -8px rgba(0,0,0,.35);z-index:9999;' +
+      'opacity:0;transition:opacity .25s, transform .25s;max-width:90vw;pointer-events:none;';
+    t.textContent = message;
+    document.body.appendChild(t);
+
+    requestAnimationFrame(function () {
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    setTimeout(function () {
+      t.style.opacity = '0';
+      t.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+    }, 2200);
+  }
+
+  /* ============================================================
+     THEME TOGGLE
+     ============================================================ */
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+
+  /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function () {
+      var isHidden = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ============================================================
+     LANGUAGE DROPDOWN
+     ============================================================ */
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !langMenu.classList.contains('invisible');
+      langMenu.classList.toggle('invisible', isOpen);
+      langMenu.classList.toggle('opacity-0', isOpen);
+      langMenu.classList.toggle('translate-y-1', isOpen);
+      langBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', function () {
+      langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      langBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      var lang = opt.getAttribute('data-lang');
+      if (!lang) return;
+      try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      var lbl = document.getElementById('langLabel');
+      if (lbl) lbl.textContent = lang.toUpperCase();
+      if (langMenu) langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      document.dispatchEvent(new CustomEvent('calcify:langchange', { detail: { lang: lang } }));
+    });
+  });
+
+  /* ============================================================
+     LANGUAGE → AUTO CURRENCY SWITCH
+     ============================================================ */
+  function defaultCurrencyForLang() {
+    try {
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      return LANG_CURRENCY[lang] || 'INR';
+    } catch (e) { return 'INR'; }
+  }
+
+  document.addEventListener('calcify:langchange', function (e) {
+    var newCur = LANG_CURRENCY[e.detail.lang];
+    if (newCur) applyCurrency(newCur);
+  });
+
+  /* ============================================================
+     NEWSLETTER
+     ============================================================ */
+  document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var emailIn = form.querySelector('input[type="email"]');
+      var msg = form.querySelector('[data-newsletter-msg]');
+      if (!emailIn || !emailIn.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailIn.value)) {
+        if (emailIn) {
+          emailIn.classList.add('border-red-400');
+          emailIn.focus();
+          window.setTimeout(function () { emailIn.classList.remove('border-red-400'); }, 1600);
+        }
+        return;
+      }
+      if (msg) msg.classList.remove('hidden');
+      emailIn.value = '';
+      emailIn.disabled = true;
+      var b = form.querySelector('button[type="submit"]');
+      if (b) { b.disabled = true; b.textContent = 'Subscribed ✓'; }
+    });
+  });
+
+  /* ============================================================
+     SCROLL HANDLERS
+     ============================================================ */
+  var onScroll = function () {
+    if (backToTop) {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove('hidden');
+        backToTop.classList.add('grid');
+      } else {
+        backToTop.classList.add('hidden');
+        backToTop.classList.remove('grid');
+      }
+    }
+    if (header) {
+      if (window.scrollY > 8) header.classList.add('shadow-soft');
+      else header.classList.remove('shadow-soft');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ============================================================
+     FOOTER YEAR
+     ============================================================ */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ============================================================
+     INITIAL SETUP
+     ============================================================ */
+  function init() {
+    /* Priority: saved currency → language default → INR */
+    var savedCurrency = null;
+    try { savedCurrency = localStorage.getItem('calcify-currency'); } catch (e) {}
+
+    var initial = savedCurrency && CURRENCIES[savedCurrency]
+      ? savedCurrency
+      : defaultCurrencyForLang();
+
+    if (currencySelect) currencySelect.value = initial;
+    applyCurrency(initial, { setDefaults: true });
+
+    /* Default mode: Add GST */
+    setMode('add');
+
+    /* Default rate: 18% */
+    gstRate.value = 18;
+    rateChips.forEach(function (c) {
+      c.classList.toggle('is-active', parseFloat(c.getAttribute('data-rate')) === 18);
+    });
+
+    /* Split hidden by default */
+    if (splitBox) splitBox.classList.add('hidden');
+
+    calculate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
