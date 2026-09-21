@@ -1,5 +1,107 @@
+# ============================================================
+# Calcify — robots.txt
+# https://calcify.com/
+# Last updated: 2026-08
+# ============================================================
+
+# Allow all well-behaved crawlers full access
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://calcvora.online/sitemap.xml
+# Block nothing — this is a fully public tools site
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
+
+# Sitemap location
+Sitemap: https://calcify.com/sitemap.xml
+Sitemap: https://calcify.com/tools-sitemap.xml
+
+# ============================================================
+# Major search engine bots — explicit allow for clarity
+# ============================================================
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ============================================================
+# AI crawlers — allow for maximum visibility
+# ============================================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# ============================================================
+# Social media preview bots — allow
+# ============================================================
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ============================================================
+# Block bad bots and scrapers
+# ============================================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# ============================================================
+# Crawl-delay for aggressive crawlers
+# ============================================================
+User-agent: *
+Crawl-delay: 1
