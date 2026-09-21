@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+
+<title>Age Calculator — Free Online Date of Birth Calculator | Calcify</title>
+<meta name="description" content="Free online age calculator. Find your exact age in years, months, days, hours and minutes from your date of birth. See your next birthday countdown, day you were born and zodiac sign instantly." />
+<meta name="keywords" content="age calculator, date of birth calculator, how old am i, birthday calculator, exact age calculator, dob calculator, age in days, chronological age" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/tools/age-calculator/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="Age Calculator — Free Online Date of Birth Calculator" />
+<meta property="og:description" content="Find your exact age in years, months, days, hours and minutes. See your next birthday countdown instantly." />
+<meta property="og:url" content="https://calcify.com/tools/age-calculator/" />
+<meta property="og:image" content="https://calcify.com/assets/og-age-calculator.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Age Calculator — Free Online Date of Birth Calculator" />
+<meta name="twitter:description" content="Find your exact age in years, months, days, hours and minutes instantly." />
+<meta name="twitter:image" content="https://calcify.com/assets/og-age-calculator.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .result-card-age {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+  input[type="date"] {
+    color-scheme: light;
+  }
+  .dark input[type="date"] { color-scheme: dark; }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer; opacity: .55; padding: 4px;
+    border-radius: 6px;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1; background: rgba(79,70,229,.1);
+  }
+  .time-box {
+    background: linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Age Calculator",
+  "url": "https://calcify.com/tools/age-calculator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free online age calculator to compute exact age in years, months, days, hours and minutes from date of birth.",
+  "inLanguage": ["en","hi","es","ar"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcify.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Date & Time", "item": "https://calcify.com/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "Age Calculator", "item": "https://calcify.com/tools/age-calculator/" }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../../index.html" class="flex shrink-0 items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex">
+      <a href="../../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <div class="grid grid-cols-2 gap-1.5">
+      <a href="../../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </div>
+    <a href="../../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- Top banner ad -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">Date &amp; Time</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">Age Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-cyan-700 dark:border-cyan-800 dark:bg-cyan-950/50 dark:text-cyan-300">
+        Date &amp; Time · Calculator
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        Age <span class="grad-text">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        Find your exact age in years, months, days, hours and minutes from your date of birth. See how many days until your next birthday, what day of the week you were born, and your zodiac sign — instantly.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ AGE CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- ==================== INPUTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Enter your date of birth</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Your age is calculated for today’s date by default. You can also set a custom date.</p>
+
+        <form id="ageForm" class="mt-6 space-y-6" autocomplete="off">
+
+          <!-- Date of Birth -->
+          <div>
+            <label for="dob" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Date of Birth</label>
+            <input id="dob" name="dob" type="date" required
+              class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+            <p class="mt-1.5 text-[11px] font-medium text-slate-400">Tap the field to open the date picker</p>
+          </div>
+
+          <!-- Time of Birth (optional) -->
+          <div>
+            <label for="tob" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Time of Birth <span class="text-xs font-normal text-slate-400">(optional)</span>
+            </label>
+            <input id="tob" name="tob" type="time" value="12:00"
+              class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+            <p class="mt-1.5 text-[11px] font-medium text-slate-400">Used for hours and minutes accuracy</p>
+          </div>
+
+          <!-- Calculate age as of -->
+          <div>
+            <label for="asOf" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Calculate Age As Of
+            </label>
+            <input id="asOf" name="asOf" type="date"
+              class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+            <p class="mt-1.5 text-[11px] font-medium text-slate-400">Leave blank to use today</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button type="button" id="resetAge" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 12a9 9 0 1015-6.7L21 8M21 3v5h-5"/></svg>
+              Reset
+            </button>
+            <button type="button" id="fillToday" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 3v3M16 3v3M3 9.5h18"/></svg>
+              Set as of today
+            </button>
+          </div>
+        </form>
+
+        <!-- Quick info chips -->
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Did you know?</div>
+          <ul class="mt-3 space-y-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <li class="flex gap-2"><span class="text-brand-500">•</span>A year has on average <strong class="text-slate-800 dark:text-slate-200">365.25 days</strong> (accounting for leap years).</li>
+            <li class="flex gap-2"><span class="text-brand-500">•</span>By age 80, your heart beats roughly <strong class="text-slate-800 dark:text-slate-200">2.5 billion times</strong>.</li>
+            <li class="flex gap-2"><span class="text-brand-500">•</span>You blink about <strong class="text-slate-800 dark:text-slate-200">28,000 times a day</strong> — over a billion blinks in a lifetime.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ==================== RESULTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Your age</h2>
+
+        <!-- Main result -->
+        <div class="result-card-age mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div class="text-xs font-bold uppercase tracking-wider text-white/75">You are</div>
+          <div class="mt-2 flex items-end gap-2">
+            <span id="ageYears" class="font-display text-5xl font-extrabold tabular-nums leading-none">25</span>
+            <span class="pb-1 text-lg font-bold text-white/80">years</span>
+          </div>
+          <div id="ageSubline" class="mt-3 text-sm font-medium text-white/80">5 months, 12 days old</div>
+        </div>
+
+        <!-- Detailed breakdown -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Months</div>
+            <div id="ageMonths" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">305</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Weeks</div>
+            <div id="ageWeeks" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">1,325</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Days</div>
+            <div id="ageDays" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">9,280</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Hours</div>
+            <div id="ageHours" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">222,720</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Minutes</div>
+            <div id="ageMinutes" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">13,363,200</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Seconds</div>
+            <div id="ageSeconds" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">801,792,000</div>
+          </div>
+        </div>
+
+        <!-- Next birthday countdown -->
+        <div class="mt-6 rounded-2xl border border-brand-200 bg-brand-50/60 p-4 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex items-center gap-2">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">Next Birthday</div>
+              <div id="nextBday" class="mt-0.5 text-sm font-bold text-slate-900 dark:text-white">In 207 days</div>
+            </div>
+          </div>
+          <div id="bdayDate" class="mt-3 text-xs font-medium text-slate-600 dark:text-slate-400">Friday, 12 September 2026</div>
+        </div>
+
+        <!-- Fun facts grid -->
+        <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Born on a</div>
+            <div id="bornDay" class="mt-1 font-display text-sm font-extrabold text-slate-900 dark:text-white">Monday</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Zodiac sign</div>
+            <div id="zodiacSign" class="mt-1 font-display text-sm font-extrabold text-slate-900 dark:text-white">♍ Virgo</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Heartbeats (approx.)</div>
+            <div id="heartbeats" class="mt-1 font-display text-sm font-extrabold text-slate-900 dark:text-white">900 million</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Breaths taken</div>
+            <div id="breaths" class="mt-1 font-display text-sm font-extrabold text-slate-900 dark:text-white">200 million</div>
+          </div>
+        </div>
+
+        <button type="button" id="copyAge" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+    
+  </div>  <!-- ============ ABOUT + HOW-TO + FAQ ============ -->
+<section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+
+    <!-- Left: content -->
+    <article class="min-w-0">
+
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        About the Age Calculator
+      </h2>
+      <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+        <p>
+          The Age Calculator on Calcify is a free, browser-based tool that instantly tells you exactly how old you are — down to the year, month, day, hour, minute and even the second. Most people know their age in years, but very few realise how many days, weeks or seconds they have actually lived. Whether you are filling out a government form, applying for a passport, checking school admission eligibility, calculating retirement dates, preparing a resume or simply curious about the number of heartbeats you have used so far, this calculator gives you the answer in one tap. It works for any date — past or future — and supports both simple age-in-years queries and precise chronological age breakdowns.
+        </p>
+        <p>
+          Age calculation is trickier than it looks. Because months have different numbers of days (28, 29, 30 or 31) and leap years add an extra day every four years, you cannot simply subtract one year from another and expect an accurate result. Our tool uses a proper calendar-based algorithm that respects all of these rules. For example, if you were born on 31 January and today is 1 March, your “months old” value has to account for the fact that February has no 31st. Our calculator handles all these edge cases automatically and produces the same answer you would get from a certified age-verification service or a legal date-difference expert.
+        </p>
+        <p>
+          Beyond the raw numbers, the Age Calculator also gives you useful contextual information. It tells you how many days remain until your next birthday, the day of the week you were born, your Western zodiac sign, an estimate of how many times your heart has beaten since birth (based on an average resting heart rate), and how many breaths you have taken. These small extras make the tool fun to use and give you interesting facts to share with friends and family. For parents, teachers and HR professionals, the calculator is also handy for quickly checking whether someone meets an age cut-off for school admission, exam eligibility, insurance premiums or retirement benefits.
+        </p>
+        <p>
+          The entire calculation runs inside your browser using plain JavaScript — nothing is uploaded to our servers, no signup is required, and there are no limits on how many times you can use it. Your date of birth is private information, and we treat it that way. The tool is fully responsive, works offline once loaded, supports multiple languages and units, and is completely free forever. Whether you are on a phone in a metro, a laptop in a café or a desktop at work, you can get your exact age in seconds. Bookmark this page — it is the only age calculator you will ever need.
+        </p>
+      </div>
+
+      <h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        How to use the Age Calculator
+      </h2>
+      <ol class="mt-5 space-y-4">
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter your date of birth</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Tap the first field and pick your date of birth from the calendar. You can also type the date directly in YYYY-MM-DD format. The calculator accepts any date from 1900 to the present day, and the picker makes it easy to navigate back through decades if you are checking age for a grandparent or elder relative.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Add your time of birth (optional)</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              If you want hour-level and minute-level precision, enter the exact time you were born. If you do not know it, that is completely fine — the tool defaults to 12:00 and still gives you an accurate age in years, months and days. The time field matters most for astrology enthusiasts or when the exact hour is legally relevant.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose an "as of" date</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              By default, the calculator uses today's date. If you need to know what your age would be on a future date — say, for a driver's licence application, a visa form or a retirement projection — pick that date in the third field. This is also useful for HR calculations, insurance quotes and exam-eligibility checks.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Read your full age breakdown</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              The result panel shows your age in years, months and days at the top, then breaks it down further into months, weeks, days, hours, minutes and seconds. Below that, you will see a next-birthday countdown, the day of the week you were born, your zodiac sign, and approximate counts of heartbeats and breaths — small details that make the result fun to read.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Copy or share the result</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Hit the “Copy result” button at the bottom of the results panel to save your full age breakdown to the clipboard. You can then paste it into a chat, email, notes app, or form field. Nothing is stored on our servers, so your date of birth remains completely private — the result only exists in your browser and your clipboard.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- ============ FAQ ============ -->
+      <h2 class="mt-12 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        Frequently asked questions
+      </h2>
+      <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+        The seven questions people ask us most about age calculation.
+      </p>
+
+      <div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+        <details class="group p-5" open>
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            How is age calculated exactly?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Age is calculated by finding the difference between your date of birth and today's date (or any other chosen date), then breaking that difference into calendar years, months, days, hours and minutes. Our tool uses a calendar-aware algorithm that correctly handles months of different lengths (28, 29, 30 or 31 days) and leap years. So if you were born on 29 February in a leap year, or on the 31st of a month, the calculation stays accurate — the same logic used by banks, government forms and legal age-verification services.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Can I find my age on a future or past date?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Yes. Use the "Calculate Age As Of" field to pick any past or future date. This is handy for many real scenarios — for example, checking how old you will be on your wedding day, what your age will be when you retire, or whether you meet an age cut-off for a job application, exam, or insurance policy deadline. The result shows the exact age you would be on that chosen date, calculated to the same precision as today's date.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Is this Age Calculator free and private?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Yes — completely free, with no signup, no email verification, and no limit on how many times you use it. All calculations run entirely inside your browser using plain JavaScript. That means your date of birth is never sent to any server, never stored in any database, and never shared with anyone. Nothing you enter leaves your device unless you explicitly tap "Copy result" yourself. You can even use the calculator offline once the page has loaded, making it one of the most privacy-friendly age tools on the web.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            What is the difference between chronological and biological age?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Chronological age is simply the number of years, months and days you have been alive since birth — the kind this calculator measures. Biological age is a medical estimate of how well your body is functioning relative to your years, based on factors like cardiovascular health, muscle mass, metabolism and cellular markers. A 45-year-old marathon runner may have a biological age of 35, while a 35-year-old with poor lifestyle habits could have a biological age closer to 45. Our tool calculates chronological age only, but you can use the numbers as a baseline for tracking health metrics.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Does the calculator handle leap years correctly?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Yes. The tool uses the standard Gregorian calendar and correctly counts 366 days in leap years (divisible by 4, except century years not divisible by 400). If you were born on 29 February, the calculator treats your "official" birthday in non-leap years as 1 March for the next-birthday countdown, matching the convention used by most governments and legal systems. Your exact age in days, hours and seconds is always counted from the true birth instant, so nothing is ever misreported.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Can I use this calculator for official or legal purposes?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            You can use the results as a quick reference for filling out forms, checking eligibility, preparing applications, or verifying a document. However, for any legal, medical, or financial decision that hinges on exact age, please rely on official documents such as your birth certificate, passport, or government ID. The calculator is 100% accurate mathematically, but it depends entirely on the date of birth you type in — so always double-check that the input matches your official record before using the output in a serious context.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Why does my age in months differ from age in days divided by 30?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Because months are not exactly 30 days long. Calendar months range from 28 to 31 days, so dividing total days by 30 will always give a slightly different answer than the true calendar-based calculation. Our tool follows the real calendar — if today is 15 March and you were born on 15 January, you are exactly 2 months old, not 59 ÷ 30 = 1.97 months. This is the same standard used in medical records, legal documents and official age-verification systems, so the numbers you see here are the ones you should trust.
+          </p>
+        </details>
+
+      </div>
+       <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+        <section class="mt-12">
+          <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+            <div class="mb-5 flex items-center gap-2.5">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+              </span>
+              <div>
+                <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for you</h2>
+                <p class="text-xs font-medium text-slate-500">Hand-picked products our readers actually use</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+              <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">📅</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Planners &amp; Journals</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Dated diaries, birthday reminder books and goal trackers for the year.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+              </a>
+              <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🎂</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Birthday Gifts</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Personalised birthday gifts, cards and celebration essentials.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+              </a>
+              <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your own tools site from ₹149/month with free SSL.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+              </a>
+            </div>
+            <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+              Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ RELATED TOOLS ============ -->
+        <section class="mt-12">
+          <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Date &amp; Time Tools</h2>
+          <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the Date &amp; Time category.</p>
+
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+            <a href="../date-difference-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 3v3M16 3v3M3 9.5h18M8 13h3M13 13h3M8 17h3M13 17h3"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Date Difference Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../days-between-dates/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Days Between Dates</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../add-days-to-date/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Add Days to Date</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../business-days-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 3v3M16 3v3M3 9.5h18M9 14l2 2 4-4"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Business Days Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../countdown-timer/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Countdown Timer</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../zodiac-sign-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4 4l16 16M20 4L4 20"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Zodiac Sign Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Date &amp; Time</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ============ PREMIUM CTA ============ -->
+        <section class="mt-12">
+          <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+            <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+            <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+              <div>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+                <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+                <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+                <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <div class="flex items-end gap-1.5">
+                  <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                  <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+                </div>
+                <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+                <a href="../../premium.html" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+                <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="../emi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="../bmi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+              <li><a href="../age-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+              <li><a href="../percentage-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Percentage Calculator</span></a></li>
+              <li><a href="../word-counter/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Word Counter</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../../premium.html" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  </main>
+  
+  <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+    </p>
+    <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="tool" novalidate>
+      <label class="sr-only" for="toolEmail">Email address</label>
+      <input id="toolEmail" type="email" required placeholder="you@example.com"
+        class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+      <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+    </form>
+    <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+    <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- Footer ad -->
+<div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · Footer</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <!-- Brand column -->
+      <div>
+        <a href="../../index.html" class="flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <!-- Popular -->
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../emi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="../bmi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="../age-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="../percentage-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="../unit-converter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="../word-counter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+          <li><a href="../sip-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="../gst-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="mailto:mediaprojects.official@gmail.com" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../../premium.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Go Premium</a></li>
+          <li><a href="../../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============ FAQ SCHEMA (EXACTLY 7 questions) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is age calculated exactly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Age is calculated by finding the difference between your date of birth and today's date (or any other chosen date), then breaking that difference into calendar years, months, days, hours and minutes. Our tool uses a calendar-aware algorithm that correctly handles months of different lengths (28, 29, 30 or 31 days) and leap years. So if you were born on 29 February in a leap year, or on the 31st of a month, the calculation stays accurate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I find my age on a future or past date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Use the Calculate Age As Of field to pick any past or future date. This is handy for many real scenarios — for example, checking how old you will be on your wedding day, what your age will be when you retire, or whether you meet an age cut-off for a job application, exam, or insurance policy deadline. The result shows the exact age you would be on that chosen date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Age Calculator free and private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free, with no signup, no email verification, and no limit on how many times you use it. All calculations run entirely inside your browser using plain JavaScript. That means your date of birth is never sent to any server, never stored in any database, and never shared with anyone. Nothing you enter leaves your device unless you explicitly tap Copy result yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between chronological and biological age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chronological age is simply the number of years, months and days you have been alive since birth — the kind this calculator measures. Biological age is a medical estimate of how well your body is functioning relative to your years, based on factors like cardiovascular health, muscle mass, metabolism and cellular markers. Our tool calculates chronological age only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator handle leap years correctly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The tool uses the standard Gregorian calendar and correctly counts 366 days in leap years (divisible by 4, except century years not divisible by 400). If you were born on 29 February, the calculator treats your official birthday in non-leap years as 1 March for the next-birthday countdown, matching the convention used by most governments and legal systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for official or legal purposes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use the results as a quick reference for filling out forms, checking eligibility, preparing applications, or verifying a document. However, for any legal, medical, or financial decision that hinges on exact age, please rely on official documents such as your birth certificate, passport, or government ID. The calculator is 100% accurate mathematically, but it depends entirely on the date of birth you type in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my age in months differ from age in days divided by 30?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because months are not exactly 30 days long. Calendar months range from 28 to 31 days, so dividing total days by 30 will always give a slightly different answer than the true calendar-based calculation. Our tool follows the real calendar — if today is 15 March and you were born on 15 January, you are exactly 2 months old, not 59 divided by 30. This is the same standard used in medical records and legal documents."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ============ SITE SCRIPTS ============ -->
+<script src="../../js/i18n.js" defer></script>
+<script src="../../js/main.js" defer></script>
+
+<!-- ============ AGE CALCULATOR LOGIC ============ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     ELEMENT REFS
+     ============================================================ */
+  var dobEl     = document.getElementById('dob');
+  var tobEl     = document.getElementById('tob');
+  var asOfEl    = document.getElementById('asOf');
+
+  var ageYearsEl  = document.getElementById('ageYears');
+  var ageSublineEl = document.getElementById('ageSubline');
+  var ageMonthsEl = document.getElementById('ageMonths');
+  var ageWeeksEl  = document.getElementById('ageWeeks');
+  var ageDaysEl   = document.getElementById('ageDays');
+  var ageHoursEl  = document.getElementById('ageHours');
+  var ageMinutesEl = document.getElementById('ageMinutes');
+  var ageSecondsEl = document.getElementById('ageSeconds');
+
+  var nextBdayEl  = document.getElementById('nextBday');
+  var bdayDateEl  = document.getElementById('bdayDate');
+  var bornDayEl   = document.getElementById('bornDay');
+  var zodiacSignEl = document.getElementById('zodiacSign');
+  var heartbeatsEl = document.getElementById('heartbeats');
+  var breathsEl   = document.getElementById('breaths');
+
+  var resetBtn  = document.getElementById('resetAge');
+  var fillTodayBtn = document.getElementById('fillToday');
+  var copyBtn   = document.getElementById('copyAge');
+
+  if (!dobEl || !ageYearsEl) return;
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function toDateInput(d) {
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+
+  function formatDateLong(d) {
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+  }
+
+  function formatDateShort(d) {
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    return days[d.getDay()];
+  }
+
+  function numberFmt(n) {
+    if (!isFinite(n)) return '—';
+    try {
+      return new Intl.NumberFormat('en-IN').format(Math.round(n));
+    } catch (e) {
+      return String(Math.round(n));
+    }
+  }
+
+  function getZodiac(month, day) {
+    var signs = [
+      { name: 'Capricorn',  symbol: '♑', end: [1, 19] },
+      { name: 'Aquarius',   symbol: '♒', end: [2, 18] },
+      { name: 'Pisces',     symbol: '♓', end: [3, 20] },
+      { name: 'Aries',      symbol: '♈', end: [4, 19] },
+      { name: 'Taurus',     symbol: '♉', end: [5, 20] },
+      { name: 'Gemini',     symbol: '♊', end: [6, 20] },
+      { name: 'Cancer',     symbol: '♋', end: [7, 22] },
+      { name: 'Leo',        symbol: '♌', end: [8, 22] },
+      { name: 'Virgo',      symbol: '♍', end: [9, 22] },
+      { name: 'Libra',      symbol: '♎', end: [10, 22] },
+      { name: 'Scorpio',    symbol: '♏', end: [11, 21] },
+      { name: 'Sagittarius', symbol: '♐', end: [12, 21] }
+    ];
+    for (var i = 0; i < signs.length; i++) {
+      var s = signs[i];
+      if (month === s.end[0] && day <= s.end[1]) return s;
+      if (month === s.end[0] + 1 && day < signs[i].end[1]) return signs[i];
+    }
+    if (month === 12 && day >= 22) return signs[0];
+    return signs[0];
+  }
+
+  /* ============================================================
+     MAIN CALCULATION
+     ============================================================ */
+  function calculate() {
+    if (!dobEl.value) {
+      ageYearsEl.textContent = '—';
+      return;
+    }
+
+    var dobParts = dobEl.value.split('-');
+    if (dobParts.length !== 3) return;
+
+    var dobYear = parseInt(dobParts[0], 10);
+    var dobMonth = parseInt(dobParts[1], 10) - 1;
+    var dobDay = parseInt(dobParts[2], 10);
+
+    /* Time of birth */
+    var tobParts = (tobEl.value || '12:00').split(':');
+    var tobH = parseInt(tobParts[0], 10) || 0;
+    var tobM = parseInt(tobParts[1], 10) || 0;
+
+    var dob = new Date(dobYear, dobMonth, dobDay, tobH, tobM, 0, 0);
+    if (isNaN(dob.getTime())) return;
+
+    /* As of date */
+    var asOf;
+    if (asOfEl.value) {
+      var asParts = asOfEl.value.split('-');
+      asOf = new Date(parseInt(asParts[0], 10), parseInt(asParts[1], 10) - 1, parseInt(asParts[2], 10), 23, 59, 59, 999);
+    } else {
+      asOf = new Date();
+    }
+    if (isNaN(asOf.getTime())) asOf = new Date();
+
+    if (asOf < dob) {
+      ageYearsEl.textContent = '—';
+      ageSublineEl.textContent = 'Date of birth is after the "as of" date';
+      return;
+    }
+
+    /* -------- Age in Y / M / D -------- */
+    var years = asOf.getFullYear() - dob.getFullYear();
+    var months = asOf.getMonth() - dob.getMonth();
+    var days = asOf.getDate() - dob.getDate();
+
+    if (days < 0) {
+      months -= 1;
+      var prevMonth = new Date(asOf.getFullYear(), asOf.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    /* -------- Total breakdown -------- */
+    var diffMs = asOf.getTime() - dob.getTime();
+    var totalSeconds = Math.floor(diffMs / 1000);
+    var totalMinutes = Math.floor(totalSeconds / 60);
+    var totalHours = Math.floor(totalMinutes / 60);
+    var totalDays = Math.floor(totalHours / 24);
+    var totalWeeks = Math.floor(totalDays / 7);
+    var totalMonths = years * 12 + months;
+
+    /* -------- Render -------- */
+    ageYearsEl.textContent = years;
+    ageSublineEl.textContent = months + ' month' + (months === 1 ? '' : 's') + ', ' + days + ' day' + (days === 1 ? '' : 's') + ' old';
+
+    ageMonthsEl.textContent = numberFmt(totalMonths);
+    ageWeeksEl.textContent = numberFmt(totalWeeks);
+    ageDaysEl.textContent = numberFmt(totalDays);
+    ageHoursEl.textContent = numberFmt(totalHours);
+    ageMinutesEl.textContent = numberFmt(totalMinutes);
+    ageSecondsEl.textContent = numberFmt(totalSeconds);
+
+    /* -------- Next birthday -------- */
+    var today = new Date();
+    var nextBdayYear = today.getFullYear();
+    var nextBday = new Date(nextBdayYear, dob.getMonth(), dob.getDate());
+    if (nextBday < today) {
+      nextBday = new Date(nextBdayYear + 1, dob.getMonth(), dob.getDate());
+    }
+
+    var daysToBday = Math.ceil((nextBday.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+    if (daysToBday === 0) {
+      nextBdayEl.textContent = '🎉 Happy Birthday!';
+      bdayDateEl.textContent = 'Today — ' + formatDateLong(today);
+    } else if (daysToBday === 1) {
+      nextBdayEl.textContent = 'Tomorrow!';
+      bdayDateEl.textContent = formatDateLong(nextBday);
+    } else {
+      nextBdayEl.textContent = 'In ' + daysToBday + ' day' + (daysToBday === 1 ? '' : 's');
+      bdayDateEl.textContent = formatDateLong(nextBday);
+    }
+
+    /* -------- Born day of week -------- */
+    bornDayEl.textContent = formatDateShort(dob);
+
+    /* -------- Zodiac -------- */
+    var z = getZodiac(dob.getMonth() + 1, dob.getDate());
+    zodiacSignEl.textContent = z.symbol + ' ' + z.name;
+
+    /* -------- Fun facts -------- */
+    /* Heartbeats: ~72 beats/min average */
+    var heartbeats = totalMinutes * 72;
+    heartbeatsEl.textContent = formatCompact(heartbeats);
+
+    /* Breaths: ~16 breaths/min average */
+    var breaths = totalMinutes * 16;
+    breathsEl.textContent = formatCompact(breaths);
+  }
+
+  function formatCompact(n) {
+    if (n >= 1e9) return (n / 1e9).toFixed(1).replace(/\.0$/, '') + ' billion';
+    if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + ' million';
+    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + ' thousand';
+    return String(n);
+  }
+
+  /* ============================================================
+     EVENTS
+     ============================================================ */
+  dobEl.addEventListener('change', calculate);
+  dobEl.addEventListener('input', calculate);
+  tobEl.addEventListener('change', calculate);
+  tobEl.addEventListener('input', calculate);
+  asOfEl.addEventListener('change', calculate);
+
+  if (resetBtn) resetBtn.addEventListener('click', function () {
+    dobEl.value = '';
+    tobEl.value = '12:00';
+    asOfEl.value = '';
+    calculate();
+  });
+
+  if (fillTodayBtn) fillTodayBtn.addEventListener('click', function () {
+    asOfEl.value = toDateInput(new Date());
+    calculate();
+  });
+
+  /* ============================================================
+     COPY RESULT
+     ============================================================ */
+  if (copyBtn) copyBtn.addEventListener('click', function () {
+    if (!dobEl.value) return;
+    var text =
+      'Age Result\n' +
+      '-----------------------\n' +
+      'Date of birth: ' + dobEl.value + '\n' +
+      'Age: ' + ageYearsEl.textContent + ' years, ' + ageSublineEl.textContent + '\n' +
+      'Total months: ' + ageMonthsEl.textContent + '\n' +
+      'Total days: ' + ageDaysEl.textContent + '\n' +
+      'Total hours: ' + ageHoursEl.textContent + '\n' +
+      'Total seconds: ' + ageSecondsEl.textContent + '\n' +
+      'Born on: ' + bornDayEl.textContent + '\n' +
+      'Zodiac: ' + zodiacSignEl.textContent + '\n' +
+      'Next birthday: ' + nextBdayEl.textContent;
+
+    var notify = function (ok) {
+      if (window.Calcify && Calcify.toast) {
+        Calcify.toast(ok ? 'Result copied to clipboard' : 'Copy failed', ok ? 'success' : 'error');
+      } else {
+        alert(ok ? 'Copied to clipboard' : 'Copy failed');
+      }
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { notify(true); }).catch(function () { notify(false); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); notify(true); }
+      catch (e) { notify(false); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ============================================================
+     INIT
+     ============================================================ */
+  function init() {
+    /* Set as-of field to today by default */
+    asOfEl.value = toDateInput(new Date());
+
+    /* Set default DOB to 25 years ago as a helpful example */
+    var example = new Date();
+    example.setFullYear(example.getFullYear() - 25);
+    dobEl.value = toDateInput(example);
+
+    calculate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
