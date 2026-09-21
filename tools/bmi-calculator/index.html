@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+
+<title>BMI Calculator — Free Body Mass Index Calculator | Calcify</title>
+<meta name="description" content="Free BMI calculator for adults. Check your Body Mass Index in metric or imperial units and see your WHO weight category — underweight, normal, overweight or obese." />
+<meta name="keywords" content="bmi calculator, body mass index calculator, bmi checker, healthy weight calculator, bmi chart, free bmi calculator, metric bmi, imperial bmi" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/tools/bmi-calculator/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="BMI Calculator — Free Body Mass Index Calculator" />
+<meta property="og:description" content="Check your Body Mass Index in metric or imperial units and see your WHO weight category instantly." />
+<meta property="og:url" content="https://calcify.com/tools/bmi-calculator/" />
+<meta property="og:image" content="https://calcify.com/assets/og-bmi-calculator.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BMI Calculator — Free Body Mass Index Calculator" />
+<meta name="twitter:description" content="Check your Body Mass Index in metric or imperial units and see your WHO weight category instantly." />
+<meta name="twitter:image" content="https://calcify.com/assets/og-bmi-calculator.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none;
+    height: 8px; border-radius: 999px;
+    background: linear-gradient(to right, #4f46e5 var(--range-pct, 50%), #e2e8f0 var(--range-pct, 50%) 100%);
+    outline: none;
+  }
+  .dark input[type="range"] {
+    background: linear-gradient(to right, #4f46e5 var(--range-pct, 50%), #1e293b var(--range-pct, 50%) 100%);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #fff; border: 3px solid #4f46e5; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(79,70,229,.35);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #fff; border: 3px solid #4f46e5; cursor: pointer;
+  }
+  .result-card-bmi {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+
+  /* BMI category scale */
+  .bmi-scale {
+    display: flex; height: 14px; border-radius: 999px; overflow: hidden;
+  }
+  .bmi-scale > span { flex: 1; }
+  .bmi-seg-1 { background: #60a5fa; }   /* Underweight - blue */
+  .bmi-seg-2 { background: #22c55e; }   /* Normal - green */
+  .bmi-seg-3 { background: #f59e0b; }   /* Overweight - amber */
+  .bmi-seg-4 { background: #ef4444; }   /* Obese - red */
+
+  .bmi-marker {
+    position: relative; height: 26px;
+  }
+  .bmi-marker::before {
+    content: ''; position: absolute; top: -5px;
+    left: var(--marker-pct, 50%);
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #1e293b;
+  }
+  .dark .bmi-marker::before { border-top-color: #fff; }
+
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Calculator",
+  "url": "https://calcify.com/tools/bmi-calculator/",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free Body Mass Index calculator with metric and imperial units, WHO weight categories and healthy-range guidance.",
+  "inLanguage": ["en","hi","es","ar"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcify.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Health", "item": "https://calcify.com/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "BMI Calculator", "item": "https://calcify.com/tools/bmi-calculator/" }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../../index.html" class="flex shrink-0 items-center gap-2.5">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex">
+      <a href="../../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <div class="grid grid-cols-2 gap-1.5">
+      <a href="../../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="mailto:mediaprojects.official@gmail.com" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </div>
+    <a href="../../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- Top banner ad -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+  <main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">Health</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">BMI Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-rose-700 dark:border-rose-800 dark:bg-rose-950/50 dark:text-rose-300">
+        Health · Calculator · WHO Standards
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        BMI <span class="grad-text">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        Check your Body Mass Index in metric (cm/kg) or imperial (ft-in/lbs) units, and see which WHO weight category you fall into — underweight, normal, overweight or obese — along with your healthy weight range.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ BMI CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- ==================== INPUTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Your measurements</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Choose your units and enter your height and weight.</p>
+
+        <!-- Unit toggle -->
+        <div class="mt-5 grid grid-cols-2 gap-1.5 rounded-xl bg-slate-100 p-1 dark:bg-slate-950" role="tablist" aria-label="Measurement system">
+          <button type="button" id="unitMetric" role="tab" aria-selected="true"
+            class="unit-btn is-active rounded-lg px-4 py-2.5 text-sm font-bold transition">
+            Metric (cm / kg)
+          </button>
+          <button type="button" id="unitImperial" role="tab" aria-selected="false"
+            class="unit-btn rounded-lg px-4 py-2.5 text-sm font-bold transition">
+            Imperial (ft / lbs)
+          </button>
+        </div>
+
+        <form id="bmiForm" class="mt-6 space-y-6" autocomplete="off">
+
+          <!-- Height — Metric -->
+          <div id="heightMetricBlock">
+            <div class="flex items-center justify-between gap-3">
+              <label for="heightCm" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Height</label>
+              <div class="relative">
+                <input id="heightCm" type="number" min="50" max="250" step="0.1" value="170"
+                  class="w-36 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-10 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">cm</span>
+              </div>
+            </div>
+            <input id="heightCmRange" type="range" min="50" max="250" step="1" value="170" class="mt-3 w-full" aria-label="Height in centimeters" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>50 cm</span><span>250 cm</span></div>
+          </div>
+
+          <!-- Height — Imperial (hidden by default) -->
+          <div id="heightImperialBlock" class="hidden">
+            <label class="text-sm font-semibold text-slate-700 dark:text-slate-200">Height</label>
+            <div class="mt-2 flex items-center gap-2">
+              <div class="relative flex-1">
+                <input id="heightFt" type="number" min="1" max="8" step="1" value="5"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-10 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">ft</span>
+              </div>
+              <div class="relative flex-1">
+                <input id="heightIn" type="number" min="0" max="11" step="1" value="7"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-10 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">in</span>
+              </div>
+            </div>
+            <input id="heightFtRange" type="range" min="0" max="96" step="1" value="67" class="mt-3 w-full" aria-label="Height in total inches" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>0 in</span><span>96 in</span></div>
+          </div>
+
+          <!-- Weight — Metric -->
+          <div id="weightMetricBlock">
+            <div class="flex items-center justify-between gap-3">
+              <label for="weightKg" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Weight</label>
+              <div class="relative">
+                <input id="weightKg" type="number" min="10" max="300" step="0.1" value="70"
+                  class="w-36 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-10 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>
+              </div>
+            </div>
+            <input id="weightKgRange" type="range" min="10" max="300" step="1" value="70" class="mt-3 w-full" aria-label="Weight in kilograms" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>10 kg</span><span>300 kg</span></div>
+          </div>
+
+          <!-- Weight — Imperial -->
+          <div id="weightImperialBlock" class="hidden">
+            <div class="flex items-center justify-between gap-3">
+              <label for="weightLbs" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Weight</label>
+              <div class="relative">
+                <input id="weightLbs" type="number" min="20" max="660" step="0.1" value="154"
+                  class="w-36 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-12 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
+              </div>
+            </div>
+            <input id="weightLbsRange" type="range" min="20" max="660" step="1" value="154" class="mt-3 w-full" aria-label="Weight in pounds" />
+            <div class="mt-1 flex justify-between text-[11px] font-medium text-slate-400"><span>20 lbs</span><span>660 lbs</span></div>
+          </div>
+
+          <button type="button" id="resetBmi" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 12a9 9 0 1015-6.7L21 8M21 3v5h-5"/></svg>
+            Reset to defaults
+          </button>
+        </form>
+      </div>
+
+      <!-- ==================== RESULTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Your BMI result</h2>
+
+        <!-- Main result card -->
+        <div class="result-card-bmi mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div class="text-xs font-bold uppercase tracking-wider text-white/75">Body Mass Index</div>
+          <div id="bmiValue" class="mt-2 font-display text-4xl font-extrabold tabular-nums sm:text-5xl">24.2</div>
+          <div id="bmiCategory" class="mt-2 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">
+            <span id="bmiCategoryDot" class="inline-block h-2 w-2 rounded-full bg-emerald-300"></span>
+            <span id="bmiCategoryText">Normal weight</span>
+          </div>
+        </div>
+
+        <!-- BMI category scale -->
+        <div class="mt-6">
+          <div class="mb-2 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <span>Under</span>
+            <span>Normal</span>
+            <span>Over</span>
+            <span>Obese</span>
+          </div>
+          <div class="bmi-scale">
+            <span class="bmi-seg-1"></span>
+            <span class="bmi-seg-2"></span>
+            <span class="bmi-seg-3"></span>
+            <span class="bmi-seg-4"></span>
+          </div>
+          <div id="bmiMarker" class="bmi-marker" style="--marker-pct: 45%;">
+            <div class="flex justify-between text-[11px] font-semibold text-slate-400">
+              <span>16</span>
+              <span>18.5</span>
+              <span>25</span>
+              <span>30</span>
+              <span>40</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category legend -->
+        <div class="mt-6 space-y-2 text-xs">
+          <div class="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-slate-800 dark:bg-slate-950">
+            <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-blue-400"></span><span class="text-slate-600 dark:text-slate-400">Underweight</span></span>
+            <span class="font-bold text-slate-700 dark:text-slate-200">&lt; 18.5</span>
+          </div>
+          <div class="flex items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 dark:border-emerald-900 dark:bg-emerald-950/30">
+            <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-emerald-500"></span><span class="font-semibold text-emerald-800 dark:text-emerald-300">Normal weight</span></span>
+            <span class="font-bold text-emerald-800 dark:text-emerald-300">18.5 – 24.9</span>
+          </div>
+          <div class="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-slate-800 dark:bg-slate-950">
+            <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-amber-500"></span><span class="text-slate-600 dark:text-slate-400">Overweight</span></span>
+            <span class="font-bold text-slate-700 dark:text-slate-200">25.0 – 29.9</span>
+          </div>
+          <div class="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-slate-800 dark:bg-slate-950">
+            <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-sm bg-red-500"></span><span class="text-slate-600 dark:text-slate-400">Obese</span></span>
+            <span class="font-bold text-slate-700 dark:text-slate-200">≥ 30.0</span>
+          </div>
+        </div>
+
+        <!-- Healthy weight range -->
+        <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Healthy weight range for your height</div>
+          </div>
+          <div id="healthyRange" class="mt-2 font-display text-lg font-extrabold text-slate-900 dark:text-white">53.5 kg – 72.0 kg</div>
+          <div class="mt-1 text-[11px] font-medium text-slate-500 dark:text-slate-400">Based on WHO BMI guidelines (18.5–24.9)</div>
+        </div>
+
+        <button type="button" id="copyBmi" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>  <!-- ============ ABOUT + HOW-TO + FAQ ============ -->
+<section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+
+    <!-- Left: content -->
+    <article class="min-w-0">
+
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        About the BMI Calculator
+      </h2>
+      <p class="mt-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+        The BMI Calculator on Calcify is a free, browser-based tool that instantly computes your Body Mass Index — a simple screening measure that compares your weight to your height to estimate whether you fall into a healthy range. BMI was developed in the 19th century and has since been adopted by the World Health Organization as the standard first-line indicator of weight status for adults. Our calculator follows the official WHO formula: BMI = weight in kilograms divided by height in metres squared. If you prefer imperial units, you can switch to feet-and-inches and pounds with one tap, and the tool will automatically convert everything behind the scenes. Based on your result, the calculator classifies you into one of four WHO categories — underweight (below 18.5), normal weight (18.5 to 24.9), overweight (25.0 to 29.9) and obese (30 and above). It also shows you the healthy weight range for your specific height so you know exactly how much you should weigh to stay within the normal band. Everything is calculated inside your browser — your height and weight are never sent to a server, and you can run as many checks as you like without signing up, downloading an app or paying anything. The tool works beautifully on phones, tablets and desktops, and supports multiple languages.
+      </p>
+
+      <h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        How to use the BMI Calculator
+      </h2>
+      <ol class="mt-5 space-y-4">
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose your unit system</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              At the top of the input panel, pick <strong>Metric</strong> (centimetres and kilograms) or <strong>Imperial</strong> (feet-inches and pounds). Most countries use metric, but if you are in the United States, the United Kingdom or a few other regions, imperial will feel more natural. Your choice is remembered for the next visit.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter your height</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Type your height into the first field, or drag the slider to explore different values. In metric, use centimetres (for example 170 cm); in imperial, use feet and inches (for example 5 ft 7 in). Try to measure in the morning without shoes for the most accurate reading, since height tends to shrink slightly through the day.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter your weight</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Move to the weight field and enter your current body weight. Metric users enter kilograms, imperial users enter pounds. Weigh yourself on a flat, hard surface with minimal clothing for the most consistent result, and try to weigh at the same time of day each time so you can track changes reliably.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Read your BMI and category</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              The result panel updates instantly the moment you change either value. Your BMI appears in the highlighted card, along with the WHO category you fall into. A colour-coded scale below shows exactly where you sit between underweight, normal, overweight and obese, and the healthy weight range box tells you the minimum and maximum weight that would keep you in the normal band.
+            </p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+          <div>
+            <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Track your progress over time</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              BMI is a snapshot, not a verdict. Use the calculator once a month — or once a week if you are actively changing your diet or exercise routine — to see which direction you are heading. Small sustained changes of 0.5 to 1 BMI point over a few months are far healthier than dramatic crash diets. Hit “Copy result” to save the figures to your clipboard and log them in a notebook, spreadsheet or health app.
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- ============ FAQ ============ -->
+      <h2 class="mt-12 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+        Frequently asked questions
+      </h2>
+      <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+        The seven questions people ask us most about BMI.
+      </p>
+
+      <div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+        <details class="group p-5" open>
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            What is BMI and how is it calculated?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            BMI stands for Body Mass Index — a simple number that compares your weight to your height to estimate whether your weight is healthy for your size. The formula is BMI = weight (kg) ÷ height (m)². For imperial units, BMI = 703 × weight (lbs) ÷ height (in)². It was originally developed by Belgian statistician Adolphe Quetelet in the 1830s and is now the standard first-line screening tool used by doctors and health organisations worldwide, including the World Health Organization.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            What is a healthy BMI range?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            According to the World Health Organization, a healthy BMI for most adults falls between 18.5 and 24.9. A BMI below 18.5 is classified as underweight, 25.0 to 29.9 as overweight, and 30.0 or above as obese. These thresholds apply to adults aged 20 and older. Children and teenagers use different age- and sex-specific BMI percentile charts because their bodies are still growing, so an adult BMI calculator should not be used for them.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Is BMI accurate for everyone?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            BMI is a useful population-level screening tool but it has known limitations. It does not distinguish between muscle and fat, so athletes and bodybuilders often register as overweight despite low body fat. It also does not account for fat distribution, bone density, age, sex or ethnicity. For a fuller picture, doctors combine BMI with waist circumference, body fat percentage, blood pressure, cholesterol and other measurements. Use BMI as a starting point for conversation, not a final diagnosis.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Is this BMI calculator free and private?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Yes — completely free, with no signup, no ads on the calculator itself and no limit on how many times you use it. All calculations run inside your browser using plain JavaScript, which means your height and weight are never uploaded to any server and no personal information is collected. Nothing you enter is stored anywhere except your own device, so you can use the tool as often as you like with complete privacy.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            Can I use this calculator for children or pregnant women?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            This calculator is designed for adults aged 20 and older. For children and teenagers (ages 2 to 19), doctors use age- and sex-specific BMI percentile charts because body composition changes rapidly during growth — a BMI that is high for an adult may be completely normal for a growing teenager. Pregnant women should also avoid standard BMI interpretation because the extra weight of pregnancy, the placenta and amniotic fluid makes regular thresholds inaccurate. Speak to a paediatrician or your obstetrician for guidance in these cases.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            What is the difference between BMI and body fat percentage?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            BMI measures how heavy you are relative to your height, while body fat percentage measures how much of your weight is actually fat tissue. A person with a high muscle mass can have a high BMI but a low body fat percentage — think of a rugby player or a powerlifter. Conversely, someone with a “normal” BMI can still carry too much visceral fat around their organs. For a full picture of health, doctors use BMI, body fat percentage and waist circumference together rather than relying on any single number.
+          </p>
+        </details>
+
+        <details class="group p-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+            How can I move my BMI into the healthy range?
+            <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Sustainable change beats quick fixes. Aim for a modest calorie deficit if you need to lose weight (300 to 500 calories a day below your maintenance level), focus on whole foods like vegetables, lean protein and whole grains, and add at least 150 minutes of moderate aerobic activity plus two strength sessions per week. If you need to gain weight, add nutrient-dense calories rather than empty ones. Track your BMI monthly, not daily, and consult a doctor or registered dietitian for a plan tailored to your health history.
+          </p>
+        </details>
+
+      </div>
+       <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+        <section class="mt-12">
+          <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+            <div class="mb-5 flex items-center gap-2.5">
+              <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+              </span>
+              <div>
+                <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for you</h2>
+                <p class="text-xs font-medium text-slate-500">Health &amp; fitness products our readers love</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+              <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">⚖️</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Smart Body Scales</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Digital BMI scales with app sync — track weight, body fat and more.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+              </a>
+              <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🏃</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Fitness Bands</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Fitness trackers and smartwatches for daily activity tracking.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+              </a>
+              <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+                 class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+                <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+                <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+                <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your own health or tools site from ₹149/month with free SSL.</p>
+                <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+              </a>
+            </div>
+            <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+              Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ RELATED TOOLS ============ -->
+        <section class="mt-12">
+          <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Health Tools</h2>
+          <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the Health &amp; Fitness category.</p>
+
+          <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+            <a href="../bmr-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">BMR Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../tdee-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">TDEE Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../body-fat-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Body Fat Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../ideal-weight-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8h14M5 16h14"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Ideal Weight Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../calorie-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 8h8M8 14h8M8 20h8"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Calorie Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            <a href="../water-intake-calculator/index.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l6 12a6 6 0 11-12 0z"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Water Intake Calculator</span>
+                <span class="block text-[11px] font-medium text-slate-400">Health</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ============ PREMIUM CTA ============ -->
+        <section class="mt-12">
+          <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+            <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+            <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+              <div>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+                <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+                <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+                <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                  <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <div class="flex items-end gap-1.5">
+                  <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                  <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+                </div>
+                <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+                <a href="../../premium.html" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+                <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="../emi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="../bmi-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+              <li><a href="../age-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+              <li><a href="../percentage-calculator/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Percentage Calculator</span></a></li>
+              <li><a href="../word-counter/index.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Word Counter</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../../premium.html" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  </main>
+ <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Join 48,000+ readers who get a short weekly digest of new tools, health tips and productivity hacks. One email, zero spam.
+    </p>
+    <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="tool" novalidate>
+      <label class="sr-only" for="toolEmail">Email address</label>
+      <input id="toolEmail" type="email" required placeholder="you@example.com"
+        class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+      <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+    </form>
+    <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+    <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- Footer ad -->
+<div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · Footer</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <!-- Brand column -->
+      <div>
+        <a href="../../index.html" class="flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <!-- Popular -->
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../emi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="../bmi-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="../age-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="../percentage-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="../unit-converter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="../word-counter/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+          <li><a href="../sip-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="../gst-calculator/index.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="mailto:mediaprojects.official@gmail.com" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../../premium.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Go Premium</a></li>
+          <li><a href="../../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<!-- ============ FAQ SCHEMA (EXACTLY 7 questions) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is BMI and how is it calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI stands for Body Mass Index — a simple number that compares your weight to your height to estimate whether your weight is healthy for your size. The formula is BMI = weight (kg) ÷ height (m)². For imperial units, BMI = 703 × weight (lbs) ÷ height (in)². It was originally developed by Belgian statistician Adolphe Quetelet in the 1830s and is now the standard first-line screening tool used by doctors and health organisations worldwide, including the World Health Organization."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a healthy BMI range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to the World Health Organization, a healthy BMI for most adults falls between 18.5 and 24.9. A BMI below 18.5 is classified as underweight, 25.0 to 29.9 as overweight, and 30.0 or above as obese. These thresholds apply to adults aged 20 and older. Children and teenagers use different age- and sex-specific BMI percentile charts because their bodies are still growing, so an adult BMI calculator should not be used for them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is BMI accurate for everyone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI is a useful population-level screening tool but it has known limitations. It does not distinguish between muscle and fat, so athletes and bodybuilders often register as overweight despite low body fat. It also does not account for fat distribution, bone density, age, sex or ethnicity. For a fuller picture, doctors combine BMI with waist circumference, body fat percentage, blood pressure, cholesterol and other measurements. Use BMI as a starting point for conversation, not a final diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this BMI calculator free and private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free, with no signup and no limit on how many times you use it. All calculations run inside your browser using plain JavaScript, which means your height and weight are never uploaded to any server and no personal information is collected. Nothing you enter is stored anywhere except your own device, so you can use the tool as often as you like with complete privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for children or pregnant women?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator is designed for adults aged 20 and older. For children and teenagers (ages 2 to 19), doctors use age- and sex-specific BMI percentile charts because body composition changes rapidly during growth — a BMI that is high for an adult may be completely normal for a growing teenager. Pregnant women should also avoid standard BMI interpretation because the extra weight of pregnancy, the placenta and amniotic fluid makes regular thresholds inaccurate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between BMI and body fat percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BMI measures how heavy you are relative to your height, while body fat percentage measures how much of your weight is actually fat tissue. A person with a high muscle mass can have a high BMI but a low body fat percentage — think of a rugby player or a powerlifter. Conversely, someone with a normal BMI can still carry too much visceral fat around their organs. For a full picture of health, doctors use BMI, body fat percentage and waist circumference together rather than relying on any single number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I move my BMI into the healthy range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sustainable change beats quick fixes. Aim for a modest calorie deficit if you need to lose weight (300 to 500 calories a day below your maintenance level), focus on whole foods like vegetables, lean protein and whole grains, and add at least 150 minutes of moderate aerobic activity plus two strength sessions per week. If you need to gain weight, add nutrient-dense calories rather than empty ones. Track your BMI monthly, not daily, and consult a doctor or registered dietitian for a plan tailored to your health history."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ============ SITE SCRIPTS ============ -->
+<script src="../../js/i18n.js" defer></script>
+<script src="../../js/main.js" defer></script>
+
+<!-- ============ BMI CALCULATOR LOGIC (METRIC + IMPERIAL) ============ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     STATE + CONSTANTS
+     ============================================================ */
+  var currentUnit = 'metric'; // 'metric' | 'imperial'
+  var lastResult = null;
+
+  var CM_PER_INCH = 2.54;
+  var KG_PER_LB = 0.45359237;
+
+  /* ============================================================
+     ELEMENT REFS
+     ============================================================ */
+  var metricBtn = document.getElementById('unitMetric');
+  var imperialBtn = document.getElementById('unitImperial');
+
+  var heightMetricBlock = document.getElementById('heightMetricBlock');
+  var heightImperialBlock = document.getElementById('heightImperialBlock');
+  var weightMetricBlock = document.getElementById('weightMetricBlock');
+  var weightImperialBlock = document.getElementById('weightImperialBlock');
+
+  var heightCm = document.getElementById('heightCm');
+  var heightCmRange = document.getElementById('heightCmRange');
+  var heightFt = document.getElementById('heightFt');
+  var heightIn = document.getElementById('heightIn');
+  var heightFtRange = document.getElementById('heightFtRange');
+
+  var weightKg = document.getElementById('weightKg');
+  var weightKgRange = document.getElementById('weightKgRange');
+  var weightLbs = document.getElementById('weightLbs');
+  var weightLbsRange = document.getElementById('weightLbsRange');
+
+  var bmiValue = document.getElementById('bmiValue');
+  var bmiCategoryText = document.getElementById('bmiCategoryText');
+  var bmiCategoryDot = document.getElementById('bmiCategoryDot');
+  var bmiMarker = document.getElementById('bmiMarker');
+  var healthyRange = document.getElementById('healthyRange');
+
+  var resetBtn = document.getElementById('resetBmi');
+  var copyBtn = document.getElementById('copyBmi');
+
+  if (!bmiValue) return;
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function clamp(v, min, max) {
+    v = parseFloat(v);
+    if (!isFinite(v)) return min;
+    return Math.max(min, Math.min(max, v));
+  }
+
+  function paintRange(el) {
+    if (!el) return;
+    var min = parseFloat(el.min) || 0;
+    var max = parseFloat(el.max) || 100;
+    var val = parseFloat(el.value) || 0;
+    var pct = max > min ? ((val - min) / (max - min)) * 100 : 50;
+    el.style.setProperty('--range-pct', pct + '%');
+  }
+
+  /* Locale-aware number */
+  function formatNumber(n, decimals) {
+    if (!isFinite(n)) return '—';
+    decimals = (decimals == null) ? 1 : decimals;
+    try {
+      var lang = 'en';
+      try { lang = localStorage.getItem('calcify-lang') || 'en'; } catch (e) {}
+      var locale = lang === 'hi' ? 'en-IN' : lang === 'ar' ? 'ar-EG' : lang === 'es' ? 'es-ES' : 'en-US';
+      return new Intl.NumberFormat(locale, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }).format(n);
+    } catch (e) {
+      return n.toFixed(decimals);
+    }
+  }
+
+  /* Get height in metres (for BMI formula) */
+  function getHeightMeters() {
+    if (currentUnit === 'metric') {
+      var cm = clamp(heightCm.value, 50, 250);
+      return cm / 100;
+    } else {
+      var ft = clamp(heightFt.value, 1, 8);
+      var inch = clamp(heightIn.value, 0, 11);
+      var totalInches = ft * 12 + inch;
+      return (totalInches * CM_PER_INCH) / 100;
+    }
+  }
+
+  /* Get weight in kilograms */
+  function getWeightKg() {
+    if (currentUnit === 'metric') {
+      return clamp(weightKg.value, 10, 300);
+    } else {
+      var lbs = clamp(weightLbs.value, 20, 660);
+      return lbs * KG_PER_LB;
+    }
+  }
+
+  /* ============================================================
+     BMI CATEGORY
+     ============================================================ */
+  function getCategory(bmi) {
+    if (bmi < 18.5) {
+      return { key: 'under',  label: 'Underweight',    color: '#60a5fa', bg: 'bg-blue-300',    pctMin: 16,  pctMax: 18.5 };
+    }
+    if (bmi < 25) {
+      return { key: 'normal', label: 'Normal weight',  color: '#22c55e', bg: 'bg-emerald-300', pctMin: 18.5, pctMax: 25 };
+    }
+    if (bmi < 30) {
+      return { key: 'over',   label: 'Overweight',     color: '#f59e0b', bg: 'bg-amber-300',   pctMin: 25,  pctMax: 30 };
+    }
+    return   { key: 'obese',  label: 'Obese',          color: '#ef4444', bg: 'bg-red-300',     pctMin: 30,  pctMax: 40 };
+  }
+
+  /* ============================================================
+     MAIN CALCULATION
+     ============================================================ */
+  function calculate() {
+    var h = getHeightMeters();
+    var w = getWeightKg();
+
+    if (h <= 0) { bmiValue.textContent = '—'; return; }
+
+    var bmi = w / (h * h);
+
+    /* Round for display */
+    var bmiRounded = Math.round(bmi * 10) / 10;
+    bmiValue.textContent = bmiRounded.toFixed(1);
+
+    /* Category */
+    var cat = getCategory(bmiRounded);
+    if (bmiCategoryText) bmiCategoryText.textContent = cat.label;
+    if (bmiCategoryDot) {
+      bmiCategoryDot.style.background = cat.color;
+    }
+
+    /* Marker position on scale */
+    /* Map BMI 16–40 onto 0–100% */
+    var pct = ((bmiRounded - 16) / (40 - 16)) * 100;
+    pct = Math.max(2, Math.min(98, pct));
+    if (bmiMarker) bmiMarker.style.setProperty('--marker-pct', pct + '%');
+
+    /* Healthy weight range for this height (BMI 18.5 – 24.9) */
+    var minKg = 18.5 * h * h;
+    var maxKg = 24.9 * h * h;
+
+    if (healthyRange) {
+      if (currentUnit === 'metric') {
+        healthyRange.textContent = formatNumber(minKg, 1) + ' kg – ' + formatNumber(maxKg, 1) + ' kg';
+      } else {
+        var minLbs = minKg / KG_PER_LB;
+        var maxLbs = maxKg / KG_PER_LB;
+        healthyRange.textContent = formatNumber(minLbs, 1) + ' lbs – ' + formatNumber(maxLbs, 1) + ' lbs';
+      }
+    }
+
+    /* Cache result */
+    lastResult = {
+      bmi: bmiRounded,
+      category: cat.label,
+      heightM: h,
+      weightKg: w,
+      healthyMinKg: minKg,
+      healthyMaxKg: maxKg,
+      unit: currentUnit
+    };
+
+    /* Update range visuals */
+    paintRange(heightCmRange);
+    paintRange(heightFtRange);
+    paintRange(weightKgRange);
+    paintRange(weightLbsRange);
+  }
+
+  /* ============================================================
+     UNIT TOGGLE
+     ============================================================ */
+  function setUnit(unit, opts) {
+    opts = opts || {};
+    if (unit !== 'metric' && unit !== 'imperial') unit = 'metric';
+    currentUnit = unit;
+
+    /* Update buttons */
+    if (metricBtn && imperialBtn) {
+      if (unit === 'metric') {
+        metricBtn.classList.add('is-active');
+        metricBtn.setAttribute('aria-selected', 'true');
+        imperialBtn.classList.remove('is-active');
+        imperialBtn.setAttribute('aria-selected', 'false');
+      } else {
+        imperialBtn.classList.add('is-active');
+        imperialBtn.setAttribute('aria-selected', 'true');
+        metricBtn.classList.remove('is-active');
+        metricBtn.setAttribute('aria-selected', 'false');
+      }
+    }
+
+    /* Show/hide blocks */
+    if (unit === 'metric') {
+      heightMetricBlock.classList.remove('hidden');
+      weightMetricBlock.classList.remove('hidden');
+      heightImperialBlock.classList.add('hidden');
+      weightImperialBlock.classList.add('hidden');
+    } else {
+      heightMetricBlock.classList.add('hidden');
+      weightMetricBlock.classList.add('hidden');
+      heightImperialBlock.classList.remove('hidden');
+      weightImperialBlock.classList.remove('hidden');
+    }
+
+    /* Convert existing values so user sees consistent numbers */
+    if (!opts.keepValues) {
+      convertValues(unit);
+    }
+
+    try { localStorage.setItem('calcify-bmi-unit', unit); } catch (e) {}
+
+    calculate();
+  }
+
+  function convertValues(targetUnit) {
+    if (targetUnit === 'imperial') {
+      /* cm → ft/in */
+      var cm = clamp(heightCm.value, 50, 250);
+      var totalInches = cm / CM_PER_INCH;
+      var ft = Math.floor(totalInches / 12);
+      var inch = Math.round(totalInches - ft * 12);
+      if (inch === 12) { ft += 1; inch = 0; }
+      heightFt.value = ft;
+      heightIn.value = inch;
+      heightFtRange.value = Math.round(totalInches);
+
+      /* kg → lbs */
+      var kg = clamp(weightKg.value, 10, 300);
+      var lbs = Math.round(kg / KG_PER_LB);
+      weightLbs.value = lbs;
+      weightLbsRange.value = lbs;
+    } else {
+      /* ft/in → cm */
+      var ft2 = clamp(heightFt.value, 1, 8);
+      var in2 = clamp(heightIn.value, 0, 11);
+      var totalInches2 = ft2 * 12 + in2;
+      var cm2 = Math.round(totalInches2 * CM_PER_INCH);
+      heightCm.value = cm2;
+      heightCmRange.value = cm2;
+
+      /* lbs → kg */
+      var lbs2 = clamp(weightLbs.value, 20, 660);
+      var kg2 = Math.round(lbs2 * KG_PER_LB);
+      weightKg.value = kg2;
+      weightKgRange.value = kg2;
+    }
+  }
+
+  if (metricBtn) metricBtn.addEventListener('click', function () { setUnit('metric'); });
+  if (imperialBtn) imperialBtn.addEventListener('click', function () { setUnit('imperial'); });
+
+  /* ============================================================
+     INPUT ↔ SLIDER PAIRING
+     ============================================================ */
+  function bindPair(numberEl, rangeEl, min, max, transformIn, transformOut) {
+    if (!numberEl || !rangeEl) return;
+    numberEl.addEventListener('input', function () {
+      var v = clamp(numberEl.value, min, max);
+      rangeEl.value = transformIn ? transformIn(v) : v;
+      calculate();
+    });
+    numberEl.addEventListener('blur', function () {
+      var v = clamp(numberEl.value, min, max);
+      numberEl.value = v;
+      rangeEl.value = transformIn ? transformIn(v) : v;
+      calculate();
+    });
+    rangeEl.addEventListener('input', function () {
+      var rv = parseFloat(rangeEl.value);
+      numberEl.value = transformOut ? transformOut(rv) : rv;
+      calculate();
+    });
+  }
+
+  /* Metric: cm ↔ cm, kg ↔ kg */
+  bindPair(heightCm, heightCmRange, 50, 250);
+  bindPair(weightKg, weightKgRange, 10, 300);
+
+  /* Imperial height: separate ft/in fields + total-inches slider */
+  if (heightFtRange) {
+    heightFtRange.addEventListener('input', function () {
+      var totalInches = parseFloat(heightFtRange.value);
+      var ft = Math.floor(totalInches / 12);
+      var inch = totalInches - ft * 12;
+      if (ft < 1) ft = 1;
+      heightFt.value = ft;
+      heightIn.value = inch;
+      calculate();
+    });
+  }
+  [heightFt, heightIn].forEach(function (el) {
+    if (!el) return;
+    el.addEventListener('input', function () {
+      var ft = clamp(heightFt.value, 1, 8);
+      var inch = clamp(heightIn.value, 0, 11);
+      heightFtRange.value = ft * 12 + inch;
+      calculate();
+    });
+    el.addEventListener('blur', function () {
+      var ft = clamp(heightFt.value, 1, 8);
+      var inch = clamp(heightIn.value, 0, 11);
+      heightFt.value = ft;
+      heightIn.value = inch;
+      heightFtRange.value = ft * 12 + inch;
+      calculate();
+    });
+  });
+
+  /* Imperial weight: lbs */
+  bindPair(weightLbs, weightLbsRange, 20, 660);
+
+  /* ============================================================
+     RESET
+     ============================================================ */
+  if (resetBtn) resetBtn.addEventListener('click', function () {
+    if (currentUnit === 'metric') {
+      heightCm.value = 170;
+      heightCmRange.value = 170;
+      weightKg.value = 70;
+      weightKgRange.value = 70;
+    } else {
+      heightFt.value = 5;
+      heightIn.value = 7;
+      heightFtRange.value = 67;
+      weightLbs.value = 154;
+      weightLbsRange.value = 154;
+    }
+    calculate();
+  });
+
+  /* ============================================================
+     COPY RESULT
+     ============================================================ */
+  if (copyBtn) copyBtn.addEventListener('click', function () {
+    if (!lastResult) return;
+    var text;
+    if (lastResult.unit === 'metric') {
+      text =
+        'BMI Result\n' +
+        '-----------------------\n' +
+        'BMI: ' + lastResult.bmi.toFixed(1) + '\n' +
+        'Category: ' + lastResult.category + '\n' +
+        'Height: ' + (lastResult.heightM * 100).toFixed(0) + ' cm\n' +
+        'Weight: ' + lastResult.weightKg.toFixed(1) + ' kg\n' +
+        'Healthy range: ' + lastResult.healthyMinKg.toFixed(1) + ' kg – ' + lastResult.healthyMaxKg.toFixed(1) + ' kg';
+    } else {
+      var hFt = Math.floor((lastResult.heightM * 100) / CM_PER_INCH / 12);
+      var hIn = Math.round(((lastResult.heightM * 100) / CM_PER_INCH) - hFt * 12);
+      text =
+        'BMI Result\n' +
+        '-----------------------\n' +
+        'BMI: ' + lastResult.bmi.toFixed(1) + '\n' +
+        'Category: ' + lastResult.category + '\n' +
+        'Height: ' + hFt + ' ft ' + hIn + ' in\n' +
+        'Weight: ' + (lastResult.weightKg / KG_PER_LB).toFixed(1) + ' lbs\n' +
+        'Healthy range: ' + (lastResult.healthyMinKg / KG_PER_LB).toFixed(1) + ' lbs – ' + (lastResult.healthyMaxKg / KG_PER_LB).toFixed(1) + ' lbs';
+    }
+
+    var notify = function (ok) {
+      if (window.Calcify && Calcify.toast) {
+        Calcify.toast(ok ? 'Result copied to clipboard' : 'Copy failed', ok ? 'success' : 'error');
+      } else {
+        alert(ok ? 'Copied to clipboard' : 'Copy failed');
+      }
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { notify(true); }).catch(function () { notify(false); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); notify(true); }
+      catch (e) { notify(false); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ============================================================
+     INIT
+     ============================================================ */
+  function init() {
+    var savedUnit = null;
+    try { savedUnit = localStorage.getItem('calcify-bmi-unit'); } catch (e) {}
+    if (savedUnit !== 'imperial' && savedUnit !== 'metric') savedUnit = 'metric';
+
+    /* Set initial values in metric first (since HTML defaults are metric) */
+    heightCm.value = 170;
+    heightCmRange.value = 170;
+    weightKg.value = 70;
+    weightKgRange.value = 70;
+
+    /* Now activate saved unit (this will convert values if imperial) */
+    setUnit(savedUnit, { keepValues: false });
+
+    /* Paint ranges */
+    paintRange(heightCmRange);
+    paintRange(heightFtRange);
+    paintRange(weightKgRange);
+    paintRange(weightLbsRange);
+
+    calculate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
