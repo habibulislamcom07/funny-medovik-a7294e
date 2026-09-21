@@ -1,255 +1,1018 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="scroll-smooth dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Contact Us – CalcVora Calculator Support</title>
-  <meta name="description" content="Get in touch with the CalcVora team. Inquire about calculator tool requests, report calculation bugs, or email CalcVora@gmail.com directly.">
-  <link rel="canonical" href="https://calcvora.online/contact.html">
-  
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://calcvora.online/contact.html">
-  <meta property="og:title" content="Contact Us – CalcVora Calculator Support">
-  <meta property="og:description" content="Get in touch with the CalcVora team. Inquire about calculator tool requests, report calculation bugs, or email CalcVora@gmail.com directly.">
-  <meta property="og:image" content="https://calcvora.online/assets/img/favicon.svg">
-  <meta property="og:site_name" content="CalcVora">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="format-detection" content="telephone=no" />
 
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="stylesheet" href="/assets/css/style.css">
+<title>Contact Us — Get in Touch With Calcify | Calcify</title>
+<meta name="description" content="Contact Calcify for support, feedback, bug reports, partnership enquiries or tool requests. We reply to every message within a few days." />
+<meta name="keywords" content="contact calcify, calcify support, calcify feedback, calculator support, tool request, partnership enquiry" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcify.com/contact.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="Contact Us — Get in Touch With Calcify" />
+<meta property="og:description" content="Contact Calcify for support, feedback, bug reports or partnership enquiries." />
+<meta property="og:url" content="https://calcify.com/contact.html" />
+<meta property="og:image" content="https://calcify.com/assets/og-cover.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contact Calcify" />
+<meta name="twitter:description" content="Get in touch with the Calcify team." />
+<meta name="twitter:image" content="https://calcify.com/assets/og-cover.png" />
+
+<link rel="alternate" hreflang="en" href="https://calcify.com/contact.html" />
+<link rel="alternate" hreflang="hi" href="https://calcify.com/contact.html?lang=hi" />
+<link rel="alternate" hreflang="es" href="https://calcify.com/contact.html?lang=es" />
+<link rel="alternate" hreflang="ar" href="https://calcify.com/contact.html?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="https://calcify.com/contact.html" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.18) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.14) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.12) 0px, transparent 50%);
+  }
+  .dark .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.22) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.16) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.14) 0px, transparent 50%);
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .content-block h2 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+  .dark .content-block h2 { color: #fff; }
+  .content-block p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .dark .content-block p { color: #94a3b8; }
+  .contact-card {
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -8px rgba(16,24,40,.15);
+  }
+  .dark .contact-card:hover {
+    box-shadow: 0 12px 32px -8px rgba(0,0,0,.5);
+  }
+  .form-input {
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    font-family: inherit;
+  }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Calcify",
+  "url": "https://calcify.com/contact.html",
+  "description": "Contact Calcify for support, feedback, bug reports or partnership enquiries.",
+  "inLanguage": ["en","hi","es","ar"],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Calcify",
+    "url": "https://calcify.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Calcify",
+    "url": "https://calcify.com/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "mediaprojects.official@gmail.com",
+      "availableLanguage": ["English","Hindi","Spanish","Arabic"],
+      "contactOption": "TollFree",
+      "areaServed": "Worldwide"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcify.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://calcify.com/contact.html" }
+  ]
+}
+</script>
 </head>
-<body>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand-link" aria-label="CalcVora Home">
-        <span class="brand-logo-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-            <line x1="8" y1="6" x2="16" y2="6"></line>
-            <line x1="16" y1="14" x2="16" y2="18"></line>
-            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"></path>
-          </svg>
-        </span>
-        <span>Calc<span class="brand-accent">Vora</span></span>
-        <span class="brand-tld">online</span>
-      </a>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-menu">
-          <li><a href="/" class="nav-link">All Tools</a></li>
-          <li><a href="/about.html" class="nav-link">About</a></li>
-          <li><a href="/contact.html" class="nav-link active">Contact</a></li>
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="index.html" class="flex shrink-0 items-center gap-2.5" aria-label="Calcify home">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+      <a href="index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="contact.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-brand-600 bg-brand-50 dark:text-brand-400 dark:bg-brand-950/50">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Change language">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" role="listbox" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
         </ul>
-      </nav>
+      </div>
 
-      <div class="header-actions">
-        <button class="btn btn-premium" data-action="open-premium" aria-label="Upgrade to Pro">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          Go Ad-Free
-        </button>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <nav class="grid grid-cols-2 gap-1.5" aria-label="Mobile navigation">
+      <a href="index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="contact.html" class="col-span-2 rounded-xl bg-brand-50 px-4 py-3 text-center text-sm font-semibold text-brand-700 dark:bg-brand-950/50 dark:text-brand-300">Contact</a>
+    </nav>
+    <a href="index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- ============ TOP BANNER AD ============ -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">Contact Us</li>
+    </ol>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="mesh">
+    <div class="mx-auto max-w-8xl px-4 pb-12 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-white/80 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 shadow-soft backdrop-blur dark:border-brand-800 dark:bg-slate-900/70 dark:text-brand-300">
+          Contact Us
+        </span>
+        <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+          Get in <span class="grad-text">Touch</span>
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+          Have a question, found a bug, want a new tool, or just want to say thanks? Send us a message — we read every email and reply within a few days.
+        </p>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <div class="container" style="max-width: 860px;">
-      
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="sep">/</span>
-        <span class="current" aria-current="page">Contact Us</span>
-      </nav>
+  <!-- ============ CONTACT GRID ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
 
-      <header class="page-header">
-        <h1 class="page-title">Contact CalcVora</h1>
-        <p class="page-description">Have a feature suggestion, discovered a math discrepancy, or want to partner? We respond directly to every message.</p>
-      </header>
+      <!-- ==================== CONTACT FORM ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Send us a message</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Fill the form below and we will get back to you as soon as possible.</p>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
-        
-        <!-- Contact Information Card -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem;">
-          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">Direct Contact</h2>
-          <p style="color: var(--text-muted); font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            For press, partnerships, advertising inquiries, or immediate assistance, email our primary inbox:
-          </p>
-          
-          <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <a href="mailto:CalcVora@gmail.com" style="font-family: var(--font-mono); font-weight: 600; color: var(--text-main); font-size: 0.95rem;">CalcVora@gmail.com</a>
-            </div>
-            <button type="button" class="btn btn-secondary btn-sm" onclick="CalcVora.copyText('CalcVora@gmail.com', 'Email copied!')">Copy</button>
+        <form id="contactForm" class="mt-6 space-y-5" novalidate>
+
+          <!-- Name -->
+          <div>
+            <label for="contactName" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Your Name <span class="text-red-500">*</span></label>
+            <input id="contactName" name="name" type="text" required autocomplete="name" placeholder="John Doe"
+              class="form-input mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
           </div>
 
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.25rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
-            <strong>Expected turnaround:</strong> We typically review submissions and reply within 24 to 48 business hours.
-          </div>
-        </div>
-
-        <!-- Feedback & Suggestions Info -->
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2rem;">
-          <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">Request a Tool</h2>
-          <p style="color: var(--text-muted); font-size: 0.925rem; line-height: 1.6; margin-bottom: 1rem;">
-            CalcVora is actively expanding to 100+ calculators. If you need a specialized utility (such as cryptocurrency yield, mortgage refinancing, or scientific conversion), let us know!
-          </p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.875rem; color: var(--text-muted);">
-            <li>✓ Financial &amp; Investment Algorithms</li>
-            <li>✓ Fitness, Caloric &amp; Health Formulas</li>
-            <li>✓ Engineering &amp; Conversions</li>
-            <li>✓ Business Tax &amp; Invoicing Standards</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Netlify Contact Form -->
-      <section style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md);">
-        <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Send Us a Message</h2>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Fill out this quick form and our engineering team will get right back to you.</p>
-
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
-          <input type="hidden" name="form-name" value="contact">
-          <p style="display: none;">
-            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-          </p>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
-            <div class="form-group">
-              <label for="contact-name" class="form-label">Your Name</label>
-              <input type="text" id="contact-name" name="name" class="form-input" required placeholder="Alex Rivera">
-            </div>
-            <div class="form-group">
-              <label for="contact-email" class="form-label">Email Address</label>
-              <input type="email" id="contact-email" name="email" class="form-input" required placeholder="alex@example.com">
-            </div>
+          <!-- Email -->
+          <div>
+            <label for="contactEmail" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Email Address <span class="text-red-500">*</span></label>
+            <input id="contactEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com"
+              class="form-input mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
           </div>
 
-          <div class="form-group" style="margin-bottom: 1.25rem;">
-            <label for="contact-subject" class="form-label">Subject</label>
-            <select id="contact-subject" name="subject" class="form-select">
-              <option value="Tool Request">Request a New Calculator Tool</option>
-              <option value="Discrepancy / Bug">Report Calculation Bug / Discrepancy</option>
-              <option value="Partnership">Business / Advertising Partnership</option>
-              <option value="Other">General Question / Other</option>
+          <!-- Subject -->
+          <div>
+            <label for="contactSubject" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Subject <span class="text-red-500">*</span></label>
+            <select id="contactSubject" name="subject" required
+              class="form-input mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+              <option value="">Select a subject…</option>
+              <option value="feedback">General Feedback</option>
+              <option value="bug">Bug Report</option>
+              <option value="tool-request">New Tool Request</option>
+              <option value="correction">Data Correction</option>
+              <option value="partnership">Partnership / Business</option>
+              <option value="advertising">Advertising Enquiry</option>
+              <option value="privacy">Privacy or Legal</option>
+              <option value="other">Other</option>
             </select>
           </div>
 
-          <div class="form-group" style="margin-bottom: 1.75rem;">
-            <label for="contact-message" class="form-label">Message</label>
-            <textarea id="contact-message" name="message" class="form-input" rows="5" required placeholder="Please provide detailed feedback, formula specifics, or details regarding your inquiry..."></textarea>
+          <!-- Message -->
+          <div>
+            <label for="contactMessage" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Message <span class="text-red-500">*</span></label>
+            <textarea id="contactMessage" name="message" rows="6" required placeholder="Tell us what's on your mind…"
+              class="form-input mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white resize-y"></textarea>
+            <p class="mt-1.5 text-[11px] font-medium text-slate-400">Max 2000 characters</p>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">
-            Send Message to CalcVora
+          <!-- Consent -->
+          <div class="flex items-start gap-3">
+            <input id="contactConsent" type="checkbox" required
+              class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-brand-600 focus:ring-brand-500 dark:border-slate-700 dark:bg-slate-950" />
+            <label for="contactConsent" class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              I agree that my name and email address will be used to respond to my enquiry as described in the
+              <a href="privacy.html" class="font-semibold text-brand-600 underline dark:text-brand-400">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" id="contactSubmit"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 disabled:opacity-60">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Send Message
           </button>
+
+          <!-- Success message -->
+          <div id="contactSuccess" class="hidden rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900 dark:bg-emerald-950/30">
+            <div class="flex items-start gap-3">
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-emerald-500 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <div class="font-display text-sm font-bold text-emerald-800 dark:text-emerald-300">Message sent successfully!</div>
+                <p class="mt-1 text-xs leading-relaxed text-emerald-700 dark:text-emerald-400">
+                  Thanks for reaching out. We typically reply within 1-2 business days. If you don't see our reply, please check your spam folder.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error message -->
+          <div id="contactError" class="hidden rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-900 dark:bg-red-950/30">
+            <div class="flex items-start gap-3">
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-red-500 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+              </span>
+              <div>
+                <div class="font-display text-sm font-bold text-red-800 dark:text-red-300">Please fix the errors above</div>
+                <p class="mt-1 text-xs leading-relaxed text-red-700 dark:text-red-400">
+                  All required fields must be filled with valid information before submitting.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </form>
+      </div>
 
-        <div id="form-success-notice" style="display: none; margin-top: 1.5rem; padding: 1.25rem; background: rgba(16, 185, 129, 0.15); border: 1px solid var(--accent-emerald); border-radius: var(--radius-sm); color: #34d399; font-size: 0.95rem;">
-          ✓ Thank you! Your message has been received. We will get back to you shortly at the provided email.
-        </div>
-      </section>
+      <!-- ==================== CONTACT INFO CARDS ==================== -->
+      <div class="space-y-4">
 
-    </div>
-  </main>
+        <!-- Email Card -->
+        <a href="mailto:mediaprojects.official@gmail.com" class="contact-card block rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+          <div class="flex items-start gap-3">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Email Us</h3>
+              <p class="mt-1 break-all text-sm font-semibold text-brand-600 dark:text-brand-400">mediaprojects.official@gmail.com</p>
+              <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">We reply within 1-2 business days.</p>
+            </div>
+          </div>
+        </a>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col-brand">
-          <a href="/" class="brand-link">
-            <span>Calc<span class="brand-accent">Vora</span></span>
-            <span class="brand-tld">online</span>
-          </a>
-          <p>CalcVora provides free, lightning-fast, and precise online calculation utilities designed for finance, health, math, and everyday productivity.</p>
-          <div style="font-size: 0.85rem; color: var(--text-dim);">
-            Direct support: <a href="mailto:CalcVora@gmail.com" style="color: var(--accent-cyan);">CalcVora@gmail.com</a>
+        <!-- YouTube Card -->
+        <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" class="contact-card block rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-red-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-red-700">
+          <div class="flex items-start gap-3">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-red-50 text-red-600 dark:bg-red-950/60 dark:text-red-400">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">YouTube Channel</h3>
+              <p class="mt-1 text-sm font-semibold text-slate-700 dark:text-slate-300">@calcifyofficialchannel</p>
+              <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">Tutorials & tool walkthroughs.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Facebook Card -->
+        <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" class="contact-card block rounded-2xl border border-slate-200 bg-white p-5 shadow-soft hover:border-blue-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700">
+          <div class="flex items-start gap-3">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-display text-sm font-bold text-slate-900 dark:text-white">Facebook Page</h3>
+              <p class="mt-1 text-sm font-semibold text-slate-700 dark:text-slate-300">Calcify Official</p>
+              <p class="mt-1.5 text-xs text-slate-500 dark:text-slate-400">Updates & announcements.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Response Time Card -->
+        <div class="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 dark:border-emerald-900 dark:bg-emerald-950/30">
+          <div class="flex items-start gap-3">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div class="min-w-0">
+              <h3 class="font-display text-sm font-bold text-emerald-900 dark:text-emerald-300">Average Response Time</h3>
+              <p class="mt-1 text-sm font-semibold text-emerald-800 dark:text-emerald-400">1-2 business days</p>
+              <p class="mt-1.5 text-xs text-emerald-700 dark:text-emerald-500">We read every message personally.</p>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Calculators</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/tools/age-calculator/">Age Calculator</a></li>
-            <li><a href="/tools/emi-calculator/">EMI Calculator</a></li>
-            <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
-            <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
-            <li><a href="/tools/gst-calculator/">GST Calculator</a></li>
-          </ul>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>
+
+  <!-- ============ FAQ + SIDEBAR ============ -->
+  <section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+
+      <!-- ============ FAQ ============ -->
+      <article class="content-block min-w-0">
+
+        <h2 class="!mt-0">Frequently Asked Questions</h2>
+        <p>
+          Before you send us a message, check whether your question is already answered below. These are the most common enquiries we receive every week.
+        </p>
+
+        <div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+          <details class="group p-5" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              How quickly will I get a reply?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              We aim to reply to every message within 1-2 business days. Simple questions and bug reports usually get a faster response. If your message is about a critical security issue, please mention "URGENT" in the subject line and we will prioritise it.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Can I request a new calculator or tool?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Absolutely — we love tool requests from our users. Many of the 150+ calculators on Calcify were built because someone asked for them. Please use the contact form with the subject "New Tool Request" and describe exactly what you want the tool to do. If it fits our categories and gets enough interest, we will build it.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              I found a bug or calculation error. What should I do?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Please email us with the subject "Bug Report" and include: the exact tool name, the values you entered, the result you got, the result you expected, and the source for your expected result (for example, a bank statement, medical guideline, or standard reference). This lets us fix the issue quickly and accurately. We take every bug report seriously.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Is my data safe when I submit the contact form?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Yes. The only data we store from a contact form submission is your name, email address, subject and message — used solely to reply to you. We never sell, share or use your email for marketing. Your data is protected under our <a href="privacy.html">Privacy Policy</a> and you can request deletion at any time by writing to us again.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Do you accept advertising or sponsorships?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Yes — we work with carefully chosen partners whose products genuinely help our users. If you are interested in advertising, sponsorship, or content collaboration, please contact us with the subject "Advertising Enquiry" and include details about your product, your target audience and your budget. We do not accept ads that are misleading, deceptive or that violate Google's advertising policies.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              Can I contribute or collaborate with Calcify?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              We are always open to collaboration with writers, developers, designers and content creators who share our vision of fast, private, accurate tools. Send us a message with the subject "Partnership / Business" describing how you would like to work with us, and include links to your portfolio or previous work. We review every proposal personally.
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              How do I report a privacy or legal concern?
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              For any privacy, copyright, trademark or legal matter, please email us with the subject "Privacy or Legal". Include your full name, contact details, the specific page or tool involved, and a clear description of your concern. We respond to all legal enquiries within 30 days as outlined in our <a href="terms.html">Terms of Use</a>.
+            </p>
+          </details>
+
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Company</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/about.html">About CalcVora</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-            <li><a href="/#tools">Explore All Tools</a></li>
-          </ul>
+        <!-- Support info callout -->
+        <div class="mt-8 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex gap-3">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h3 class="!mt-0 !mb-1 font-display text-sm font-bold text-slate-900 dark:text-white">Support Commitment</h3>
+              <p class="!mb-0 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                Every message lands in the same inbox — there is no automated bot, no ticket queue, no "priority tier". A real human reads your email and replies personally. Whether you are reporting a bug, requesting a tool, or just saying thanks, you will hear back from a real person.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <h4 class="footer-col-title">Legal</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/terms.html">Terms of Service</a></li>
-            <li><a href="#" data-action="open-premium">CalcVora Pro</a></li>
-          </ul>
+        <h2 id="email-direct">Prefer Email Instead?</h2>
+        <p>
+          If you would rather skip the form and email us directly, that is completely fine. Write to us at:
+        </p>
+        <div class="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+          <a href="mailto:mediaprojects.official@gmail.com" class="break-all font-display text-base font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+            mediaprojects.official@gmail.com
+          </a>
+        </div>
+        <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+          Using the form is faster because it automatically includes the subject line and structured information, but direct email works perfectly too.
+        </p>
+
+      </article>
+
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Contact Options</h2>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li class="flex items-center gap-2">
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                </span>
+                <a href="mailto:mediaprojects.official@gmail.com" class="font-medium text-slate-700 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Email</a>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-red-50 text-red-600 dark:bg-red-950/60 dark:text-red-400">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+                </span>
+                <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" class="font-medium text-slate-700 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">YouTube</a>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+                </span>
+                <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" class="font-medium text-slate-700 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-400">Facebook</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="index.html#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Quick Links</h2>
+            <ul class="mt-3 space-y-1.5 text-sm">
+              <li><a href="index.html#all-tools" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">All 150+ Tools</a></li>
+              <li><a href="about.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Calcify</a></li>
+              <li><a href="privacy.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+              <li><a href="terms.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+              <li><a href="disclaimer.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Disclaimer</a></li>
+            </ul>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+ <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+    </p>
+    <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="footer" novalidate>
+      <label class="sr-only" for="footerEmail">Email address</label>
+      <input id="footerEmail" type="email" required placeholder="you@example.com" autocomplete="email"
+        class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+      <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+    </form>
+    <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+    <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER AD ============ -->
+<div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · Footer</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="Calcify home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 CalcVora.online. All rights reserved. Free high-precision web tools.</p>
-        <p>Built with privacy-first client-side computing.</p>
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="tools/emi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="tools/bmi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="tools/age-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="tools/percentage-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="tools/unit-converter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="tools/word-counter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="contact.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="disclaimer.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Disclaimer</a></li>
+          <li><a href="sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="/assets/js/common.js"></script>
-  <script>
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        try {
-          const resp = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-          });
-          if (resp.ok) {
-            contactForm.style.display = 'none';
-            document.getElementById('form-success-notice').style.display = 'block';
-          } else {
-            contactForm.submit();
-          }
-        } catch (err) {
-          contactForm.submit();
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="js/i18n.js" defer></script>
+<script src="js/main.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------
+     Theme toggle
+     ------------------------------------------------------------ */
+  var tt = document.getElementById('themeToggle');
+  if (tt) tt.addEventListener('click', function () {
+    var isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  });
+
+  /* ------------------------------------------------------------
+     Mobile menu
+     ------------------------------------------------------------ */
+  var mt = document.getElementById('mobileToggle');
+  var mm = document.getElementById('mobileMenu');
+  if (mt && mm) {
+    mt.addEventListener('click', function () {
+      var isHidden = mm.classList.toggle('hidden');
+      mt.setAttribute('aria-expanded', String(!isHidden));
+    });
+    mm.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mm.classList.add('hidden');
+        mt.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------
+     Language dropdown
+     ------------------------------------------------------------ */
+  var lb = document.getElementById('langBtn');
+  var lm = document.getElementById('langMenu');
+  if (lb && lm) {
+    lb.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !lm.classList.contains('invisible');
+      lm.classList.toggle('invisible', isOpen);
+      lm.classList.toggle('opacity-0', isOpen);
+      lm.classList.toggle('translate-y-1', isOpen);
+      lb.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', function () {
+      lm.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      lb.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      var lang = opt.getAttribute('data-lang');
+      if (!lang) return;
+      try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      var lbl = document.getElementById('langLabel');
+      if (lbl) lbl.textContent = lang.toUpperCase();
+      if (lm) lm.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      document.dispatchEvent(new CustomEvent('calcify:langchange', { detail: { lang: lang } }));
+    });
+  });
+
+  /* ------------------------------------------------------------
+     Newsletter forms
+     ------------------------------------------------------------ */
+  document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      var msg = form.querySelector('[data-newsletter-msg]');
+      if (!input || !input.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value)) {
+        if (input) {
+          input.classList.add('border-red-400');
+          input.focus();
+          window.setTimeout(function () { input.classList.remove('border-red-400'); }, 1600);
+        }
+        return;
+      }
+      if (msg) msg.classList.remove('hidden');
+      input.value = '';
+      input.disabled = true;
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Subscribed ✓'; }
+    });
+  });
+
+  /* ------------------------------------------------------------
+     Contact Form — client-side validation + mailto fallback
+     ------------------------------------------------------------ */
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    var successEl = document.getElementById('contactSuccess');
+    var errorEl = document.getElementById('contactError');
+    var submitBtn = document.getElementById('contactSubmit');
+    var messageEl = document.getElementById('contactMessage');
+
+    /* Live character limit */
+    if (messageEl) {
+      messageEl.addEventListener('input', function () {
+        if (messageEl.value.length > 2000) {
+          messageEl.value = messageEl.value.slice(0, 2000);
         }
       });
     }
-  </script>
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      /* Reset states */
+      if (successEl) successEl.classList.add('hidden');
+      if (errorEl) errorEl.classList.add('hidden');
+
+      var name = document.getElementById('contactName');
+      var email = document.getElementById('contactEmail');
+      var subject = document.getElementById('contactSubject');
+      var message = document.getElementById('contactMessage');
+      var consent = document.getElementById('contactConsent');
+
+      var hasError = false;
+
+      /* Validate name */
+      if (!name.value.trim() || name.value.trim().length < 2) {
+        name.classList.add('border-red-400');
+        hasError = true;
+      } else {
+        name.classList.remove('border-red-400');
+      }
+
+      /* Validate email */
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value)) {
+        email.classList.add('border-red-400');
+        hasError = true;
+      } else {
+        email.classList.remove('border-red-400');
+      }
+
+      /* Validate subject */
+      if (!subject.value) {
+        subject.classList.add('border-red-400');
+        hasError = true;
+      } else {
+        subject.classList.remove('border-red-400');
+      }
+
+      /* Validate message */
+      if (!message.value.trim() || message.value.trim().length < 10) {
+        message.classList.add('border-red-400');
+        hasError = true;
+      } else {
+        message.classList.remove('border-red-400');
+      }
+
+      /* Validate consent */
+      if (!consent.checked) {
+        hasError = true;
+      }
+
+      if (hasError) {
+        if (errorEl) {
+          errorEl.classList.remove('hidden');
+          errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      /* Prepare mailto link (since no backend) */
+      var subjectLine = '[Calcify Contact] ' + subject.options[subject.selectedIndex].text;
+      var bodyLines =
+        'Name: ' + name.value + '\n' +
+        'Email: ' + email.value + '\n' +
+        'Subject: ' + subject.options[subject.selectedIndex].text + '\n\n' +
+        'Message:\n' + message.value + '\n\n' +
+        '---\nSent via Calcify contact form';
+
+      var mailtoUrl = 'mailto:mediaprojects.official@gmail.com' +
+        '?subject=' + encodeURIComponent(subjectLine) +
+        '&body=' + encodeURIComponent(bodyLines);
+
+      /* Disable submit button and show success */
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Opening your email app…';
+      }
+
+      /* Trigger mailto */
+      window.location.href = mailtoUrl;
+
+      /* Show success message after short delay */
+      window.setTimeout(function () {
+        if (successEl) {
+          successEl.classList.remove('hidden');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        contactForm.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Send Message';
+        }
+      }, 800);
+    });
+
+    /* Remove red border on typing */
+    ['contactName', 'contactEmail', 'contactSubject', 'contactMessage'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        el.classList.remove('border-red-400');
+      });
+      el.addEventListener('change', function () {
+        el.classList.remove('border-red-400');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------
+     Back to top + header shadow
+     ------------------------------------------------------------ */
+  var btt = document.getElementById('backToTop');
+  var header = document.getElementById('siteHeader');
+  var onScroll = function () {
+    if (btt) {
+      if (window.scrollY > 600) {
+        btt.classList.remove('hidden');
+        btt.classList.add('grid');
+      } else {
+        btt.classList.add('hidden');
+        btt.classList.remove('grid');
+      }
+    }
+    if (header) {
+      if (window.scrollY > 8) header.classList.add('shadow-soft');
+      else header.classList.remove('shadow-soft');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  if (btt) btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  /* ------------------------------------------------------------
+     Footer year
+     ------------------------------------------------------------ */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+})();
+</script>
+
 </body>
 </html>
