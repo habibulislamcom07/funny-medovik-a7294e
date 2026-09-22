@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- ============ PRIMARY SEO ============ -->
+<title>Sales Tax Calculator — Free Online Tax &amp; VAT Calculator | Calcify</title>
+<meta name="description" content="Free online sales tax calculator. Add or remove sales tax, VAT, GST instantly. Perfect for US, UK, Canada, Australia, India — with multi-currency support." />
+<meta name="keywords" content="sales tax calculator, sales tax, vat calculator, gst calculator, tax calculator, add sales tax, remove sales tax, reverse sales tax, us sales tax, uk vat, canada hst" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcvora.online/tools/sales-tax-calculator.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="Sales Tax Calculator — Free Online Tax &amp; VAT Calculator" />
+<meta property="og:description" content="Add or remove sales tax, VAT, GST instantly. Multi-currency, mobile-friendly, 100% free." />
+<meta property="og:url" content="https://calcvora.online/tools/sales-tax-calculator.html" />
+<meta property="og:image" content="https://calcvora.online/assets/og-cover.png" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sales Tax Calculator — Free Online Tax &amp; VAT Calculator" />
+<meta name="twitter:description" content="Add or remove sales tax, VAT, GST instantly — free, accurate, no signup." />
+<meta name="twitter:image" content="https://calcvora.online/assets/og-cover.png" />
+
+<link rel="alternate" hreflang="en" href="https://calcvora.online/tools/sales-tax-calculator.html" />
+<link rel="alternate" hreflang="hi" href="https://calcvora.online/tools/sales-tax-calculator.html?lang=hi" />
+<link rel="alternate" hreflang="es" href="https://calcvora.online/tools/sales-tax-calculator.html?lang=es" />
+<link rel="alternate" hreflang="ar" href="https://calcvora.online/tools/sales-tax-calculator.html?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="https://calcvora.online/tools/sales-tax-calculator.html" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.18) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.14) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.12) 0px, transparent 50%);
+  }
+  .dark .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.22) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.16) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.14) 0px, transparent 50%);
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .result-card-st {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+  .mode-tab {
+    transition: all .2s ease;
+  }
+  .mode-tab.is-active {
+    background: #4f46e5 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px -2px rgba(79,70,229,.35);
+  }
+  .rate-chip {
+    transition: all .15s ease;
+  }
+  .rate-chip.is-active {
+    background: #4f46e5 !important;
+    color: #fff !important;
+    border-color: #4f46e5 !important;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  input[type="number"] { -moz-appearance: textfield; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sales Tax Calculator",
+  "alternateName": "Calcify Sales Tax Calculator",
+  "url": "https://calcvora.online/tools/sales-tax-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "applicationSubCategory": "Tax Calculator",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+  "description": "Free online sales tax calculator. Add or remove sales tax, VAT and GST instantly with multi-currency support.",
+  "inLanguage": ["en","hi","es","ar"],
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Add sales tax to base price",
+    "Remove sales tax from gross price",
+    "Standard US, UK, Canada, Australia rates",
+    "Custom rate support",
+    "Multi-currency (7 currencies)",
+    "Live calculation"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1876",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvora.online/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://calcvora.online/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "Sales Tax Calculator", "item": "https://calcvora.online/tools/sales-tax-calculator.html" }
+  ]
+}
+</script>
+</head>
+
+ <body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../index.html" class="flex shrink-0 items-center gap-2.5" aria-label="Calcify home">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+      <a href="../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="../contact.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400" aria-label="Search tools">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Change language">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" role="listbox" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <nav class="grid grid-cols-2 gap-1.5" aria-label="Mobile navigation">
+      <a href="../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="../contact.html" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </nav>
+    <a href="../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- ============ TOP BANNER AD ============ -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" data-ad-slot="top-banner" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+  <main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">Sales Tax Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+        Finance · Tax · Multi-Currency
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        Sales Tax <span class="grad-text">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        Add sales tax to a base price or remove tax from a gross amount instantly. Works for US sales tax, UK VAT, Canada HST/GST, Australia GST, India GST and any custom rate — in your own currency.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SALES TAX CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- ==================== INPUTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Tax details</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Choose a mode, pick a rate and enter the amount.</p>
+
+        <!-- Currency selector -->
+        <div class="mt-5 flex items-center justify-between gap-3 rounded-xl border border-brand-200 bg-brand-50/60 px-4 py-3 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+            <label for="currencySelect" class="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">Currency</label>
+          </div>
+          <select id="currencySelect" class="max-w-[60%] rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-bold text-slate-800 outline-none transition focus:border-brand-500 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+            <option value="USD" selected>$ USD — US Dollar</option>
+            <option value="INR">₹ INR — Indian Rupee</option>
+            <option value="EUR">€ EUR — Euro</option>
+            <option value="GBP">£ GBP — British Pound</option>
+            <option value="CAD">$ CAD — Canadian Dollar</option>
+            <option value="AUD">$ AUD — Australian Dollar</option>
+            <option value="AED">د.إ AED — UAE Dirham</option>
+            <option value="SAR">﷼ SAR — Saudi Riyal</option>
+          </select>
+        </div>
+
+        <!-- Mode tabs -->
+        <div class="mt-6 grid grid-cols-2 gap-1.5 rounded-xl bg-slate-100 p-1 dark:bg-slate-950" role="tablist" aria-label="Sales tax calculation mode">
+          <button type="button" role="tab" aria-selected="true" data-mode="add"
+            class="mode-tab is-active rounded-lg px-3 py-2.5 text-xs font-bold text-slate-600 transition dark:text-slate-300">
+            Add Tax
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-mode="remove"
+            class="mode-tab rounded-lg px-3 py-2.5 text-xs font-bold text-slate-600 transition dark:text-slate-300">
+            Remove Tax
+          </button>
+        </div>
+
+        <form id="taxForm" class="mt-6 space-y-6" autocomplete="off">
+
+          <!-- Amount input -->
+          <div>
+            <label for="taxAmount" class="block text-sm font-semibold text-slate-700 dark:text-slate-200">
+              <span id="amountLabel">Base Amount (Before Tax)</span>
+            </label>
+            <div class="relative mt-2">
+              <span id="currencySymbol1" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">$</span>
+              <input id="taxAmount" name="taxAmount" type="number" min="0" max="100000000" step="0.01" value="100"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-9 pr-3 text-lg font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+            </div>
+            <p id="amountHint" class="mt-1.5 text-[11px] font-medium text-slate-400">Enter the price before tax is added</p>
+          </div>
+
+          <!-- Tax Rate -->
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200">Tax Rate</label>
+            <div class="mt-2 flex flex-wrap gap-2" id="rateChips">
+              <button type="button" data-rate="5" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">5%</button>
+              <button type="button" data-rate="7" class="rate-chip is-active rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">7%</button>
+              <button type="button" data-rate="10" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">10%</button>
+              <button type="button" data-rate="15" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">15%</button>
+              <button type="button" data-rate="18" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">18%</button>
+              <button type="button" data-rate="20" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">20%</button>
+              <button type="button" data-rate="25" class="rate-chip rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">25%</button>
+            </div>
+
+            <div class="mt-3 flex items-center gap-3">
+              <label for="taxRate" class="text-xs font-semibold text-slate-500 dark:text-slate-400">Custom rate:</label>
+              <div class="relative">
+                <input id="taxRate" name="taxRate" type="number" min="0" max="100" step="0.01" value="7"
+                  class="w-28 rounded-xl border border-slate-200 bg-slate-50 py-2 pl-3 pr-8 text-right text-sm font-bold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white" />
+                <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">%</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="taxReset" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 dark:text-brand-400">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 1015-6.7L21 8M21 3v5h-5"/></svg>
+            Reset to defaults
+          </button>
+        </form>
+      </div>
+
+      <!-- ==================== RESULTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Tax breakdown</h2>
+        <p id="resultLabel" class="mt-1 text-sm text-slate-500 dark:text-slate-400">$100.00 + 7% tax</p>
+
+        <!-- Main result -->
+        <div class="result-card-st mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div id="resultCaption" class="text-xs font-bold uppercase tracking-wider text-white/75">Total Price (Incl. Tax)</div>
+          <div id="taxTotal" class="mt-2 font-display text-3xl font-extrabold tabular-nums sm:text-4xl leading-tight break-words">$107.00</div>
+          <div id="taxTotalSub" class="mt-1 text-xs text-white/75">Base $100.00 + Tax $7.00</div>
+        </div>
+
+        <!-- Breakdown -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span id="baseLabel">Base Price</span>
+            </div>
+            <div id="taxBase" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">$100.00</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Tax <span id="rateDisplay">(7%)</span>
+            </div>
+            <div id="taxAmountOut" class="mt-1 font-display text-lg font-extrabold tabular-nums text-emerald-600 dark:text-emerald-400">$7.00</div>
+          </div>
+          <div class="col-span-2 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span id="totalLabel">Total Price</span>
+            </div>
+            <div id="taxTotalOut" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">$107.00</div>
+          </div>
+        </div>
+
+        <!-- Formula / working -->
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950">
+          <div class="flex items-center gap-2">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16"/></svg>
+            </span>
+            <div class="flex-1">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Calculation</div>
+            </div>
+          </div>
+          <div id="taxWorking" class="mt-3 space-y-1.5 font-mono text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+            <div>Tax = Base × Rate ÷ 100</div>
+            <div>Tax = 100 × 7 ÷ 100 = 7</div>
+            <div>Total = Base + Tax = 107</div>
+          </div>
+        </div>
+
+        <button type="button" id="taxCopy" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" data-ad-slot="in-content" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>
+
+     <!-- ============ ABOUT + HOW-TO ============ -->
+  <section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+
+      <!-- ============ LEFT: CONTENT ============ -->
+      <article class="min-w-0">
+
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          About the Sales Tax Calculator
+        </h2>
+        <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+          <p>
+            The Sales Tax Calculator on Calcify is a free, browser-based tool that lets you add sales tax to a base price or remove it from a gross amount in one click. Sales tax is charged on the sale of goods and services in almost every country, though the name and rate vary widely — the US calls it sales tax (ranging from 0% in states like Oregon and New Hampshire to over 10% in parts of California and Louisiana), the UK calls it VAT at 20%, Canada uses a mix of GST, HST and PST ranging from 5% to 15%, Australia charges a flat 10% GST, and India uses GST at multiple slabs of 5%, 12%, 18% and 28%. Whatever your country and rate, our calculator applies the correct formula instantly and shows you the exact base price, tax amount and total in your local currency. Whether you are a small business owner preparing an invoice, an accountant reconciling receipts, a student learning how tax works, or a shopper trying to understand how much tax is buried inside a price, this tool gives you a clear, accurate breakdown in seconds.
+          </p>
+          <p>
+            The tool supports two distinct modes. In Add Tax mode, you enter the net price before tax and the calculator shows you the tax amount and the final gross price the customer pays — this is the mode you use when quoting a price to a buyer or preparing a sales invoice. In Remove Tax mode (also called reverse sales tax calculation), you enter the gross price the customer has paid, and the calculator extracts the base price and the tax component that was already included — this is the mode you use when a customer gives you only the total, when you are reconciling receipts, or when you need to separate the tax from the sale amount for accounting and tax filings. Both modes are handled by the exact same formula, applied in the correct direction, and the result updates live as you type.
+          </p>
+          <p>
+            Beyond the numbers, the calculator is genuinely useful for daily work. Common tax rates appear as one-tap chips — 5%, 7%, 10%, 15%, 18%, 20% and 25% — so you can apply the most frequently used rates without typing anything. For any rate outside that list, you simply type it into the custom field. The built-in multi-currency support means the calculator works with USD, INR, EUR, GBP, CAD, AUD, AED and SAR, formatting every result with the correct local symbol and comma style — so a US user sees $107.00, an Indian user sees ₹107.00, and a UK user sees £107.00, all with the same clean formula. Every calculation runs entirely inside your browser using plain JavaScript, so no data is sent to any server. Your prices, invoices and tax figures remain completely private. The tool works perfectly on phones, tablets and desktops, supports dark mode, four languages and right-to-left layout, and is free to use as many times as you like — no signup, no limits, no hidden costs.
+          </p>
+        </div>
+
+        <!-- Highlight callout -->
+        <div class="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 dark:border-emerald-900 dark:bg-emerald-950/30">
+          <div class="flex gap-3">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>
+            </span>
+            <div>
+              <h3 class="!mt-0 !mb-1 font-display text-sm font-bold text-slate-900 dark:text-white">Two Simple Formulas</h3>
+              <p class="!mb-0 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                <strong>Add Tax:</strong> Total = Base × (1 + Rate ÷ 100)<br />
+                <strong>Remove Tax:</strong> Base = Gross ÷ (1 + Rate ÷ 100)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          How to use the Sales Tax Calculator
+        </h2>
+        <ol class="mt-5 space-y-4">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Choose your currency</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                Select your preferred currency from the dropdown at the top of the input panel — USD, INR, EUR, GBP, CAD, AUD, AED or SAR. All input fields, results and formatting update instantly to use the correct symbol and comma style for your currency. This makes the calculator feel native whether you are in New York, New Delhi, London, Toronto or Dubai.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Pick Add or Remove mode</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                Use <strong>Add Tax</strong> when you have a base (pre-tax) price and want to know the final amount with tax added — perfect for preparing invoices and quotes. Use <strong>Remove Tax</strong> when you have a total (tax-inclusive) price and want to extract the base and the tax — perfect for accounting, reconciliation and receipt analysis. The input label and hint text change automatically to remind you which number to enter.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Enter amount and pick rate</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                Type the price into the amount field. Then click one of the seven rate chips — 5%, 7%, 10%, 15%, 18%, 20% or 25% — for the most common tax slabs. If your rate is not in the list (for example 6.25% in Massachusetts, 8.875% in New York City, or 13% HST in Ontario), simply type it into the "Custom rate" field. The result updates live on every keystroke, so you can experiment with different rates and see how the tax amount changes.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Read the breakdown</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                The result panel shows the total price prominently along with the base amount and the tax amount as separate cards. Below, the step-by-step working panel shows exactly how the numbers were calculated, so you can verify the math yourself or explain it to a customer or colleague. In Remove mode, the total card shows the extracted base price, and the subtext shows what the original total was and how much tax was inside it.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">Copy the result and use it anywhere</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                When you are happy with the calculation, click "Copy result" and the full breakdown — mode, amount, rate, base price, tax amount and total — is copied to your clipboard in a clean, readable format. Paste it into an invoice, an email, a chat message, WhatsApp, a spreadsheet or your accounting software. Nothing you type is stored anywhere — the entire calculation happens inside your browser, so your prices and tax figures remain completely private.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" data-ad-slot="sidebar" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="emi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="sip-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">SIP Calculator</span></a></li>
+              <li><a href="gst-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">GST Calculator</span></a></li>
+              <li><a href="sales-tax-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Sales Tax Calculator</span></a></li>
+              <li><a href="bmi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../index.html#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" data-ad-slot="sidebar-sticky" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+<!-- ============ FAQ SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is sales tax and how is it calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales tax is a consumption tax charged on the sale of goods and services. It is calculated as a percentage of the base price: Sales Tax = Base Price × (Rate ÷ 100). For example, 7% tax on a $100 item is $7, making the total $107. In most countries, the seller collects the tax from the buyer and remits it to the government."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove sales tax from an inclusive price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Removing sales tax (also called reverse tax calculation) means finding the base price and tax amount from a total that already includes tax. The formula is: Base Price = Gross Price ÷ (1 + Rate ÷ 100). For example, if a bill totals $107 at 7% tax, the base is 107 ÷ 1.07 = $100, and the tax is $7."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between sales tax, VAT and GST?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales tax is the US-style consumption tax charged once at the point of sale. VAT (Value Added Tax) is the UK and EU system where tax is charged at every stage of production but credited back, so only the end consumer pays. GST (Goods and Services Tax) is the Canadian, Australian and Indian system that works like VAT. The math is the same — only the name and the collection mechanism differ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the sales tax rates in the USA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "US sales tax is set at the state and local level, so rates vary widely. States like Oregon, Montana, New Hampshire and Delaware have no sales tax at all. Others range from 4% (Alabama, Hawaii, Louisiana) to 7.25% (California). Adding local city and county taxes, combined rates can exceed 10% in some cities, such as Chicago and parts of California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Sales Tax Calculator free and private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free with no signup, no email requirement and no limit on how many times you use it. All calculations run inside your browser using plain JavaScript, so the prices, invoices and tax figures you enter are never sent to any server. You can use the tool for confidential business data with complete privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for VAT in the UK or GST in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculation is mathematically identical whether the tax is called sales tax, VAT or GST. Just select your currency (GBP for the UK, INR for India), pick or type your tax rate (20% for UK VAT, 5% / 12% / 18% / 28% for India GST) and the calculator will give you the correct base, tax and total amounts instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator work on mobile phones and tablets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. The Sales Tax Calculator is built mobile-first and works beautifully on any screen size from a 320px budget phone to a 4K desktop. Input fields use the correct numeric keyboard, buttons are touch-friendly, and the result panel stays readable. You can add the page to your phone home screen for one-tap access, and it works offline once loaded."
+      }
+    }
+  ]
+}
+</script>
+    
+</main>
+
+ <!-- ============ AFFILIATE + PREMIUM SECTION ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <div class="min-w-0">
+
+      <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+      <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+        <div class="mb-5 flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for businesses</h2>
+            <p class="text-xs font-medium text-slate-500">Hand-picked tools and resources</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+          <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">🧾</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Receipt Books</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Pre-printed invoice and receipt books for small businesses and freelancers.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+          </a>
+          <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🖩</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Billing Calculators</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">GST-ready billing calculators and POS machines for retail shops.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+          </a>
+          <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your business website from ₹149/month with free SSL.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+          </a>
+        </div>
+        <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+          Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+        </p>
+      </div>
+
+      <!-- ============ RELATED TOOLS ============ -->
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Finance Tools</h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the Finance category.</p>
+
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+          <a href="emi-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">EMI Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="gst-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">GST Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="sip-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">SIP Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="compound-interest-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M12 7l5 5M12 12l5 5"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Compound Interest</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="income-tax-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Income Tax Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="discount-calculator.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Discount Calculator</span>
+              <span class="block text-[11px] font-medium text-slate-400">Finance</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ============ PREMIUM CTA ============ -->
+      <section class="mt-10">
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+          <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+          <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+              <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+              <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+              <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <div class="flex items-end gap-1.5">
+                <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+              </div>
+              <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+              <a href="../index.html#premium" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+              <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="hidden lg:block" aria-label="Sidebar">
+      <div class="sticky top-24 space-y-5">
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+          <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">💡 Quick Tips</h2>
+          <ul class="mt-3 space-y-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <li><strong class="text-slate-800 dark:text-slate-200">US:</strong> Combined state + city rates often exceed 10%.</li>
+            <li><strong class="text-slate-800 dark:text-slate-200">UK:</strong> Standard VAT is 20%, reduced 5%, zero 0%.</li>
+            <li><strong class="text-slate-800 dark:text-slate-200">Canada:</strong> HST 13% in Ontario, GST 5% in Alberta.</li>
+            <li><strong class="text-slate-800 dark:text-slate-200">Australia:</strong> Flat 10% GST nationwide.</li>
+            <li><strong class="text-slate-800 dark:text-slate-200">India:</strong> GST slabs are 5%, 12%, 18%, 28%.</li>
+          </ul>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+    <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+      </p>
+      <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="footer" novalidate>
+        <label class="sr-only" for="footerEmail">Email address</label>
+        <input id="footerEmail" type="email" required placeholder="you@example.com" autocomplete="email"
+          class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+        <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+      </form>
+      <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+      <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[70px] w-full sm:h-[90px]" data-ad-slot="footer" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · Footer</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <div>
+        <a href="../index.html" class="flex items-center gap-2.5" aria-label="Calcify home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="emi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="sip-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="gst-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+          <li><a href="sales-tax-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sales Tax Calculator</a></li>
+          <li><a href="bmi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="age-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="word-counter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="../contact.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Disclaimer</a></li>
+          <li><a href="../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>   
+</button> 
+
+  <!-- ============ SCRIPTS ============ -->
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     CURRENCY CONFIGURATION
+     ============================================================ */
+  var CURRENCIES = {
+    USD: { code: 'USD', symbol: '$', locale: 'en-US', defaultAmount: 100, defaultRate: 7 },
+    INR: { code: 'INR', symbol: '₹', locale: 'en-IN', defaultAmount: 1000, defaultRate: 18 },
+    EUR: { code: 'EUR', symbol: '€', locale: 'es-ES', defaultAmount: 100, defaultRate: 20 },
+    GBP: { code: 'GBP', symbol: '£', locale: 'en-GB', defaultAmount: 100, defaultRate: 20 },
+    CAD: { code: 'CAD', symbol: '$', locale: 'en-CA', defaultAmount: 100, defaultRate: 13 },
+    AUD: { code: 'AUD', symbol: '$', locale: 'en-AU', defaultAmount: 100, defaultRate: 10 },
+    AED: { code: 'AED', symbol: 'د.إ', locale: 'ar-AE', defaultAmount: 500, defaultRate: 5 },
+    SAR: { code: 'SAR', symbol: '﷼', locale: 'ar-SA', defaultAmount: 500, defaultRate: 15 }
+  };
+
+  /* Language-based currency switch (only used when user changes language) */
+  var LANG_CURRENCY = { en: 'USD', hi: 'INR', es: 'EUR', ar: 'AED' };
+
+  var currentCurrency = 'USD';
+  var currentMode = 'add';
+  var lastResult = null;
+
+  /* ============================================================
+     ELEMENT REFS
+     ============================================================ */
+  var currencySelect = document.getElementById('currencySelect');
+  var currencySymbol1 = document.getElementById('currencySymbol1');
+  var modeTabs = document.querySelectorAll('.mode-tab');
+
+  var amountLabel = document.getElementById('amountLabel');
+  var amountHint = document.getElementById('amountHint');
+  var taxAmount = document.getElementById('taxAmount');
+  var taxRate = document.getElementById('taxRate');
+  var rateChips = document.querySelectorAll('.rate-chip');
+  var taxReset = document.getElementById('taxReset');
+
+  var resultLabel = document.getElementById('resultLabel');
+  var resultCaption = document.getElementById('resultCaption');
+  var taxTotal = document.getElementById('taxTotal');
+  var taxTotalSub = document.getElementById('taxTotalSub');
+  var baseLabel = document.getElementById('baseLabel');
+  var taxBase = document.getElementById('taxBase');
+  var rateDisplay = document.getElementById('rateDisplay');
+  var taxAmountOut = document.getElementById('taxAmountOut');
+  var totalLabel = document.getElementById('totalLabel');
+  var taxTotalOut = document.getElementById('taxTotalOut');
+  var taxWorking = document.getElementById('taxWorking');
+
+  var taxCopy = document.getElementById('taxCopy');
+
+  var themeToggle = document.getElementById('themeToggle');
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var langBtn = document.getElementById('langBtn');
+  var langMenu = document.getElementById('langMenu');
+  var backToTop = document.getElementById('backToTop');
+  var header = document.getElementById('siteHeader');
+
+  if (!taxAmount || !taxTotal) return;
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function num(v) {
+    var n = parseFloat(v);
+    return isFinite(n) ? n : NaN;
+  }
+
+  function formatMoney(n) {
+    if (!isFinite(n)) return '—';
+    var cfg = CURRENCIES[currentCurrency];
+    try {
+      return new Intl.NumberFormat(cfg.locale, {
+        style: 'currency',
+        currency: cfg.code,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(n);
+    } catch (e) {
+      return cfg.symbol + n.toFixed(2);
+    }
+  }
+
+  function formatNum(n, decimals) {
+    if (!isFinite(n)) return '—';
+    decimals = (decimals == null) ? 2 : decimals;
+    var s = n.toFixed(decimals);
+    if (s.indexOf('.') !== -1) s = s.replace(/\.?0+$/, '');
+    return s;
+  }
+
+  /* ============================================================
+     CORE CALCULATION
+     ============================================================ */
+  function calculate() {
+    var amount = num(taxAmount.value);
+    var rate = num(taxRate.value);
+
+    if (!isFinite(amount) || amount < 0) amount = 0;
+    if (!isFinite(rate) || rate < 0) rate = 0;
+    if (rate > 100) rate = 100;
+
+    var base, taxAmt, total;
+
+    if (currentMode === 'add') {
+      base = amount;
+      taxAmt = base * rate / 100;
+      total = base + taxAmt;
+    } else {
+      total = amount;
+      if (rate === 0) {
+        base = amount;
+        taxAmt = 0;
+      } else {
+        base = amount / (1 + rate / 100);
+        taxAmt = amount - base;
+      }
+    }
+
+    /* Labels per mode */
+    if (currentMode === 'add') {
+      amountLabel.textContent = 'Base Amount (Before Tax)';
+      amountHint.textContent = 'Enter the price before tax is added';
+      resultCaption.textContent = 'Total Price (Incl. Tax)';
+      baseLabel.textContent = 'Base Price';
+      totalLabel.textContent = 'Total Price';
+    } else {
+      amountLabel.textContent = 'Total Amount (Incl. Tax)';
+      amountHint.textContent = 'Enter the final price that already includes tax';
+      resultCaption.textContent = 'Base Price (Excl. Tax)';
+      baseLabel.textContent = 'Base Price';
+      totalLabel.textContent = 'Total Price';
+    }
+
+    /* Main card */
+    if (currentMode === 'add') {
+      taxTotal.textContent = formatMoney(total);
+      taxTotalSub.textContent = 'Base ' + formatMoney(base) + ' + Tax ' + formatMoney(taxAmt);
+    } else {
+      taxTotal.textContent = formatMoney(base);
+      taxTotalSub.textContent = 'Extracted from ' + formatMoney(total) + ' (Tax was ' + formatMoney(taxAmt) + ')';
+    }
+
+    /* Breakdown */
+    taxBase.textContent = formatMoney(base);
+    taxAmountOut.textContent = formatMoney(taxAmt);
+    taxTotalOut.textContent = formatMoney(total);
+    rateDisplay.textContent = '(' + formatNum(rate, 2) + '%)';
+
+    /* Result label */
+    if (currentMode === 'add') {
+      resultLabel.textContent = formatMoney(base) + ' + ' + formatNum(rate, 2) + '% tax';
+    } else {
+      resultLabel.textContent = formatMoney(total) + ' ÷ ' + formatNum(rate, 2) + '% tax';
+    }
+
+    /* Working */
+    var lines;
+    if (currentMode === 'add') {
+      lines = [
+        'Tax = Base × Rate ÷ 100',
+        'Tax = ' + formatNum(base, 4) + ' × ' + formatNum(rate, 2) + ' ÷ 100 = ' + formatNum(taxAmt, 2),
+        'Total = Base + Tax = ' + formatNum(base, 4) + ' + ' + formatNum(taxAmt, 2) + ' = ' + formatNum(total, 2)
+      ];
+    } else {
+      lines = [
+        'Base = Gross ÷ (1 + Rate ÷ 100)',
+        'Base = ' + formatNum(total, 4) + ' ÷ (1 + ' + formatNum(rate, 2) + ' ÷ 100) = ' + formatNum(base, 2),
+        'Tax = Gross − Base = ' + formatNum(total, 4) + ' − ' + formatNum(base, 2) + ' = ' + formatNum(taxAmt, 2)
+      ];
+    }
+    taxWorking.innerHTML = lines.map(function (l) { return '<div>' + l + '</div>'; }).join('');
+
+    lastResult = {
+      mode: currentMode,
+      amount: amount,
+      base: base,
+      tax: taxAmt,
+      total: total,
+      rate: rate,
+      currency: currentCurrency
+    };
+  }
+
+  /* ============================================================
+     MODE SWITCHING
+     ============================================================ */
+  function setMode(mode) {
+    currentMode = mode === 'remove' ? 'remove' : 'add';
+    modeTabs.forEach(function (tab) {
+      var isActive = tab.getAttribute('data-mode') === currentMode;
+      tab.classList.toggle('is-active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    calculate();
+  }
+
+  modeTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      setMode(tab.getAttribute('data-mode'));
+    });
+  });
+
+  /* ============================================================
+     RATE CHIPS
+     ============================================================ */
+  rateChips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var r = chip.getAttribute('data-rate');
+      taxRate.value = r;
+      rateChips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      calculate();
+    });
+  });
+
+  taxRate.addEventListener('input', function () {
+    var r = num(taxRate.value);
+    rateChips.forEach(function (c) {
+      var chipRate = parseFloat(c.getAttribute('data-rate'));
+      c.classList.toggle('is-active', isFinite(r) && chipRate === r);
+    });
+    calculate();
+  });
+
+  /* ============================================================
+     CURRENCY APPLICATION
+     ============================================================ */
+  function applyCurrency(code, opts) {
+    opts = opts || {};
+    if (!CURRENCIES[code]) code = 'USD';
+    currentCurrency = code;
+    var cfg = CURRENCIES[code];
+
+    if (currencySymbol1) currencySymbol1.textContent = cfg.symbol;
+
+    if (opts.setDefaults) {
+      taxAmount.value = cfg.defaultAmount;
+      taxRate.value = cfg.defaultRate;
+      rateChips.forEach(function (c) {
+        c.classList.toggle('is-active', parseFloat(c.getAttribute('data-rate')) === cfg.defaultRate);
+      });
+    }
+
+    if (currencySelect && currencySelect.value !== code) {
+      currencySelect.value = code;
+    }
+
+    calculate();
+  }
+
+  if (currencySelect) {
+    currencySelect.addEventListener('change', function () {
+      applyCurrency(currencySelect.value);
+      try { localStorage.setItem('calcify-currency', currencySelect.value); } catch (e) {}
+    });
+  }
+
+  /* ============================================================
+     AMOUNT INPUT
+     ============================================================ */
+  taxAmount.addEventListener('input', calculate);
+  taxAmount.addEventListener('change', calculate);
+
+  /* ============================================================
+     RESET
+     ============================================================ */
+  if (taxReset) {
+    taxReset.addEventListener('click', function () {
+      var cfg = CURRENCIES[currentCurrency];
+      taxAmount.value = cfg.defaultAmount;
+      taxRate.value = cfg.defaultRate;
+      rateChips.forEach(function (c) {
+        c.classList.toggle('is-active', parseFloat(c.getAttribute('data-rate')) === cfg.defaultRate);
+      });
+      setMode('add');
+      calculate();
+    });
+  }
+
+  /* ============================================================
+     COPY RESULT
+     ============================================================ */
+  if (taxCopy) {
+    taxCopy.addEventListener('click', function () {
+      if (!lastResult) return;
+      var cfg = CURRENCIES[lastResult.currency];
+      var modeLabel = lastResult.mode === 'add' ? 'Add Tax' : 'Remove Tax';
+      var text =
+        'Sales Tax Calculation (' + cfg.code + ')\n' +
+        '-----------------------\n' +
+        'Mode: ' + modeLabel + '\n' +
+        'Rate: ' + formatNum(lastResult.rate, 2) + '%\n' +
+        'Base Price: ' + formatMoney(lastResult.base) + '\n' +
+        'Tax Amount: ' + formatMoney(lastResult.tax) + '\n' +
+        'Total Price: ' + formatMoney(lastResult.total);
+
+      var notify = function (ok) {
+        toast(ok ? 'Result copied to clipboard' : 'Copy failed', ok ? 'success' : 'error');
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { notify(true); }).catch(function () { notify(false); });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); notify(true); }
+        catch (e) { notify(false); }
+        document.body.removeChild(ta);
+      }
+    });
+  }
+
+  /* ============================================================
+     TOAST
+     ============================================================ */
+  function toast(message, type) {
+    var existing = document.querySelector('.st-toast');
+    if (existing) existing.remove();
+
+    var t = document.createElement('div');
+    t.className = 'st-toast';
+    var bg = type === 'error' ? '#dc2626' : type === 'warning' ? '#d97706' : '#0f172a';
+    t.style.cssText =
+      'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);' +
+      'background:' + bg + ';color:#fff;padding:12px 20px;border-radius:12px;' +
+      'font-size:14px;font-weight:600;font-family:Inter,sans-serif;' +
+      'box-shadow:0 12px 32px -8px rgba(0,0,0,.35);z-index:9999;' +
+      'opacity:0;transition:opacity .25s, transform .25s;max-width:90vw;pointer-events:none;';
+    t.textContent = message;
+    document.body.appendChild(t);
+
+    requestAnimationFrame(function () {
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    setTimeout(function () {
+      t.style.opacity = '0';
+      t.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+    }, 2200);
+  }
+
+  /* ============================================================
+     THEME TOGGLE
+     ============================================================ */
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+
+  /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function () {
+      var isHidden = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ============================================================
+     LANGUAGE DROPDOWN
+     ============================================================ */
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !langMenu.classList.contains('invisible');
+      langMenu.classList.toggle('invisible', isOpen);
+      langMenu.classList.toggle('opacity-0', isOpen);
+      langMenu.classList.toggle('translate-y-1', isOpen);
+      langBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', function () {
+      langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      langBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      var lang = opt.getAttribute('data-lang');
+      if (!lang) return;
+      try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      var lbl = document.getElementById('langLabel');
+      if (lbl) lbl.textContent = lang.toUpperCase();
+      if (langMenu) langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      document.dispatchEvent(new CustomEvent('calcify:langchange', { detail: { lang: lang } }));
+    });
+  });
+
+  /* ============================================================
+     LANGUAGE → AUTO CURRENCY SWITCH (only when user changes language)
+     ============================================================ */
+  document.addEventListener('calcify:langchange', function (e) {
+    var newCur = LANG_CURRENCY[e.detail.lang];
+    if (newCur) applyCurrency(newCur, { setDefaults: true });
+  });
+
+  /* ============================================================
+     NEWSLETTER
+     ============================================================ */
+  document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var emailIn = form.querySelector('input[type="email"]');
+      var msg = form.querySelector('[data-newsletter-msg]');
+      if (!emailIn || !emailIn.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailIn.value)) {
+        if (emailIn) {
+          emailIn.classList.add('border-red-400');
+          emailIn.focus();
+          window.setTimeout(function () { emailIn.classList.remove('border-red-400'); }, 1600);
+        }
+        return;
+      }
+      if (msg) msg.classList.remove('hidden');
+      emailIn.value = '';
+      emailIn.disabled = true;
+      var b = form.querySelector('button[type="submit"]');
+      if (b) { b.disabled = true; b.textContent = 'Subscribed ✓'; }
+    });
+  });
+
+  /* ============================================================
+     SCROLL HANDLERS
+     ============================================================ */
+  var onScroll = function () {
+    if (backToTop) {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove('hidden');
+        backToTop.classList.add('grid');
+      } else {
+        backToTop.classList.add('hidden');
+        backToTop.classList.remove('grid');
+      }
+    }
+    if (header) {
+      if (window.scrollY > 8) header.classList.add('shadow-soft');
+      else header.classList.remove('shadow-soft');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ============================================================
+     FOOTER YEAR
+     ============================================================ */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ============================================================
+     INITIAL SETUP — USD DEFAULT FOR FIRST VISIT
+     ============================================================ */
+  function init() {
+    /* 
+      Priority:
+      1. If user manually saved currency (from previous dropdown change) → use that
+      2. Otherwise → USD (default)
+      
+      Language switcher auto-switch only when user changes language.
+    */
+    var savedCurrency = null;
+    try { savedCurrency = localStorage.getItem('calcify-currency'); } catch (e) {}
+
+    var initial = (savedCurrency && CURRENCIES[savedCurrency]) ? savedCurrency : 'USD';
+
+    if (currencySelect) currencySelect.value = initial;
+    applyCurrency(initial, { setDefaults: true });
+
+    setMode('add');
+    calculate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
+   
