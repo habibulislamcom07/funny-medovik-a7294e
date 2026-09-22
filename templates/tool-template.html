@@ -1,406 +1,1297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="scroll-smooth dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Primary Meta Tags -->
-  <title>{{META_TITLE}}</title>
-  <meta name="description" content="{{META_DESCRIPTION}}">
-  <link rel="canonical" href="https://calcvora.online/tools/{{TOOL_SLUG}}/">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://calcvora.online/tools/{{TOOL_SLUG}}/">
-  <meta property="og:title" content="{{META_TITLE}}">
-  <meta property="og:description" content="{{META_DESCRIPTION}}">
-  <meta property="og:image" content="https://calcvora.online/assets/img/og-image.svg">
-  <meta property="og:site_name" content="CalcVora">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="format-detection" content="telephone=no" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://calcvora.online/tools/{{TOOL_SLUG}}/">
-  <meta name="twitter:title" content="{{META_TITLE}}">
-  <meta name="twitter:description" content="{{META_DESCRIPTION}}">
-  <meta name="twitter:image" content="https://calcvora.online/assets/img/og-image.svg">
+<!-- ============ SEO META ============ -->
+<title>{{TOOL_TITLE}} — Free Online {{TOOL_TITLE}} | Calcify</title>
+<meta name="description" content="{{META_DESCRIPTION}}" />
+<meta name="keywords" content="{{TOOL_TITLE}}, free {{TOOL_TITLE}}, online {{TOOL_TITLE}}, {{CATEGORY}} calculator, calcify {{TOOL_TITLE}}" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Calcify" />
+<link rel="canonical" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+<!-- ============ OPEN GRAPH ============ -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:title" content="{{TOOL_TITLE}} — Free Online Calculator" />
+<meta property="og:description" content="{{META_DESCRIPTION}}" />
+<meta property="og:url" content="https://calcvora.online/tools/{{TOOL_SLUG}}.html" />
+<meta property="og:image" content="https://calcvora.online/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="ar_AR" />
 
-  <!-- Structured Data: WebApplication + FAQPage + Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://calcvora.online/tools/{{TOOL_SLUG}}/#app",
-        "name": "{{TOOL_NAME}}",
-        "url": "https://calcvora.online/tools/{{TOOL_SLUG}}/",
-        "applicationCategory": "{{CATEGORY_SCHEMA}}",
-        "operatingSystem": "All",
-        "description": "{{META_DESCRIPTION}}",
-        "browserRequirements": "Requires JavaScript",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://calcvora.online/tools/{{TOOL_SLUG}}/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://calcvora.online/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{CATEGORY_NAME}}",
-            "item": "https://calcvora.online/#category-{{CATEGORY_SLUG}}"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{TOOL_NAME}}"
+<!-- ============ TWITTER ============ -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{TOOL_TITLE}} — Free Online Calculator" />
+<meta name="twitter:description" content="{{META_DESCRIPTION}}" />
+<meta name="twitter:image" content="https://calcvora.online/assets/og-cover.png" />
+
+<!-- ============ HREFLANG ============ -->
+<link rel="alternate" hreflang="en" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html" />
+<link rel="alternate" hreflang="hi" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html?lang=hi" />
+<link rel="alternate" hreflang="es" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html?lang=es" />
+<link rel="alternate" hreflang="ar" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="https://calcvora.online/tools/{{TOOL_SLUG}}.html" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<!-- ============ FONTS ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.tailwindcss.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<!-- ============ TAILWIND + CONFIG ============ -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',
+            500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'
           }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://calcvora.online/tools/{{TOOL_SLUG}}/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "{{FAQ_1_Q}}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{FAQ_1_A}}"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "{{FAQ_2_Q}}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{FAQ_2_A}}"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "{{FAQ_3_Q}}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{FAQ_3_A}}"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "{{FAQ_4_Q}}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{FAQ_4_A}}"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "{{FAQ_5_Q}}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "{{FAQ_5_A}}"
-            }
-          }
-        ]
+        },
+        fontFamily: {
+          sans: ['Inter','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+          display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.10)',
+          card: '0 4px 24px -6px rgba(16,24,40,.10)',
+          pop:  '0 18px 40px -12px rgba(79,70,229,.35)'
+        },
+        maxWidth: { '8xl': '88rem' }
       }
-    ]
+    }
+  };
+</script>
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('calcify-theme');
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+      var lang = localStorage.getItem('calcify-lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<style>
+  :root { --accent: #4f46e5; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Inter', system-ui, sans-serif; text-rendering: optimizeLegibility; }
+  .font-display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+  ::selection { background: #4f46e5; color: #fff; }
+  .grad-text {
+    background: linear-gradient(100deg,#4f46e5 0%,#7c3aed 45%,#0ea5e9 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
   }
-  </script>
+  .dark .grad-text {
+    background: linear-gradient(100deg,#a5b4fc 0%,#c4b5fd 45%,#7dd3fc 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.18) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.14) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.12) 0px, transparent 50%);
+  }
+  .dark .mesh {
+    background-image:
+      radial-gradient(at 12% 8%, rgba(99,102,241,.22) 0px, transparent 55%),
+      radial-gradient(at 88% 4%, rgba(14,165,233,.16) 0px, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(168,85,247,.14) 0px, transparent 50%);
+  }
+  .ad-slot {
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg,#f8fafc,#f8fafc 10px,#f1f5f9 10px,#f1f5f9 20px);
+    border:1px dashed #cbd5e1; border-radius:14px;
+    color:#94a3b8; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; font-weight:600; overflow:hidden;
+  }
+  .dark .ad-slot {
+    background: repeating-linear-gradient(45deg,#0f172a,#0f172a 10px,#131c31 10px,#131c31 20px);
+    border-color:#1e293b; color:#475569;
+  }
+  .result-card {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 55%, #7c3aed 100%);
+  }
+  /* Add tool-specific styles here */
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; border:2px solid transparent; background-clip: content-box; }
+  .dark ::-webkit-scrollbar-thumb { background:#334155; background-clip: content-box; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+</style>
+
+<!-- ============ WEB APPLICATION SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "{{TOOL_TITLE}}",
+  "url": "https://calcvora.online/tools/{{TOOL_SLUG}}.html",
+  "applicationCategory": "{{SCHEMA_CATEGORY}}",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+  "description": "{{META_DESCRIPTION}}",
+  "inLanguage": ["en","hi","es","ar"],
+  "isAccessibleForFree": true,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "1500",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<!-- ============ BREADCRUMB SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvora.online/" },
+    { "@type": "ListItem", "position": 2, "name": "{{CATEGORY}}", "item": "https://calcvora.online/#all-tools" },
+    { "@type": "ListItem", "position": 3, "name": "{{TOOL_TITLE}}", "item": "https://calcvora.online/tools/{{TOOL_SLUG}}.html" }
+  ]
+}
+</script>
 </head>
-<body>
 
-  <!-- Site Navigation Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand-link" aria-label="CalcVora Home">
-        <span class="brand-logo-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-            <line x1="8" y1="6" x2="16" y2="6"></line>
-            <line x1="16" y1="14" x2="16" y2="18"></line>
-            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"></path>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/85">
+  <div class="mx-auto flex h-16 max-w-8xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+
+    <a href="../index.html" class="flex shrink-0 items-center gap-2.5" aria-label="Calcify home">
+      <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 shadow-pop">
+        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+      </span>
+      <span class="font-display text-[1.35rem] font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+    </a>
+
+    <nav class="ml-4 hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+      <a href="../index.html#all-tools" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">All Tools</a>
+      <a href="../about.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">About</a>
+      <a href="../contact.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white">Contact</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-1.5">
+
+      <button type="button" id="searchTrigger" class="hidden h-10 items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 transition hover:border-brand-300 sm:flex dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400" aria-label="Search tools">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="hidden lg:inline">Search tools…</span>
+      </button>
+
+      <div class="relative" id="langWrap">
+        <button type="button" id="langBtn" class="flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-label="Change language">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <span id="langLabel" class="uppercase">EN</span>
+        </button>
+        <ul id="langMenu" role="listbox" class="invisible absolute right-0 top-full z-50 mt-2 w-44 translate-y-1 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-card transition-all dark:border-slate-800 dark:bg-slate-900">
+          <li><button data-lang="en" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">English <span class="text-xs text-slate-400">EN</span></button></li>
+          <li><button data-lang="hi" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">हिन्दी <span class="text-xs text-slate-400">HI</span></button></li>
+          <li><button data-lang="es" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Español <span class="text-xs text-slate-400">ES</span></button></li>
+          <li><button data-lang="ar" class="lang-opt flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800">العربية <span class="text-xs text-slate-400">AR</span></button></li>
+        </ul>
+      </div>
+
+      <button type="button" id="themeToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-label="Toggle dark mode">
+        <svg class="h-[18px] w-[18px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        <svg class="hidden h-[18px] w-[18px] dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg>
+      </button>
+
+      <a href="../index.html#premium" class="hidden h-10 items-center rounded-xl bg-brand-600 px-4 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700 lg:inline-flex">Go Premium</a>
+
+      <button type="button" id="mobileToggle" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-slate-600 lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 pb-6 pt-4 lg:hidden dark:border-slate-800 dark:bg-slate-950">
+    <nav class="grid grid-cols-2 gap-1.5" aria-label="Mobile navigation">
+      <a href="../index.html#all-tools" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">All Tools</a>
+      <a href="../about.html" class="rounded-xl bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">About</a>
+      <a href="../contact.html" class="col-span-2 rounded-xl bg-slate-50 px-4 py-3 text-center text-sm font-semibold text-slate-700 dark:bg-slate-900 dark:text-slate-200">Contact</a>
+    </nav>
+    <a href="../index.html#premium" class="mt-4 flex items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-pop">Go Premium — Remove Ads</a>
+  </div>
+</header>
+
+<!-- ============ TOP BANNER AD ============ -->
+<div class="mx-auto max-w-8xl px-4 pt-4 sm:px-6 lg:px-8">
+  <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+    <span>Advertisement · 728×90</span>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMBS ============ -->
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-8xl px-4 pt-6 sm:px-6 lg:px-8">
+    <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../index.html#all-tools" class="hover:text-brand-600 dark:hover:text-brand-400">{{CATEGORY}}</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="font-semibold text-slate-800 dark:text-slate-200" aria-current="page">{{TOOL_TITLE}}</li>
+    </ol>
+  </nav>
+
+  <!-- ============ TOOL HERO ============ -->
+  <section class="mx-auto max-w-8xl px-4 pt-6 pb-8 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 dark:border-brand-800 dark:bg-brand-950/50 dark:text-brand-300">
+        {{CATEGORY}} · {{TOOL_BADGE}}
+      </span>
+      <h1 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+        {{TOOL_TITLE_PART_1}} <span class="grad-text">{{TOOL_TITLE_PART_2}}</span>
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+        {{TOOL_SUBTITLE}}
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CALCULATOR ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+
+      <!-- ==================== INPUTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">{{INPUT_PANEL_TITLE}}</h2>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{INPUT_PANEL_SUBTITLE}}</p>
+
+        <!-- ============ TOOL-SPECIFIC INPUT UI GOES HERE ============ -->
+        <!--
+          ═══════════════════════════════════════════════════════════
+          PLACEHOLDER: {{CALCULATOR_UI}}
+
+          Replace this comment block with the tool's input fields.
+
+          Examples:
+          - Finance tools: currency dropdown + amount sliders
+          - Health tools: unit toggles + number inputs
+          - Date tools: date pickers
+          - Text tools: textarea
+          - Converter tools: category tabs + dropdowns
+
+          ═══════════════════════════════════════════════════════════
+        -->
+
+        <div class="rounded-2xl border border-dashed border-slate-300 bg-slate-50/60 p-6 text-center dark:border-slate-700 dark:bg-slate-950/60">
+          <svg class="mx-auto h-10 w-10 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2.5"/>
+            <path d="M9 9h6M9 13h6M9 17h3"/>
           </svg>
-        </span>
-        <span>Calc<span class="brand-accent">Vora</span></span>
-        <span class="brand-tld">online</span>
-      </a>
+          <p class="mt-3 text-sm font-bold text-slate-700 dark:text-slate-300">Calculator inputs go here</p>
+          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Replace the {{CALCULATOR_UI}} placeholder</p>
+        </div>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-menu">
-          <li><a href="/" class="nav-link">All Tools</a></li>
-          <li><a href="/about.html" class="nav-link">About</a></li>
-          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+      </div>
+
+      <!-- ==================== RESULTS PANEL ==================== -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 class="font-display text-lg font-bold text-slate-900 dark:text-white">Result</h2>
+        <p id="resultLabel" class="mt-1 text-sm text-slate-500 dark:text-slate-400">Enter values to see the result</p>
+
+        <!-- Main result card -->
+        <div class="result-card mt-5 rounded-2xl p-6 text-white shadow-pop">
+          <div id="resultCaption" class="text-xs font-bold uppercase tracking-wider text-white/75">Answer</div>
+          <div id="mainResult" class="mt-2 font-display text-3xl font-extrabold tabular-nums sm:text-4xl leading-tight break-words">—</div>
+          <div id="resultSub" class="mt-1 text-xs text-white/75">Enter values above to calculate</div>
+        </div>
+
+        <!-- Breakdown (optional, tool-specific) -->
+        <div id="breakdownGrid" class="mt-6 grid grid-cols-2 gap-3">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Value 1</div>
+            <div id="value1" class="mt-1 font-display text-lg font-extrabold tabular-nums text-slate-900 dark:text-white">—</div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500">Value 2</div>
+            <div id="value2" class="mt-1 font-display text-lg font-extrabold tabular-nums text-brand-600 dark:text-brand-400">—</div>
+          </div>
+        </div>
+
+        <!-- Copy result -->
+        <button type="button" id="copyResult" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="11" height="11" rx="2"/>
+            <path d="M5 15V5a2 2 0 012-2h10"/>
+          </svg>
+          Copy result
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-CONTENT AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[110px] w-full sm:h-[130px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · In-content</span>
+    </div>
+  </div>
+
+    <!-- ============ ABOUT + HOW-TO + FAQ ============ -->
+  <section class="mx-auto max-w-8xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+
+      <!-- ============ LEFT: CONTENT ============ -->
+      <article class="min-w-0">
+
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          About the {{TOOL_TITLE}}
+        </h2>
+        <div class="mt-4 space-y-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
+          <!--
+            ═══════════════════════════════════════════════════════════
+            PLACEHOLDER: {{ABOUT_PARAGRAPH_1}}
+            180-200 words — What the tool does, who it's for, key features.
+            Open with: "The {{TOOL_TITLE}} on Calcify is a free, browser-based tool that..."
+            ═══════════════════════════════════════════════════════════
+          -->
+          <p>
+            {{ABOUT_PARAGRAPH_1}}
+          </p>
+
+          <!--
+            ═══════════════════════════════════════════════════════════
+            PLACEHOLDER: {{ABOUT_PARAGRAPH_2}}
+            180-200 words — Why it's accurate, formulas used, standards followed, comparison with alternatives.
+            ═══════════════════════════════════════════════════════════
+          -->
+          <p>
+            {{ABOUT_PARAGRAPH_2}}
+          </p>
+
+          <!--
+            ═══════════════════════════════════════════════════════════
+            PLACEHOLDER: {{ABOUT_PARAGRAPH_3}}
+            150-180 words — Privacy, accessibility, extra features, CTA.
+            ═══════════════════════════════════════════════════════════
+          -->
+          <p>
+            {{ABOUT_PARAGRAPH_3}}
+          </p>
+        </div>
+
+        <!-- ============ HIGHLIGHT CALLOUT (OPTIONAL) ============ -->
+        <!--
+          ═══════════════════════════════════════════════════════════
+          PLACEHOLDER: {{HIGHLIGHT_CALLOUT}}
+          Optional colored callout box with a key insight, formula or tip.
+          Delete this block if not needed for the tool.
+          ═══════════════════════════════════════════════════════════
+        -->
+        <div class="mt-6 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+          <div class="flex gap-3">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="!mt-0 !mb-1 font-display text-sm font-bold text-slate-900 dark:text-white">{{HIGHLIGHT_TITLE}}</h3>
+              <p class="!mb-0 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                {{HIGHLIGHT_TEXT}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ HOW TO USE ============ -->
+        <h2 class="mt-10 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          How to use the {{TOOL_TITLE}}
+        </h2>
+        <ol class="mt-5 space-y-4">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">1</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">{{HOW_TO_STEP_1_TITLE}}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {{HOW_TO_STEP_1_BODY}}
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">2</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">{{HOW_TO_STEP_2_TITLE}}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {{HOW_TO_STEP_2_BODY}}
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">3</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">{{HOW_TO_STEP_3_TITLE}}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {{HOW_TO_STEP_3_BODY}}
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">4</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">{{HOW_TO_STEP_4_TITLE}}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {{HOW_TO_STEP_4_BODY}}
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">5</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-slate-900 dark:text-white">{{HOW_TO_STEP_5_TITLE}}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {{HOW_TO_STEP_5_BODY}}
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- ============ FAQ (EXACTLY 7 QUESTIONS) ============ -->
+        <h2 class="mt-12 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+          Frequently asked questions
+        </h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
+          The seven questions people ask us most about {{TOOL_TITLE_LOWERCASE}}.
+        </p>
+
+        <div class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
+
+          <details class="group p-5" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_1_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_1_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_2_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_2_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_3_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_3_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_4_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_4_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_5_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_5_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_6_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_6_A}}
+            </p>
+          </details>
+
+          <details class="group p-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-[15px] font-bold text-slate-900 dark:text-white">
+              {{FAQ_7_Q}}
+              <svg class="h-5 w-5 shrink-0 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              {{FAQ_7_A}}
+            </p>
+          </details>
+
+        </div>
+
+      </article>
+
+      <!-- ============ SIDEBAR (desktop) ============ -->
+      <aside class="hidden lg:block" aria-label="Sidebar">
+        <div class="sticky top-24 space-y-5">
+
+          <div class="ad-slot h-[250px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×250</span>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">🔥 Trending this week</h2>
+            <ol class="mt-3.5 space-y-0.5">
+              <li><a href="emi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">1</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">EMI Calculator</span></a></li>
+              <li><a href="sip-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">2</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">SIP Calculator</span></a></li>
+              <li><a href="gst-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">3</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">GST Calculator</span></a></li>
+              <li><a href="bmi-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">4</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">BMI Calculator</span></a></li>
+              <li><a href="age-calculator.html" class="flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-slate-50 dark:hover:bg-slate-800"><span class="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">5</span><span class="truncate text-sm font-semibold text-slate-700 dark:text-slate-200">Age Calculator</span></a></li>
+            </ol>
+          </div>
+
+          <div class="rounded-2xl border border-brand-200 bg-brand-50/60 p-5 dark:border-brand-900 dark:bg-brand-950/30">
+            <div class="flex items-center gap-2">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>
+              </span>
+              <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">Go Premium</h2>
+            </div>
+            <p class="mt-2.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Remove all ads, export results to PDF/CSV and save unlimited calculations.</p>
+            <a href="../index.html#premium" class="mt-3.5 block rounded-xl bg-brand-600 px-4 py-2.5 text-center text-xs font-bold text-white transition hover:bg-brand-700">Remove Ads — ₹99/mo</a>
+          </div>
+
+          <div class="ad-slot h-[600px] w-full" role="complementary" aria-label="Advertisement">
+            <span>Advertisement · 300×600</span>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+<!-- ============ FAQ SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "{{FAQ_1_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_1_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_2_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_2_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_3_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_3_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_4_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_4_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_5_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_5_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_6_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_6_A}}" } },
+    { "@type": "Question", "name": "{{FAQ_7_Q}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_7_A}}" } }
+  ]
+}
+</script>
+<!-- ============ AFFILIATE + RELATED + PREMIUM ============ -->
+<section class="mx-auto max-w-8xl px-4 pb-12 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <div class="min-w-0">
+
+      <!-- ============ AFFILIATE RECOMMENDATION ============ -->
+      <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-soft sm:p-7 dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+        <div class="mb-5 flex items-center gap-2.5">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 16.8 6.6 19.7l1.2-6.1L3.3 9.4l6.1-.8z"/></svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-extrabold text-slate-900 dark:text-white">Recommended for you</h2>
+            <p class="text-xs font-medium text-slate-500">Hand-picked products our readers actually use</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+          <a href="https://www.amazon.in/?tag=calcify-21" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-amber-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-xl dark:bg-amber-950/40">🛒</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-amber-600 dark:text-white">Amazon Deals</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Bestselling products at today's lowest prices with fast delivery.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-amber-600">Shop on Amazon →</span>
+          </a>
+          <a href="https://www.flipkart.com/?affid=calcify" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-50 text-xl dark:bg-blue-950/40">🛍️</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white">Flipkart Picks</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Big Billion savings on electronics, home essentials and more.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-blue-600">Shop on Flipkart →</span>
+          </a>
+          <a href="https://www.hostinger.com/?REFERRALCODE=CALCIFY" rel="nofollow sponsored noopener" target="_blank"
+             class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-brand-400 hover:shadow-card dark:border-slate-800 dark:bg-slate-900">
+            <span class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-xl dark:bg-brand-950/40">🚀</span>
+            <h3 class="font-display text-sm font-bold text-slate-900 group-hover:text-brand-600 dark:text-white">Hostinger Hosting</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600 dark:text-slate-400">Launch your own website from ₹149/month with free SSL.</p>
+            <span class="mt-3 inline-block text-xs font-bold text-brand-600">Get 75% off →</span>
+          </a>
+        </div>
+        <p class="mt-4 text-[11px] leading-relaxed text-slate-400">
+          Disclosure: some links above are affiliate links. If you buy through them we may earn a small commission at no extra cost to you.
+        </p>
+      </div>
+
+      <!-- ============ RELATED TOOLS ============ -->
+      <section class="mt-10">
+        <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related {{CATEGORY}} Tools</h2>
+        <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-400">Explore other calculators in the {{CATEGORY}} category.</p>
+
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+          <!--
+            ═══════════════════════════════════════════════════════════
+            PLACEHOLDER: {{RELATED_TOOLS}}
+            Replace with 6 related tool cards.
+            Each card follows this exact pattern:
+
+            <a href="tool-slug.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+                [SVG ICON]
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">[TOOL NAME]</span>
+                <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+              </span>
+              <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </a>
+
+            Background colors match the category:
+            - Finance: bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400
+            - Health:  bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400
+            - Math:    bg-violet-50 text-violet-600 dark:bg-violet-950/50 dark:text-violet-400
+            - Converter: bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400
+            - Text:    bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400
+            - Date:    bg-cyan-50 text-cyan-600 dark:bg-cyan-950/50 dark:text-cyan-400
+            - Developer: bg-indigo-50 text-indigo-600 dark:bg-indigo-950/50 dark:text-indigo-400
+            - Everyday: bg-teal-50 text-teal-600 dark:bg-teal-950/50 dark:text-teal-400
+            ═══════════════════════════════════════════════════════════
+          -->
+
+          <a href="related-tool-1.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 1</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="related-tool-2.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 2</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="related-tool-3.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 3</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="related-tool-4.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 4</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="related-tool-5.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 5</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <a href="related-tool-6.html" class="tool-card group flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-soft hover:border-brand-300 hover:shadow-card dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg>
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block truncate text-sm font-semibold text-slate-800 group-hover:text-brand-700 dark:text-slate-100">Related Tool 6</span>
+              <span class="block text-[11px] font-medium text-slate-400">{{CATEGORY}}</span>
+            </span>
+            <svg class="h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-brand-500 dark:text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ============ PREMIUM CTA ============ -->
+      <section class="mt-10">
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 p-7 sm:p-10">
+          <div class="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl"></div>
+          <div class="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-white/15">⚡ Calcify Premium</span>
+              <h2 class="mt-4 font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">Remove every ad. Unlock pro features.</h2>
+              <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">Ad-free browsing, unlimited saved calculations, CSV &amp; PDF export and priority support.</p>
+              <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Zero ads, ever</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Unlimited saved results</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> PDF &amp; CSV export</li>
+                <li class="flex items-center gap-2 text-sm text-slate-200"><svg class="h-4 w-4 shrink-0 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Priority email support</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <div class="flex items-end gap-1.5">
+                <span class="font-display text-4xl font-extrabold text-white">₹99</span>
+                <span class="pb-1.5 text-sm font-medium text-slate-400">/ month</span>
+              </div>
+              <p class="mt-1 text-xs font-semibold text-brand-300">or ₹799/year — save 33%</p>
+              <a href="../index.html#premium" class="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-bold text-white shadow-pop transition hover:bg-brand-500">Go Premium — Remove Ads</a>
+              <p class="mt-3 text-center text-[11px] text-slate-400">7-day money-back guarantee · Cancel anytime</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ============ SIDEBAR (mobile spacer) ============ -->
+    <aside class="hidden lg:block" aria-label="Sidebar">
+      <div class="sticky top-24 space-y-5">
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+          <h2 class="font-display text-sm font-extrabold text-slate-900 dark:text-white">📚 Related Tools</h2>
+          <ul class="mt-3.5 space-y-1 text-sm">
+            <li><a href="related-tool-1.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:bg-slate-50 hover:text-brand-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-brand-400">Related Tool 1</a></li>
+            <li><a href="related-tool-2.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:bg-slate-50 hover:text-brand-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-brand-400">Related Tool 2</a></li>
+            <li><a href="related-tool-3.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:bg-slate-50 hover:text-brand-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-brand-400">Related Tool 3</a></li>
+            <li><a href="related-tool-4.html" class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-slate-600 transition hover:bg-slate-50 hover:text-brand-600 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-brand-400">Related Tool 4</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+</section>
+  
+ 
+        <!-- ============ FULL-WIDTH NEWSLETTER ============ -->
+  <section class="mx-auto max-w-8xl px-4 pb-16 sm:px-6 lg:px-8">
+    <div class="mesh overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-soft sm:p-12 dark:border-slate-800 dark:bg-slate-900">
+      <h2 class="font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Never miss a new calculator</h2>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+        Join 48,000+ readers who get a short weekly digest of new tools, money tips and productivity hacks. One email, zero spam.
+      </p>
+      <form class="mx-auto mt-6 flex max-w-md flex-col gap-2.5 sm:flex-row" data-newsletter="footer" novalidate>
+        <label class="sr-only" for="footerEmail">Email address</label>
+        <input id="footerEmail" type="email" required placeholder="you@example.com" autocomplete="email"
+          class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-950" />
+        <button type="submit" class="h-12 rounded-xl bg-brand-600 px-6 text-sm font-bold text-white shadow-pop transition hover:bg-brand-700">Subscribe</button>
+      </form>
+      <p class="mt-3 hidden text-xs font-semibold text-emerald-600" data-newsletter-msg>✓ You're subscribed. Check your inbox!</p>
+      <p class="mt-3 text-[11px] text-slate-400">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER AD ============ -->
+  <div class="mx-auto max-w-8xl px-4 pb-4 sm:px-6 lg:px-8">
+    <div class="ad-slot h-[70px] w-full sm:h-[90px]" role="complementary" aria-label="Advertisement">
+      <span>Advertisement · Footer</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-8xl px-4 py-14 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+      <div>
+        <a href="../index.html" class="flex items-center gap-2.5" aria-label="Calcify home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600">
+            <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h4"/></svg>
+          </span>
+          <span class="font-display text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          150+ free smart calculators &amp; tools. Fast, private, accurate — built for the whole world.
+        </p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" rel="noopener" target="_blank" aria-label="YouTube" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-red-400 hover:text-red-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.8-.5-5.6a2.9 2.9 0 00-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.4a2.9 2.9 0 00-2 2C1 8.2 1 12 1 12s0 3.8.5 5.6a2.9 2.9 0 002 2C5.3 20 12 20 12 20s6.7 0 8.5-.4a2.9 2.9 0 002-2C23 15.8 23 12 23 12zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" rel="noopener" target="_blank" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-blue-400 hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Tool categories">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Categories</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Finance Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Health &amp; Fitness</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Math Calculators</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converters</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Text Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Date &amp; Time</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Developer Tools</a></li>
+          <li><a href="../index.html#all-tools" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Everyday Tools</a></li>
         </ul>
       </nav>
 
-      <div class="header-actions">
-        <button class="btn btn-premium" data-action="open-premium" aria-label="Upgrade to Pro">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          Go Ad-Free
-        </button>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Top Banner Ad Slot -->
-  <div class="container" style="padding-top: 1.5rem;">
-    <div class="ad-slot" data-slot="top-banner" aria-label="Advertisement Banner"></div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <div class="container">
-      
-      <!-- Breadcrumb Navigation -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span class="sep">/</span>
-        <a href="/#category-{{CATEGORY_SLUG}}">{{CATEGORY_NAME}}</a>
-        <span class="sep">/</span>
-        <span class="current" aria-current="page">{{TOOL_NAME}}</span>
+      <nav aria-label="Popular tools">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Popular Tools</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="emi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">EMI Calculator</a></li>
+          <li><a href="sip-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">SIP Calculator</a></li>
+          <li><a href="gst-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">GST Calculator</a></li>
+          <li><a href="bmi-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">BMI Calculator</a></li>
+          <li><a href="age-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Percentage Calculator</a></li>
+          <li><a href="unit-converter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Unit Converter</a></li>
+          <li><a href="word-counter.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Word Counter</a></li>
+        </ul>
       </nav>
 
-      <!-- Page Header -->
-      <header class="page-header">
-        <h1 class="page-title">{{TOOL_NAME}}</h1>
-        <p class="page-description">{{TOOL_INTRO}}</p>
-      </header>
-
-      <!-- Tool Layout with Main Column & Monetization Sidebar -->
-      <div class="tool-page-layout">
-        <div class="tool-main-column">
-          
-          <!-- 1. The Calculator Widget -->
-          <div class="calculator-box" id="calc-app">
-            {{CALCULATOR_UI}}
-          </div>
-
-          <!-- Mid-Content Ad Slot -->
-          <div class="ad-slot" data-slot="mid-content" aria-label="In-Feed Advertisement"></div>
-
-          <!-- 2. How to Use Section -->
-          <section class="content-section" aria-labelledby="how-to-use-title">
-            <h2 id="how-to-use-title" class="section-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-              </svg>
-              How to Use the {{TOOL_NAME}}
-            </h2>
-            <div class="section-body">
-              {{HOW_TO_USE_STEPS}}
-            </div>
-          </section>
-
-          <!-- 3. How It Works / Formula Section -->
-          <section class="content-section" aria-labelledby="formula-title">
-            <h2 id="formula-title" class="section-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>
-              How It Works: Mathematical Formula & Principles
-            </h2>
-            <div class="section-body">
-              {{FORMULA_EXPLANATION}}
-            </div>
-          </section>
-
-          <!-- 4. Five FAQs (Accordion UI) -->
-          <section class="content-section" aria-labelledby="faq-title">
-            <h2 id="faq-title" class="section-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-              Frequently Asked Questions (FAQ)
-            </h2>
-            <div class="faq-accordion" id="tool-faq">
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{{FAQ_1_Q}}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>{{FAQ_1_A}}</p>
-                </div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{{FAQ_2_Q}}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>{{FAQ_2_A}}</p>
-                </div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{{FAQ_3_Q}}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>{{FAQ_3_A}}</p>
-                </div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{{FAQ_4_Q}}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>{{FAQ_4_A}}</p>
-                </div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                  <span>{{FAQ_5_Q}}</span>
-                  <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                  <p>{{FAQ_5_A}}</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- 5. Related Tools Section -->
-          <section class="content-section" aria-labelledby="related-title">
-            <h2 id="related-title" class="section-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-              </svg>
-              You May Also Like
-            </h2>
-            <div class="related-tools-grid">
-              {{RELATED_TOOLS_HTML}}
-            </div>
-          </section>
-
-        </div>
-
-        <!-- Sidebar Column (Desktop Only & Monetization) -->
-        <aside class="tool-sidebar-column">
-          <!-- Sidebar Ad Unit -->
-          <div class="ad-slot" data-slot="sidebar" aria-label="Sidebar Advertisement"></div>
-
-          <!-- Recommended / Affiliate Slot -->
-          <div class="recommended-card">
-            <span class="recommended-card-tag">Featured Utility</span>
-            <h4 class="recommended-card-title">{{RECOMMENDED_TITLE}}</h4>
-            <p class="recommended-card-desc">{{RECOMMENDED_DESC}}</p>
-            <a href="{{RECOMMENDED_URL}}" class="btn btn-secondary btn-sm" style="width: 100%;">Explore Tool</a>
-          </div>
-
-          <!-- Quick Navigation Card -->
-          <div class="recommended-card">
-            <span class="recommended-card-tag">Tool Category</span>
-            <h4 class="recommended-card-title">More in {{CATEGORY_NAME}}</h4>
-            <p class="recommended-card-desc">Calculate quickly with privacy-preserving client-side processing.</p>
-            <a href="/#category-{{CATEGORY_SLUG}}" class="btn btn-secondary btn-sm" style="width: 100%;">Browse Category</a>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Bottom Banner Ad Slot -->
-      <div class="ad-slot" data-slot="bottom-banner" aria-label="Bottom Page Advertisement"></div>
-
+      <nav aria-label="Company">
+        <h2 class="font-display text-sm font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">About Us</a></li>
+          <li><a href="../contact.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Contact</a></li>
+          <li><a href="../privacy.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Privacy Policy</a></li>
+          <li><a href="../terms.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Terms of Use</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Disclaimer</a></li>
+          <li><a href="../sitemap.xml" class="text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">Sitemap</a></li>
+        </ul>
+      </nav>
     </div>
-  </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col-brand">
-          <a href="/" class="brand-link">
-            <span>Calc<span class="brand-accent">Vora</span></span>
-            <span class="brand-tld">online</span>
-          </a>
-          <p>CalcVora provides free, lightning-fast, and precise online calculation utilities designed for finance, health, math, and everyday productivity.</p>
-          <div style="font-size: 0.85rem; color: var(--text-dim);">
-            Direct support: <a href="mailto:CalcVora@gmail.com" style="color: var(--accent-cyan);">CalcVora@gmail.com</a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Calculators</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/tools/age-calculator/">Age Calculator</a></li>
-            <li><a href="/tools/emi-calculator/">EMI Calculator</a></li>
-            <li><a href="/tools/bmi-calculator/">BMI Calculator</a></li>
-            <li><a href="/tools/percentage-calculator/">Percentage Calculator</a></li>
-            <li><a href="/tools/gst-calculator/">GST Calculator</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Company</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/about.html">About CalcVora</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-            <li><a href="/#tools">Explore All Tools</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Legal</h4>
-          <ul class="footer-nav-list">
-            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="/terms.html">Terms of Service</a></li>
-            <li><a href="#" data-action="open-premium">CalcVora Pro</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 CalcVora.online. All rights reserved. Free high-precision web tools.</p>
-        <p>Built with privacy-first client-side computing.</p>
+    <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-7 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+      <p class="text-xs text-slate-500">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" data-lang="en" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">English</button>
+        <button type="button" data-lang="hi" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">हिन्दी</button>
+        <button type="button" data-lang="es" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">Español</button>
+        <button type="button" data-lang="ar" class="lang-opt rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-400 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">العربية</button>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Scripts -->
-  <script src="/assets/js/common.js"></script>
-  <script>
-    // {{TOOL_NAME}} Logic
-    {{CALCULATOR_LOGIC}}
-  </script>
+<!-- Back to top -->
+<button type="button" id="backToTop" aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 hidden h-11 w-11 place-items-center rounded-full bg-brand-600 text-white shadow-pop transition hover:bg-brand-700">
+  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+  <!-- ============ SCRIPTS ============ -->
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     ELEMENT REFS — GLOBAL (same for every tool)
+     ============================================================ */
+  var themeToggle  = document.getElementById('themeToggle');
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileMenu   = document.getElementById('mobileMenu');
+  var langBtn      = document.getElementById('langBtn');
+  var langMenu     = document.getElementById('langMenu');
+  var backToTop    = document.getElementById('backToTop');
+  var header       = document.getElementById('siteHeader');
+
+  /* ============================================================
+     TOAST NOTIFICATION — Global helper
+     Available as window.CalcifyToasts.show(msg, type)
+     ============================================================ */
+  var Toast = {
+    show: function (message, type) {
+      var existing = document.querySelector('.calcify-toast');
+      if (existing) existing.remove();
+
+      var t = document.createElement('div');
+      t.className = 'calcify-toast';
+      var bg = type === 'error' ? '#dc2626' : type === 'warning' ? '#d97706' : '#0f172a';
+      t.style.cssText =
+        'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);' +
+        'background:' + bg + ';color:#fff;padding:12px 20px;border-radius:12px;' +
+        'font-size:14px;font-weight:600;font-family:Inter,sans-serif;' +
+        'box-shadow:0 12px 32px -8px rgba(0,0,0,.35);z-index:9999;' +
+        'opacity:0;transition:opacity .25s, transform .25s;max-width:90vw;pointer-events:none;';
+      t.textContent = message;
+      document.body.appendChild(t);
+
+      requestAnimationFrame(function () {
+        t.style.opacity = '1';
+        t.style.transform = 'translateX(-50%) translateY(0)';
+      });
+      setTimeout(function () {
+        t.style.opacity = '0';
+        t.style.transform = 'translateX(-50%) translateY(20px)';
+        setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+      }, 2200);
+    }
+  };
+  window.CalcifyToasts = Toast;
+
+  /* ============================================================
+     THEME TOGGLE
+     ============================================================ */
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+      document.dispatchEvent(new CustomEvent('calcify:themechange', { detail: { mode: isDark ? 'dark' : 'light' } }));
+    });
+  }
+
+  /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', function () {
+      var isHidden = mobileMenu.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', String(!isHidden));
+    });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (mobileMenu.classList.contains('hidden')) return;
+      if (mobileMenu.contains(e.target) || mobileToggle.contains(e.target)) return;
+      mobileMenu.classList.add('hidden');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ============================================================
+     LANGUAGE DROPDOWN
+     ============================================================ */
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = !langMenu.classList.contains('invisible');
+      langMenu.classList.toggle('invisible', isOpen);
+      langMenu.classList.toggle('opacity-0', isOpen);
+      langMenu.classList.toggle('translate-y-1', isOpen);
+      langBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', function () {
+      langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      langBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      var lang = opt.getAttribute('data-lang');
+      if (!lang) return;
+      try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      var lbl = document.getElementById('langLabel');
+      if (lbl) lbl.textContent = lang.toUpperCase();
+      if (langMenu) langMenu.classList.add('invisible', 'opacity-0', 'translate-y-1');
+      document.dispatchEvent(new CustomEvent('calcify:langchange', { detail: { lang: lang } }));
+    });
+  });
+
+  /* ============================================================
+     NEWSLETTER FORMS
+     ============================================================ */
+  document.querySelectorAll('[data-newsletter]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var emailIn = form.querySelector('input[type="email"]');
+      var msg = form.querySelector('[data-newsletter-msg]');
+      if (!emailIn || !emailIn.value || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailIn.value)) {
+        if (emailIn) {
+          emailIn.classList.add('border-red-400');
+          emailIn.focus();
+          window.setTimeout(function () { emailIn.classList.remove('border-red-400'); }, 1600);
+        }
+        Toast.show('Please enter a valid email address', 'error');
+        return;
+      }
+      if (msg) msg.classList.remove('hidden');
+      emailIn.value = '';
+      emailIn.disabled = true;
+      var b = form.querySelector('button[type="submit"]');
+      if (b) { b.disabled = true; b.textContent = 'Subscribed ✓'; }
+      Toast.show('You are subscribed. Thank you!', 'success');
+    });
+  });
+
+  /* ============================================================
+     BACK TO TOP + HEADER SHADOW
+     ============================================================ */
+  var onScroll = function () {
+    if (backToTop) {
+      if (window.scrollY > 600) {
+        backToTop.classList.remove('hidden');
+        backToTop.classList.add('grid');
+      } else {
+        backToTop.classList.add('hidden');
+        backToTop.classList.remove('grid');
+      }
+    }
+    if (header) {
+      if (window.scrollY > 8) header.classList.add('shadow-soft');
+      else header.classList.remove('shadow-soft');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ============================================================
+     FOOTER YEAR
+     ============================================================ */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ============================================================
+     GLOBAL COPY HELPER (used by tools)
+     ============================================================ */
+  window.CalcifyCopy = function (text) {
+    return new Promise(function (resolve, reject) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(resolve).catch(reject);
+      } else {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          resolve();
+        } catch (e) { reject(e); }
+      }
+    });
+  };
+
+  /* ============================================================
+     GLOBAL NUMBER/MONEY FORMATTERS
+     ============================================================ */
+  window.CalcifyFormat = {
+    number: function (n, decimals) {
+      if (!isFinite(n)) return '—';
+      decimals = (decimals == null) ? 2 : decimals;
+      var s = n.toFixed(decimals);
+      if (s.indexOf('.') !== -1) s = s.replace(/\.?0+$/, '');
+      var parts = s.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return parts.join('.');
+    },
+    money: function (n, currencyCode) {
+      if (!isFinite(n)) return '—';
+      currencyCode = currencyCode || 'INR';
+      var locale = currencyCode === 'INR' ? 'en-IN' : 'en-US';
+      try {
+        return new Intl.NumberFormat(locale, {
+          style: 'currency',
+          currency: currencyCode,
+          maximumFractionDigits: 0
+        }).format(Math.round(n));
+      } catch (e) {
+        return currencyCode + ' ' + Math.round(n);
+      }
+    }
+  };
+
+})();
+</script>
+
+  <!-- ============ TOOL-SPECIFIC JAVASCRIPT ============ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║                                                          ║
+     ║   PLACEHOLDER: {{CALCULATOR_JS}}                         ║
+     ║                                                          ║
+     ║   Replace this entire IIFE with the tool's specific      ║
+     ║   JavaScript logic. Below is a working example for a     ║
+     ║   simple generic calculator — use it as a starting       ║
+     ║   pattern.                                               ║
+     ║                                                          ║
+     ╚══════════════════════════════════════════════════════════╝
+  ============================================================ */
+
+  /* ------------------------------------------------------------
+     ELEMENT REFS — Tool-specific (change per tool)
+     ------------------------------------------------------------ */
+  var inputEls = document.querySelectorAll('[data-calc-input]');
+  var mainResult = document.getElementById('mainResult');
+  var resultLabel = document.getElementById('resultLabel');
+  var resultSub = document.getElementById('resultSub');
+  var value1El = document.getElementById('value1');
+  var value2El = document.getElementById('value2');
+  var copyBtn = document.getElementById('copyResult');
+
+  if (!mainResult) return;
+
+  var lastResult = null;
+
+  /* ------------------------------------------------------------
+     MAIN CALCULATION FUNCTION
+     Replace the formula below with your tool's logic
+     ------------------------------------------------------------ */
+  function calculate() {
+    /* Read input values */
+    var values = {};
+    inputEls.forEach(function (el) {
+      var key = el.name || el.id;
+      if (!key) return;
+      values[key] = el.type === 'checkbox' ? el.checked : el.value;
+    });
+
+    /* ═══════════════════════════════════════════════════════════
+       REPLACE BELOW: YOUR TOOL FORMULA
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Example: sum of two numbers */
+    var a = parseFloat(values.inputA) || 0;
+    var b = parseFloat(values.inputB) || 0;
+    var result = a + b;
+
+    /* ═══════════════════════════════════════════════════════════
+       END OF FORMULA
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Render */
+    resultLabel.textContent = 'Result for ' + a + ' and ' + b;
+    mainResult.textContent = window.CalcifyFormat.number(result, 2);
+    resultSub.textContent = a + ' + ' + b + ' = ' + result;
+
+    value1El.textContent = window.CalcifyFormat.number(a, 2);
+    value2El.textContent = window.CalcifyFormat.number(b, 2);
+
+    /* Save result for copy */
+    lastResult = {
+      a: a,
+      b: b,
+      result: result
+    };
+  }
+
+  /* ------------------------------------------------------------
+     INPUT EVENTS — Live calculation
+     ------------------------------------------------------------ */
+  inputEls.forEach(function (el) {
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+
+  /* ------------------------------------------------------------
+     COPY RESULT
+     ------------------------------------------------------------ */
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      if (!lastResult) {
+        window.CalcifyToasts.show('Nothing to copy yet', 'warning');
+        return;
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+         REPLACE BELOW: TEXT TO COPY FOR YOUR TOOL
+         ═══════════════════════════════════════════════════════════ */
+      var text =
+        'Calculation Result\n' +
+        '-----------------------\n' +
+        'Input A: ' + lastResult.a + '\n' +
+        'Input B: ' + lastResult.b + '\n' +
+        'Result: ' + lastResult.result + '\n\n' +
+        'Calculated at: https://calcvora.online/tools/{{TOOL_SLUG}}.html';
+
+      window.CalcifyCopy(text).then(function () {
+        window.CalcifyToasts.show('Result copied to clipboard', 'success');
+      }).catch(function () {
+        window.CalcifyToasts.show('Copy failed', 'error');
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------
+     INIT — Run calculation on page load
+     ------------------------------------------------------------ */
+  calculate();
+
+})();
+</script>
+
 </body>
 </html>
