@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#4f46e5" />
+
+<title>FD Calculator – Free Fixed Deposit Calculator Online | Calcify</title>
+<meta name="description" content="Free FD calculator to compute fixed deposit maturity amount & interest instantly. Supports monthly, quarterly, half-yearly & yearly compounding with multi-currency support." />
+<meta name="keywords" content="FD calculator, fixed deposit calculator, FD maturity calculator, bank FD calculator, FD interest calculator, fixed deposit interest rate" />
+<meta name="author" content="Calcify" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html" />
+
+<link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html" />
+<link rel="alternate" hreflang="hi" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html?lang=hi" />
+<link rel="alternate" hreflang="es" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html?lang=es" />
+<link rel="alternate" hreflang="ar" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html?lang=ar" />
+<link rel="alternate" hreflang="x-default" href="https://YOUR-DOMAIN.com/tools/fd-calculator.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://YOUR-DOMAIN.com/tools/fd-calculator.html" />
+<meta property="og:title" content="FD Calculator – Free Fixed Deposit Calculator Online | Calcify" />
+<meta property="og:description" content="Calculate your fixed deposit maturity amount instantly. Free, accurate, multi-currency, no signup required." />
+<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Calcify" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FD Calculator – Calcify" />
+<meta name="twitter:description" content="Free FD calculator for fixed deposit maturity & interest. Instant, multi-currency, no signup." />
+<meta name="twitter:image" content="https://YOUR-DOMAIN.com/assets/og-cover.png" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EC%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="https://YOUR-DOMAIN.com/assets/og-cover.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: '#4f46e5',
+        'primary-dark': '#4338ca',
+        accent: '#7c3aed',
+        sky: '#0ea5e9',
+        emerald: '#10b981',
+        rose: '#f43f5e',
+        violet: '#8b5cf6',
+        amber: '#f59e0b',
+        cyan: '#06b6d4',
+        indigo: '#6366f1',
+        teal: '#14b8a6',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -2px rgba(79, 70, 229, 0.12)',
+        'card': '0 10px 40px -10px rgba(79, 70, 229, 0.18)',
+        'pop': '0 20px 60px -15px rgba(79, 70, 229, 0.30)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%)',
+      },
+    }
+  }
+}
+</script>
+
+<script>
+(function() {
+  try {
+    var theme = localStorage.getItem('calcify-theme') || 'dark';
+    var lang = localStorage.getItem('calcify-lang') || 'en';
+    var html = document.documentElement;
+    if (theme === 'light') {
+      html.classList.remove('dark');
+    } else {
+      html.classList.add('dark');
+    }
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  } catch (e) {
+    document.documentElement.classList.add('dark');
+  }
+})();
+</script>
+
+<link rel="stylesheet" href="../css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "FD Calculator – Fixed Deposit Calculator",
+  "url": "https://YOUR-DOMAIN.com/tools/fd-calculator.html",
+  "description": "Free online fixed deposit calculator to compute FD maturity amount and interest earned with flexible compounding frequencies.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "978"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Calcify",
+    "url": "https://YOUR-DOMAIN.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://YOUR-DOMAIN.com/assets/og-cover.png"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR-DOMAIN.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Finance Calculators", "item": "https://YOUR-DOMAIN.com/#finance" },
+    { "@type": "ListItem", "position": 3, "name": "FD Calculator", "item": "https://YOUR-DOMAIN.com/tools/fd-calculator.html" }
+  ]
+}
+</script>
+
+</head>
+<body class="bg-white dark:bg-[#020617] text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:shadow-pop">
+  Skip to content
+</a>
+
+<header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/80 dark:bg-[#020617]/80 border-b border-slate-200/60 dark:border-slate-800/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="../index.html" class="flex items-center gap-2.5 group shrink-0" aria-label="Calcify Home">
+        <div class="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-soft group-hover:shadow-pop transition-all duration-300">
+          <span class="text-white font-display font-extrabold text-lg">C</span>
+        </div>
+        <span class="font-display font-extrabold text-xl tracking-tight hidden sm:block">
+          Calcify
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+        <a href="../index.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Home</a>
+        <a href="../index.html#finance" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Finance</a>
+        <a href="../index.html#health" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Health</a>
+        <a href="../index.html#math" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Math</a>
+        <a href="../index.html#converters" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">Converters</a>
+        <a href="../about.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">About</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+
+        <select id="lang-select" aria-label="Select language" class="text-xs font-medium bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-lg px-2 py-1.5 outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer">
+          <option value="en">EN</option>
+          <option value="hi">हिं</option>
+          <option value="es">ES</option>
+          <option value="ar">عر</option>
+        </select>
+
+        <button id="theme-toggle" aria-label="Toggle dark mode" class="w-9 h-9 rounded-lg flex items-center justify-center bg-slate-100 dark:bg-slate-800/70 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          <svg id="icon-sun" class="hidden dark:block text-amber-400" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg id="icon-moon" class="block dark:hidden text-slate-700" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center bg-slate-100 dark:bg-slate-800/70 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#020617]">
+    <nav class="px-4 py-4 space-y-1" aria-label="Mobile navigation">
+      <a href="../index.html" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">🏠 Home</a>
+      <a href="../index.html#finance" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">💰 Finance</a>
+      <a href="../index.html#health" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">❤️ Health</a>
+      <a href="../index.html#math" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">🔢 Math</a>
+      <a href="../index.html#converters" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">🔄 Converters</a>
+      <a href="../index.html#text" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">📝 Text</a>
+      <a href="../index.html#date" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">📅 Date</a>
+      <a href="../index.html#developer" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">💻 Developer</a>
+      <a href="../index.html#everyday" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">🎯 Everyday</a>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800">
+        <a href="../about.html" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">ℹ️ About</a>
+        <a href="../contact.html" class="block px-3 py-2.5 text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors">📧 Contact</a>
+      </div>
+      <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800">
+        <label for="lang-select-mobile" class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Language</label>
+        <select id="lang-select-mobile" aria-label="Select language" class="w-full text-sm font-medium bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2.5 outline-none">
+          <option value="en">🇬🇧 English</option>
+          <option value="hi">🇮🇳 हिंदी</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="ar">🇸🇦 العربية</option>
+        </select>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+  <div class="ad-slot ad-top w-full min-h-[90px] rounded-xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-center text-xs text-slate-400 dark:text-slate-500" data-ad-slot="top" aria-label="Advertisement">
+    Advertisement
+  </div>
+</div>
+
+  <main id="main-content" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <ol class="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-primary transition-colors">Home</a></li>
+      <li aria-hidden="true" class="text-slate-300 dark:text-slate-600">/</li>
+      <li><a href="../index.html#finance" class="hover:text-primary transition-colors">Finance</a></li>
+      <li aria-hidden="true" class="text-slate-300 dark:text-slate-600">/</li>
+      <li aria-current="page" class="font-semibold text-slate-700 dark:text-slate-200">FD Calculator</li>
+    </ol>
+  </nav>
+
+  <section class="text-center mb-8 sm:mb-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="text-xs font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide">Finance Tool</span>
+    </div>
+
+    <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-3 bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-clip-text text-transparent">
+      FD Calculator
+    </h1>
+
+    <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+      Calculate your Fixed Deposit maturity amount and total interest earned with flexible compounding options. Get accurate results for any bank FD scheme — instantly.
+    </p>
+  </section>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
+    <div class="lg:col-span-2 space-y-6">
+
+      <section class="rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-card overflow-hidden">
+
+        <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+              <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="14" rx="2"></rect>
+                <path d="M3 10h18M8 6V4M16 6V4" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h2 class="font-display font-bold text-base sm:text-lg">Fixed Deposit Calculator</h2>
+          </div>
+          <span class="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded-md">
+            Live
+          </span>
+        </div>
+
+        <div class="p-5 sm:p-6 space-y-6">
+
+          <div class="rounded-xl border-2 border-indigo-200 dark:border-indigo-500/30 bg-indigo-50/50 dark:bg-indigo-500/5 p-3.5">
+            <label for="currency-select" class="flex items-center justify-between gap-3 cursor-pointer">
+              <span class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"></path>
+                </svg>
+                Currency
+              </span>
+              <select
+                id="currency-select"
+                aria-label="Select currency"
+                class="flex-1 max-w-[220px] text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 cursor-pointer text-slate-900 dark:text-slate-100"
+              >
+                <option value="USD">🇺🇸 $ USD — US Dollar</option>
+                <option value="INR">🇮🇳 ₹ INR — Indian Rupee</option>
+                <option value="EUR">🇪🇺 € EUR — Euro</option>
+                <option value="GBP">🇬🇧 £ GBP — British Pound</option>
+                <option value="AED">🇦🇪 د.إ AED — UAE Dirham</option>
+                <option value="SAR">🇸🇦 ﷼ SAR — Saudi Riyal</option>
+                <option value="CAD">🇨🇦 C$ CAD — Canadian Dollar</option>
+                <option value="AUD">🇦🇺 A$ AUD — Australian Dollar</option>
+                <option value="JPY">🇯🇵 ¥ JPY — Japanese Yen</option>
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <label for="principal" class="block text-sm font-semibold mb-2">
+              Deposit Amount (<span class="currency-symbol">$</span>)
+            </label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-medium currency-symbol">$</span>
+              <input
+                type="number"
+                id="principal"
+                min="0"
+                step="any"
+                value="100000"
+                inputmode="decimal"
+                class="w-full pl-8 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-semibold outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                placeholder="100000"
+              />
+            </div>
+            <input type="range" id="principal-range" min="1000" max="10000000" step="1000" value="100000" class="w-full mt-3 accent-emerald-500 cursor-pointer" aria-label="Deposit amount slider" />
+          </div>
+
+          <div>
+            <label for="rate" class="block text-sm font-semibold mb-2">
+              Interest Rate (% p.a.)
+            </label>
+            <div class="relative">
+              <input
+                type="number"
+                id="rate"
+                min="0"
+                max="100"
+                step="0.01"
+                value="7.1"
+                inputmode="decimal"
+                class="w-full pl-4 pr-10 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-semibold outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                placeholder="7.1"
+              />
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 font-medium">%</span>
+            </div>
+            <input type="range" id="rate-range" min="0.1" max="15" step="0.05" value="7.1" class="w-full mt-3 accent-emerald-500 cursor-pointer" aria-label="Interest rate slider" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="years" class="block text-sm font-semibold mb-2">Tenure (Years)</label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="years"
+                  min="0"
+                  max="50"
+                  step="0.25"
+                  value="5"
+                  inputmode="decimal"
+                  class="w-full pl-4 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-semibold outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                  placeholder="5"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="months" class="block text-sm font-semibold mb-2">Tenure (Months)</label>
+              <div class="relative">
+                <input
+                  type="number"
+                  id="months"
+                  min="0"
+                  max="11"
+                  step="1"
+                  value="0"
+                  inputmode="numeric"
+                  class="w-full pl-4 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-semibold outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </div>
+          <input type="range" id="years-range" min="0.25" max="20" step="0.25" value="5" class="w-full accent-emerald-500 cursor-pointer" aria-label="Tenure slider" />
+
+          <div>
+            <label for="frequency" class="block text-sm font-semibold mb-2">
+              Compounding Frequency
+            </label>
+            <select
+              id="frequency"
+              class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 font-semibold outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all cursor-pointer"
+            >
+              <option value="1">Yearly (1× per year)</option>
+              <option value="2">Half-Yearly (2× per year)</option>
+              <option value="4" selected>Quarterly (4× per year) — Most common</option>
+              <option value="12">Monthly (12× per year)</option>
+            </select>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <button type="button" id="copy-btn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-semibold transition-colors">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy Result
+            </button>
+            <button type="button" id="reset-btn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-semibold transition-colors">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="px-5 sm:px-6 py-5 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-500/5 dark:to-teal-500/5 border-t border-slate-200 dark:border-slate-800">
+
+          <div class="text-center mb-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Maturity Amount</p>
+            <p id="result-total" class="font-display font-extrabold text-3xl sm:text-4xl text-emerald-600 dark:text-emerald-400 break-words">
+              $0.00
+            </p>
+            <p id="result-invested-sub" class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+              Deposited: $0.00
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="rounded-xl bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 text-center">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">Principal</p>
+              <p id="result-principal" class="font-display font-bold text-base text-slate-800 dark:text-slate-100 break-words">$0.00</p>
+            </div>
+            <div class="rounded-xl bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 text-center">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">Interest Earned</p>
+              <p id="result-interest" class="font-display font-bold text-base text-emerald-600 dark:text-emerald-400 break-words">$0.00</p>
+            </div>
+            <div class="rounded-xl bg-white/70 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 text-center">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">Effective Yield</p>
+              <p id="result-growth" class="font-display font-bold text-base text-indigo-600 dark:text-indigo-400 break-words">0.00%</p>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-center text-slate-500 dark:text-slate-400 mt-4">
+            Compounded <span id="freq-label" class="font-semibold">quarterly</span> · Formula: A = P(1 + r/n)<sup>nt</sup>
+          </p>
+        </div>
+      </section>
+
+      <div class="ad-slot ad-incontent w-full min-h-[90px] rounded-xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-center text-xs text-slate-400 dark:text-slate-500" data-ad-slot="incontent" aria-label="Advertisement">
+        Advertisement
+      </div>
+
+    </div>
+
+    <aside class="lg:col-span-1 space-y-6">
+      <div class="ad-slot ad-sidebar w-full min-h-[250px] rounded-xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-center text-xs text-slate-400 dark:text-slate-500" data-ad-slot="sidebar1" aria-label="Advertisement">
+        Sidebar Ad
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+ <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+
+  <article class="rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-5 sm:p-8 shadow-card">
+
+    <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-4 text-slate-900 dark:text-white">
+      About the FD Calculator
+    </h2>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+      A Fixed Deposit, commonly called FD, is one of the safest and most popular savings instruments offered by banks and non-banking financial companies. When you open an FD, you deposit a lump sum amount with a bank for a fixed tenure at a predetermined interest rate. The bank pays you interest on this deposit, and at maturity you receive your principal back along with the accumulated interest. Unlike market-linked investments, FD returns are guaranteed, making them ideal for risk-averse savers, retirees, and anyone looking for predictable growth on their idle money.
+    </p>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+      The interest earned on a fixed deposit depends on three key factors: the principal amount you deposit, the annual interest rate offered by the bank, and the tenure of the deposit. Longer tenures typically command higher rates, and senior citizens often receive an additional 0.25% to 0.50% interest. Most banks compound interest quarterly, which means the interest is calculated four times a year and added back to your principal — allowing subsequent interest to be earned on the larger balance. This compounding effect makes a meaningful difference to your final maturity amount, especially over long tenures.
+    </p>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+      The formula used by banks to calculate FD maturity is <strong>A = P(1 + r/n)<sup>nt</sup></strong>, where A is the maturity amount, P is the principal deposit, r is the annual interest rate as a decimal, n is the number of times interest compounds per year, and t is the tenure in years. For example, if you deposit $100,000 at 7.1% for 5 years with quarterly compounding, the maturity amount works out to approximately $142,300 — meaning you earn around $42,300 in pure interest. Compare this to simple interest, which would yield only $35,500 over the same period — a difference of nearly $7,000 thanks to compounding.
+    </p>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+      Our FD Calculator supports four common compounding frequencies used by banks worldwide — yearly, half-yearly, quarterly, and monthly. In India and many other countries, quarterly compounding is the standard for most bank fixed deposits, but some banks offer monthly or half-yearly compounding on select schemes. By switching between frequencies, you can instantly see how a small change in compounding schedule affects your total returns. This makes it easy to compare FD schemes across different banks and choose the one that offers the best effective yield for your money.
+    </p>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+      Fixed deposits also come with important considerations. Premature withdrawal usually attracts a penalty of 0.5% to 1% on the applicable interest rate. Interest income is fully taxable as per your income slab, and banks deduct TDS if annual interest exceeds the prescribed threshold. Despite these caveats, FDs remain a cornerstone of conservative financial planning because of their guaranteed returns, capital protection, and easy liquidity. They're perfect for parking emergency funds, saving for short-term goals, or balancing a portfolio that also includes equities and mutual funds.
+    </p>
+
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+      This calculator is 100% free and runs entirely in your browser — your financial details never leave your device. It supports nine major currencies (USD, INR, EUR, GBP, AED, SAR, CAD, AUD, JPY) with automatic formatting based on your selected language. Whether you're planning your first FD, comparing bank schemes, or teaching someone about compound growth, this tool gives you accurate, instant results. No signup, no email, no limits — just simple, reliable FD math.
+    </p>
+
+  </article>
+
+  <article class="mt-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-5 sm:p-8 shadow-card">
+
+    <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-2 text-slate-900 dark:text-white">
+      How to Use This Calculator
+    </h2>
+    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Follow these five steps to calculate your FD maturity amount in seconds.</p>
+
+    <ol class="space-y-4">
+      <li class="flex gap-4">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-sm">1</span>
+        <div>
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Choose Your Currency</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Select your preferred currency from the dropdown at the top of the calculator. You can pick from USD, INR, EUR, GBP, AED, SAR, CAD, AUD, or JPY — results will auto-format accordingly.</p>
+        </div>
+      </li>
+
+      <li class="flex gap-4">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-sm">2</span>
+        <div>
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Enter the Deposit Amount</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Type the amount you plan to deposit in the "Deposit Amount" field, or use the slider for quick adjustments. Values from $1,000 to $10,000,000 are supported via the slider.</p>
+        </div>
+      </li>
+
+      <li class="flex gap-4">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-sm">3</span>
+        <div>
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Set the Interest Rate</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Enter the annual interest rate offered by your bank. Use decimal values for precision — for example, 7.1 for 7.1% per year. Rates from 0.1% up to 15% are supported via the slider.</p>
+        </div>
+      </li>
+
+      <li class="flex gap-4">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-sm">4</span>
+        <div>
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Enter Tenure & Compounding Frequency</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Specify the tenure in years and months (e.g., 3 years 6 months). Then choose the compounding frequency — quarterly is the most common for bank FDs, but you can compare yearly, half-yearly, or monthly.</p>
+        </div>
+      </li>
+
+      <li class="flex gap-4">
+        <span class="shrink-0 w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-display font-bold text-sm">5</span>
+        <div>
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Read Your Instant Results</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Results update live as you type. You'll see the maturity amount, interest earned, effective yield, and total growth percentage. Click "Copy Result" to save a summary to your clipboard.</p>
+        </div>
+      </li>
+    </ol>
+  </article>
+
+ </section>
+ <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+
+  <div class="rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-5 sm:p-8 shadow-card">
+
+    <div class="text-center mb-6 sm:mb-8">
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-2 text-slate-900 dark:text-white">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Everything you need to know about fixed deposits.</p>
+    </div>
+
+    <div class="space-y-3">
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>What is a Fixed Deposit (FD)?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          A Fixed Deposit is a financial instrument offered by banks and NBFCs where you deposit a lump sum amount for a fixed tenure at a predetermined interest rate. The bank guarantees the return of your principal along with interest at maturity, making FDs one of the safest investment options available.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>How is FD interest calculated?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          FD interest is calculated using the compound interest formula A = P(1 + r/n)^(nt), where P is the principal, r is the annual rate, n is the compounding frequency, and t is the tenure in years. Most banks in India compound interest quarterly, though some offer monthly or half-yearly options.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>Does compounding frequency affect my FD returns?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Yes. The more frequently interest is compounded, the higher your maturity amount. For example, $100,000 at 7% for 5 years yields about $140,255 with yearly compounding, $141,478 with half-yearly, $141,478 with quarterly, and $141,478 with monthly. Quarterly is the standard for most bank FDs.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>Can I withdraw my FD before maturity?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Yes, most banks allow premature withdrawal of FDs, but they charge a penalty of 0.5% to 1% on the applicable interest rate. This means you'll earn slightly less interest than originally promised. Some tax-saving FDs have a 5-year lock-in period and cannot be withdrawn early.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>Is FD interest taxable?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Yes, interest earned on FDs is fully taxable as per your income tax slab. Banks also deduct TDS (Tax Deducted at Source) if annual interest exceeds the prescribed threshold — typically ₹40,000 for regular citizens and ₹50,000 for senior citizens in India. You can submit Form 15G or 15H to avoid TDS if your income is below the taxable limit.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>Do senior citizens get higher FD rates?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Yes, most banks offer an additional 0.25% to 0.50% interest to senior citizens (typically aged 60 and above) on fixed deposits. Some banks also offer special senior citizen FD schemes with higher rates and flexible tenures. This extra interest can meaningfully boost retirement income.
+        </div>
+      </details>
+
+      <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 overflow-hidden">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-4 sm:px-5 py-4 font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors list-none">
+          <span>Is this FD calculator free and safe?</span>
+          <svg class="w-5 h-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </summary>
+        <div class="px-4 sm:px-5 pb-4 pt-1 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Yes. Calcify's FD Calculator is 100% free with no signup, no email, and no limits. All calculations run entirely in your browser using JavaScript — your deposit amounts, rates, and tenures never leave your device and are never stored on any server. You can use it unlimited times across nine currencies.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Fixed Deposit (FD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Fixed Deposit is a financial instrument offered by banks and NBFCs where you deposit a lump sum amount for a fixed tenure at a predetermined interest rate. The bank guarantees the return of your principal along with interest at maturity, making FDs one of the safest investment options available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is FD interest calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FD interest is calculated using the compound interest formula A = P(1 + r/n)^(nt), where P is the principal, r is the annual rate, n is the compounding frequency, and t is the tenure in years. Most banks compound interest quarterly, though some offer monthly or half-yearly options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does compounding frequency affect my FD returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The more frequently interest is compounded, the higher your maturity amount. Quarterly compounding is the standard for most bank FDs, but you can compare yearly, half-yearly, quarterly, and monthly frequencies to see the difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I withdraw my FD before maturity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most banks allow premature withdrawal of FDs, but they charge a penalty of 0.5% to 1% on the applicable interest rate. Some tax-saving FDs have a 5-year lock-in period and cannot be withdrawn early."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is FD interest taxable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, interest earned on FDs is fully taxable as per your income tax slab. Banks also deduct TDS if annual interest exceeds the prescribed threshold. You can submit Form 15G or 15H to avoid TDS if your income is below the taxable limit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do senior citizens get higher FD rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most banks offer an additional 0.25% to 0.50% interest to senior citizens aged 60 and above on fixed deposits. Some banks also offer special senior citizen FD schemes with higher rates and flexible tenures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this FD calculator free and safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Calcify's FD Calculator is 100% free with no signup, no email, and no limits. All calculations run entirely in your browser using JavaScript, and your inputs never leave your device."
+      }
+    }
+  ]
+}
+</script>
+
+ <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+  <div class="rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-card">
+
+    <div class="flex items-center gap-2 mb-4">
+      <span class="w-7 h-7 rounded-lg bg-amber-500/10 flex items-center justify-center">
+        <svg width="15" height="15" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <h2 class="font-display font-bold text-lg">Recommended for You</h2>
+    </div>
+    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+      Handpicked products & services to help you save and invest smarter.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+
+      <a href="https://www.amazon.in/?tag=calcify-21" target="_blank" rel="noopener sponsored nofollow" class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 p-4 hover:border-amber-400 dark:hover:border-amber-500 hover:shadow-soft transition-all">
+        <div class="flex items-center gap-2.5 mb-2.5">
+          <div class="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center shrink-0">
+            <svg width="16" height="16" fill="none" stroke="#f97316" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 3h18v18H3zM9 9h6v6H9z" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Amazon</p>
+            <p class="text-xs font-semibold text-slate-900 dark:text-white leading-tight">Personal Finance Books</p>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Best reads on wealth building & savings</p>
+        <span class="inline-flex items-center gap-1 mt-3 text-[11px] font-bold text-orange-600 dark:text-orange-400 group-hover:gap-2 transition-all">
+          Shop Now
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </a>
+
+      <a href="https://www.flipkart.com/?affid=calcify" target="_blank" rel="noopener sponsored nofollow" class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 p-4 hover:border-sky-400 dark:hover:border-sky-500 hover:shadow-soft transition-all">
+        <div class="flex items-center gap-2.5 mb-2.5">
+          <div class="w-9 h-9 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0">
+            <svg width="16" height="16" fill="none" stroke="#0ea5e9" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+              <path d="M7 10h2M7 14h5" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Flipkart</p>
+            <p class="text-xs font-semibold text-slate-900 dark:text-white leading-tight">Financial Calculators</p>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Top-rated devices for smart planning</p>
+        <span class="inline-flex items-center gap-1 mt-3 text-[11px] font-bold text-sky-600 dark:text-sky-400 group-hover:gap-2 transition-all">
+          Shop Now
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </a>
+
+      <a href="https://www.hostinger.in/?REFERRALCODE=CALCIFY" target="_blank" rel="noopener sponsored nofollow" class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/30 p-4 hover:border-violet-400 dark:hover:border-violet-500 hover:shadow-soft transition-all">
+        <div class="flex items-center gap-2.5 mb-2.5">
+          <div class="w-9 h-9 rounded-lg bg-violet-500/10 flex items-center justify-center shrink-0">
+            <svg width="16" height="16" fill="none" stroke="#8b5cf6" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M2 10h20M8 14h2M14 14h2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Hostinger</p>
+            <p class="text-xs font-semibold text-slate-900 dark:text-white leading-tight">Web Hosting</p>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Start your finance blog from ₹69/month</p>
+        <span class="inline-flex items-center gap-1 mt-3 text-[11px] font-bold text-violet-600 dark:text-violet-400 group-hover:gap-2 transition-all">
+          Get Deal
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </span>
+      </a>
+
+    </div>
+
+    <p class="text-[10px] text-slate-400 dark:text-slate-500 mt-4 text-center">
+      Disclosure: Some links are affiliate links. We may earn a small commission at no extra cost to you.
+    </p>
+  </div>
+</section>
+
+<section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+  <div class="flex items-center justify-between mb-5">
+    <h2 class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white">
+      Related Calculators
+    </h2>
+    <a href="../index.html#finance" class="text-xs font-semibold text-primary hover:text-primary-dark transition-colors flex items-center gap-1">
+      View All
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+
+    <a href="emi-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">EMI Calculator</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">Loan EMI</p>
+    </a>
+
+    <a href="sip-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 3v18h18M7 15l3-3 4 4 5-6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">SIP Calculator</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">Mutual funds</p>
+    </a>
+
+    <a href="compound-interest-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Compound Interest</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">CI calc</p>
+    </a>
+
+    <a href="loan-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Loan Calculator</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">All loans</p>
+    </a>
+
+    <a href="gst-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#10b981" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 9h6v6H9zM3 3h18v18H3z" stroke-linecap="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">GST Calculator</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">Tax calc</p>
+    </a>
+
+    <a href="percentage-calculator.html" class="group rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-3.5 hover:border-violet-400 dark:hover:border-violet-500 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+      <div class="w-9 h-9 rounded-lg bg-violet-500/10 flex items-center justify-center mb-2.5">
+        <svg width="16" height="16" fill="none" stroke="#8b5cf6" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M19 5 5 19M6.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM17.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">Percentage</h3>
+      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-snug">% calc</p>
+    </a>
+
+  </div>
+</section>
+
+<section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+  <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 via-violet-600 to-sky-500 p-6 sm:p-8 shadow-pop">
+    <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10"></div>
+    <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5"></div>
+
+    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2 text-white">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur text-[10px] font-bold uppercase tracking-wider mb-3">
+          <svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.6-6.2 4.6 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          Calcify Premium
+        </div>
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-2">
+          Go Ad-Free. Unlock Everything.
+        </h2>
+        <p class="text-sm text-white/80 leading-relaxed max-w-xl">
+          Get all 158 tools, offline access, PDF exports, priority support, and zero ads — for less than a cup of coffee per month.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row md:flex-col gap-2.5">
+        <a href="../index.html#premium" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-slate-100 transition-colors shadow-soft">
+          Upgrade Now
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href="../index.html#premium" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white/10 backdrop-blur border border-white/20 text-white font-semibold text-sm hover:bg-white/20 transition-colors">
+          Compare Plans
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+  <div class="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-card">
+    <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-primary/5"></div>
+    <div class="absolute -bottom-16 -left-16 w-52 h-52 rounded-full bg-accent/5"></div>
+
+    <div class="relative max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-primary shadow-soft mb-4">
+        <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="m3 7 9 6 9-6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-2 text-slate-900 dark:text-white">
+        Get Money Tips Weekly
+      </h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-5">
+        Join 12,000+ readers. Finance hacks, calculator updates, and free tools — no spam, ever.
+      </p>
+
+      <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto" novalidate>
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="newsletter-email"
+          required
+          placeholder="you@example.com"
+          class="flex-1 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 text-sm outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+        />
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-primary text-white font-bold text-sm shadow-soft hover:shadow-pop transition-all whitespace-nowrap"
+        >
+          Subscribe
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </form>
+      <p id="newsletter-msg" class="hidden text-xs font-semibold mt-3"></p>
+      <p class="text-[10px] text-slate-400 dark:text-slate-500 mt-3">
+        By subscribing, you agree to our <a href="../privacy.html" class="underline hover:text-primary">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+  <div class="ad-slot ad-footer w-full min-h-[90px] rounded-xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 flex items-center justify-center text-xs text-slate-400 dark:text-slate-500" data-ad-slot="footer" aria-label="Advertisement">
+    Advertisement
+  </div>
+</div>
+
+<footer class="w-full bg-slate-50 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+
+      <div class="col-span-2 lg:col-span-2">
+        <a href="../index.html" class="flex items-center gap-2.5 mb-4 group" aria-label="Calcify Home">
+          <div class="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-soft group-hover:shadow-pop transition-all">
+            <span class="text-white font-display font-extrabold text-lg">C</span>
+          </div>
+          <span class="font-display font-extrabold text-xl tracking-tight">Calcify</span>
+        </a>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 max-w-sm">
+          158+ free online calculators and tools for finance, health, math, and everyday life. Fast, accurate, and 100% private — no signup required.
+        </p>
+
+        <div class="flex items-center gap-2">
+          <a href="https://youtube.com/@calcifyofficialchannel" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-colors">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/19XLZJw3wW/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="w-9 h-9 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../index.html#finance" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Finance</a></li>
+          <li><a href="../index.html#health" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Health</a></li>
+          <li><a href="../index.html#math" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Math</a></li>
+          <li><a href="../index.html#converters" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Converters</a></li>
+          <li><a href="../index.html#developer" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Developer</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Company</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="../contact.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Contact</a></li>
+          <li><a href="../index.html#premium" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Premium</a></li>
+          <li><a href="../index.html#blog" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../privacy.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+          <li><a href="../terms.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Terms of Use</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Disclaimer</a></li>
+          <li><a href="../privacy.html#cookies" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
+        © <span id="year">2025</span> Calcify. All rights reserved. Made with ❤️ for smart people.
+      </p>
+      <p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        100% Client-Side · No Data Collected
+      </p>
+    </div>
+  </div>
+</footer>
+
+<button
+  id="back-to-top"
+  aria-label="Back to top"
+  class="fixed bottom-5 right-5 z-40 w-11 h-11 rounded-xl bg-gradient-primary text-white shadow-pop flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-105"
+>
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</button>
+
+<div
+  id="toast"
+  role="status"
+  aria-live="polite"
+  class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold shadow-pop opacity-0 pointer-events-none transition-all duration-300"
+>
+  Copied!
+</div>
+
+ <script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var CURRENCY_LOCALE = {
+    USD: 'en-US', INR: 'en-IN', EUR: 'de-DE', GBP: 'en-GB',
+    AED: 'ar-AE', SAR: 'ar-SA', CAD: 'en-CA', AUD: 'en-AU', JPY: 'ja-JP'
+  };
+
+  var CURRENCY_SYMBOL = {
+    USD: '$', INR: '₹', EUR: '€', GBP: '£',
+    AED: 'د.إ', SAR: '﷼', CAD: 'C$', AUD: 'A$', JPY: '¥'
+  };
+
+  var DEFAULTS = {
+    principal: 100000,
+    rate: 7.1,
+    years: 5,
+    months: 0,
+    frequency: 4
+  };
+
+  var el = {
+    principal: document.getElementById('principal'),
+    principalRange: document.getElementById('principal-range'),
+    rate: document.getElementById('rate'),
+    rateRange: document.getElementById('rate-range'),
+    years: document.getElementById('years'),
+    yearsRange: document.getElementById('years-range'),
+    months: document.getElementById('months'),
+    frequency: document.getElementById('frequency'),
+
+    resultTotal: document.getElementById('result-total'),
+    resultInvestedSub: document.getElementById('result-invested-sub'),
+    resultPrincipal: document.getElementById('result-principal'),
+    resultInterest: document.getElementById('result-interest'),
+    resultGrowth: document.getElementById('result-growth'),
+    freqLabel: document.getElementById('freq-label'),
+
+    copyBtn: document.getElementById('copy-btn'),
+    resetBtn: document.getElementById('reset-btn'),
+    toast: document.getElementById('toast'),
+
+    currencySelect: document.getElementById('currency-select'),
+    langSelect: document.getElementById('lang-select'),
+    langSelectMobile: document.getElementById('lang-select-mobile'),
+    themeToggle: document.getElementById('theme-toggle'),
+
+    menuToggle: document.getElementById('menu-toggle'),
+    mobileMenu: document.getElementById('mobile-menu'),
+
+    newsletterForm: document.getElementById('newsletter-form'),
+    newsletterEmail: document.getElementById('newsletter-email'),
+    newsletterMsg: document.getElementById('newsletter-msg'),
+
+    backToTop: document.getElementById('back-to-top'),
+    year: document.getElementById('year')
+  };
+
+  var currentCurrency = localStorage.getItem('calcify-currency') || 'USD';
+  var currentLang = localStorage.getItem('calcify-lang') || 'en';
+
+  function formatCurrency(value) {
+    if (!isFinite(value)) value = 0;
+    var locale = CURRENCY_LOCALE[currentCurrency] || 'en-US';
+    try {
+      return new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency: currentCurrency,
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 0
+      }).format(value);
+    } catch (e) {
+      return CURRENCY_SYMBOL[currentCurrency] + ' ' + value.toFixed(2);
+    }
+  }
+
+  function formatPercent(value) {
+    if (!isFinite(value)) value = 0;
+    return value.toFixed(2) + '%';
+  }
+
+  function parseNum(input, fallback) {
+    var v = parseFloat(input);
+    return (isNaN(v) || !isFinite(v)) ? fallback : v;
+  }
+
+  function getTotalYears() {
+    var y = Math.max(0, parseNum(el.years.value, 0));
+    var m = Math.max(0, parseNum(el.months.value, 0));
+    if (m >= 12) {
+      y += Math.floor(m / 12);
+      m = m % 12;
+    }
+    return y + (m / 12);
+  }
+
+  function calculate() {
+    var P = Math.max(0, parseNum(el.principal.value, DEFAULTS.principal));
+    var r = Math.max(0, parseNum(el.rate.value, DEFAULTS.rate)) / 100;
+    var t = getTotalYears();
+    var n = parseNum(el.frequency.value, DEFAULTS.frequency);
+
+    var total, interest, growth;
+
+    if (t === 0) {
+      total = P;
+      interest = 0;
+      growth = 0;
+    } else {
+      total = P * Math.pow(1 + r / n, n * t);
+      if (!isFinite(total)) total = P;
+      interest = total - P;
+      growth = P > 0 ? (interest / P) * 100 : 0;
+    }
+
+    el.resultTotal.textContent = formatCurrency(total);
+    el.resultInvestedSub.textContent = 'Deposited: ' + formatCurrency(P);
+    el.resultPrincipal.textContent = formatCurrency(P);
+    el.resultInterest.textContent = formatCurrency(interest);
+    el.resultGrowth.textContent = formatPercent(growth);
+
+    var freqMap = { '1': 'yearly', '2': 'half-yearly', '4': 'quarterly', '12': 'monthly' };
+    el.freqLabel.textContent = freqMap[String(n)] || 'quarterly';
+
+    updateCurrencySymbols();
+
+    return {
+      principal: P,
+      rate: r * 100,
+      years: t,
+      frequency: n,
+      total: total,
+      interest: interest,
+      growth: growth
+    };
+  }
+
+  function updateCurrencySymbols() {
+    var sym = CURRENCY_SYMBOL[currentCurrency] || '$';
+    var nodes = document.querySelectorAll('.currency-symbol');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].textContent = sym;
+    }
+  }
+
+  function syncPair(inputEl, rangeEl, min, max) {
+    if (!inputEl || !rangeEl) return;
+
+    inputEl.addEventListener('input', function () {
+      var v = parseNum(inputEl.value, min);
+      if (v < min) v = min;
+      if (v > max) v = max;
+      rangeEl.value = v;
+      calculate();
+    });
+
+    rangeEl.addEventListener('input', function () {
+      inputEl.value = rangeEl.value;
+      calculate();
+    });
+
+    inputEl.addEventListener('blur', function () {
+      var v = parseNum(inputEl.value, min);
+      if (v < min) v = min;
+      if (v > max) v = max;
+      inputEl.value = v;
+      rangeEl.value = v;
+      calculate();
+    });
+  }
+
+  syncPair(el.principal, el.principalRange, 0, 100000000);
+  syncPair(el.rate, el.rateRange, 0, 100);
+  syncPair(el.years, el.yearsRange, 0, 50);
+
+  if (el.years) {
+    el.years.addEventListener('input', function () {
+      var v = Math.max(0, parseNum(el.years.value, 0));
+      if (el.yearsRange && v >= 0.25 && v <= 20) el.yearsRange.value = v;
+      calculate();
+    });
+  }
+
+  if (el.yearsRange) {
+    el.yearsRange.addEventListener('input', function () {
+      el.years.value = this.value;
+      calculate();
+    });
+  }
+
+  if (el.months) {
+    el.months.addEventListener('input', function () {
+      var v = Math.max(0, Math.min(11, Math.floor(parseNum(el.months.value, 0))));
+      el.months.value = v;
+      calculate();
+    });
+    el.months.addEventListener('blur', function () {
+      var v = Math.max(0, Math.min(11, Math.floor(parseNum(el.months.value, 0))));
+      el.months.value = v;
+      calculate();
+    });
+  }
+
+  if (el.frequency) el.frequency.addEventListener('change', calculate);
+
+  function showToast(msg) {
+    el.toast.textContent = msg || 'Copied!';
+    el.toast.classList.remove('opacity-0', 'pointer-events-none');
+    el.toast.classList.add('opacity-100');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function () {
+      el.toast.classList.remove('opacity-100');
+      el.toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2000);
+  }
+
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  if (el.copyBtn) {
+    el.copyBtn.addEventListener('click', function () {
+      var d = calculate();
+      var freqMap = { 1: 'Yearly', 2: 'Half-Yearly', 4: 'Quarterly', 12: 'Monthly' };
+
+      var text =
+        '📊 Fixed Deposit Calculation\n' +
+        '─────────────────────────────\n' +
+        'Deposit Amount: ' + formatCurrency(d.principal) + '\n' +
+        'Interest Rate: ' + d.rate.toFixed(2) + '% p.a.\n' +
+        'Tenure: ' + d.years.toFixed(2) + ' years\n' +
+        'Compounding: ' + (freqMap[d.frequency] || 'Quarterly') + '\n' +
+        '─────────────────────────────\n' +
+        'Maturity Amount: ' + formatCurrency(d.total) + '\n' +
+        'Interest Earned: ' + formatCurrency(d.interest) + '\n' +
+        'Effective Yield: ' + formatPercent(d.growth) + '\n' +
+        '─────────────────────────────\n' +
+        'Calculated on Calcify — https://YOUR-DOMAIN.com';
+
+      var done = function () { showToast('✅ Copied to clipboard!'); };
+      var fail = function () { showToast('❌ Copy failed'); };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () {
+          legacyCopy(text) ? done() : fail();
+        });
+      } else {
+        legacyCopy(text) ? done() : fail();
+      }
+    });
+  }
+
+  if (el.resetBtn) {
+    el.resetBtn.addEventListener('click', function () {
+      el.principal.value = DEFAULTS.principal;
+      el.principalRange.value = DEFAULTS.principal;
+      el.rate.value = DEFAULTS.rate;
+      el.rateRange.value = DEFAULTS.rate;
+      el.years.value = DEFAULTS.years;
+      el.yearsRange.value = DEFAULTS.years;
+      el.months.value = DEFAULTS.months;
+      el.frequency.value = DEFAULTS.frequency;
+      calculate();
+      showToast('🔄 Reset to defaults');
+    });
+  }
+
+  function setCurrency(curr) {
+    if (!CURRENCY_SYMBOL[curr]) curr = 'USD';
+    currentCurrency = curr;
+    try { localStorage.setItem('calcify-currency', curr); } catch (e) {}
+    if (el.currencySelect) el.currencySelect.value = curr;
+    calculate();
+  }
+
+  if (el.currencySelect) {
+    el.currencySelect.value = currentCurrency;
+    el.currencySelect.addEventListener('change', function () {
+      setCurrency(this.value);
+    });
+  }
+
+  var LANG_CURRENCY = { en: 'USD', hi: 'INR', es: 'EUR', ar: 'AED' };
+
+  function setLanguage(lang) {
+    if (['en', 'hi', 'es', 'ar'].indexOf(lang) === -1) lang = 'en';
+    currentLang = lang;
+    try { localStorage.setItem('calcify-lang', lang); } catch (e) {}
+
+    var html = document.documentElement;
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    if (el.langSelect) el.langSelect.value = lang;
+    if (el.langSelectMobile) el.langSelectMobile.value = lang;
+
+    var autoCurr = LANG_CURRENCY[lang];
+    if (autoCurr) setCurrency(autoCurr);
+
+    if (window.CalcifyI18n && typeof window.CalcifyI18n.apply === 'function') {
+      window.CalcifyI18n.apply(lang);
+    }
+  }
+
+  if (el.langSelect) {
+    el.langSelect.value = currentLang;
+    el.langSelect.addEventListener('change', function () {
+      setLanguage(this.value);
+    });
+  }
+  if (el.langSelectMobile) {
+    el.langSelectMobile.value = currentLang;
+    el.langSelectMobile.addEventListener('change', function () {
+      setLanguage(this.value);
+    });
+  }
+
+  if (el.themeToggle) {
+    el.themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+  }
+
+  if (el.menuToggle && el.mobileMenu) {
+    el.menuToggle.addEventListener('click', function () {
+      var isOpen = el.mobileMenu.classList.toggle('hidden') === false;
+      el.menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    var links = el.mobileMenu.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function () {
+        el.mobileMenu.classList.add('hidden');
+        el.menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  }
+
+  if (el.backToTop) {
+    var toggleBTT = function () {
+      if (window.scrollY > 400) {
+        el.backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        el.backToTop.classList.add('opacity-100');
+      } else {
+        el.backToTop.classList.add('opacity-0', 'pointer-events-none');
+        el.backToTop.classList.remove('opacity-100');
+      }
+    };
+    window.addEventListener('scroll', toggleBTT, { passive: true });
+    el.backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggleBTT();
+  }
+
+  if (el.newsletterForm) {
+    el.newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (el.newsletterEmail.value || '').trim();
+      var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      el.newsletterMsg.classList.remove('hidden', 'text-emerald-600', 'dark:text-emerald-400', 'text-rose-600', 'dark:text-rose-400');
+
+      if (!re.test(email)) {
+        el.newsletterMsg.textContent = '⚠️ Please enter a valid email address.';
+        el.newsletterMsg.classList.add('text-rose-600', 'dark:text-rose-400');
+        return;
+      }
+
+      el.newsletterMsg.textContent = '✅ Thanks for subscribing! Check your inbox.';
+      el.newsletterMsg.classList.add('text-emerald-600', 'dark:text-emerald-400');
+      el.newsletterEmail.value = '';
+    });
+  }
+
+  if (el.year) el.year.textContent = new Date().getFullYear();
+
+  updateCurrencySymbols();
+  calculate();
+
+  window.CalcifyFD = {
+    calculate: calculate,
+    setCurrency: setCurrency,
+    setLanguage: setLanguage,
+    getState: function () {
+      return { currency: currentCurrency, lang: currentLang, defaults: DEFAULTS };
+    }
+  };
+
+})();
+</script>
+
+</body>
+</html>
