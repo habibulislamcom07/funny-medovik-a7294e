@@ -1,99 +1,243 @@
-# AGENTS.md — Developer & AI Agent Guidelines for CalcVora
+# AGENTS.md — Calcify Project Guide
 
-This document serves as the architectural reference for AI agents and human developers maintaining and extending **CalcVora** (hosted at `CalcVora.online`).
-
----
-
-## 1. Core Architectural Mandate
-
-CalcVora is an ultra-fast, multi-tool calculator website built for deployment on **Netlify (Free Tier)**.
-
-### Budget & Build Minute Constraints:
-- **Zero Heavy Build Pipelines:** The project uses plain HTML5, CSS3, and Vanilla JavaScript.
-- **Do NOT Scaffold 100+ Tools at Once:** Netlify free tier allowances can easily be consumed by massive multi-file builds. Tools must be added **one by one** as needed.
-- **Pure Client-Side Computation:** Every tool computes values inside the user's browser. Do NOT introduce Netlify Functions, Node.js server dependencies, or client bundlers (Webpack/Vite/Rollup) without explicit directive.
+> **Purpose:** This file documents coding rules, design conventions, and workflow guidelines for anyone (human or AI assistant) working on the Calcify codebase. Following these rules ensures consistency, privacy, and quality across all 150+ tools.
 
 ---
 
-## 2. Directory Structure
+## 1. Project Overview
 
-```
-/
-├── index.html                  # Homepage (directory of live tools + categories)
-├── about.html                  # About page
-├── contact.html                # Contact page with Netlify Forms integration
-├── privacy-policy.html         # Legal Privacy Policy (GDPR/CCPA compliant)
-├── terms.html                  # Terms of Service & professional disclaimers
-├── sitemap.xml                 # XML sitemap (only contains live pilot pages)
-├── robots.txt                  # Search crawler configuration
-├── netlify.toml                # Netlify redirects, headers, publish directory
-├── assets/
-│   ├── css/style.css           # Global design system & responsive styling
-│   ├── js/common.js            # Shared UI logic (search, themes, modals, clipboard)
-│   └── img/                    # Icons and brand assets
-├── tools/                      # Dedicated tool folders (ONE tool = ONE folder)
-│   ├── age-calculator/index.html
-│   ├── emi-calculator/index.html
-│   ├── bmi-calculator/index.html
-│   ├── percentage-calculator/index.html
-│   └── gst-calculator/index.html
-└── templates/
-    └── tool-template.html      # Reusable master template for new tools
-```
+**Calcify** is a free, fast, private, and SEO-friendly online calculator platform hosting 150+ tools across 8 categories (Finance, Health, Math, Converters, Text, Date, Developer, Everyday).
+
+**Live site:** https://calcvora.online
+**Hosting:** Vercel (static, CDN-backed)
+**Contact:** mediaprojects.official@gmail.com
 
 ---
 
-## 3. Tool Creation Protocol (One Tool at a Time)
+## 2. Core Principles (Non-Negotiable)
 
-When instructed to add a new tool:
-
-1. **Copy the Master Template:**
-   Duplicate `/templates/tool-template.html` into a new folder under `/tools/<tool-slug>/index.html`. Never merge multiple tools into one file.
-2. **Implement Required SEO Elements:**
-   - `<title>`: 55–60 characters in length (`[Tool Name] Online – [Primary Keyword] | CalcVora`).
-   - `<meta name="description">`: 150–160 characters.
-   - Canonical URL tag pointing to `https://calcvora.online/tools/<tool-slug>/`.
-   - Open Graph + Twitter Card tags.
-   - Schema.org JSON-LD graph containing:
-     - `WebApplication` (or `SoftwareApplication`)
-     - `BreadcrumbList`
-     - `FAQPage` containing **exactly 5 FAQs**.
-3. **Follow the Standard Content Hierarchy:**
-   1. `<h1>` Tool Title
-   2. Short Intro Paragraph
-   3. The Interactive Calculator Widget (HTML form + output cards)
-   4. `<h2>` "How to Use" (step-by-step guidance)
-   5. `<h2>` "How It Works" (transparent mathematical formula box)
-   6. `<h2>` Frequently Asked Questions (exactly 5 accordions matching the JSON-LD schema)
-   7. `<h2>` You May Also Like (3–4 links to sibling tools)
-   8. Responsive ad slots (`top-banner`, `mid-content`, `bottom-banner`, `sidebar`)
-4. **Update System Files:**
-   - Add clean redirect rule in `netlify.toml`:
-     ```toml
-     [[redirects]]
-       from = "/<tool-slug>"
-       to = "/tools/<tool-slug>/"
-       status = 301
-     ```
-   - Add `<url>` entry to `sitemap.xml`.
-   - Add card in `index.html` under the matching category filter.
+1. **Privacy first** — Every calculation runs client-side. No data leaves the browser.
+2. **Speed** — Every page must load in under 1 second on 4G.
+3. **Zero dependencies** — No frameworks, no npm, no build tools.
+4. **Mobile-first** — Beautiful from 320px to 4K.
+5. **SEO-ready** — Every page ships with full schema, meta, and FAQ markup.
+6. **Free forever** — Core tools must never be paywalled.
 
 ---
 
-## 4. Coding & Design Conventions
+## 3. File Naming Rules
 
-- **CSS & Design System:**
-  - Modify `/assets/css/style.css` for site-wide visual adjustments.
-  - Colors are managed via CSS custom properties (`--bg-body`, `--bg-surface`, `--accent-cyan`, `--accent-emerald`, etc.).
-  - Avoid AI aesthetic clichés: no oversaturated neon glows, no generic unstyled inputs. Use the custom range sliders, segment toggles, and formatted monospace numerical outputs (`font-family: var(--font-mono)`).
-- **JavaScript Execution:**
-  - Shared behaviors (toast notifications, clipboard copy, theme toggle, print, share, premium modal) are exposed on `window.CalcVora`.
-  - Tool-specific calculation logic must be enclosed in an IIFE (`(function(){ ... })();`) at the bottom of the tool's `index.html`.
-- **Forms & Backend:**
-  - `contact.html` uses **Netlify Forms** (`data-netlify="true"`). If any form attributes are changed, run `node /opt/buildhome/.agents/skills/netlify-forms/scripts/enable.cjs` to ensure form detection remains active.
+| Type | Rule | Example |
+|------|------|---------|
+| Tool pages | `tools/tool-name.html` (kebab-case, flat file) | `tools/emi-calculator.html` |
+| Legal pages | `page-name.html` (root) | `privacy.html` |
+| CSS | `css/style.css` | Single global stylesheet |
+| JS | `js/main.js`, `js/i18n.js` | Global scripts only |
+| Template | `templates/tool-template.html` | Master template |
+
+**Never use folder structure for tools** — always flat files like `tools/emi-calculator.html`, not `tools/emi-calculator/index.html`.
 
 ---
 
-## 5. Monetization Preservation
+## 4. Tech Stack (Locked)
 
-Do not remove the `.ad-slot` container elements or the `[data-action="open-premium"]` triggers. They serve as zero-layout-shift placeholders for future Google AdSense and premium paywall integrations.
+- **HTML5** — Semantic, accessible markup
+- **TailwindCSS** — Loaded via CDN, configured inline in `<head>`
+- **Vanilla JavaScript** — ES5-compatible syntax for maximum browser support
+- **Google Fonts** — Inter + Plus Jakarta Sans only
+- **Vercel** — Static hosting
+
+**Do NOT add:** React, Vue, Angular, Svelte, jQuery, Bootstrap, Webpack, Vite, npm, or any build step.
+
+---
+
+## 5. Design System
+
+### Colors
+- **Primary accent:** `#4f46e5` (Indigo 600)
+- **Gradient:** `#4f46e5 → #7c3aed → #0ea5e9`
+- **Background (light):** `#ffffff`
+- **Background (dark):** `#020617` (Slate 950)
+- **Text (light):** `#1e293b` (Slate 800)
+- **Text (dark):** `#e2e8f0` (Slate 200)
+
+### Typography
+- **Body font:** Inter
+- **Display font:** Plus Jakarta Sans (for headings, brand name)
+- **Base size:** 16px (15px on mobile)
+
+### Components
+- **Border radius:** `rounded-xl` (12px), `rounded-2xl` (16px), `rounded-3xl` (24px)
+- **Shadows:** `shadow-soft`, `shadow-card`, `shadow-pop` (custom Tailwind config)
+- **Transitions:** 200ms ease-in-out (default)
+
+### Dark Mode
+- **Default:** Dark mode ON for new visitors
+- **Storage key:** `calcify-theme` (`dark` or `light`)
+- **Toggle:** Sun/Moon icon in header
+
+---
+
+## 6. Required Page Structure
+
+Every tool page MUST include, in this exact order:
+
+1. `<head>` — SEO meta, Open Graph, Twitter, hreflang, favicon, fonts, Tailwind config, theme bootstrap
+2. Header — sticky, with logo, nav, language switcher, theme toggle, mobile menu
+3. Top banner ad slot
+4. Breadcrumb navigation
+5. Tool hero — badge, H1, subtitle
+6. Calculator UI — input panel + result panel
+7. In-content ad slot
+8. About section — 550–600 words of original content
+9. How to Use — 5 numbered steps
+10. FAQ — exactly 7 questions with FAQ Schema
+11. Affiliate box — Amazon + Flipkart + Hostinger
+12. Related tools — exactly 6 cards
+13. Premium CTA — dark gradient card
+14. Newsletter signup
+15. Footer ad slot
+16. Footer — brand, categories, popular tools, company links
+17. Back-to-top button
+18. Scripts — i18n.js, main.js, tool-specific JS
+
+---
+
+## 7. SEO Rules (Per Tool Page)
+
+| Element | Requirement |
+|---------|-------------|
+| Title | 50–60 characters |
+| Meta description | 150–160 characters |
+| H1 | Exactly one per page |
+| Word count | 550–600 words of original content |
+| FAQ | Exactly 7 questions (no more, no less) |
+| Schema | `WebApplication`, `BreadcrumbList`, `FAQPage` |
+| OG image | `https://calcvora.online/assets/og-cover.png` |
+| Canonical | Full URL of the page |
+| Hreflang | en, hi, es, ar + x-default |
+
+---
+
+## 8. Code Style
+
+- **Indentation:** 2 spaces
+- **Semicolons:** Always
+- **JS quotes:** Single quotes for strings
+- **HTML attributes:** Double quotes
+- **CSS class order:** Layout → Spacing → Typography → Colors → Effects
+- **Comments:** Use `/* ... */` for complex logic
+- **Function naming:** camelCase (JS), kebab-case (files)
+
+---
+
+## 9. Accessibility Requirements
+
+Every page must include:
+
+- Semantic HTML (`<header>`, `<main>`, `<article>`, `<nav>`, `<footer>`)
+- `aria-label` on icon-only buttons
+- `aria-hidden="true"` on decorative SVGs
+- Focus-visible outlines on interactive elements
+- Skip-to-content link
+- Alt text on images
+- Keyboard navigation support
+
+---
+
+## 10. Privacy & Security
+
+- **No server-side calls** for calculations
+- **No cookies** beyond theme and language preference
+- **No third-party trackers** except Google Analytics (if enabled)
+- **No user accounts** for free tools
+- **No data collection** from calculator inputs
+- **HTTPS only** (handled by Vercel)
+
+---
+
+## 11. Monetization Rules
+
+Ads and affiliate content must be:
+
+- **Non-intrusive** — no pop-ups, no auto-play, no overlays
+- **Clearly labelled** — "Advertisement" or "Disclosure" text visible
+- **AdSense-compliant** — follow Google's policies strictly
+- **Positioned** in the designated slots only (top, in-content, sidebar, footer)
+
+**Affiliate disclosure** must appear on every page containing affiliate links.
+
+---
+
+## 12. Adding a New Tool (Workflow)
+
+1. Copy `templates/tool-template.html`
+2. Rename to `tools/new-tool-name.html`
+3. Replace all `{{PLACEHOLDER}}` values:
+   - `{{TOOL_TITLE}}`, `{{TOOL_SLUG}}`, `{{CATEGORY}}`
+   - `{{META_DESCRIPTION}}`, `{{TOOL_SUBTITLE}}`
+   - `{{ABOUT_PARAGRAPH_1/2/3}}` (550–600 words total)
+   - `{{HOW_TO_STEP_1...5}}` (5 steps)
+   - `{{FAQ_1...7}}` (exactly 7 Q&A pairs)
+   - `{{CALCULATOR_UI}}` (input HTML)
+   - `{{CALCULATOR_JS}}` (calculation logic)
+   - `{{RELATED_TOOLS}}` (6 cards)
+4. Test on mobile + desktop + dark mode
+5. Commit to GitHub → Vercel auto-deploys
+
+---
+
+## 13. Testing Checklist
+
+Before committing any tool, verify:
+
+- [ ] Calculation is mathematically correct
+- [ ] Works on 320px mobile width
+- [ ] Works in dark and light mode
+- [ ] All inputs update the result live
+- [ ] Copy result button works
+- [ ] Reset button works
+- [ ] Language switcher works (EN/HI/ES/AR)
+- [ ] Theme toggle works
+- [ ] No console errors
+- [ ] Ad slots visible
+- [ ] Footer links correct
+- [ ] Back-to-top works
+- [ ] Newsletter validates email
+
+---
+
+## 14. Do NOT
+
+- ❌ Use frameworks (React, Vue, etc.)
+- ❌ Add npm, package.json, or build tools
+- ❌ Use folder structure for tools (use flat files)
+- ❌ Copy content from other websites
+- ❌ Add tracking beyond Google Analytics
+- ❌ Break the Indigo/Slate theme
+- ❌ Remove existing ad slots or affiliate boxes
+- ❌ Change the header/footer structure between tools
+- ❌ Use external icon libraries (use inline SVG)
+- ❌ Add auto-playing media
+
+---
+
+## 15. Communication & Support
+
+**For contributors and collaborators:**
+
+- **Email:** mediaprojects.official@gmail.com
+- **Subject prefix:** `[Calcify]`
+- **Response time:** 1–2 business days
+
+**For AI assistants:**
+
+- Follow all rules in this file
+- Preserve the exact design system
+- Never change file paths or naming conventions
+- Always validate output against the testing checklist
+
+---
+
+**Last updated:** 2026
+**Maintained by:** Calcify
