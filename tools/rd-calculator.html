@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RD Calculator — Recurring Deposit Maturity & Interest</title>
+<meta name="description" content="Calculate RD maturity amount and interest earned. Enter monthly deposit, rate, and tenure to see exact returns with quarterly compounding.">
+<meta name="keywords" content="rd calculator, recurring deposit calculator, rd maturity, rd interest, monthly deposit calculator, post office rd, bank rd">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="rd-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="RD Calculator — Recurring Deposit Maturity & Interest">
+<meta property="og:description" content="Calculate RD maturity amount and interest earned with quarterly compounding. Free, instant, no signup.">
+<meta property="og:image" content="../assets/og-rd.png">
+<meta property="og:site_name" content="Calcify">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RD Calculator — Recurring Deposit Maturity">
+<meta name="twitter:description" content="See exact RD maturity and interest in seconds.">
+<meta name="twitter:image" content="../assets/og-rd.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: '#4f46e5',
+        ink: '#020617'
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 2px 12px -2px rgba(2, 6, 23, 0.08)',
+        card: '0 8px 28px -8px rgba(2, 6, 23, 0.15)',
+        pop: '0 12px 40px -10px rgba(79, 70, 229, 0.35)'
+      },
+      borderRadius: {
+        'xl': '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem'
+      }
+    }
+  }
+}
+</script>
+
+<script>
+(function() {
+  try {
+    var t = localStorage.getItem('calcify-theme');
+    if (t === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  } catch(e) {}
+})();
+</script>
+
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RD Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate recurring deposit maturity amount and interest earned with quarterly compounding.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home"},
+    {"@type": "ListItem", "position": 2, "name": "Finance"},
+    {"@type": "ListItem", "position": 3, "name": "RD Calculator"}
+  ]
+}
+</script>
+</head>
+
+ <body class="bg-white dark:bg-ink text-slate-900 dark:text-slate-100 font-sans antialiased">
+
+<a href="#calculator" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-xl focus:bg-primary focus:text-white focus:font-semibold">Skip to calculator</a>
+
+<header class="sticky top-0 z-40 backdrop-blur-lg bg-white/80 dark:bg-ink/80 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="../index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="8" y1="6" x2="16" y2="6"/>
+            <line x1="8" y1="10" x2="10" y2="10"/>
+            <line x1="14" y1="10" x2="16" y2="10"/>
+            <line x1="8" y1="14" x2="10" y2="14"/>
+            <line x1="14" y1="14" x2="16" y2="14"/>
+            <line x1="8" y1="18" x2="16" y2="18"/>
+          </svg>
+        </div>
+        <span class="font-display font-bold text-lg tracking-tight">Calcify</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="../index.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Home</a>
+        <a href="../finance.html" class="px-3 py-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 rounded-lg">Finance</a>
+        <a href="../health.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Health</a>
+        <a href="../math.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Math</a>
+        <a href="../converters.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Converters</a>
+        <a href="../about.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">About</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+
+        <div class="relative hidden sm:block">
+          <button id="langBtn" class="flex items-center gap-1.5 px-2.5 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary rounded-lg transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span id="langLabel">EN</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="langMenu" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-card py-1.5 z-50">
+            <button data-lang="en" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">English <span class="text-xs text-slate-400">EN</span></button>
+            <button data-lang="hi" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">हिन्दी <span class="text-xs text-slate-400">HI</span></button>
+            <button data-lang="es" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">Español <span class="text-xs text-slate-400">ES</span></button>
+            <button data-lang="ar" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">العربية <span class="text-xs text-slate-400">AR</span></button>
+          </div>
+        </div>
+
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button id="mobileBtn" aria-label="Open menu" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-ink">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      <a href="../index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+      <a href="../finance.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800">Finance</a>
+      <a href="../health.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-slate-100 dark:hover:bg-slate-800">Health</a>
+      <a href="../math.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-violet-600 dark:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800">Math</a>
+      <a href="../converters.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-sky-600 dark:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800">Converters</a>
+      <a href="../text.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-amber-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800">Text</a>
+      <a href="../date.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800">Date</a>
+      <a href="../developer.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800">Developer</a>
+      <a href="../everyday.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-teal-600 dark:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800">Everyday</a>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800 space-y-1">
+        <a href="../about.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="../contact.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+      </div>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800">
+        <div class="px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Language</div>
+        <div class="grid grid-cols-4 gap-1.5 px-1">
+          <button data-lang="en" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">EN</button>
+          <button data-lang="hi" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">HI</button>
+          <button data-lang="es" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">ES</button>
+          <button data-lang="ar" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">AR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-primary transition">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../finance.html" class="hover:text-primary transition">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-slate-700 dark:text-slate-200 font-medium">RD Calculator</li>
+    </ol>
+  </nav>
+
+  <div class="mb-8">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-900/50">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      Finance
+    </span>
+    <h1 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+      RD Calculator
+    </h1>
+    <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+      Enter your monthly deposit, interest rate, and tenure to see exactly what you'll get at maturity — with quarterly compounding built in.
+    </p>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+
+    <div class="lg:col-span-2">
+      <div class="rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-card overflow-hidden">
+
+        <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-display font-bold text-lg text-slate-900 dark:text-white">Recurring Deposit</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Quarterly compounding</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Live
+          </span>
+        </div>
+
+        <div class="p-5 sm:p-6">
+
+          <div class="mb-6 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 p-4">
+            <div class="flex items-center justify-between mb-3">
+              <label class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Currency
+              </label>
+              <span class="text-xs text-slate-500 dark:text-slate-400" id="currencyName">US Dollar</span>
+            </div>
+            <select id="currency" class="w-full px-3 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+              <option value="USD" data-locale="en-US" data-name="US Dollar" selected>USD — US Dollar ($)</option>
+              <option value="INR" data-locale="en-IN" data-name="Indian Rupee">INR — Indian Rupee (₹)</option>
+              <option value="EUR" data-locale="de-DE" data-name="Euro">EUR — Euro (€)</option>
+              <option value="GBP" data-locale="en-GB" data-name="British Pound">GBP — British Pound (£)</option>
+              <option value="AED" data-locale="ar-AE" data-name="UAE Dirham">AED — UAE Dirham (د.إ)</option>
+              <option value="SAR" data-locale="ar-SA" data-name="Saudi Riyal">SAR — Saudi Riyal (﷼)</option>
+              <option value="CAD" data-locale="en-CA" data-name="Canadian Dollar">CAD — Canadian Dollar (C$)</option>
+              <option value="AUD" data-locale="en-AU" data-name="Australian Dollar">AUD — Australian Dollar (A$)</option>
+              <option value="JPY" data-locale="ja-JP" data-name="Japanese Yen">JPY — Japanese Yen (¥)</option>
+            </select>
+          </div>
+
+          <div class="space-y-6">
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="monthly" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Monthly Deposit</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-r border-slate-200 dark:border-slate-700" id="symbolMonthly">$</span>
+                  <input type="number" id="monthly" value="10000" min="100" max="10000000" step="100" class="w-32 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                </div>
+              </div>
+              <input type="range" id="monthlyRange" min="100" max="500000" step="100" value="10000" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>100</span>
+                <span>500,000</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="rate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Interest Rate (per year)</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="rate" value="7.1" min="1" max="15" step="0.05" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">%</span>
+                </div>
+              </div>
+              <input type="range" id="rateRange" min="1" max="15" step="0.05" value="7.1" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>1%</span>
+                <span>15%</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="years" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Tenure</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="years" value="5" min="0.5" max="30" step="0.5" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">yrs</span>
+                </div>
+              </div>
+              <input type="range" id="yearsRange" min="0.5" max="30" step="0.5" value="5" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>6 mo</span>
+                <span>30 yrs</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-7">
+            <button id="copyBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-indigo-700 text-white text-sm font-semibold shadow-soft transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Copy Result
+            </button>
+            <button id="resetBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              Reset
+            </button>
+          </div>
+
+          <div class="mt-7 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 p-5 sm:p-6">
+
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-2">Maturity Amount</div>
+            <div id="maturity" class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white break-all">$7,17,432</div>
+
+            <div class="grid grid-cols-3 gap-3 mt-6">
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Invested</div>
+                <div id="invested" class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white break-all">$6,00,000</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Interest</div>
+                <div id="interest" class="font-display font-bold text-sm sm:text-base text-emerald-600 dark:text-emerald-400 break-all">$1,17,432</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Return</div>
+                <div id="returnPct" class="font-display font-bold text-sm sm:text-base text-indigo-600 dark:text-indigo-400 break-all">19.6%</div>
+              </div>
+            </div>
+
+            <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+              Formula: M = P × [((1 + i)<sup>n</sup> − 1) / i] × (1 + i), where i = r/400 (quarterly rate), n = months. Interest compounded quarterly.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-1">
+      <!-- Sidebar filled in Phase 5 -->
+    </div>
+
+  </div>
+  </main>
+
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="max-w-3xl">
+
+    <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">About the RD Calculator</h2>
+
+    <div class="mt-6 space-y-5 text-slate-700 dark:text-slate-300 leading-relaxed">
+
+      <p>
+        A recurring deposit is the boring cousin of the mutual fund SIP — and that's exactly why it works. You commit the same amount every month, the bank pays a fixed rate, and you know your maturity figure on day one. Put $300 a month into an RD at 7.1% for five years and you'll end up with about $21,530. Of that, $18,000 is your own money and $3,530 is interest the bank pays you for showing up on time.
+      </p>
+
+      <p>
+        The math behind RD is slightly more involved than a lump-sum FD because every deposit earns interest for a different length of time. Your first installment compounds for the full 60 months, the second for 59, and so on. Banks typically compound quarterly, which is why the formula divides the annual rate by 400 instead of 100 — you're applying the rate four times a year to an ever-growing balance.
+      </p>
+
+      <p>
+        Consider a real example. In India, SBI currently offers around 6.8% on a 5-year RD for regular customers, while HDFC hovers near 7.0%. Post Office RD sits at 6.7%. If you deposit ₹10,000 a month at 7.0% for 5 years, you invest ₹6 lakh and walk away with roughly ₹7.17 lakh. That ₹1.17 lakh interest is taxable — RD interest is added to your income and taxed at your slab rate, unlike PPF which is tax-free under Section 80C.
+      </p>
+
+      <p>
+        In the US, recurring deposits don't exist in the same form. The closest equivalents are bank "holiday club" accounts or automatic savings plans, which typically pay 0.5–3% APY — nowhere near Indian RD rates. A Chase savings account pays 0.01% APY on standard balances, so a 12-month $500/month plan earns less than a dollar in interest. For Americans, a CD ladder or a high-yield savings account at 4.5% (like Marcus or Ally) is a far better match.
+      </p>
+
+      <p>
+        The trade-off with RDs is liquidity. If you break an RD before maturity, banks usually cut your rate by 0.5–1% and you lose the compounding benefit on the broken period. SBI charges a 0.50% penalty; HDFC charges 1% on RDs above ₹5 lakh. So an RD only makes sense for money you genuinely won't touch — an emergency fund or a goal with a fixed date (a wedding in 2028, a car down payment in 2027).
+      </p>
+
+      <p>
+        One number worth watching: the effective yield. An RD advertised at 7.0% actually delivers about 7.4% on your average balance because each installment compounds for a shorter period but the effective annualized return (on money-weighted basis) is slightly higher than the quoted rate. Our calculator handles this automatically — no need to reverse-engineer bank statements.
+      </p>
+
+      <p>
+        Use this tool when comparing RD offers across banks, or when deciding between an RD and a monthly SIP. A SIP in an index fund has historically returned 10–12% over 10-year windows, but with volatility and no guaranteed figure. An RD gives you certainty at a lower rate. Neither is wrong — it depends on whether you can stomach watching your ₹6 lakh dip to ₹5.4 lakh in a bad year.
+      </p>
+
+    </div>
+
+    <div class="mt-10">
+      <h3 class="font-display text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">How to Use</h3>
+
+      <ol class="mt-5 space-y-4">
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">1</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Set your currency.</strong> The currency box inside the calculator switches formatting across nine currencies. Your choice is saved — reopening the page won't reset it back to USD.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">2</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Enter your monthly deposit.</strong> Type the amount or drag the slider. The range goes from 100 to 500,000 — you can also type a larger number directly if your bank allows it.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">3</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Set the interest rate.</strong> Check your bank's current RD rate — it changes quarterly in India. Senior citizens get an extra 0.25–0.5%, so adjust accordingly.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">4</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Choose your tenure.</strong> RDs typically run 6 months to 10 years, though some banks allow 20. Longer tenure means more compounding on the early installments, but a bigger lock-in.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">5</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Read the breakdown.</strong> The result panel shows maturity amount, total invested, interest earned, and effective return percentage. Hit "Copy Result" to paste a clean summary into a spreadsheet or WhatsApp.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="grid lg:grid-cols-3 gap-8">
+
+    <div class="lg:col-span-2">
+
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+
+      <div class="mt-6 space-y-3">
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What is a recurring deposit and how is it different from an FD?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            An FD is a one-time lump sum you lock for a fixed period. An RD is the same idea but you deposit a fixed amount every month — say ₹10,000 on the 5th of each month for 3 years. Both pay a fixed rate and guarantee your maturity figure. The key difference is that in an RD, each installment earns interest for a different duration, so the total interest is lower than if you'd deposited the entire sum upfront. Deposit ₹3.6 lakh as a lump-sum FD at 7% for 3 years and you'll earn about ₹83,000. Do the same amount as an RD spread across 36 months and you'll earn closer to ₹41,000.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">How is RD interest calculated?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Banks use quarterly compounding on RDs. The formula is M = P × [((1 + i)^n − 1) / i] × (1 + i), where P is your monthly deposit, i is the quarterly interest rate (annual rate ÷ 400), and n is the number of months in the tenure. That last × (1 + i) accounts for the first month's deposit earning interest starting from month one. If you deposit ₹5,000/month at 6.8% for 24 months, the quarterly rate is 0.017, n is 24, and the formula gives roughly ₹1,28,400 in maturity against ₹1,20,000 invested.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Is RD interest taxable?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Yes, fully taxable in India at your income slab rate. If you're in the 30% bracket, a ₹1 lakh interest payout effectively becomes ₹70,000. Banks deduct 10% TDS if your total interest from that bank exceeds ₹40,000 in a financial year (₹50,000 for senior citizens) — but that TDS is not your final tax, just a prepayment. In the US, "holiday club" account interest is reported on Form 1099-INT and taxed as ordinary income. There's no special exemption for RDs the way PPF or 5-year tax-saver FDs have under Section 80C.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What happens if I miss a monthly installment?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Banks charge a penalty — usually ₹1 to ₹1.50 per ₹100 of the missed installment per month. SBI charges ₹1.50 per ₹100; HDFC charges ₹1.50 for RDs up to ₹5 lakh and ₹2 beyond that. If you miss three consecutive installments, the bank can close the RD and pay you back at the savings-account rate, which is typically 2.7–3%. So a ₹10,000 missed installment at SBI costs you ₹150 that month, and if it drags into default, you lose the entire rate advantage. Set up auto-debit from your savings account the day after salary credit — most banks let you do this in the app.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Can I break an RD early, and what's the penalty?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Yes, but you'll pay a price. Most banks cut your effective rate by 0.5–1% on premature closure. If you opened a 5-year RD at 7.1% and close it after 18 months, the bank will recalculate interest at, say, 6.6% — and only on the months you actually held it. On a ₹10,000/month RD, that penalty eats about ₹500–800 depending on tenure. Some banks refuse premature closure within the first 3 months entirely. Senior citizens and small RDs (under ₹1 lakh) sometimes escape the penalty — check your bank's fine print before assuming.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Is RD a good alternative to a monthly SIP?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            They serve different goals. A SIP in an equity index fund has historically returned 10–12% CAGR over 10-year periods, but a bad year can leave you down 15%. An RD gives you 6.5–7.5% with zero volatility and a guaranteed maturity figure. For money you'll need in 1–3 years — a wedding, a car down payment, an emergency buffer — the certainty of an RD beats the upside of a SIP. For money you won't touch for 7+ years, the SIP wins by a wide margin even after a market crash or two. Many people run both: SIP for long-term wealth, RD for short-term goals.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Which banks offer the best RD rates right now?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Rates move quarterly with the RBI repo rate, so check before you commit. As of recent quarters, small finance banks like AU Small Finance (7.25%) and Ujjivan (7.5%) lead on 3-year RDs, followed by HDFC (7.0%), ICICI (7.0%), and SBI (6.8%). Post Office RD sits at 6.7% but is fully government-backed, which matters if you're parking more than ₹5 lakh (DICGC insurance caps at ₹5 lakh per bank per depositor). Senior citizens get 0.25–0.5% extra at most banks — SBI gives 0.50%, HDFC gives 0.25% on select tenures. Don't chase 0.3% differences across banks; the paperwork isn't worth it.
+          </div>
+        </details>
+
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a recurring deposit and how is it different from an FD?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An FD is a one-time lump sum you lock for a fixed period. An RD is the same idea but you deposit a fixed amount every month for a fixed period. Both pay a fixed rate and guarantee your maturity figure. The key difference is that in an RD, each installment earns interest for a different duration, so total interest is lower than an equivalent lump-sum FD. Deposit ₹3.6 lakh as an FD at 7% for 3 years and you earn about ₹83,000; do it as an RD across 36 months and you earn closer to ₹41,000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is RD interest calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Banks use quarterly compounding on RDs. The formula is M = P × [((1 + i)^n − 1) / i] × (1 + i), where P is your monthly deposit, i is the quarterly interest rate (annual rate ÷ 400), and n is the number of months. That last × (1 + i) accounts for the first deposit earning interest from month one. Example: ₹5,000/month at 6.8% for 24 months yields roughly ₹1,28,400 on ₹1,20,000 invested."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is RD interest taxable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, RD interest is fully taxable at your income slab rate in India. If you're in the 30% bracket, ₹1 lakh in interest becomes ₹70,000 after tax. Banks deduct 10% TDS if total interest from one bank exceeds ₹40,000 in a financial year (₹50,000 for seniors). In the US, holiday club account interest is reported on Form 1099-INT and taxed as ordinary income. There's no special exemption like PPF has under Section 80C."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if I miss a monthly installment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Banks charge a penalty of ₹1 to ₹2 per ₹100 of the missed installment per month. SBI charges ₹1.50; HDFC charges ₹1.50 up to ₹5 lakh and ₹2 above. Three consecutive misses can trigger default closure at savings-account rates (2.7–3%), wiping out the rate advantage. Set auto-debit the day after salary credit to avoid this."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I break an RD early, and what's the penalty?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but most banks cut your effective rate by 0.5–1% on premature closure. A 5-year RD at 7.1% broken after 18 months might be recalculated at 6.6% on the held period. On a ₹10,000/month RD that penalty eats ₹500–800 depending on tenure. Some banks refuse closure within 3 months. Senior citizens and RDs under ₹1 lakh sometimes escape the penalty."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is RD a good alternative to a monthly SIP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They serve different goals. A SIP in an equity index fund has historically returned 10–12% CAGR over 10-year periods but can drop 15% in a bad year. An RD gives 6.5–7.5% with zero volatility and a guaranteed figure. For 1–3 year goals, RD certainty beats SIP upside. For 7+ year goals, SIP wins by a wide margin. Many people run both."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which banks offer the best RD rates right now?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rates move quarterly with the RBI repo rate. Recent quarters put small finance banks like AU Small Finance (7.25%) and Ujjivan (7.5%) on top for 3-year RDs, followed by HDFC (7.0%), ICICI (7.0%), and SBI (6.8%). Post Office RD sits at 6.7% but is government-backed. Senior citizens get 0.25–0.5% extra at most banks. DICGC insurance caps at ₹5 lakh per bank per depositor."
+            }
+          }
+        ]
+      }
+      </script>
+
+    </div>
+
+    <aside class="lg:col-span-1 space-y-5">
+
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5">
+        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-4">Trending Tools</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="fd-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              FD Calculator
+            </a>
+          </li>
+          <li>
+            <a href="sip-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              SIP Calculator
+            </a>
+          </li>
+          <li>
+            <a href="emi-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              EMI Calculator
+            </a>
+          </li>
+          <li>
+            <a href="ppf-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              PPF Calculator
+            </a>
+          </li>
+          <li>
+            <a href="bmi-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#f43f5e"></span>
+              BMI Calculator
+            </a>
+          </li>
+          <li>
+            <a href="percentage-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#8b5cf6"></span>
+              Percentage Calculator
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl p-5 shadow-pop" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-xs font-bold uppercase tracking-wider text-white/90">Premium</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-white">Ad-free. Faster. Saved history.</h3>
+        <p class="mt-2 text-sm text-white/80">Upgrade to Calcify Premium and access 158 tools without ads, plus export results to PDF.</p>
+        <a href="../premium.html" class="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-xl bg-white text-primary text-sm font-bold hover:bg-white/90 transition">
+          Learn More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="flex items-end justify-between mb-6">
+    <div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Tools</h2>
+      <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400">Other finance calculators you might find useful</p>
+    </div>
+    <a href="../finance.html" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 dark:hover:text-indigo-400 transition">
+      View All
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <a href="fd-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M8 15h.01M12 15h.01M16 15h.01"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">FD Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Lump-sum fixed deposit maturity with quarterly compounding.</p>
+    </a>
+
+    <a href="sip-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+          <polyline points="16 7 22 7 22 13"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">SIP Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Project mutual fund SIP returns with expected CAGR.</p>
+    </a>
+
+    <a href="emi-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12l9-9 9 9v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <path d="M9 22V12h6v10"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">EMI Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Home, car, and personal loan EMIs with amortization.</p>
+    </a>
+
+    <a href="ppf-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">PPF Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">15-year Public Provident Fund projection with tax-free returns.</p>
+    </a>
+
+    <a href="compound-interest-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Compound Interest</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">See how any amount grows with any compounding frequency.</p>
+    </a>
+
+    <a href="inflation-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+          <polyline points="17 18 23 18 23 12"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Inflation Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">What today's money will be worth in future rupees or dollars.</p>
+    </a>
+
+  </div>
+
+  <a href="../finance.html" class="sm:hidden mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 transition">
+    View All Finance Tools
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <div class="rounded-3xl p-8 sm:p-10 shadow-pop relative overflow-hidden" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+    <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 pointer-events-none"></div>
+    <div class="absolute -bottom-20 -left-10 w-64 h-64 rounded-full bg-white/5 pointer-events-none"></div>
+
+    <div class="relative max-w-2xl">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/15 text-white border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Calcify Premium
+      </span>
+      <h2 class="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Stop switching tabs. Get every tool, ad-free.</h2>
+      <p class="mt-3 text-sm sm:text-base text-white/85 leading-relaxed">One subscription unlocks all 158 calculators, saves your inputs across sessions, and lets you export results as PDF or CSV. No ads, ever.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="../premium.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-primary font-bold text-sm shadow-soft hover:bg-white/90 transition">
+          Get Premium
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="../premium.html#compare" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold text-sm hover:bg-white/20 transition">
+          Compare Plans
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">New calculators, one email a month</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm sm:text-base">We ship 4–6 new tools every month. Get a short digest — no spam, no promos, unsubscribe in one click.</p>
+
+      <form id="newsletterForm" class="mt-6 flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto">
+        <input type="email" id="newsletterEmail" required placeholder="you@example.com" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40">
+        <button type="submit" class="px-5 py-3 rounded-xl text-white text-sm font-bold shadow-soft transition hover:opacity-95" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="mt-3 text-sm hidden"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-ink border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8">
+
+      <div class="col-span-2 sm:col-span-4 lg:col-span-1">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="10" y2="10"/>
+              <line x1="14" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="10" y2="14"/>
+              <line x1="14" y1="14" x2="16" y2="14"/>
+              <line x1="8" y1="18" x2="16" y2="18"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">158 free calculators for finance, health, math, and everyday life. Built for people who want answers, not ads.</p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://www.youtube.com/@calcifyofficialchannel" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/calcifyofficial" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../finance.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Finance</a></li>
+          <li><a href="../health.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Health</a></li>
+          <li><a href="../math.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Math</a></li>
+          <li><a href="../converters.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Converters</a></li>
+          <li><a href="../everyday.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Everyday</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Company</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">About</a></li>
+          <li><a href="../contact.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Contact</a></li>
+          <li><a href="../premium.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Premium</a></li>
+          <li><a href="../blog.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../privacy.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Privacy</a></li>
+          <li><a href="../terms.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Terms</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Disclaimer</a></li>
+          <li><a href="../cookies.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-slate-500 dark:text-slate-400">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        100% client-side. Nothing leaves your browser.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-xl shadow-pop text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+</button>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold shadow-pop opacity-0 pointer-events-none transition-opacity">
+  Copied to clipboard
+  </div>
+
+   <script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  var currencies = {
+    USD: { locale: 'en-US', symbol: '$', name: 'US Dollar' },
+    INR: { locale: 'en-IN', symbol: '₹', name: 'Indian Rupee' },
+    EUR: { locale: 'de-DE', symbol: '€', name: 'Euro' },
+    GBP: { locale: 'en-GB', symbol: '£', name: 'British Pound' },
+    AED: { locale: 'ar-AE', symbol: 'د.إ', name: 'UAE Dirham' },
+    SAR: { locale: 'ar-SA', symbol: '﷼', name: 'Saudi Riyal' },
+    CAD: { locale: 'en-CA', symbol: 'C$', name: 'Canadian Dollar' },
+    AUD: { locale: 'en-AU', symbol: 'A$', name: 'Australian Dollar' },
+    JPY: { locale: 'ja-JP', symbol: '¥', name: 'Japanese Yen' }
+  };
+
+  var defaults = { monthly: 10000, rate: 7.1, years: 5, currency: 'USD' };
+
+  var el = {
+    monthly: document.getElementById('monthly'),
+    monthlyRange: document.getElementById('monthlyRange'),
+    rate: document.getElementById('rate'),
+    rateRange: document.getElementById('rateRange'),
+    years: document.getElementById('years'),
+    yearsRange: document.getElementById('yearsRange'),
+    currency: document.getElementById('currency'),
+    currencyName: document.getElementById('currencyName'),
+    symbolMonthly: document.getElementById('symbolMonthly'),
+    maturity: document.getElementById('maturity'),
+    invested: document.getElementById('invested'),
+    interest: document.getElementById('interest'),
+    returnPct: document.getElementById('returnPct'),
+    copyBtn: document.getElementById('copyBtn'),
+    resetBtn: document.getElementById('resetBtn'),
+    toast: document.getElementById('toast'),
+    themeToggle: document.getElementById('themeToggle'),
+    mobileBtn: document.getElementById('mobileBtn'),
+    mobileDrawer: document.getElementById('mobileDrawer'),
+    langBtn: document.getElementById('langBtn'),
+    langMenu: document.getElementById('langMenu'),
+    langLabel: document.getElementById('langLabel'),
+    backToTop: document.getElementById('backToTop'),
+    newsletterForm: document.getElementById('newsletterForm'),
+    newsletterEmail: document.getElementById('newsletterEmail'),
+    newsletterMsg: document.getElementById('newsletterMsg'),
+    year: document.getElementById('year')
+  };
+
+  function num(v, fallback) {
+    var n = parseFloat(v);
+    return isFinite(n) ? n : fallback;
+  }
+
+  function clamp(v, min, max) {
+    return Math.min(Math.max(v, min), max);
+  }
+
+  function fmt(amount, code) {
+    var c = currencies[code] || currencies.USD;
+    try {
+      return new Intl.NumberFormat(c.locale, {
+        style: 'currency',
+        currency: code,
+        maximumFractionDigits: 0
+      }).format(amount);
+    } catch (e) {
+      return c.symbol + Math.round(amount).toLocaleString();
+    }
+  }
+
+  function currentCurrency() {
+    return el.currency.value || 'USD';
+  }
+
+  function calc() {
+    var P = num(el.monthly.value, 0);
+    var annualRate = num(el.rate.value, 0);
+    var months = Math.round(num(el.years.value, 0) * 12);
+
+    if (P < 0) P = 0;
+    if (annualRate < 0) annualRate = 0;
+    if (months < 0) months = 0;
+
+    var i = annualRate / 400;
+    var maturity, invested, interest;
+
+    if (months === 0 || P === 0) {
+      maturity = 0;
+      invested = 0;
+      interest = 0;
+    } else if (i === 0) {
+      invested = P * months;
+      maturity = invested;
+      interest = 0;
+    } else {
+      maturity = P * ((Math.pow(1 + i, months) - 1) / i) * (1 + i);
+      invested = P * months;
+      interest = maturity - invested;
+    }
+
+    var returnPct = invested > 0 ? (interest / invested) * 100 : 0;
+    var code = currentCurrency();
+
+    el.maturity.textContent = fmt(maturity, code);
+    el.invested.textContent = fmt(invested, code);
+    el.interest.textContent = fmt(interest, code);
+    el.returnPct.textContent = returnPct.toFixed(1) + '%';
+
+    return { maturity: maturity, invested: invested, interest: interest, returnPct: returnPct, code: code };
+  }
+
+  function syncFromRange(sliderEl, inputEl, min, max, step) {
+    sliderEl.addEventListener('input', function() {
+      inputEl.value = sliderEl.value;
+      calc();
+    });
+    inputEl.addEventListener('input', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      sliderEl.value = v;
+      calc();
+    });
+    inputEl.addEventListener('blur', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      inputEl.value = v;
+      sliderEl.value = v;
+      calc();
+    });
+  }
+
+  function updateSymbol() {
+    var code = currentCurrency();
+    el.symbolMonthly.textContent = currencies[code].symbol;
+    el.currencyName.textContent = currencies[code].name;
+  }
+
+  function loadCurrency() {
+    var saved = null;
+    try { saved = localStorage.getItem('calcify-currency'); } catch (e) {}
+    if (saved && currencies[saved]) {
+      el.currency.value = saved;
+    }
+    updateSymbol();
+  }
+
+  function setCurrency(code) {
+    if (!currencies[code]) return;
+    el.currency.value = code;
+    try { localStorage.setItem('calcify-currency', code); } catch (e) {}
+    updateSymbol();
+    calc();
+  }
+
+  function showToast(msg) {
+    el.toast.textContent = msg;
+    el.toast.style.opacity = '1';
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function() {
+      el.toast.style.opacity = '0';
+    }, 1800);
+  }
+
+  function copyResult() {
+    var r = calc();
+    var lines = [
+      'Calcify — RD Calculator',
+      'Monthly Deposit: ' + fmt(num(el.monthly.value, 0), r.code),
+      'Rate: ' + num(el.rate.value, 0) + '% per year',
+      'Tenure: ' + num(el.years.value, 0) + ' years',
+      'Total Invested: ' + fmt(r.invested, r.code),
+      'Interest Earned: ' + fmt(r.interest, r.code),
+      'Maturity Amount: ' + fmt(r.maturity, r.code),
+      'Effective Return: ' + r.returnPct.toFixed(1) + '%',
+      '',
+      'Calculated on Calcify'
+    ];
+    var text = lines.join('\n');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('Result copied');
+      }, function() {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Result copied');
+    } catch (e) {
+      showToast('Copy failed');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function reset() {
+    el.monthly.value = defaults.monthly;
+    el.monthlyRange.value = defaults.monthly;
+    el.rate.value = defaults.rate;
+    el.rateRange.value = defaults.rate;
+    el.years.value = defaults.years;
+    el.yearsRange.value = defaults.years;
+    calc();
+  }
+
+  function toggleTheme() {
+    var isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  function toggleMobile() {
+    el.mobileDrawer.classList.toggle('hidden');
+  }
+
+  function closeMobile() {
+    el.mobileDrawer.classList.add('hidden');
+  }
+
+  function toggleLangMenu(e) {
+    e.stopPropagation();
+    el.langMenu.classList.toggle('hidden');
+  }
+
+  function applyLang(code) {
+    el.langLabel.textContent = code.toUpperCase();
+    try { localStorage.setItem('calcify-lang', code); } catch (e) {}
+    var map = { en: 'USD', hi: 'INR', es: 'EUR', ar: 'AED' };
+    if (map[code]) setCurrency(map[code]);
+    el.langMenu.classList.add('hidden');
+    closeMobile();
+  }
+
+  function bindLangOptions() {
+    var opts = document.querySelectorAll('.lang-opt');
+    for (var i = 0; i < opts.length; i++) {
+      opts[i].addEventListener('click', function() {
+        applyLang(this.getAttribute('data-lang'));
+      });
+    }
+  }
+
+  function handleScroll() {
+    if (window.pageYOffset > 400) {
+      el.backToTop.style.opacity = '1';
+      el.backToTop.style.pointerEvents = 'auto';
+    } else {
+      el.backToTop.style.opacity = '0';
+      el.backToTop.style.pointerEvents = 'none';
+    }
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    var email = el.newsletterEmail.value.trim();
+    if (!email || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+      el.newsletterMsg.textContent = 'Please enter a valid email address.';
+      el.newsletterMsg.className = 'mt-3 text-sm text-rose-500';
+      return;
+    }
+    el.newsletterMsg.textContent = 'Thanks — you are subscribed.';
+    el.newsletterMsg.className = 'mt-3 text-sm text-emerald-600 dark:text-emerald-400';
+    el.newsletterEmail.value = '';
+  }
+
+  function init() {
+    loadCurrency();
+
+    var savedLang = null;
+    try { savedLang = localStorage.getItem('calcify-lang'); } catch (e) {}
+    if (savedLang) el.langLabel.textContent = savedLang.toUpperCase();
+
+    syncFromRange(el.monthlyRange, el.monthly, 100, 500000, 100);
+    syncFromRange(el.rateRange, el.rate, 1, 15, 0.05);
+    syncFromRange(el.yearsRange, el.years, 0.5, 30, 0.5);
+
+    el.currency.addEventListener('change', function() {
+      try { localStorage.setItem('calcify-currency', el.currency.value); } catch (e) {}
+      updateSymbol();
+      calc();
+    });
+
+    el.copyBtn.addEventListener('click', copyResult);
+    el.resetBtn.addEventListener('click', reset);
+    el.themeToggle.addEventListener('click', toggleTheme);
+    el.mobileBtn.addEventListener('click', toggleMobile);
+    el.langBtn.addEventListener('click', toggleLangMenu);
+
+    document.addEventListener('click', function(e) {
+      if (!el.langMenu.classList.contains('hidden')) {
+        if (!el.langMenu.contains(e.target) && e.target !== el.langBtn) {
+          el.langMenu.classList.add('hidden');
+        }
+      }
+    });
+
+    var mobileLinks = el.mobileDrawer.querySelectorAll('a');
+    for (var i = 0; i < mobileLinks.length; i++) {
+      mobileLinks[i].addEventListener('click', closeMobile);
+    }
+
+    bindLangOptions();
+
+    el.backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    el.newsletterForm.addEventListener('submit', handleNewsletter);
+
+    el.year.textContent = new Date().getFullYear();
+
+    calc();
+  }
+
+  window.Calcify = window.Calcify || {};
+  window.Calcify.RDCalculator = {
+    calc: calc,
+    reset: reset,
+    setCurrency: setCurrency,
+    currencies: currencies
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
+
+   
