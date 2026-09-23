@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPF Calculator — 15-Year Public Provident Fund Returns</title>
+<meta name="description" content="Calculate PPF maturity, interest earned, and tax-free returns over 15 years. Enter yearly deposit and current rate to see exact projection.">
+<meta name="keywords" content="ppf calculator, public provident fund calculator, ppf maturity, ppf interest, ppf returns, ppf 15 years, ppf tax free">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="ppf-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PPF Calculator — 15-Year Public Provident Fund Returns">
+<meta property="og:description" content="Calculate PPF maturity, interest earned, and tax-free returns over 15 years. Free, instant, no signup.">
+<meta property="og:image" content="../assets/og-ppf.png">
+<meta property="og:site_name" content="Calcify">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PPF Calculator — 15-Year Returns">
+<meta name="twitter:description" content="See exact PPF maturity and tax-free interest in seconds.">
+<meta name="twitter:image" content="../assets/og-ppf.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: { primary: '#4f46e5', ink: '#020617' },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 2px 12px -2px rgba(2, 6, 23, 0.08)',
+        card: '0 8px 28px -8px rgba(2, 6, 23, 0.15)',
+        pop: '0 12px 40px -10px rgba(79, 70, 229, 0.35)'
+      },
+      borderRadius: { 'xl': '0.75rem', '2xl': '1rem', '3xl': '1.5rem' }
+    }
+  }
+}
+</script>
+
+<script>
+(function() {
+  try {
+    var t = localStorage.getItem('calcify-theme');
+    if (t === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  } catch(e) {}
+})();
+</script>
+
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PPF Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate Public Provident Fund maturity, interest earned, and tax-free returns over 15 years with yearly compounding.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home"},
+    {"@type": "ListItem", "position": 2, "name": "Finance"},
+    {"@type": "ListItem", "position": 3, "name": "PPF Calculator"}
+  ]
+}
+</script>
+</head>
+
+ <body class="bg-white dark:bg-ink text-slate-900 dark:text-slate-100 font-sans antialiased">
+
+<a href="#calculator" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-xl focus:bg-primary focus:text-white focus:font-semibold">Skip to calculator</a>
+
+<header class="sticky top-0 z-40 backdrop-blur-lg bg-white/80 dark:bg-ink/80 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="../index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="8" y1="6" x2="16" y2="6"/>
+            <line x1="8" y1="10" x2="10" y2="10"/>
+            <line x1="14" y1="10" x2="16" y2="10"/>
+            <line x1="8" y1="14" x2="10" y2="14"/>
+            <line x1="14" y1="14" x2="16" y2="14"/>
+            <line x1="8" y1="18" x2="16" y2="18"/>
+          </svg>
+        </div>
+        <span class="font-display font-bold text-lg tracking-tight">Calcify</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="../index.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Home</a>
+        <a href="../finance.html" class="px-3 py-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 rounded-lg">Finance</a>
+        <a href="../health.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Health</a>
+        <a href="../math.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Math</a>
+        <a href="../converters.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Converters</a>
+        <a href="../about.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">About</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+
+        <div class="relative hidden sm:block">
+          <button id="langBtn" class="flex items-center gap-1.5 px-2.5 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary rounded-lg transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span id="langLabel">EN</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="langMenu" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-card py-1.5 z-50">
+            <button data-lang="en" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">English <span class="text-xs text-slate-400">EN</span></button>
+            <button data-lang="hi" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">हिन्दी <span class="text-xs text-slate-400">HI</span></button>
+            <button data-lang="es" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">Español <span class="text-xs text-slate-400">ES</span></button>
+            <button data-lang="ar" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">العربية <span class="text-xs text-slate-400">AR</span></button>
+          </div>
+        </div>
+
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button id="mobileBtn" aria-label="Open menu" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-ink">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      <a href="../index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+      <a href="../finance.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800">Finance</a>
+      <a href="../health.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-slate-100 dark:hover:bg-slate-800">Health</a>
+      <a href="../math.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-violet-600 dark:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800">Math</a>
+      <a href="../converters.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-sky-600 dark:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800">Converters</a>
+      <a href="../text.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-amber-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800">Text</a>
+      <a href="../date.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800">Date</a>
+      <a href="../developer.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800">Developer</a>
+      <a href="../everyday.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-teal-600 dark:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800">Everyday</a>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800 space-y-1">
+        <a href="../about.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="../contact.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+      </div>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800">
+        <div class="px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Language</div>
+        <div class="grid grid-cols-4 gap-1.5 px-1">
+          <button data-lang="en" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">EN</button>
+          <button data-lang="hi" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">HI</button>
+          <button data-lang="es" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">ES</button>
+          <button data-lang="ar" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">AR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-primary transition">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../finance.html" class="hover:text-primary transition">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-slate-700 dark:text-slate-200 font-medium">PPF Calculator</li>
+    </ol>
+  </nav>
+
+  <div class="mb-8">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-900/50">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      Finance
+    </span>
+    <h1 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+      PPF Calculator
+    </h1>
+    <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+      See exactly what your Public Provident Fund grows into over 15 years — tax-free, government-backed, and fully compounded every year.
+    </p>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+
+    <div class="lg:col-span-2">
+      <div class="rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-card overflow-hidden">
+
+        <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-display font-bold text-lg text-slate-900 dark:text-white">Public Provident Fund</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400">15-year lock-in · Yearly compounding</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Live
+          </span>
+        </div>
+
+        <div class="p-5 sm:p-6">
+
+          <div class="mb-6 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 p-4">
+            <div class="flex items-center justify-between mb-3">
+              <label class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Currency
+              </label>
+              <span class="text-xs text-slate-500 dark:text-slate-400" id="currencyName">Indian Rupee</span>
+            </div>
+            <select id="currency" class="w-full px-3 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+              <option value="INR" data-locale="en-IN" data-name="Indian Rupee" selected>INR — Indian Rupee (₹)</option>
+              <option value="USD" data-locale="en-US" data-name="US Dollar">USD — US Dollar ($)</option>
+              <option value="EUR" data-locale="de-DE" data-name="Euro">EUR — Euro (€)</option>
+              <option value="GBP" data-locale="en-GB" data-name="British Pound">GBP — British Pound (£)</option>
+              <option value="AED" data-locale="ar-AE" data-name="UAE Dirham">AED — UAE Dirham (د.إ)</option>
+              <option value="SAR" data-locale="ar-SA" data-name="Saudi Riyal">SAR — Saudi Riyal (﷼)</option>
+              <option value="CAD" data-locale="en-CA" data-name="Canadian Dollar">CAD — Canadian Dollar (C$)</option>
+              <option value="AUD" data-locale="en-AU" data-name="Australian Dollar">AUD — Australian Dollar (A$)</option>
+              <option value="JPY" data-locale="ja-JP" data-name="Japanese Yen">JPY — Japanese Yen (¥)</option>
+            </select>
+          </div>
+
+          <div class="space-y-6">
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="yearly" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Yearly Deposit</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-r border-slate-200 dark:border-slate-700" id="symbolYearly">₹</span>
+                  <input type="number" id="yearly" value="150000" min="500" max="150000" step="500" class="w-32 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                </div>
+              </div>
+              <input type="range" id="yearlyRange" min="500" max="150000" step="500" value="150000" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>500</span>
+                <span>1,50,000 (max)</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">PPF caps deposits at ₹1.5 lakh per financial year. Minimum ₹500.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="rate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Interest Rate (per year)</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="rate" value="7.1" min="4" max="12" step="0.05" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">%</span>
+                </div>
+              </div>
+              <input type="range" id="rateRange" min="4" max="12" step="0.05" value="7.1" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>4%</span>
+                <span>12%</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Current rate: 7.1% (Q3 FY 2024-25). Revised every quarter by the government.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="years" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Tenure</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="years" value="15" min="15" max="50" step="5" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">yrs</span>
+                </div>
+              </div>
+              <input type="range" id="yearsRange" min="15" max="50" step="5" value="15" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>15</span>
+                <span>50</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">PPF matures at 15 years. Extend in 5-year blocks, with or without fresh deposits.</p>
+            </div>
+
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-7">
+            <button id="copyBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-indigo-700 text-white text-sm font-semibold shadow-soft transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Copy Result
+            </button>
+            <button id="resetBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              Reset
+            </button>
+          </div>
+
+          <div class="mt-7 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 p-5 sm:p-6">
+
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-2">Maturity Amount</div>
+            <div id="maturity" class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white break-all">₹40,68,209</div>
+
+            <div class="grid grid-cols-3 gap-3 mt-6">
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Invested</div>
+                <div id="invested" class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white break-all">₹22,50,000</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Interest</div>
+                <div id="interest" class="font-display font-bold text-sm sm:text-base text-emerald-600 dark:text-emerald-400 break-all">₹18,18,209</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Return</div>
+                <div id="returnPct" class="font-display font-bold text-sm sm:text-base text-indigo-600 dark:text-indigo-400 break-all">80.8%</div>
+              </div>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-emerald-200/60 dark:border-emerald-900/40 flex items-center gap-2 text-xs text-emerald-700 dark:text-emerald-400">
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              <span class="font-semibold">Fully tax-free — interest and maturity both exempt under Section 80C &amp; EEE status.</span>
+            </div>
+
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">
+              Formula: Year-end balance = (Opening + Deposit) × (1 + r). Deposits made before the 5th of the month earn interest for that month; after the 5th, they earn from the next.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-1">
+      <!-- Sidebar filled in Phase 5 -->
+    </div>
+
+  </div>
+</main>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="max-w-3xl">
+
+    <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">About the PPF Calculator</h2>
+
+    <div class="mt-6 space-y-5 text-slate-700 dark:text-slate-300 leading-relaxed">
+
+      <p>
+        Public Provident Fund is the one investment where you can see your exact maturity amount in advance and not worry about it for 15 years. Put ₹1.5 lakh a year into PPF at 7.1% and you'll walk away with about ₹40.68 lakh after 15 years. You contributed ₹22.5 lakh, the government paid you ₹18.18 lakh in interest, and not a single rupee of it is taxable. Try finding that combination anywhere else.
+      </p>
+
+      <p>
+        PPF was launched in 1968 and has been reset every quarter since 2016. The rate moves with the 10-year government bond yield — when bond yields rise, PPF rises, and vice versa. In FY 2023-24 it sat at 7.1%, unchanged for the last several quarters because bond yields have stayed in a narrow band. Post Office Time Deposits currently pay 6.9% for 5 years, and 5-year bank FDs hover at 7.0–7.5%. PPF's rate is competitive, but its real edge is the tax treatment.
+      </p>
+
+      <p>
+        Here's the tax math. Suppose you're in the 30% slab. A 5-year bank FD at 7.5% effectively pays you 5.25% after tax. A PPF at 7.1% pays you 7.1% — no tax, no TDS, no reporting. On ₹22.5 lakh over 15 years, that difference compounds to roughly ₹4–5 lakh of extra post-tax wealth. Add the 80C deduction on your contributions (up to ₹1.5 lakh per year under old regime) and PPF becomes the highest after-tax fixed-income product most Indians can access legally.
+      </p>
+
+      <p>
+        The catch is liquidity. You can't touch PPF for 15 years except for a partial withdrawal from year 7 (50% of the balance at the end of year 4). Loans against PPF are allowed between years 3 and 6, capped at 25% of the balance at the end of the second year. After maturity, you can extend in 5-year blocks — with fresh deposits (extension with contribution) or without (extension without contribution), where the corpus keeps earning interest without further additions.
+      </p>
+
+      <p>
+        For Americans and Europeans, PPF has no direct equivalent — it's an India-specific instrument available only to Indian residents and a few categories of non-resident Indians. NRIs who opened PPF before becoming NRI can hold to maturity, but new accounts aren't allowed. The closest parallels are US Series I bonds (currently 4.28% as of late 2024, exempt from state tax) or a Roth IRA where you're already past the income limit for direct contributions.
+      </p>
+
+      <p>
+        One practical tip: deposit before the 5th of April each year. PPF interest is calculated on the minimum balance between the 5th and the last day of each month. Deposit ₹1.5 lakh on April 4th and it earns interest for all 12 months of that financial year. Deposit the same amount on April 10th and you lose a full month's interest — roughly ₹890 on ₹1.5 lakh at 7.1%, every single year. Over 15 years, that timing gap costs about ₹18,000.
+      </p>
+
+      <p>
+        Whether PPF belongs in your portfolio depends on your horizon and tax bracket. If you're in the 5% or 0% slab, a 7.5% FD often wins after tax, and it's far more flexible. If you're in the 20% or 30% slab and can lock money for 15 years, PPF is hard to beat for the debt portion of your allocation. Most financial planners suggest treating PPF as the "safe bucket" and letting equity mutual funds handle growth — not choosing between the two.
+      </p>
+
+    </div>
+
+    <div class="mt-10">
+      <h3 class="font-display text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">How to Use</h3>
+
+      <ol class="mt-5 space-y-4">
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">1</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Set currency (default INR).</strong> PPF is an Indian instrument, so INR is selected by default. Switch if you want to model the numbers in another currency for comparison — though PPF itself can only be opened in INR.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">2</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Enter your yearly deposit.</strong> The slider maxes out at ₹1.5 lakh because that's the PPF ceiling per financial year. You can type a lower amount — the minimum is ₹500 per year. Most people contribute the full ₹1.5 lakh to maximize the 80C deduction.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">3</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Check the current rate.</strong> The government announces PPF rates every quarter. As of late 2024 it's 7.1%. If you're modeling a future scenario, 7.0–7.2% is a reasonable long-term assumption based on the last 8 years of data.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">4</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Pick your tenure.</strong> PPF matures at 15 years, but you can extend to 20, 25, and so on. The slider goes up to 50 years so you can see what a multigenerational PPF would grow into — though in practice, most people withdraw at 15 and reinvest elsewhere.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">5</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Read the tax badge.</strong> The result panel shows a green "Fully tax-free" note confirming EEE (Exempt-Exempt-Exempt) status. Copy the result to compare against FD or NPS numbers on a spreadsheet.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+  </div>
+  </section>
+
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="grid lg:grid-cols-3 gap-8">
+
+    <div class="lg:col-span-2">
+
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+
+      <div class="mt-6 space-y-3">
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What is PPF and who can open one?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            PPF is a long-term savings scheme backed by the Government of India, with a 15-year lock-in and a fixed rate revised quarterly. Any Indian resident can open one — salaried, self-employed, minors through a guardian. You can also open a second PPF account in a minor child's name, but the combined yearly limit across all accounts is still ₹1.5 lakh. NRIs can't open a new PPF account, though accounts opened before becoming an NRI continue until maturity. You can open PPF at any nationalized bank (SBI, PNB), major private banks (HDFC, ICICI), or the post office — the rate and rules are identical everywhere.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">How is PPF interest calculated?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            PPF compounds yearly, but the trick is in the monthly rule. Interest each month is calculated on the lowest balance between the 5th and the last day of that month. So if you deposit ₹1.5 lakh on April 4th, it earns interest for 12 months of the year. Deposit it on April 10th and you lose April's interest entirely — that's the ₹890 mistake. Interest is credited to your account on March 31st each year. The formula is: Year-end balance = (Opening balance + Deposits during year) × (1 + rate). This repeats every year for 15 years.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Is PPF interest taxable?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            No. PPF enjoys EEE status — Exempt on contribution (80C deduction up to ₹1.5 lakh), Exempt on interest accrued, Exempt on maturity amount. This is why PPF is a rare "triple tax-free" instrument. In the old tax regime, contributing ₹1.5 lakh to PPF saves you ₹46,800 in tax if you're in the 30% slab (plus cess). In the new regime (from FY 2023-24), the 80C deduction isn't available, but the interest and maturity remain fully tax-free — so PPF is still worth it if you want tax-free growth.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Can I withdraw money from PPF before 15 years?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Partially, from year 7. You can withdraw up to 50% of the balance at the end of year 4, once per year. Say you deposited ₹1.5 lakh yearly for 6 years and the balance at end of year 4 was ₹6.7 lakh — you can withdraw up to ₹3.35 lakh starting from year 7. Between years 3 and 6 you can take a loan against your PPF balance at 2% above the PPF rate, capped at 25% of the year-2 closing balance. Full withdrawal is only allowed at maturity (15 years) or in specific cases like death of the account holder.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What happens at PPF maturity after 15 years?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            You have three choices. First, withdraw the full amount — tax-free. Second, extend for 5 years with fresh contributions (you keep depositing ₹1.5 lakh/year and keep earning 7.1% tax-free). Third, extend for 5 years without fresh contributions — the existing corpus keeps compounding at the PPF rate but you don't add money. Option three is popular with retirees. If you do nothing, the account continues to earn interest but doesn't get fresh contributions until you formally submit the extension form at your bank. So if you want to keep PPF alive after 15 years, submit Form H within one year of maturity.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Is PPF better than FD or mutual funds?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Depends on your tax slab and horizon. Against a 5-year bank FD at 7.5%, if you're in the 30% slab, the FD effectively gives 5.25% after tax — PPF at 7.1% tax-free clearly wins. If you're in the 0–5% slab, the FD is competitive and far more liquid. Against equity mutual funds, a SIP in an index fund has historically returned 11–12% over 15-year windows but with drawdowns. PPF gives certainty. Most planners suggest putting your debt allocation into PPF and growth allocation into equity funds — not choosing one over the other. Never compare PPF to small-cap funds; they're playing different games.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What is the minimum and maximum I can deposit in PPF?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Minimum ₹500 per financial year — miss this and the account becomes dormant, costing you ₹50 to reactivate. Maximum ₹1.5 lakh per financial year, across all PPF accounts you hold (self + minor child combined). You can deposit in one lump sum or in up to 12 monthly installments. Many people set up a ₹12,500 monthly auto-debit to hit the ₹1.5 lakh cap without thinking about it. Deposits above ₹1.5 lakh don't earn interest and are returned without any benefit — banks simply reject them at the time of deposit.
+          </div>
+        </details>
+
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is PPF and who can open one?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PPF is a long-term savings scheme backed by the Government of India with a 15-year lock-in and a fixed rate revised quarterly. Any Indian resident can open one — salaried, self-employed, or minors through a guardian. NRIs cannot open a new account, though existing accounts continue until maturity. You can open PPF at SBI, PNB, HDFC, ICICI, or the post office — the rate and rules are identical everywhere."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is PPF interest calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PPF compounds yearly, but interest each month is calculated on the lowest balance between the 5th and last day of that month. Deposit ₹1.5 lakh on April 4th and it earns 12 months of interest; deposit on April 10th and you lose April's interest entirely (roughly ₹890). Interest credits on March 31st each year. The formula is: Year-end balance = (Opening + Deposits) × (1 + rate)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PPF interest taxable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. PPF enjoys EEE status — Exempt on contribution (80C up to ₹1.5 lakh), Exempt on interest accrued, Exempt on maturity. Contributing ₹1.5 lakh saves you ₹46,800 in tax in the 30% slab under the old regime. In the new tax regime, the 80C deduction isn't available but interest and maturity remain fully tax-free, so PPF still delivers tax-free compounding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I withdraw money from PPF before 15 years?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Partially, from year 7. You can withdraw up to 50% of the balance at the end of year 4, once per year. Between years 3 and 6 you can take a loan against your PPF balance at 2% above the PPF rate, capped at 25% of the year-2 closing balance. Full withdrawal is only allowed at maturity or on death of the account holder."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens at PPF maturity after 15 years?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three options: withdraw fully tax-free, extend 5 years with fresh contributions, or extend without contributions so the corpus keeps compounding. Extension without fresh deposits is popular with retirees. If you want to keep the account active, submit Form H within one year of maturity; otherwise interest continues but no new deposits are accepted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PPF better than FD or mutual funds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depends on tax slab and horizon. Against a 5-year FD at 7.5%, a 30%-slab investor nets 5.25% after tax vs PPF's 7.1% tax-free — PPF wins. In the 0–5% slab, FDs are competitive and more liquid. Against equity funds, PPF offers certainty, not maximum growth. Most planners suggest PPF for the debt allocation and equity funds for growth — not an either/or choice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum and maximum I can deposit in PPF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Minimum ₹500 per financial year; miss it and the account goes dormant, costing ₹50 to reactivate. Maximum ₹1.5 lakh per financial year across all PPF accounts (self plus minor child combined). You can deposit as a lump sum or in up to 12 monthly installments. Deposits above the ₹1.5 lakh cap earn no interest and are rejected by banks."
+            }
+          }
+        ]
+      }
+      </script>
+
+    </div>
+
+    <aside class="lg:col-span-1 space-y-5">
+
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5">
+        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-4">Trending Tools</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="fd-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              FD Calculator
+            </a>
+          </li>
+          <li>
+            <a href="rd-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              RD Calculator
+            </a>
+          </li>
+          <li>
+            <a href="sip-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              SIP Calculator
+            </a>
+          </li>
+          <li>
+            <a href="emi-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              EMI Calculator
+            </a>
+          </li>
+          <li>
+            <a href="compound-interest-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              Compound Interest
+            </a>
+          </li>
+          <li>
+            <a href="bmi-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#f43f5e"></span>
+              BMI Calculator
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl p-5 shadow-pop" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-xs font-bold uppercase tracking-wider text-white/90">Premium</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-white">Ad-free. Faster. Saved history.</h3>
+        <p class="mt-2 text-sm text-white/80">Upgrade to Calcify Premium and access 158 tools without ads, plus export results to PDF.</p>
+        <a href="../premium.html" class="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-xl bg-white text-primary text-sm font-bold hover:bg-white/90 transition">
+          Learn More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+  </section>
+
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="flex items-end justify-between mb-6">
+    <div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Tools</h2>
+      <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400">Other finance calculators you might find useful</p>
+    </div>
+    <a href="../finance.html" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 dark:hover:text-indigo-400 transition">
+      View All
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <a href="fd-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M8 15h.01M12 15h.01M16 15h.01"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">FD Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Lump-sum fixed deposit maturity with quarterly compounding.</p>
+    </a>
+
+    <a href="rd-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">RD Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Recurring deposit maturity with monthly contributions.</p>
+    </a>
+
+    <a href="sip-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+          <polyline points="16 7 22 7 22 13"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">SIP Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Project mutual fund SIP returns with expected CAGR.</p>
+    </a>
+
+    <a href="nps-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/>
+          <path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/>
+          <path d="M18 12a2 2 0 0 0 0 4h4v-4z"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">NPS Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">National Pension System corpus and pension estimate.</p>
+    </a>
+
+    <a href="compound-interest-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Compound Interest</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">See how any amount grows with any compounding frequency.</p>
+    </a>
+
+    <a href="income-tax-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Income Tax Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Compare old vs new tax regime with deductions.</p>
+    </a>
+
+  </div>
+
+  <a href="../finance.html" class="sm:hidden mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 transition">
+    View All Finance Tools
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <div class="rounded-3xl p-8 sm:p-10 shadow-pop relative overflow-hidden" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+    <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 pointer-events-none"></div>
+    <div class="absolute -bottom-20 -left-10 w-64 h-64 rounded-full bg-white/5 pointer-events-none"></div>
+
+    <div class="relative max-w-2xl">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/15 text-white border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Calcify Premium
+      </span>
+      <h2 class="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Stop switching tabs. Get every tool, ad-free.</h2>
+      <p class="mt-3 text-sm sm:text-base text-white/85 leading-relaxed">One subscription unlocks all 158 calculators, saves your inputs across sessions, and lets you export results as PDF or CSV. No ads, ever.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="../premium.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-primary font-bold text-sm shadow-soft hover:bg-white/90 transition">
+          Get Premium
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="../premium.html#compare" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold text-sm hover:bg-white/20 transition">
+          Compare Plans
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">New calculators, one email a month</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm sm:text-base">We ship 4–6 new tools every month. Get a short digest — no spam, no promos, unsubscribe in one click.</p>
+
+      <form id="newsletterForm" class="mt-6 flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto">
+        <input type="email" id="newsletterEmail" required placeholder="you@example.com" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40">
+        <button type="submit" class="px-5 py-3 rounded-xl text-white text-sm font-bold shadow-soft transition hover:opacity-95" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="mt-3 text-sm hidden"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-ink border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8">
+
+      <div class="col-span-2 sm:col-span-4 lg:col-span-1">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="10" y2="10"/>
+              <line x1="14" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="10" y2="14"/>
+              <line x1="14" y1="14" x2="16" y2="14"/>
+              <line x1="8" y1="18" x2="16" y2="18"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">158 free calculators for finance, health, math, and everyday life. Built for people who want answers, not ads.</p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://www.youtube.com/@calcifyofficialchannel" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/calcifyofficial" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../finance.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Finance</a></li>
+          <li><a href="../health.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Health</a></li>
+          <li><a href="../math.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Math</a></li>
+          <li><a href="../converters.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Converters</a></li>
+          <li><a href="../everyday.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Everyday</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Company</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">About</a></li>
+          <li><a href="../contact.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Contact</a></li>
+          <li><a href="../premium.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Premium</a></li>
+          <li><a href="../blog.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../privacy.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Privacy</a></li>
+          <li><a href="../terms.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Terms</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Disclaimer</a></li>
+          <li><a href="../cookies.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-slate-500 dark:text-slate-400">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        100% client-side. Nothing leaves your browser.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-xl shadow-pop text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+</button>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold shadow-pop opacity-0 pointer-events-none transition-opacity">
+  Copied to clipboard
+</div>
+
+  <script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  var currencies = {
+    INR: { locale: 'en-IN', symbol: '₹', name: 'Indian Rupee' },
+    USD: { locale: 'en-US', symbol: '$', name: 'US Dollar' },
+    EUR: { locale: 'de-DE', symbol: '€', name: 'Euro' },
+    GBP: { locale: 'en-GB', symbol: '£', name: 'British Pound' },
+    AED: { locale: 'ar-AE', symbol: 'د.إ', name: 'UAE Dirham' },
+    SAR: { locale: 'ar-SA', symbol: '﷼', name: 'Saudi Riyal' },
+    CAD: { locale: 'en-CA', symbol: 'C$', name: 'Canadian Dollar' },
+    AUD: { locale: 'en-AU', symbol: 'A$', name: 'Australian Dollar' },
+    JPY: { locale: 'ja-JP', symbol: '¥', name: 'Japanese Yen' }
+  };
+
+  var defaults = { yearly: 150000, rate: 7.1, years: 15, currency: 'INR' };
+  var PPF_MAX = 150000;
+
+  var el = {
+    yearly: document.getElementById('yearly'),
+    yearlyRange: document.getElementById('yearlyRange'),
+    rate: document.getElementById('rate'),
+    rateRange: document.getElementById('rateRange'),
+    years: document.getElementById('years'),
+    yearsRange: document.getElementById('yearsRange'),
+    currency: document.getElementById('currency'),
+    currencyName: document.getElementById('currencyName'),
+    symbolYearly: document.getElementById('symbolYearly'),
+    maturity: document.getElementById('maturity'),
+    invested: document.getElementById('invested'),
+    interest: document.getElementById('interest'),
+    returnPct: document.getElementById('returnPct'),
+    copyBtn: document.getElementById('copyBtn'),
+    resetBtn: document.getElementById('resetBtn'),
+    toast: document.getElementById('toast'),
+    themeToggle: document.getElementById('themeToggle'),
+    mobileBtn: document.getElementById('mobileBtn'),
+    mobileDrawer: document.getElementById('mobileDrawer'),
+    langBtn: document.getElementById('langBtn'),
+    langMenu: document.getElementById('langMenu'),
+    langLabel: document.getElementById('langLabel'),
+    backToTop: document.getElementById('backToTop'),
+    newsletterForm: document.getElementById('newsletterForm'),
+    newsletterEmail: document.getElementById('newsletterEmail'),
+    newsletterMsg: document.getElementById('newsletterMsg'),
+    year: document.getElementById('year')
+  };
+
+  function num(v, fallback) {
+    var n = parseFloat(v);
+    return isFinite(n) ? n : fallback;
+  }
+
+  function clamp(v, min, max) {
+    return Math.min(Math.max(v, min), max);
+  }
+
+  function fmt(amount, code) {
+    var c = currencies[code] || currencies.INR;
+    try {
+      return new Intl.NumberFormat(c.locale, {
+        style: 'currency',
+        currency: code,
+        maximumFractionDigits: 0
+      }).format(amount);
+    } catch (e) {
+      return c.symbol + Math.round(amount).toLocaleString();
+    }
+  }
+
+  function currentCurrency() {
+    return el.currency.value || 'INR';
+  }
+
+  function calc() {
+    var deposit = num(el.yearly.value, 0);
+    var rate = num(el.rate.value, 0) / 100;
+    var years = Math.round(num(el.years.value, 0));
+
+    if (deposit < 0) deposit = 0;
+    if (deposit > PPF_MAX) deposit = PPF_MAX;
+    if (rate < 0) rate = 0;
+    if (years < 0) years = 0;
+
+    var balance = 0;
+    for (var y = 0; y < years; y++) {
+      balance = (balance + deposit) * (1 + rate);
+    }
+
+    var invested = deposit * years;
+    var interest = balance - invested;
+    var returnPct = invested > 0 ? (interest / invested) * 100 : 0;
+    var code = currentCurrency();
+
+    el.maturity.textContent = fmt(balance, code);
+    el.invested.textContent = fmt(invested, code);
+    el.interest.textContent = fmt(interest, code);
+    el.returnPct.textContent = returnPct.toFixed(1) + '%';
+
+    return { maturity: balance, invested: invested, interest: interest, returnPct: returnPct, code: code };
+  }
+
+  function syncFromRange(sliderEl, inputEl, min, max) {
+    sliderEl.addEventListener('input', function() {
+      inputEl.value = sliderEl.value;
+      calc();
+    });
+    inputEl.addEventListener('input', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      sliderEl.value = v;
+      calc();
+    });
+    inputEl.addEventListener('blur', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      inputEl.value = v;
+      sliderEl.value = v;
+      calc();
+    });
+  }
+
+  function updateSymbol() {
+    var code = currentCurrency();
+    el.symbolYearly.textContent = currencies[code].symbol;
+    el.currencyName.textContent = currencies[code].name;
+  }
+
+  function loadCurrency() {
+    var saved = null;
+    try { saved = localStorage.getItem('calcify-currency'); } catch (e) {}
+    if (saved && currencies[saved]) {
+      el.currency.value = saved;
+    } else {
+      el.currency.value = 'INR';
+    }
+    updateSymbol();
+  }
+
+  function setCurrency(code) {
+    if (!currencies[code]) return;
+    el.currency.value = code;
+    try { localStorage.setItem('calcify-currency', code); } catch (e) {}
+    updateSymbol();
+    calc();
+  }
+
+  function showToast(msg) {
+    el.toast.textContent = msg;
+    el.toast.style.opacity = '1';
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function() {
+      el.toast.style.opacity = '0';
+    }, 1800);
+  }
+
+  function copyResult() {
+    var r = calc();
+    var lines = [
+      'Calcify — PPF Calculator',
+      'Yearly Deposit: ' + fmt(num(el.yearly.value, 0), r.code),
+      'Rate: ' + num(el.rate.value, 0) + '% per year',
+      'Tenure: ' + num(el.years.value, 0) + ' years',
+      'Total Invested: ' + fmt(r.invested, r.code),
+      'Interest Earned: ' + fmt(r.interest, r.code),
+      'Maturity Amount: ' + fmt(r.maturity, r.code),
+      'Effective Return: ' + r.returnPct.toFixed(1) + '%',
+      'Tax Status: Fully tax-free (EEE)',
+      '',
+      'Calculated on Calcify'
+    ];
+    var text = lines.join('\n');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('Result copied');
+      }, function() {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Result copied');
+    } catch (e) {
+      showToast('Copy failed');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function reset() {
+    el.yearly.value = defaults.yearly;
+    el.yearlyRange.value = defaults.yearly;
+    el.rate.value = defaults.rate;
+    el.rateRange.value = defaults.rate;
+    el.years.value = defaults.years;
+    el.yearsRange.value = defaults.years;
+    calc();
+  }
+
+  function toggleTheme() {
+    var isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  function toggleMobile() {
+    el.mobileDrawer.classList.toggle('hidden');
+  }
+
+  function closeMobile() {
+    el.mobileDrawer.classList.add('hidden');
+  }
+
+  function toggleLangMenu(e) {
+    e.stopPropagation();
+    el.langMenu.classList.toggle('hidden');
+  }
+
+  function applyLang(code) {
+    el.langLabel.textContent = code.toUpperCase();
+    try { localStorage.setItem('calcify-lang', code); } catch (e) {}
+    var map = { en: 'USD', hi: 'INR', es: 'EUR', ar: 'AED' };
+    if (map[code]) setCurrency(map[code]);
+    el.langMenu.classList.add('hidden');
+    closeMobile();
+  }
+
+  function bindLangOptions() {
+    var opts = document.querySelectorAll('.lang-opt');
+    for (var i = 0; i < opts.length; i++) {
+      opts[i].addEventListener('click', function() {
+        applyLang(this.getAttribute('data-lang'));
+      });
+    }
+  }
+
+  function handleScroll() {
+    if (window.pageYOffset > 400) {
+      el.backToTop.style.opacity = '1';
+      el.backToTop.style.pointerEvents = 'auto';
+    } else {
+      el.backToTop.style.opacity = '0';
+      el.backToTop.style.pointerEvents = 'none';
+    }
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    var email = el.newsletterEmail.value.trim();
+    if (!email || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+      el.newsletterMsg.textContent = 'Please enter a valid email address.';
+      el.newsletterMsg.className = 'mt-3 text-sm text-rose-500';
+      return;
+    }
+    el.newsletterMsg.textContent = 'Thanks — you are subscribed.';
+    el.newsletterMsg.className = 'mt-3 text-sm text-emerald-600 dark:text-emerald-400';
+    el.newsletterEmail.value = '';
+  }
+
+  function init() {
+    loadCurrency();
+
+    var savedLang = null;
+    try { savedLang = localStorage.getItem('calcify-lang'); } catch (e) {}
+    if (savedLang) el.langLabel.textContent = savedLang.toUpperCase();
+
+    syncFromRange(el.yearlyRange, el.yearly, 500, PPF_MAX);
+    syncFromRange(el.rateRange, el.rate, 4, 12);
+    syncFromRange(el.yearsRange, el.years, 15, 50);
+
+    el.currency.addEventListener('change', function() {
+      try { localStorage.setItem('calcify-currency', el.currency.value); } catch (e) {}
+      updateSymbol();
+      calc();
+    });
+
+    el.copyBtn.addEventListener('click', copyResult);
+    el.resetBtn.addEventListener('click', reset);
+    el.themeToggle.addEventListener('click', toggleTheme);
+    el.mobileBtn.addEventListener('click', toggleMobile);
+    el.langBtn.addEventListener('click', toggleLangMenu);
+
+    document.addEventListener('click', function(e) {
+      if (!el.langMenu.classList.contains('hidden')) {
+        if (!el.langMenu.contains(e.target) && e.target !== el.langBtn) {
+          el.langMenu.classList.add('hidden');
+        }
+      }
+    });
+
+    var mobileLinks = el.mobileDrawer.querySelectorAll('a');
+    for (var i = 0; i < mobileLinks.length; i++) {
+      mobileLinks[i].addEventListener('click', closeMobile);
+    }
+
+    bindLangOptions();
+
+    el.backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    el.newsletterForm.addEventListener('submit', handleNewsletter);
+    el.year.textContent = new Date().getFullYear();
+
+    calc();
+  }
+
+  window.Calcify = window.Calcify || {};
+  window.Calcify.PPFCalculator = {
+    calc: calc,
+    reset: reset,
+    setCurrency: setCurrency,
+    currencies: currencies
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
