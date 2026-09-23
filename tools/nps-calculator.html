@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPS Calculator — National Pension System Corpus & Pension</title>
+<meta name="description" content="Calculate NPS corpus at 60, lump-sum withdrawal, monthly pension via annuity, and tax savings. Free, instant, no signup.">
+<meta name="keywords" content="nps calculator, national pension system calculator, nps corpus, nps pension, nps tax saving, nps tier 1, nps annuity">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="nps-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="NPS Calculator — National Pension System Corpus & Pension">
+<meta property="og:description" content="Calculate NPS corpus at 60, lump-sum withdrawal, monthly pension, and tax savings. Free, instant.">
+<meta property="og:image" content="../assets/og-nps.png">
+<meta property="og:site_name" content="Calcify">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NPS Calculator — Corpus & Pension">
+<meta name="twitter:description" content="See your NPS corpus and monthly pension in seconds.">
+<meta name="twitter:image" content="../assets/og-nps.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: { primary: '#4f46e5', ink: '#020617' },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 2px 12px -2px rgba(2, 6, 23, 0.08)',
+        card: '0 8px 28px -8px rgba(2, 6, 23, 0.15)',
+        pop: '0 12px 40px -10px rgba(79, 70, 229, 0.35)'
+      },
+      borderRadius: { 'xl': '0.75rem', '2xl': '1rem', '3xl': '1.5rem' }
+    }
+  }
+}
+</script>
+
+<script>
+(function() {
+  try {
+    var t = localStorage.getItem('calcify-theme');
+    if (t === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+  } catch(e) {}
+})();
+</script>
+
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NPS Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate National Pension System corpus at age 60, lump-sum withdrawal, monthly annuity pension, and tax savings under Section 80CCD.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home"},
+    {"@type": "ListItem", "position": 2, "name": "Finance"},
+    {"@type": "ListItem", "position": 3, "name": "NPS Calculator"}
+  ]
+}
+</script>
+</head>
+
+  <body class="bg-white dark:bg-ink text-slate-900 dark:text-slate-100 font-sans antialiased">
+
+<a href="#calculator" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-xl focus:bg-primary focus:text-white focus:font-semibold">Skip to calculator</a>
+
+<header class="sticky top-0 z-40 backdrop-blur-lg bg-white/80 dark:bg-ink/80 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <a href="../index.html" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="8" y1="6" x2="16" y2="6"/>
+            <line x1="8" y1="10" x2="10" y2="10"/>
+            <line x1="14" y1="10" x2="16" y2="10"/>
+            <line x1="8" y1="14" x2="10" y2="14"/>
+            <line x1="14" y1="14" x2="16" y2="14"/>
+            <line x1="8" y1="18" x2="16" y2="18"/>
+          </svg>
+        </div>
+        <span class="font-display font-bold text-lg tracking-tight">Calcify</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="../index.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Home</a>
+        <a href="../finance.html" class="px-3 py-2 text-sm font-medium text-emerald-600 dark:text-emerald-400 rounded-lg">Finance</a>
+        <a href="../health.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Health</a>
+        <a href="../math.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Math</a>
+        <a href="../converters.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">Converters</a>
+        <a href="../about.html" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary rounded-lg transition">About</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+
+        <div class="relative hidden sm:block">
+          <button id="langBtn" class="flex items-center gap-1.5 px-2.5 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary rounded-lg transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span id="langLabel">EN</span>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div id="langMenu" class="hidden absolute right-0 mt-2 w-44 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-card py-1.5 z-50">
+            <button data-lang="en" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">English <span class="text-xs text-slate-400">EN</span></button>
+            <button data-lang="hi" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">हिन्दी <span class="text-xs text-slate-400">HI</span></button>
+            <button data-lang="es" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">Español <span class="text-xs text-slate-400">ES</span></button>
+            <button data-lang="ar" class="lang-opt w-full text-left px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">العربية <span class="text-xs text-slate-400">AR</span></button>
+          </div>
+        </div>
+
+        <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button id="mobileBtn" aria-label="Open menu" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-ink">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      <a href="../index.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+      <a href="../finance.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800">Finance</a>
+      <a href="../health.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-slate-100 dark:hover:bg-slate-800">Health</a>
+      <a href="../math.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-violet-600 dark:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800">Math</a>
+      <a href="../converters.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-sky-600 dark:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800">Converters</a>
+      <a href="../text.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-amber-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800">Text</a>
+      <a href="../date.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800">Date</a>
+      <a href="../developer.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800">Developer</a>
+      <a href="../everyday.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-teal-600 dark:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800">Everyday</a>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800 space-y-1">
+        <a href="../about.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+        <a href="../contact.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+      </div>
+      <div class="pt-2 mt-2 border-t border-slate-200 dark:border-slate-800">
+        <div class="px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Language</div>
+        <div class="grid grid-cols-4 gap-1.5 px-1">
+          <button data-lang="en" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">EN</button>
+          <button data-lang="hi" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">HI</button>
+          <button data-lang="es" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">ES</button>
+          <button data-lang="ar" class="lang-opt px-2 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition">AR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+ <main id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <ol class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+      <li><a href="../index.html" class="hover:text-primary transition">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="../finance.html" class="hover:text-primary transition">Finance</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-slate-700 dark:text-slate-200 font-medium">NPS Calculator</li>
+    </ol>
+  </nav>
+
+  <div class="mb-8">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-900/50">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      Finance
+    </span>
+    <h1 class="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+      NPS Calculator
+    </h1>
+    <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+      Project your National Pension System corpus at 60, see the tax-free lump sum, and estimate your monthly annuity pension.
+    </p>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+
+    <div class="lg:col-span-2">
+      <div class="rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-card overflow-hidden">
+
+        <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/>
+                <path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/>
+                <path d="M18 12a2 2 0 0 0 0 4h4v-4z"/>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-display font-bold text-lg text-slate-900 dark:text-white">National Pension System</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Tier-I · Retirement corpus projection</p>
+            </div>
+          </div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Live
+          </span>
+        </div>
+
+        <div class="p-5 sm:p-6">
+
+          <div class="mb-6 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 p-4">
+            <div class="flex items-center justify-between mb-3">
+              <label class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Currency
+              </label>
+              <span class="text-xs text-slate-500 dark:text-slate-400" id="currencyName">Indian Rupee</span>
+            </div>
+            <select id="currency" class="w-full px-3 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+              <option value="INR" data-locale="en-IN" data-name="Indian Rupee" selected>INR — Indian Rupee (₹)</option>
+              <option value="USD" data-locale="en-US" data-name="US Dollar">USD — US Dollar ($)</option>
+              <option value="EUR" data-locale="de-DE" data-name="Euro">EUR — Euro (€)</option>
+              <option value="GBP" data-locale="en-GB" data-name="British Pound">GBP — British Pound (£)</option>
+              <option value="AED" data-locale="ar-AE" data-name="UAE Dirham">AED — UAE Dirham (د.إ)</option>
+              <option value="SAR" data-locale="ar-SA" data-name="Saudi Riyal">SAR — Saudi Riyal (﷼)</option>
+              <option value="CAD" data-locale="en-CA" data-name="Canadian Dollar">CAD — Canadian Dollar (C$)</option>
+              <option value="AUD" data-locale="en-AU" data-name="Australian Dollar">AUD — Australian Dollar (A$)</option>
+              <option value="JPY" data-locale="ja-JP" data-name="Japanese Yen">JPY — Japanese Yen (¥)</option>
+            </select>
+          </div>
+
+          <div class="space-y-6">
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="monthly" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Monthly Contribution</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-r border-slate-200 dark:border-slate-700" id="symbolMonthly">₹</span>
+                  <input type="number" id="monthly" value="10000" min="500" max="500000" step="500" class="w-32 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                </div>
+              </div>
+              <input type="range" id="monthlyRange" min="500" max="200000" step="500" value="10000" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>500</span>
+                <span>2,00,000</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="age" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Your Current Age</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="age" value="30" min="18" max="59" step="1" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">yrs</span>
+                </div>
+              </div>
+              <input type="range" id="ageRange" min="18" max="59" step="1" value="30" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>18</span>
+                <span>59</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">NPS matures at 60. Corpus is projected over <span id="yearsLabel">30</span> years.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="returnRate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Expected Return (CAGR)</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="returnRate" value="10" min="4" max="15" step="0.5" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">%</span>
+                </div>
+              </div>
+              <input type="range" id="returnRateRange" min="4" max="15" step="0.5" value="10" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>4%</span>
+                <span>15%</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Aggressive (E) has historically returned ~11-12%. Moderate (C) ~9%. Conservative (G) ~8%.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="annuityPct" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Annuity Allocation (%)</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="annuityPct" value="40" min="40" max="100" step="5" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">%</span>
+                </div>
+              </div>
+              <input type="range" id="annuityPctRange" min="40" max="100" step="5" value="40" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>40% (min)</span>
+                <span>100%</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">At least 40% must go into an annuity to earn pension. Rest is tax-free lump sum.</p>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="annuityRate" class="text-sm font-semibold text-slate-700 dark:text-slate-200">Annuity Return Rate</label>
+                <div class="flex items-center rounded-xl border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900">
+                  <input type="number" id="annuityRate" value="6" min="4" max="9" step="0.1" class="w-20 px-2.5 py-1.5 text-sm font-semibold bg-transparent focus:outline-none text-right">
+                  <span class="px-2.5 py-1.5 text-sm font-semibold text-slate-500 dark:text-slate-400 border-l border-slate-200 dark:border-slate-700">%</span>
+                </div>
+              </div>
+              <input type="range" id="annuityRateRange" min="4" max="9" step="0.1" value="6" class="w-full accent-indigo-600 dark:accent-indigo-500">
+              <div class="flex justify-between text-xs text-slate-400 mt-1">
+                <span>4%</span>
+                <span>9%</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-7">
+            <button id="copyBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-indigo-700 text-white text-sm font-semibold shadow-soft transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Copy Result
+            </button>
+            <button id="resetBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-semibold transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              Reset
+            </button>
+          </div>
+
+          <div class="mt-7 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 p-5 sm:p-6">
+
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-2">Corpus at 60</div>
+            <div id="corpus" class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white break-all">₹2,26,09,745</div>
+
+            <div class="grid grid-cols-2 gap-3 mt-6">
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Total Invested</div>
+                <div id="invested" class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white break-all">₹36,00,000</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Growth</div>
+                <div id="growth" class="font-display font-bold text-sm sm:text-base text-emerald-600 dark:text-emerald-400 break-all">₹1,90,09,745</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-3">
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Lump Sum (Tax-free)</div>
+                <div id="lumpsum" class="font-display font-bold text-sm sm:text-base text-emerald-600 dark:text-emerald-400 break-all">₹1,35,65,847</div>
+              </div>
+              <div class="rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 p-3">
+                <div class="text-xs text-slate-500 dark:text-slate-400 mb-1">Annuity Corpus</div>
+                <div id="annuityCorpus" class="font-display font-bold text-sm sm:text-base text-indigo-600 dark:text-indigo-400 break-all">₹90,43,898</div>
+              </div>
+            </div>
+
+            <div class="mt-3 rounded-xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 p-4">
+              <div class="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-400 mb-1">Estimated Monthly Pension</div>
+              <div id="pension" class="font-display font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white break-all">₹45,219</div>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Based on <span id="annuityRateLabel">6.0</span>% annuity return on the allocated corpus.</p>
+            </div>
+
+            <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+              Corpus uses monthly compounding: FV = P × [((1 + r/12)^n − 1) / (r/12)] × (1 + r/12). NPS Tier-I is EET — contributions and growth are tax-free, but pension income is taxable as per slab.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-1">
+      <!-- Sidebar filled in Phase 5 -->
+    </div>
+
+  </div>
+</main>
+
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="max-w-3xl">
+
+    <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">About the NPS Calculator</h2>
+
+    <div class="mt-6 space-y-5 text-slate-700 dark:text-slate-300 leading-relaxed">
+
+      <p>
+        Start NPS at 30 with ₹10,000 a month and you retire at 60 with roughly ₹2.26 crore. You'll have put in ₹36 lakh yourself, the market will have added ₹1.90 crore on top, and you'll walk away with a ₹1.35 crore tax-free lump sum plus a ₹45,000 monthly pension for life. That math only works if you start early — begin at 45 instead and the same ₹10,000 a month gets you about ₹34 lakh total, not ₹2.26 crore. Fifteen years less compounding costs you ₹1.9 crore.
+      </p>
+
+      <p>
+        The National Pension System was launched in 2004 for government employees and opened to all citizens in 2009. The regulator is PFRDA. Unlike EPF or PPF, NPS is market-linked — your money sits in equity, corporate bonds, and government securities based on the allocation you choose (Active or Auto). The default Auto Choice (LC50) starts at 50% equity, drops 2.5% every year after 35, and lands at 10% equity by age 55. If you're 30 and comfortable with volatility, Active Choice with 75% equity (the Tier-I cap) has historically delivered 11–12% CAGR over 15-year windows.
+      </p>
+
+      <p>
+        The tax treatment is EET — Exempt on contribution (both employee and employer contributions deductible under Section 80CCD), Exempt on growth, Taxed on withdrawal of pension income. Your own contribution qualifies for an extra ₹50,000 deduction under 80CCD(1B) on top of the ₹1.5 lakh 80C limit, which makes NPS one of the few ways to save ₹2 lakh a year in deductible contributions. The lump-sum 60% at retirement is fully tax-free. Only the 40% forced into an annuity generates taxable pension — and there's no way to skip this 40% requirement anymore, though the government has hinted at revisiting it.
+      </p>
+
+      <p>
+        The annuity is where most people get disappointed. Park ₹90 lakh into an annuity at retirement and the insurer gives you 5.5–6.5% for life — that's ₹45,000–50,000 a month on ₹90 lakh. A simple 8% SWP (systematic withdrawal plan) from a debt fund would give you ₹60,000 a month with some capital preservation, but it isn't guaranteed for life. For retirees who value certainty and don't want to outlive their money, the annuity trade-off makes sense. For those with other income sources, choosing the minimum 40% annuity and keeping the rest in growth assets is usually smarter.
+      </p>
+
+      <p>
+        Exit rules matter. You can withdraw 25% of your contributions after 10 years for specific reasons — buying a house, medical treatment, higher education, marriage of children. Partial withdrawals are allowed three times total. Before 60, you can only exit if you've been in NPS for 10+ years, and then 80% must go into an annuity (20% tax-free lump sum). If you exit before 10 years, only your own contribution comes back and the returns go to the pension fund. So NPS isn't a product to enter and exit casually — it's a 25–30 year commitment.
+      </p>
+
+      <p>
+        For most salaried Indians, the sweet spot is contributing ₹10,000–15,000 a month through the corporate NPS route, where your employer's 10% of basic salary (up to ₹7.5 lakh/year under 80CCD(2)) is tax-free, and it doesn't eat into your 80C limit. That's the biggest NPS advantage most people miss. If you're self-employed, the ₹50,000 extra deduction under 80CCD(1B) makes NPS the single best tax-saving instrument after EPF. For low-income earners with no tax liability, NPS gives no tax benefit — better to stick with PPF.
+      </p>
+
+      <p>
+        Compare this tool's result against a simple SIP calculator. A ₹10,000 SIP for 30 years at 12% gives ₹3.5 crore — more than NPS because there's no annuity drag. But the SIP corpus isn't tax-free, and you have to manage withdrawal discipline yourself. NPS forces discipline, gives the ₹50,000 deduction, and hands you a guaranteed pension — for a modest return cost. Neither is universally better.
+      </p>
+
+    </div>
+
+    <div class="mt-10">
+      <h3 class="font-display text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">How to Use</h3>
+
+      <ol class="mt-5 space-y-4">
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">1</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Enter your monthly contribution.</strong> This is what you plus your employer put into Tier-I each month. If your employer contributes 10% of basic, add that to your own number for a realistic total.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">2</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Set your current age.</strong> The calculator automatically projects to age 60 — that's the mandatory NPS exit age for the corpus calculation. Younger entry = dramatically larger corpus.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">3</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Pick your expected return.</strong> 10% is a reasonable middle assumption for a mixed allocation. Use 12% if you're in 75% equity Active Choice, 8–9% if you're conservative or approaching 55 (Auto Choice reduces equity sharply).</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">4</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Choose your annuity allocation.</strong> The PFRDA minimum is 40%. Anything above 40% reduces your tax-free lump sum but increases guaranteed lifetime pension. Test both 40% and 60% to see the trade-off.</p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-soft" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">5</span>
+          <div>
+            <p class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Read the four outputs.</strong> Corpus is the total at 60. Lump Sum is the 60% you get tax-free. Annuity Corpus goes to the insurer. Monthly Pension is what the insurer pays you for life. Copy the summary to compare NPS against PPF, EPF, or SIP numbers.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+  </div>
+ </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="grid lg:grid-cols-3 gap-8">
+
+    <div class="lg:col-span-2">
+
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+
+      <div class="mt-6 space-y-3">
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What is NPS and who should invest in it?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            NPS is a government-regulated, market-linked retirement scheme managed by PFRDA. It's best suited for salaried individuals aged 25–40 who are in the 20% or 30% tax bracket and want an extra ₹50,000 deduction under Section 80CCD(1B). The corporate NPS route (where your employer contributes 10% of basic) is especially attractive because employer contributions up to ₹7.5 lakh a year are fully tax-free and don't consume your 80C limit. Self-employed professionals with high tax liability also benefit. Low-income earners with no tax liability get little from NPS — PPF is better for them.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">How is the NPS corpus calculated?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            The corpus uses a monthly SIP formula: FV = P × [((1 + r/12)^n − 1) / (r/12)] × (1 + r/12), where P is your monthly contribution, r is the annual return, and n is the number of months from your current age to 60. Example: ₹10,000/month at 10% from age 30 to 60 = ₹2.26 crore. The NPS fund manager (SBI, HDFC, UTI, ICICI, etc.) actually computes NAV-based returns, not a fixed rate — this calculator uses a CAGR assumption so you can plan.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">How is NPS taxed at retirement?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            NPS Tier-I follows EET: contributions are tax-deductible (80CCD + extra ₹50,000 under 80CCD(1B)), growth is tax-free, and the pension income is taxed as per slab. At 60, you take 60% of the corpus as a tax-free lump sum. The remaining 40% must be used to buy an annuity — the monthly pension from that annuity is added to your income and taxed at your slab rate. If your total income at retirement is under ₹5 lakh, you may owe no tax on the pension due to rebate u/s 87A. Corpus above ₹5 lakh at exit also triggers 20% must-annuitize.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Can I withdraw from NPS before 60?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            Partial withdrawals up to 25% of your own contributions are allowed after 3 years (not 10) for specific reasons — medical treatment, higher education, marriage of children, buying a house. You can do this a maximum of three times during the entire tenure. Full exit before 60 is allowed only after 10 years of membership, and then 80% of the corpus must go into an annuity with only 20% available as a lump sum. Exit before 10 years returns only your contributions (minus the returns) back to you. So NPS is genuinely a long-term product.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Is NPS better than PPF or EPF?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            They're different instruments. PPF is guaranteed at 7.1% and fully tax-free (EEE), with a 15-year horizon. EPF earns 8.25% (FY 2023-24) and is also EEE for salaried employees. NPS is market-linked — 10–12% CAGR historically but with volatility, and it's EET (pension taxed). NPS gives a bigger corpus in good markets plus the extra ₹50,000 deduction, but the 40% forced annuity drags returns at retirement. Many planners suggest running NPS alongside EPF for diversification: EPF for the safety net, NPS for tax efficiency and equity exposure.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">What is the minimum annuity I must buy at 60?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            40% of your NPS corpus must be used to purchase an annuity from an IRDAI-registered life insurer (LIC, HDFC Life, SBI Life, ICICI Pru, etc.). You can choose to annuitize more than 40% — up to 100% if you want a larger lifetime pension. The annuity rate depends on the insurer and the product: a "life annuity" (pays till you die) gives around 6%, "life annuity with return of purchase price" gives around 5.5%, and "joint life with 100% to spouse" gives around 5%. The 60% outside annuity is a tax-free lump sum you can invest anywhere. There's no way to fully skip the 40% requirement.
+          </div>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
+            <span class="font-semibold text-slate-900 dark:text-white text-sm sm:text-base">Which NPS fund manager and scheme should I pick?</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            PFRDA-registered pension fund managers include SBI Pension Funds, HDFC Pension, UTI Retirement, ICICI Prudential, LIC, Kotak, Aditya Birla, Tata, and Max Life. Their long-term equity returns sit in a tight 11–13% CAGR band — differences are small. For allocation: Active Choice lets you set equity (E), corporate bond (C), and government securities (G) up to prescribed caps (75% E max under Tier-I, or 50% if you opt for the alternative). Auto Choice (LC50, LC25, LG) automatically reduces equity as you age. Most 25–40 year olds pick Active Choice with 75% E, 10% C, 15% G. Cost is low — total NPS charges are capped around 0.09% of AUM annually, one of the cheapest retirement products in India.
+          </div>
+        </details>
+
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is NPS and who should invest in it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NPS is a government-regulated, market-linked retirement scheme managed by PFRDA. It suits salaried individuals aged 25-40 in the 20% or 30% tax bracket who want an extra ₹50,000 deduction under Section 80CCD(1B). Corporate NPS is especially attractive because employer contributions up to ₹7.5 lakh a year are tax-free and don't consume 80C. Low-income earners with no tax liability get little from NPS — PPF is better for them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the NPS corpus calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The corpus uses a monthly SIP formula: FV = P × [((1 + r/12)^n − 1) / (r/12)] × (1 + r/12), where P is your monthly contribution, r is the annual return, and n is the number of months from your current age to 60. Example: ₹10,000/month at 10% from age 30 to 60 = ₹2.26 crore. Actual NPS returns are NAV-based; this calculator uses a CAGR assumption for planning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is NPS taxed at retirement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NPS Tier-I follows EET: contributions are deductible (80CCD plus extra ₹50,000 under 80CCD(1B)), growth is tax-free, and pension income is taxed as per slab. At 60, 60% of the corpus is a tax-free lump sum. The remaining 40% must buy an annuity — the monthly pension is added to your income and taxed at your slab rate. Corpus above ₹5 lakh at exit triggers the 20% must-annuitize rule."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I withdraw from NPS before 60?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Partial withdrawals up to 25% of your own contributions are allowed after 3 years for specific reasons — medical treatment, higher education, marriage of children, buying a house. Maximum three times during the entire tenure. Full exit before 60 is allowed only after 10 years, and 80% of the corpus must go into an annuity. Exit before 10 years returns only your own contributions minus the returns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is NPS better than PPF or EPF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Different instruments. PPF is guaranteed at 7.1% and fully EEE tax-free with a 15-year horizon. EPF earns 8.25% and is EEE for salaried employees. NPS is market-linked with 10-12% CAGR historically but with volatility, and is EET (pension taxed). NPS offers the extra ₹50,000 deduction but the 40% forced annuity drags returns. Many planners suggest running NPS alongside EPF — EPF as safety net, NPS for tax efficiency and equity exposure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the minimum annuity I must buy at 60?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "40% of your NPS corpus must purchase an annuity from an IRDAI-registered life insurer (LIC, HDFC Life, SBI Life, ICICI Pru, etc.). You can annuitize more than 40%, up to 100%, for a larger pension. Annuity rates: life annuity (till death) ~6%, life with return of purchase price ~5.5%, joint life with 100% to spouse ~5%. The 60% outside the annuity is a tax-free lump sum. There's no way to fully skip the 40% requirement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which NPS fund manager and scheme should I pick?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PFRDA-registered pension fund managers include SBI, HDFC, UTI, ICICI Prudential, LIC, Kotak, Aditya Birla, Tata, and Max Life. Their long-term equity returns sit in a tight 11-13% CAGR band. Active Choice lets you set equity (E) up to 75% under Tier-I, corporate bond (C), and government securities (G). Auto Choice (LC50, LC25, LG) reduces equity automatically as you age. Most 25-40 year olds pick Active Choice with 75% E, 10% C, 15% G. Total NPS charges are capped around 0.09% of AUM annually."
+            }
+          }
+        ]
+      }
+      </script>
+
+    </div>
+
+    <aside class="lg:col-span-1 space-y-5">
+
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5">
+        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-4">Trending Tools</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="ppf-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              PPF Calculator
+            </a>
+          </li>
+          <li>
+            <a href="fd-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              FD Calculator
+            </a>
+          </li>
+          <li>
+            <a href="rd-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              RD Calculator
+            </a>
+          </li>
+          <li>
+            <a href="sip-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              SIP Calculator
+            </a>
+          </li>
+          <li>
+            <a href="income-tax-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#10b981"></span>
+              Income Tax Calculator
+            </a>
+          </li>
+          <li>
+            <a href="bmi-calculator.html" class="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 transition">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background:#f43f5e"></span>
+              BMI Calculator
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl p-5 shadow-pop" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span class="text-xs font-bold uppercase tracking-wider text-white/90">Premium</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-white">Ad-free. Faster. Saved history.</h3>
+        <p class="mt-2 text-sm text-white/80">Upgrade to Calcify Premium and access 158 tools without ads, plus export results to PDF.</p>
+        <a href="../premium.html" class="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-xl bg-white text-primary text-sm font-bold hover:bg-white/90 transition">
+          Learn More
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+  </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="flex items-end justify-between mb-6">
+    <div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Related Tools</h2>
+      <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400">Other retirement and investment calculators</p>
+    </div>
+    <a href="../finance.html" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 dark:hover:text-indigo-400 transition">
+      View All
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <a href="ppf-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">PPF Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">15-year tax-free Public Provident Fund projection.</p>
+    </a>
+
+    <a href="sip-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+          <polyline points="16 7 22 7 22 13"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">SIP Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Project mutual fund SIP returns with expected CAGR.</p>
+    </a>
+
+    <a href="retirement-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Retirement Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">How much you need to retire comfortably.</p>
+    </a>
+
+    <a href="compound-interest-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Compound Interest</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">See how any amount grows with any compounding frequency.</p>
+    </a>
+
+    <a href="cagr-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+          <polyline points="17 6 23 6 23 12"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">CAGR Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Compound annual growth rate for any investment.</p>
+    </a>
+
+    <a href="lumpsum-calculator.html" class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-5 hover:-translate-y-1 hover:shadow-card transition-all">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <h3 class="font-display font-bold text-base text-slate-900 dark:text-white group-hover:text-primary transition">Lumpsum Calculator</h3>
+      <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">One-time investment growth projection.</p>
+    </a>
+
+  </div>
+
+  <a href="../finance.html" class="sm:hidden mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-indigo-700 transition">
+    View All Finance Tools
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <div class="rounded-3xl p-8 sm:p-10 shadow-pop relative overflow-hidden" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+    <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 pointer-events-none"></div>
+    <div class="absolute -bottom-20 -left-10 w-64 h-64 rounded-full bg-white/5 pointer-events-none"></div>
+
+    <div class="relative max-w-2xl">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/15 text-white border border-white/20">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Calcify Premium
+      </span>
+      <h2 class="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Stop switching tabs. Get every tool, ad-free.</h2>
+      <p class="mt-3 text-sm sm:text-base text-white/85 leading-relaxed">One subscription unlocks all 158 calculators, saves your inputs across sessions, and lets you export results as PDF or CSV. No ads, ever.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="../premium.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-primary font-bold text-sm shadow-soft hover:bg-white/90 transition">
+          Get Premium
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="../premium.html#compare" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/25 text-white font-semibold text-sm hover:bg-white/20 transition">
+          Compare Plans
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="w-12 h-12 mx-auto rounded-2xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">New calculators, one email a month</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-400 text-sm sm:text-base">We ship 4–6 new tools every month. Get a short digest — no spam, no promos, unsubscribe in one click.</p>
+
+      <form id="newsletterForm" class="mt-6 flex flex-col sm:flex-row gap-2.5 max-w-md mx-auto">
+        <input type="email" id="newsletterEmail" required placeholder="you@example.com" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40">
+        <button type="submit" class="px-5 py-3 rounded-xl text-white text-sm font-bold shadow-soft transition hover:opacity-95" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" class="mt-3 text-sm hidden"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-ink border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8">
+
+      <div class="col-span-2 sm:col-span-4 lg:col-span-1">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-soft" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="8" y1="10" x2="10" y2="10"/>
+              <line x1="14" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="10" y2="14"/>
+              <line x1="14" y1="14" x2="16" y2="14"/>
+              <line x1="8" y1="18" x2="16" y2="18"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white">Calcify</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs">158 free calculators for finance, health, math, and everyday life. Built for people who want answers, not ads.</p>
+
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://www.youtube.com/@calcifyofficialchannel" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/calcifyofficial" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="mailto:mediaprojects.official@gmail.com" aria-label="Email" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../finance.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Finance</a></li>
+          <li><a href="../health.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Health</a></li>
+          <li><a href="../math.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Math</a></li>
+          <li><a href="../converters.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Converters</a></li>
+          <li><a href="../everyday.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Everyday</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Company</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../about.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">About</a></li>
+          <li><a href="../contact.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Contact</a></li>
+          <li><a href="../premium.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Premium</a></li>
+          <li><a href="../blog.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900 dark:text-white mb-4">Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../privacy.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Privacy</a></li>
+          <li><a href="../terms.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Terms</a></li>
+          <li><a href="../disclaimer.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Disclaimer</a></li>
+          <li><a href="../cookies.html" class="text-slate-500 dark:text-slate-400 hover:text-primary transition">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-slate-500 dark:text-slate-400">© <span id="year">2025</span> Calcify. All rights reserved.</p>
+      <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        100% client-side. Nothing leaves your browser.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-xl shadow-pop text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+</button>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold shadow-pop opacity-0 pointer-events-none transition-opacity">
+  Copied to clipboard
+</div>
+
+  <script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  var currencies = {
+    INR: { locale: 'en-IN', symbol: '₹', name: 'Indian Rupee' },
+    USD: { locale: 'en-US', symbol: '$', name: 'US Dollar' },
+    EUR: { locale: 'de-DE', symbol: '€', name: 'Euro' },
+    GBP: { locale: 'en-GB', symbol: '£', name: 'British Pound' },
+    AED: { locale: 'ar-AE', symbol: 'د.إ', name: 'UAE Dirham' },
+    SAR: { locale: 'ar-SA', symbol: '﷼', name: 'Saudi Riyal' },
+    CAD: { locale: 'en-CA', symbol: 'C$', name: 'Canadian Dollar' },
+    AUD: { locale: 'en-AU', symbol: 'A$', name: 'Australian Dollar' },
+    JPY: { locale: 'ja-JP', symbol: '¥', name: 'Japanese Yen' }
+  };
+
+  var defaults = {
+    monthly: 10000,
+    age: 30,
+    returnRate: 10,
+    annuityPct: 40,
+    annuityRate: 6,
+    currency: 'INR'
+  };
+
+  var el = {
+    monthly: document.getElementById('monthly'),
+    monthlyRange: document.getElementById('monthlyRange'),
+    age: document.getElementById('age'),
+    ageRange: document.getElementById('ageRange'),
+    returnRate: document.getElementById('returnRate'),
+    returnRateRange: document.getElementById('returnRateRange'),
+    annuityPct: document.getElementById('annuityPct'),
+    annuityPctRange: document.getElementById('annuityPctRange'),
+    annuityRate: document.getElementById('annuityRate'),
+    annuityRateRange: document.getElementById('annuityRateRange'),
+    currency: document.getElementById('currency'),
+    currencyName: document.getElementById('currencyName'),
+    symbolMonthly: document.getElementById('symbolMonthly'),
+    corpus: document.getElementById('corpus'),
+    invested: document.getElementById('invested'),
+    growth: document.getElementById('growth'),
+    lumpsum: document.getElementById('lumpsum'),
+    annuityCorpus: document.getElementById('annuityCorpus'),
+    pension: document.getElementById('pension'),
+    annuityRateLabel: document.getElementById('annuityRateLabel'),
+    yearsLabel: document.getElementById('yearsLabel'),
+    copyBtn: document.getElementById('copyBtn'),
+    resetBtn: document.getElementById('resetBtn'),
+    toast: document.getElementById('toast'),
+    themeToggle: document.getElementById('themeToggle'),
+    mobileBtn: document.getElementById('mobileBtn'),
+    mobileDrawer: document.getElementById('mobileDrawer'),
+    langBtn: document.getElementById('langBtn'),
+    langMenu: document.getElementById('langMenu'),
+    langLabel: document.getElementById('langLabel'),
+    backToTop: document.getElementById('backToTop'),
+    newsletterForm: document.getElementById('newsletterForm'),
+    newsletterEmail: document.getElementById('newsletterEmail'),
+    newsletterMsg: document.getElementById('newsletterMsg'),
+    year: document.getElementById('year')
+  };
+
+  function num(v, fallback) {
+    var n = parseFloat(v);
+    return isFinite(n) ? n : fallback;
+  }
+
+  function clamp(v, min, max) {
+    return Math.min(Math.max(v, min), max);
+  }
+
+  function fmt(amount, code) {
+    var c = currencies[code] || currencies.INR;
+    try {
+      return new Intl.NumberFormat(c.locale, {
+        style: 'currency',
+        currency: code,
+        maximumFractionDigits: 0
+      }).format(amount);
+    } catch (e) {
+      return c.symbol + Math.round(amount).toLocaleString();
+    }
+  }
+
+  function currentCurrency() {
+    return el.currency.value || 'INR';
+  }
+
+  function calc() {
+    var P = num(el.monthly.value, 0);
+    var age = Math.round(num(el.age.value, 30));
+    var annualReturn = num(el.returnRate.value, 0) / 100;
+    var annuityPct = clamp(num(el.annuityPct.value, 40), 40, 100) / 100;
+    var annuityRate = num(el.annuityRate.value, 0) / 100;
+
+    if (age < 18) age = 18;
+    if (age > 59) age = 59;
+    if (P < 0) P = 0;
+
+    var years = 60 - age;
+    var months = years * 12;
+
+    var corpus = 0;
+    if (months > 0 && P > 0) {
+      var r = annualReturn / 12;
+      if (r === 0) {
+        corpus = P * months;
+      } else {
+        corpus = P * ((Math.pow(1 + r, months) - 1) / r) * (1 + r);
+      }
+    }
+
+    var invested = P * months;
+    var growth = corpus - invested;
+    var lumpsum = corpus * (1 - annuityPct);
+    var annuityCorpus = corpus * annuityPct;
+    var monthlyPension = (annuityCorpus * annuityRate) / 12;
+
+    var code = currentCurrency();
+
+    el.corpus.textContent = fmt(corpus, code);
+    el.invested.textContent = fmt(invested, code);
+    el.growth.textContent = fmt(growth, code);
+    el.lumpsum.textContent = fmt(lumpsum, code);
+    el.annuityCorpus.textContent = fmt(annuityCorpus, code);
+    el.pension.textContent = fmt(monthlyPension, code);
+    el.annuityRateLabel.textContent = num(el.annuityRate.value, 0).toFixed(1);
+    el.yearsLabel.textContent = years;
+
+    return {
+      corpus: corpus,
+      invested: invested,
+      growth: growth,
+      lumpsum: lumpsum,
+      annuityCorpus: annuityCorpus,
+      monthlyPension: monthlyPension,
+      years: years,
+      code: code
+    };
+  }
+
+  function syncFromRange(sliderEl, inputEl, min, max) {
+    sliderEl.addEventListener('input', function() {
+      inputEl.value = sliderEl.value;
+      calc();
+    });
+    inputEl.addEventListener('input', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      sliderEl.value = v;
+      calc();
+    });
+    inputEl.addEventListener('blur', function() {
+      var v = clamp(num(inputEl.value, min), min, max);
+      inputEl.value = v;
+      sliderEl.value = v;
+      calc();
+    });
+  }
+
+  function updateSymbol() {
+    var code = currentCurrency();
+    el.symbolMonthly.textContent = currencies[code].symbol;
+    el.currencyName.textContent = currencies[code].name;
+  }
+
+  function loadCurrency() {
+    var saved = null;
+    try { saved = localStorage.getItem('calcify-currency'); } catch (e) {}
+    if (saved && currencies[saved]) {
+      el.currency.value = saved;
+    } else {
+      el.currency.value = 'INR';
+    }
+    updateSymbol();
+  }
+
+  function setCurrency(code) {
+    if (!currencies[code]) return;
+    el.currency.value = code;
+    try { localStorage.setItem('calcify-currency', code); } catch (e) {}
+    updateSymbol();
+    calc();
+  }
+
+  function showToast(msg) {
+    el.toast.textContent = msg;
+    el.toast.style.opacity = '1';
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function() {
+      el.toast.style.opacity = '0';
+    }, 1800);
+  }
+
+  function copyResult() {
+    var r = calc();
+    var lines = [
+      'Calcify — NPS Calculator',
+      'Monthly Contribution: ' + fmt(num(el.monthly.value, 0), r.code),
+      'Current Age: ' + num(el.age.value, 0) + ' years',
+      'Years to 60: ' + r.years,
+      'Expected Return: ' + num(el.returnRate.value, 0) + '% CAGR',
+      'Annuity Allocation: ' + num(el.annuityPct.value, 40) + '%',
+      'Annuity Rate: ' + num(el.annuityRate.value, 0) + '%',
+      '',
+      'Corpus at 60: ' + fmt(r.corpus, r.code),
+      'Total Invested: ' + fmt(r.invested, r.code),
+      'Investment Growth: ' + fmt(r.growth, r.code),
+      'Tax-free Lump Sum (60%): ' + fmt(r.lumpsum, r.code),
+      'Annuity Corpus: ' + fmt(r.annuityCorpus, r.code),
+      'Estimated Monthly Pension: ' + fmt(r.monthlyPension, r.code),
+      '',
+      'Calculated on Calcify'
+    ];
+    var text = lines.join('\n');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showToast('Result copied');
+      }, function() {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Result copied');
+    } catch (e) {
+      showToast('Copy failed');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function reset() {
+    el.monthly.value = defaults.monthly;
+    el.monthlyRange.value = defaults.monthly;
+    el.age.value = defaults.age;
+    el.ageRange.value = defaults.age;
+    el.returnRate.value = defaults.returnRate;
+    el.returnRateRange.value = defaults.returnRate;
+    el.annuityPct.value = defaults.annuityPct;
+    el.annuityPctRange.value = defaults.annuityPct;
+    el.annuityRate.value = defaults.annuityRate;
+    el.annuityRateRange.value = defaults.annuityRate;
+    calc();
+  }
+
+  function toggleTheme() {
+    var isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem('calcify-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+  }
+
+  function toggleMobile() {
+    el.mobileDrawer.classList.toggle('hidden');
+  }
+
+  function closeMobile() {
+    el.mobileDrawer.classList.add('hidden');
+  }
+
+  function toggleLangMenu(e) {
+    e.stopPropagation();
+    el.langMenu.classList.toggle('hidden');
+  }
+
+  function applyLang(code) {
+    el.langLabel.textContent = code.toUpperCase();
+    try { localStorage.setItem('calcify-lang', code); } catch (e) {}
+    var map = { en: 'USD', hi: 'INR', es: 'EUR', ar: 'AED' };
+    if (map[code]) setCurrency(map[code]);
+    el.langMenu.classList.add('hidden');
+    closeMobile();
+  }
+
+  function bindLangOptions() {
+    var opts = document.querySelectorAll('.lang-opt');
+    for (var i = 0; i < opts.length; i++) {
+      opts[i].addEventListener('click', function() {
+        applyLang(this.getAttribute('data-lang'));
+      });
+    }
+  }
+
+  function handleScroll() {
+    if (window.pageYOffset > 400) {
+      el.backToTop.style.opacity = '1';
+      el.backToTop.style.pointerEvents = 'auto';
+    } else {
+      el.backToTop.style.opacity = '0';
+      el.backToTop.style.pointerEvents = 'none';
+    }
+  }
+
+  function handleNewsletter(e) {
+    e.preventDefault();
+    var email = el.newsletterEmail.value.trim();
+    if (!email || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+      el.newsletterMsg.textContent = 'Please enter a valid email address.';
+      el.newsletterMsg.className = 'mt-3 text-sm text-rose-500';
+      return;
+    }
+    el.newsletterMsg.textContent = 'Thanks — you are subscribed.';
+    el.newsletterMsg.className = 'mt-3 text-sm text-emerald-600 dark:text-emerald-400';
+    el.newsletterEmail.value = '';
+  }
+
+  function init() {
+    loadCurrency();
+
+    var savedLang = null;
+    try { savedLang = localStorage.getItem('calcify-lang'); } catch (e) {}
+    if (savedLang) el.langLabel.textContent = savedLang.toUpperCase();
+
+    syncFromRange(el.monthlyRange, el.monthly, 500, 200000);
+    syncFromRange(el.ageRange, el.age, 18, 59);
+    syncFromRange(el.returnRateRange, el.returnRate, 4, 15);
+    syncFromRange(el.annuityPctRange, el.annuityPct, 40, 100);
+    syncFromRange(el.annuityRateRange, el.annuityRate, 4, 9);
+
+    el.currency.addEventListener('change', function() {
+      try { localStorage.setItem('calcify-currency', el.currency.value); } catch (e) {}
+      updateSymbol();
+      calc();
+    });
+
+    el.copyBtn.addEventListener('click', copyResult);
+    el.resetBtn.addEventListener('click', reset);
+    el.themeToggle.addEventListener('click', toggleTheme);
+    el.mobileBtn.addEventListener('click', toggleMobile);
+    el.langBtn.addEventListener('click', toggleLangMenu);
+
+    document.addEventListener('click', function(e) {
+      if (!el.langMenu.classList.contains('hidden')) {
+        if (!el.langMenu.contains(e.target) && e.target !== el.langBtn) {
+          el.langMenu.classList.add('hidden');
+        }
+      }
+    });
+
+    var mobileLinks = el.mobileDrawer.querySelectorAll('a');
+    for (var i = 0; i < mobileLinks.length; i++) {
+      mobileLinks[i].addEventListener('click', closeMobile);
+    }
+
+    bindLangOptions();
+
+    el.backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    el.newsletterForm.addEventListener('submit', handleNewsletter);
+    el.year.textContent = new Date().getFullYear();
+
+    calc();
+  }
+
+  window.Calcify = window.Calcify || {};
+  window.Calcify.NPSCalculator = {
+    calc: calc,
+    reset: reset,
+    setCurrency: setCurrency,
+    currencies: currencies
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
+ 
